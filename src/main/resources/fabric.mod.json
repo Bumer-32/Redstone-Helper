@@ -1,0 +1,49 @@
+{
+	"schemaVersion": 1,
+	"id": "redstone-helper",
+	"version": "${version}",
+	"name": "Redstone Helper",
+	"description": "Mod which must to help you with redstone!",
+	"authors": [
+		"Bumer_32"
+	],
+	"contact": {
+		"homepage": "https://github.com/Bumer-32/Redstone-Helper",
+		"sources": "https://github.com/Bumer-32/Redstone-Helper",
+		"issues": "https://github.com/Bumer-32/Redstone-Helper/issues"
+	},
+	"license": "Apache-2.0",
+	"icon": "assets/redstone-helper/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "com.lumivoid.RedstoneHelper",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "com.lumivoid.RedstoneHelperClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"redstone-helper.mixins.json",
+		{
+			"config": "redstone-helper.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": ">=1.10.19+kotlin.1.9.23"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
