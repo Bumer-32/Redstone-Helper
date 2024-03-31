@@ -1,27 +1,24 @@
 package com.lumivoid
 
-import com.mojang.brigadier.arguments.IntegerArgumentType
+import com.lumivoid.commands.CalcCommand
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
-import net.minecraft.server.command.CommandManager.argument
-import net.minecraft.server.command.CommandManager.literal
+import net.minecraft.entity.player.PlayerInventory
+import net.minecraft.screen.ScreenHandlerContext
+import org.mariuszgromada.math.mxparser.License
 import org.slf4j.LoggerFactory
+import java.awt.Insets
+
 
 object RedstoneHelper : ModInitializer {
     private val logger = LoggerFactory.getLogger("redstone-helper")
 
 	override fun onInitialize() {
-		logger.info("Initializing redstone helper!!")
+		logger.info("Initializing redstone helper!")
+		License.iConfirmNonCommercialUse("Artem")
 
 		CommandRegistrationCallback.EVENT.register { dispatcher, registryAccess, environment ->
-			dispatcher.register(literal("calc")
-				.then(argument("value", IntegerArgumentType.integer())
-					.executes { context ->
-						val value1 = IntegerArgumentType.getInteger(context, "value")
-						context.getSource().sendFeedback({ net.minecraft.text.Text.literal(value1.toString()) }, false)
-						1
-					}
-				))
+			CalcCommand().register(dispatcher)
 		}
 	}
 }

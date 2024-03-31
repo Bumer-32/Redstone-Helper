@@ -1,7 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
-  id "org.jetbrains.kotlin.jvm" version "1.9.23"
+  	id "org.jetbrains.kotlin.jvm" version "1.9.23"
 }
 
 version = project.mod_version
@@ -13,7 +13,8 @@ base {
 
 repositories {
 	maven {
-		url 'https://maven.xpple.dev/maven2'
+		name = "CottonMC"
+		url = "https://server.bbkr.space/artifactory/libs-release"
 	}
 }
 
@@ -36,6 +37,10 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
+
+	include(implementation "org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
+
+	modImplementation include("io.github.cottonmc:LibGui:${project.libgui_version}")
 }
 
 processResources {
