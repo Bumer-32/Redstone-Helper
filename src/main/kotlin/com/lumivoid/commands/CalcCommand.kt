@@ -14,7 +14,7 @@ class CalcCommand {
         dispatcher.register(
             CommandManager.literal("calc")
                 .then(
-                    CommandManager.argument("expression", StringArgumentType.string())
+                    CommandManager.argument("expression", StringArgumentType.greedyString())
                         .executes { context ->
                             try {
                                 val expression = StringArgumentType.getString(context, "expression")
@@ -30,7 +30,16 @@ class CalcCommand {
     }
 
     fun calc(expression: String): Any? {
-        val result: Expression = Expression(expression)
-        return result.calculate()
+        logger.debug("Calculating expression: {}", expression)
+        val result: Expression = Expression(prepareExpression(expression))
+        val calculationResult = result.calculate()
+        logger.debug("Calculated expression: {}", calculationResult)
+        return calculationResult
     }
+    private fun prepareExpression(expression: String): String {
+        return expression.replace("multiply", "*").replace(" * ", "*")
+    }
+
 }
+
+
