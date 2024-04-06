@@ -38,7 +38,7 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
-	include(implementation "org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
+	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
 
 	modImplementation include("io.github.cottonmc:LibGui:${project.libgui_version}")
 }

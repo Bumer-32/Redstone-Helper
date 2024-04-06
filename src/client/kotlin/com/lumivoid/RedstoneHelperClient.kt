@@ -1,9 +1,18 @@
 package com.lumivoid
 
 import net.fabricmc.api.ClientModInitializer
+import org.mariuszgromada.math.mxparser.License
+import org.slf4j.LoggerFactory
+
 
 object RedstoneHelperClient : ClientModInitializer {
+	private val logger = LoggerFactory.getLogger("redstone-helper")
+
 	override fun onInitializeClient() {
-		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
+		logger.info("Initializing Client Redstone Helper")
+		License.iConfirmNonCommercialUse("Artem")
+
+		ClientCommands().register() // Registering client commands
+		KeyBindings().register() // Registering keybindings
 	}
 }
