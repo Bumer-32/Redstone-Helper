@@ -12,7 +12,7 @@ object RedstoneHelperClient : ClientModInitializer {
 		logger.info("Initializing Client Redstone Helper")
 		License.iConfirmNonCommercialUse("Artem")
 
-		Commands().register() // Registering commands
+		ClientCommands().register() // Registering client commands
 		KeyBindings().register() // Registering keybindings
 	}
 }

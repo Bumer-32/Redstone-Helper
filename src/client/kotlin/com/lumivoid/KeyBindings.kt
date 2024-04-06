@@ -11,7 +11,7 @@ import org.lwjgl.glfw.GLFW
 
 class KeyBindings {
     private val calcKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding("key.redstone-helper.calc-keybinding",
+        KeyBinding("key.redstone-helper.calc_keybinding",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_N,
             "key.redstone-helper.category.basic"

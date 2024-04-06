@@ -9,5 +9,7 @@ object RedstoneHelper : ModInitializer {
 
 	override fun onInitialize() {
 		logger.info("Initializing redstone helper!")
+
+		Commands().register() // Registering commands
 	}
 }
