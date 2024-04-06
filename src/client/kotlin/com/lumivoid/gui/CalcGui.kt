@@ -15,7 +15,7 @@ class CalcGui : LightweightGuiDescription() {
         root.setSize(256, 35)
         root.setInsets(Insets.ROOT_PANEL)
 
-        val expressionField = TextField(Text.literal("Expression"))
+        val expressionField = TextField(Text.literal(""))
         expressionField.maxLength = 100
         expressionField.releaseFocus()
         root.add(expressionField, 0, 0, 14, 1)

@@ -10,11 +10,8 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
-import org.slf4j.LoggerFactory
 
 class CalcCommand {
-    private val logger = LoggerFactory.getLogger("redstone-helper")
-
     fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>) {
         dispatcher.register(ClientCommandManager.literal("calc")
             .executes {
