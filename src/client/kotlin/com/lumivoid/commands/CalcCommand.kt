@@ -1,6 +1,6 @@
 package com.lumivoid.commands
 
-import com.lumivoid.`fun`.Calculate
+import com.lumivoid.util.Calculate
 import com.lumivoid.gui.CalcGui
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.StringArgumentType
