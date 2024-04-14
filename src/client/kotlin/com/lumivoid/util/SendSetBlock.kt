@@ -6,11 +6,11 @@ import net.fabricmc.fabric.api.networking.v1.PacketByteBufs
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
 
-class SendSetBlock {
+object SendSetBlock {
     fun sendPacket(pos: BlockPos, block: String) {
         val buf = PacketByteBufs.create()
         buf.writeBlockPos(pos)
         buf.writeIdentifier(Identifier("minecraft", block)) // Here in second arg set the block (for exhample stone)
-        ClientPlayNetworking.send(Constants().SET_BLOCK_PACKET, buf)
+        ClientPlayNetworking.send(Constants.SET_BLOCK_PACKET, buf)
     }
 }

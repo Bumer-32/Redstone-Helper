@@ -6,11 +6,11 @@ import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 
-class ClientCommands {
+object ClientCommands {
     fun register() {
         ClientCommandRegistrationCallback.EVENT.register { dispatcher: CommandDispatcher<FabricClientCommandSource?>, registryAccess ->
-            CalcCommand().register(dispatcher)
-            AutoWireCommand().register(dispatcher)
+            CalcCommand.register(dispatcher)
+            AutoWireCommand.register(dispatcher)
         }
     }
 }

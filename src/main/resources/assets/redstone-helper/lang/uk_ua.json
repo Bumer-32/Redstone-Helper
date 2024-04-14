@@ -1,4 +1,10 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
-  "key.redstone-helper.calc_keybinding": "Відкрити калькулятор"
+  "key.redstone-helper.calc_keybinding": "Відкрити калькулятор",
+
+  "gui.redstone-helper.calculator": "Калькулятор",
+  "gui.redstone-helper.expression": "Вираз",
+  "gui.redstone-helper.result": "Результат: %d",
+  "gui.redstone-helper.invalid_expression": "Результат: не можливий вираз!",
+  "gui.redstone-helper.select_auto_wire_mode": "Вибрати режим"
 }

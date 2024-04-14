@@ -1,4 +1,10 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
-  "key.redstone-helper.calc_keybinding": "Open calculator"
+  "key.redstone-helper.calc_keybinding": "Open calculator",
+
+  "gui.redstone-helper.calculator": "Calculator",
+  "gui.redstone-helper.expression": "Expression",
+  "gui.redstone-helper.result": "Result: %d",
+  "gui.redstone-helper.invalid_expression": "Result: invalid expression!",
+  "gui.redstone-helper.select_auto_wire_mode": "Select mode"
 }

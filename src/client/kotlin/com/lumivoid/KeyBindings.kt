@@ -9,7 +9,7 @@ import net.minecraft.client.option.KeyBinding
 import net.minecraft.client.util.InputUtil
 import org.lwjgl.glfw.GLFW
 
-class KeyBindings {
+object KeyBindings {
     private val calcKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
         KeyBinding("key.redstone-helper.calc_keybinding",
             InputUtil.Type.KEYSYM,
