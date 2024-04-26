@@ -31,7 +31,7 @@ loom {
 }
 
 modrinth {
-	token = System.getenv("MODRINTH_TOKEN")
+	token = project.hasProperty('modrinthToken') ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
 	projectId = project.id_main
 	versionNumber = project.mod_version
 	versionName = "Redstone Helper ${project.mod_version})"

@@ -25,4 +25,4 @@ jobs:
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: building and publishing
-        run: ./gradlew modrinth
+        run: ./gradlew modrinth -PmodrinthToken=${{ secrets.MODRINTH_TOKEN }}
