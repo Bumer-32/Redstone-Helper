@@ -1,7 +1,10 @@
+import com.modrinth.minotaur.dependencies.ModDependency
+
 plugins {
 	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
   	id "org.jetbrains.kotlin.jvm" version "1.9.23"
+	id "com.modrinth.minotaur" version "2.+"
 }
 
 version = project.mod_version
@@ -12,10 +15,7 @@ base {
 }
 
 repositories {
-	maven {
-		name = "CottonMC"
-		url = "https://server.bbkr.space/artifactory/libs-release"
-	}
+	maven { url 'https://maven.wispforest.io' }
 }
 
 loom {
@@ -30,6 +30,25 @@ loom {
 
 }
 
+modrinth {
+	token = System.getenv("MODRINTH_TOKEN")
+	projectId = project.id_main
+	versionNumber = project.mod_version
+	versionName = "Redstone Helper ${project.mod_version})"
+	uploadFile = remapJar
+	additionalFiles = [remapSourcesJar]
+	gameVersions = [project.minecraft_version]
+	versionType = project.release_type
+	loaders = ["fabric"]
+	syncBodyFrom = rootProject.file("README.md").text
+	changelog = rootProject.file("CHANGELOG.md").text
+	dependencies = [
+		new ModDependency(project.id_fabric_api, "required"),
+		new ModDependency(project.id_fabric_kotlin, "required"),
+		new ModDependency(project.owo_id, "required")
+	]
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -40,7 +59,7 @@ dependencies {
 
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
 
-	modImplementation include("io.github.cottonmc:LibGui:${project.libgui_version}")
+	modImplementation("io.wispforest:owo-lib:${project.owo_version}")
 }
 
 processResources {
@@ -74,22 +93,5 @@ java {
 jar {
 	from("LICENSE") {
 		rename { "${it}_${project.base.archivesName.get()}"}
-	}
-}
-
-// configure the maven publication
-publishing {
-	publications {
-		mavenJava(MavenPublication) {
-			from components.java
-		}
-	}
-
-	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-	repositories {
-		// Add repositories to publish to here.
-		// Notice: This block does NOT have the same function as the block in the top level.
-		// The repositories here will be used for publishing your artifact, not for
-		// retrieving dependencies.
 	}
 }

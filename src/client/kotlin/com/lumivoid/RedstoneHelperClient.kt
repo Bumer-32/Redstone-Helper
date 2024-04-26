@@ -6,13 +6,13 @@ import org.slf4j.LoggerFactory
 
 
 object RedstoneHelperClient : ClientModInitializer {
-	private val logger = LoggerFactory.getLogger("redstone-helper")
+	private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
 
 	override fun onInitializeClient() {
-		logger.info("Initializing Client Redstone Helper")
+		logger.info("Initializing client ${Constants.MOD_ID}")
 		License.iConfirmNonCommercialUse("Artem")
 
-		ClientCommands().register() // Registering client commands
-		KeyBindings().register() // Registering keybindings
+		ClientCommands.register() // Registering client commands
+		KeyBindings.register() // Registering keybindings
 	}
 }

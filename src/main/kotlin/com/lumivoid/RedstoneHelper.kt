@@ -5,11 +5,12 @@ import org.slf4j.LoggerFactory
 
 
 object RedstoneHelper : ModInitializer {
-    private val logger = LoggerFactory.getLogger("redstone-helper")
+    private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
 
 	override fun onInitialize() {
-		logger.info("Initializing redstone helper!")
+		logger.info("Initializing ${Constants.MOD_ID}!")
 
-		Commands().register() // Registering commands
+		Commands.register() // Registering commands
+		PacketReceiver.register() // Registering packets
 	}
 }

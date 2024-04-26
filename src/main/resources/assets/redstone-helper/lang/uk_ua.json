@@ -1,4 +1,22 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
-  "key.redstone-helper.calc_keybinding": "Відкрити калькулятор"
+  "key.redstone-helper.calc_keybinding": "Відкрити калькулятор",
+
+  "gui.redstone-helper.calculator": "Калькулятор",
+  "gui.redstone-helper.expression": "Вираз",
+  "gui.redstone-helper.result": "Результат: %d",
+  "gui.redstone-helper.invalid_expression": "Результат: не можливий вираз!",
+
+  "gui.redstone-helper.select_auto_wire": "Auto Wire",
+  "gui.redstone-helper.enable_auto_wire": "Увімкнути auto wire",
+  "gui.redstone-helper.select_auto_wire_mode": "Вибрати режим",
+  "gui.redstone-helper.current_mode": "Зараз вибрано: %d",
+  "gui.redstone-helper.auto_redstone": "редстоун лінія",
+  "gui.redstone-helper.auto_line": "редстоун лінія з поворювачами",
+  "gui.redstone-helper.auto_repeater": "тільки повторювачі",
+  "gui.redstone-helper.auto_comparator": "тільки компаратори",
+  "gui.redstone-helper.cheap_auto_comparator": "компаратори з блоками",
+
+  "help.redstone-helper.version": "Версія моду: %d",
+  "help.redstone-helper.help": "Ось весь список команд redstone-helper:"
 }
