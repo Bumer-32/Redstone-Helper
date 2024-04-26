@@ -36,7 +36,7 @@ modrinth {
 	versionNumber = project.mod_version
 	versionName = "Redstone Helper ${project.mod_version})"
 	uploadFile = remapJar
-	additionalFiles = [remapSourcesJar]
+	//additionalFiles = [remapSourcesJar] // idk why but it don`t works, IT WORKS BEFOREEEE
 	gameVersions = [project.minecraft_version]
 	versionType = project.release_type
 	loaders = ["fabric"]
