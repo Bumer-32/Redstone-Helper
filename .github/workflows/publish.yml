@@ -1,0 +1,28 @@
+# Publishing to modrinth
+
+name: publish
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  publish:
+    name: build and publish to modrinth
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: validate gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+      - name: setup jdk
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'microsoft'
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: building and publishing
+        run: ./gradlew modrinth

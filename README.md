@@ -25,15 +25,11 @@ At the moment in mod only 1 feature but
 ### mod still WIP! Wait for future releases! I have few more ideas for it!
 
 /calc command opens ingame calculator or allows you to calculate any shit you want!
-<img src="doc/calc demonstration.gif" alt="/calc demonstration">
+<img src="https://raw.githubusercontent.com/Bumer-32/Redstone-Helper/main/doc/calc%20demonstration.gif" alt="/calc demonstration">
 
 also you can open calculator window by pressing N (you can rebind it in settings)
 
 ---
 ### If you have an idea which can help with redstone you always can report it to <a href="https://github.com/Bumer-32/Redstone-Helper/issues">issues</a> ! Also you can report bugs)
 
-How to build:
-eh? just download repository (for any way) and run build client task
 ---
-
-[//]: <> HELLO
