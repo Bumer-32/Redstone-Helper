@@ -17,6 +17,9 @@
   "gui.redstone-helper.auto_comparator": "тільки компаратори",
   "gui.redstone-helper.cheap_auto_comparator": "компаратори з блоками",
 
+  "info.redstone-helper.insta_on": "Миттєві лампи увімкнені",
+  "info.redstone-helper.insta_off": "Миттєві лампи вимкнені",
+
   "help.redstone-helper.version": "Версія моду: %d",
   "help.redstone-helper.help": "Ось весь список команд redstone-helper:"
 }
