@@ -11,6 +11,6 @@ object RedstoneHelper : ModInitializer {
 		logger.info("Initializing ${Constants.MOD_ID}!")
 
 		Commands.register() // Registering commands
-		PacketReceiver.register()
+		PacketReceiver.register() // Registering packets
 	}
 }

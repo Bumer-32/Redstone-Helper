@@ -1,7 +1,6 @@
 package com.lumivoid
 
-import com.lumivoid.gui.CalcGui
-import io.github.cottonmc.cotton.gui.client.CottonClientScreen
+import com.lumivoid.gui.CalcScreen
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.minecraft.client.MinecraftClient
@@ -19,9 +18,9 @@ object KeyBindings {
     )
 
     fun register() {
-        ClientTickEvents.END_CLIENT_TICK.register{ client ->
+        ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (calcKeyBinding.wasPressed()) {
-                MinecraftClient.getInstance().setScreen(CottonClientScreen(CalcGui()))
+                MinecraftClient.getInstance().setScreen(CalcScreen())
             }
         }
     }

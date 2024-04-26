@@ -21,7 +21,7 @@ enum class AutoWire {
             return "AUTO_COMPARATOR"
         }
     },
-    COMPACT_AUTO_COMPARATOR {
+    CHEAP_AUTO_COMPARATOR {
         override fun place(): String {
             return "COMPACT_AUTO_COMPARATOR"
         }
