@@ -17,6 +17,9 @@
   "gui.redstone-helper.auto_comparator": "only comparators",
   "gui.redstone-helper.cheap_auto_comparator": "comparators with blocks",
 
+  "info.redstone-helper.insta_on": "Instant lamps enabled",
+  "info.redstone-helper.insta_off": "Instant lamps disabled",
+
   "help.redstone-helper.version": "Mod version: %d",
   "help.redstone-helper.help": "Here all commands of redstone-helper:"
 }
