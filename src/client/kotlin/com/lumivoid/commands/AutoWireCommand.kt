@@ -1,13 +1,15 @@
 package com.lumivoid.commands
 
 import com.lumivoid.Constants
-import com.lumivoid.gui.CalcScreen
+import com.lumivoid.gui.AutowireScreen
+import com.lumivoid.util.SendPackage
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.context.CommandContext
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
+import net.minecraft.util.math.BlockPos
 import net.minecraft.world.GameMode
 import org.slf4j.LoggerFactory
 
@@ -19,10 +21,8 @@ object AutoWireCommand {
             .requires { MinecraftClient.getInstance().interactionManager!!.currentGameMode == GameMode.CREATIVE } // YEYEYEYEYEYYE! I HAVE GAMEMODE ALREADY.
             .executes { context: CommandContext<FabricClientCommandSource> ->
                 logger.debug("opening autowire menu")
-                context.source.sendFeedback(Text.literal("Not yet runnable"))
-                MinecraftClient.getInstance().send(Runnable {
-                    MinecraftClient.getInstance().setScreen(CalcScreen())
-                })
+                context.source.sendFeedback(Text.literal("Not yet awail"))
+                //SendPackage.SET_BLOCK.sendPacket(BlockPos(0, 100, 0), "stone")
                 1
             }
         )
