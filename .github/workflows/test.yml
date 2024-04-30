@@ -19,7 +19,6 @@ jobs:
         # Use these Java versions
         java: [
           21,
-          22,
         ]
         # and run on both Linux and Windows
         os: [ubuntu-22.04, windows-2022]
