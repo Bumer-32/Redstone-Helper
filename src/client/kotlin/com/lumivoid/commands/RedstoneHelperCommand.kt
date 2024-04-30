@@ -11,7 +11,8 @@ object RedstoneHelperCommand {
     private val commandsList = setOf( // Not sure is it ok to keep commands list here, but IT'S MY MOD! I CAN DO WHAT I WANT
         "/restone-helper",
         "/calc",
-        "/autowire"
+        "/autowire   //works only in creative",
+        "/instaLamp   //works only in creative and needs mod on server"
         )
     fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>) {
         dispatcher.register(ClientCommandManager.literal("redstone-helper")

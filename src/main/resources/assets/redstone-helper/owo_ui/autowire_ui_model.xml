@@ -1,0 +1,53 @@
+<owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+    <components>
+        <flow-layout direction="vertical">
+            <children>
+                <flow-layout direction="vertical">
+                    <children>
+                        <label>
+                            <positioning type="relative">50,0</positioning>
+                            <text translate="true">gui.redstone-helper.calculator</text>
+                        </label>
+
+                        <text-box id="expression">
+                            <sizing>
+                                <horizontal method="fixed">245</horizontal>
+                            </sizing>
+                            <tooltip-text translate="true">gui.redstone-helper.expression</tooltip-text>
+                        </text-box>
+
+                        <label id="result">
+                            <positioning type="relative">1,100</positioning>
+                            <text translate="true">gui.redstone-helper.result</text>
+                        </label>
+                    </children>
+
+
+                    <horizontal-alignment>center</horizontal-alignment>
+                    <vertical-alignment>center</vertical-alignment>
+
+                    <surface>
+                        <panel dark="true"/>
+                    </surface>
+
+                    <padding>
+                        <all>5</all>
+                    </padding>
+
+                    <sizing>
+                        <horizontal method="fixed">256</horizontal>
+                        <vertical method="fixed">55</vertical>
+                    </sizing>
+                </flow-layout>
+            </children>
+
+            <vertical-alignment>center</vertical-alignment>
+            <horizontal-alignment>center</horizontal-alignment>
+
+            <surface>
+                <vanilla-translucent/>
+            </surface>
+        </flow-layout>
+    </components>
+</owo-ui>

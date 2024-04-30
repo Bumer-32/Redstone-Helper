@@ -1,7 +1,7 @@
 import com.modrinth.minotaur.dependencies.ModDependency
 
 plugins {
-	id 'fabric-loom' version '1.5-SNAPSHOT'
+	id 'fabric-loom' version '1.6.5'
 	id 'maven-publish'
   	id "org.jetbrains.kotlin.jvm" version "1.9.23"
 	id "com.modrinth.minotaur" version "2.+"
@@ -34,9 +34,9 @@ modrinth {
 	token = project.hasProperty('modrinthToken') ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
 	projectId = project.id_main
 	versionNumber = project.mod_version
-	versionName = "Redstone Helper ${project.mod_version})"
+	versionName = "Redstone Helper ${project.mod_version}"
 	uploadFile = remapJar
-	//additionalFiles = [remapSourcesJar] // idk why but it don`t works, IT WORKS BEFOREEEE
+	additionalFiles = [remapSourcesJar]
 	gameVersions = [project.minecraft_version]
 	versionType = project.release_type
 	loaders = ["fabric"]
@@ -59,7 +59,7 @@ dependencies {
 
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
 
-	modImplementation("io.wispforest:owo-lib:${project.owo_version}")
+	modImplementation "io.wispforest:owo-lib:${project.owo_version}"
 }
 
 processResources {
@@ -71,12 +71,12 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 21
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
 	kotlinOptions {
-		jvmTarget = 17
+		jvmTarget = 21
 	}
 }
 
@@ -84,10 +84,10 @@ java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 	// if it is present.
 	// If you remove this line, sources will not be generated.
-	withSourcesJar()
+	// withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
