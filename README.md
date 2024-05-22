@@ -28,7 +28,7 @@ At the moment in mod only 2 features but
 also you can open calculator window by pressing N (you can rebind it in settings)
 
 /instaLamp makes lamps to off instant!
-<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/instaLamp demonstration.gif?raw=true" alt="/instaLamp demonstation">
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/instaLamp%20demonstration.gif?raw=true" alt="/instaLamp demonstation">
 
 ---
 ### If you have an idea which can help with redstone you always can report it to <a href="https://github.com/Bumer-32/Redstone-Helper/issues">issues</a> ! Also you can report bugs)

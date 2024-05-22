@@ -5,22 +5,31 @@
             <children>
                 <flow-layout direction="vertical">
                     <children>
-                        <label>
+                        <label id="label">
                             <positioning type="relative">50,0</positioning>
-                            <text translate="true">gui.redstone-helper.calculator</text>
+                            <text translate="true">gui.redstone-helper.auto_wire</text>
                         </label>
 
-                        <text-box id="expression">
+                        <checkbox id="autowireState">
+                            <checked>false</checked>
+                            <text translate="true">gui.redstone-helper.enable_auto_wire</text>
+                        </checkbox>
+
+                        <button id="selectMode">
+                            <text translate="true">gui.redstone-helper.select_auto_wire_mode</text>
+                        </button>
+
+                        <label id="currentMode">
+                            <text></text>
+                        </label>
+
+                        <text-box id="selectBlock">
                             <sizing>
-                                <horizontal method="fixed">245</horizontal>
+                                <horizontal method="fixed">120</horizontal>
                             </sizing>
-                            <tooltip-text translate="true">gui.redstone-helper.expression</tooltip-text>
+                            <text>smooth_stone</text>
+                            <tooltip-text translate="true">gui.redstone-helper.select_auto_wire_block</tooltip-text>
                         </text-box>
-
-                        <label id="result">
-                            <positioning type="relative">1,100</positioning>
-                            <text translate="true">gui.redstone-helper.result</text>
-                        </label>
                     </children>
 
 
@@ -36,8 +45,8 @@
                     </padding>
 
                     <sizing>
-                        <horizontal method="fixed">256</horizontal>
-                        <vertical method="fixed">55</vertical>
+                        <horizontal method="fixed">230</horizontal>
+                        <vertical method="fixed">85</vertical>
                     </sizing>
                 </flow-layout>
             </children>
