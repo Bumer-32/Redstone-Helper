@@ -1,6 +1,7 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
   "key.redstone-helper.calc_keybinding": "Відкрити калькулятор",
+  "key.redstone-helper.enable_autowire_keybinding": "Переключити auto wire",
 
   "gui.redstone-helper.calculator": "Калькулятор",
   "gui.redstone-helper.expression": "Вираз",
@@ -24,8 +25,12 @@
   "gui.redstone-helper.auto_comparator_desc": "Ставить компаратори на кожен блок що ви ставите",
   "gui.redstone-helper.cheap_auto_comparator_desc": "Ставить компаратори з блоками і редстоуном за схемою редстоун-компаратор-блок",
 
+  "needs.redstone-helper.creative_needs":  "Ви повинні бути в креативі для використання цієї команди!",
+
   "info.redstone-helper.insta_on": "Миттєві лампи увімкнені",
   "info.redstone-helper.insta_off": "Миттєві лампи вимкнені",
+  "info.redstone-helper.auto_wire_on": "Auto wire увімкнено",
+  "info.redstone-helper.auto_wire_off": "Auto wire вимкнено",
 
   "help.redstone-helper.version": "Версія моду: %d",
   "help.redstone-helper.help": "Ось весь список команд redstone-helper:"

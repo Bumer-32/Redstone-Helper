@@ -1,10 +1,12 @@
 package ua.pp.lumivoid
 
+import net.minecraft.util.math.BlockPos
 import ua.pp.lumivoid.util.AutoWire
-import net.minecraft.util.Identifier
 
 object ClientOptions {
     var isAutoWireEnabled: Boolean = false
     var autoWireMode: AutoWire = AutoWire.AUTO_REDSTONE
-    var autoWireBlock: Identifier = Identifier("minecraft:smooth_stone")
+    var autoWireBlock: String = "minecraft:smooth_stone"
+    var autoWireLastBlock: BlockPos = BlockPos(0, 0, 0)
+    //var autoWireBlockCounter: Int = 1
 }

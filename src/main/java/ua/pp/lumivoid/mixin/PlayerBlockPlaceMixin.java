@@ -16,8 +16,6 @@ import java.util.Objects;
 public class PlayerBlockPlaceMixin {
     @Inject(method = "place(Lnet/minecraft/item/ItemPlacementContext;Lnet/minecraft/block/BlockState;)Z", at = @At("HEAD"))
     private void place(ItemPlacementContext context, BlockState state, CallbackInfoReturnable<Boolean> info) {
-        System.out.println("test");
-
         ActionResult result = PlayerBlockPlaceCallback.EVENT.invoker().interact(
                 Objects.requireNonNull(context.getPlayer()),
                 context.getWorld(),

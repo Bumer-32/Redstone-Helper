@@ -2,8 +2,8 @@ package ua.pp.lumivoid
 
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
-import ua.pp.lumivoid.registration.AutoWireRegistration
 import ua.pp.lumivoid.registration.CommandsRegistration
+import ua.pp.lumivoid.registration.EachTickRegistration
 import ua.pp.lumivoid.registration.PacketReceiverRegistration
 
 
@@ -15,6 +15,6 @@ object RedstoneHelper : ModInitializer {
 
 		CommandsRegistration.register() // Registering commands
 		PacketReceiverRegistration.register() // Registering packets
-		AutoWireRegistration.register()
+		EachTickRegistration.register() // Register something for each tick
 	}
 }

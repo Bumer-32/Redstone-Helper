@@ -2,6 +2,7 @@ package ua.pp.lumivoid.packets
 
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
+import net.minecraft.util.math.Direction
 
 @JvmRecord
-data class SetBlockPacket(val blockPos: BlockPos, val block: String, val aMinecraftClass: Identifier)
+data class SetBlockPacket(val blockPos: BlockPos, val block: Identifier, val direction: Direction, val aMinecraftClass: Identifier)

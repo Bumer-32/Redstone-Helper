@@ -24,6 +24,8 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
         val currentMode = rootComponent.childById(LabelComponent::class.java, "currentMode")
         val selectBlock = rootComponent.childById(TextFieldWidget::class.java, "selectBlock")
 
+        autowireState.checked(ClientOptions.isAutoWireEnabled)
+
         currentMode.text(Text.translatable("gui.redstone-helper.current_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
 
         selectBlock.setEditableColor(0x00FF00)
@@ -68,11 +70,11 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
 
         selectBlock.setChangedListener {
             if (Registries.BLOCK.containsId(Identifier(selectBlock.text))) {
-                ClientOptions.autoWireBlock = Identifier(selectBlock.text)
+                ClientOptions.autoWireBlock = selectBlock.text
                 selectBlock.setEditableColor(0x00FF00)
                 logger.debug("selected new auto wire block: " + ClientOptions.autoWireBlock)
             } else {
-                ClientOptions.autoWireBlock = Identifier("minecraft:smooth_stone")
+                ClientOptions.autoWireBlock = "minecraft:smooth_stone"
                 selectBlock.setEditableColor(0xFF0000)
                 logger.debug("wrong auto wire block selected, reject, new block is: " + ClientOptions.autoWireBlock)
             }
