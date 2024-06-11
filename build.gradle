@@ -18,18 +18,6 @@ repositories {
 	maven { url 'https://maven.wispforest.io' }
 }
 
-loom {
-    splitEnvironmentSourceSets()
-
-	mods {
-		"redstone-helper" {
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
-		}
-	}
-
-}
-
 modrinth {
 	token = project.hasProperty('modrinthToken') ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
 	projectId = project.id_main
