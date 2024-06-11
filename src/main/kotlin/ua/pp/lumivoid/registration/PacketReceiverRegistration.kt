@@ -1,9 +1,10 @@
-package ua.pp.lumivoid
+package ua.pp.lumivoid.registration
 
 import ua.pp.lumivoid.packets.SetBlockPacket
 import org.slf4j.LoggerFactory
+import ua.pp.lumivoid.Constants
 
-object PacketReceiver {
+object PacketReceiverRegistration {
     private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
     fun register() {
         // SET_BLOCK_PACKET receive

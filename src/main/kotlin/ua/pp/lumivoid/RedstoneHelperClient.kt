@@ -1,13 +1,10 @@
 package ua.pp.lumivoid
 
 import net.fabricmc.api.ClientModInitializer
-import net.fabricmc.fabric.api.event.player.UseBlockCallback
-import net.minecraft.entity.player.PlayerEntity
-import net.minecraft.util.Hand
-import net.minecraft.util.hit.HitResult
-import net.minecraft.world.World
 import org.mariuszgromada.math.mxparser.License
 import org.slf4j.LoggerFactory
+import ua.pp.lumivoid.registration.ClientCommandsRegistration
+import ua.pp.lumivoid.registration.KeyBindingsRegistration
 
 
 object RedstoneHelperClient : ClientModInitializer {
@@ -17,8 +14,8 @@ object RedstoneHelperClient : ClientModInitializer {
 		logger.info("Initializing client ${Constants.MOD_ID}")
 		License.iConfirmNonCommercialUse("Artem")
 
-        ClientCommands.register() // Registering client commands
-        KeyBindings.register() // Registering keybindings
+        ClientCommandsRegistration.register() // Registering client commands
+        KeyBindingsRegistration.register() // Registering keybindings
 
 	}
 }

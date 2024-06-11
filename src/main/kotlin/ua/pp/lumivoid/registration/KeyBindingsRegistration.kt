@@ -1,4 +1,4 @@
-package ua.pp.lumivoid
+package ua.pp.lumivoid.registration
 
 import ua.pp.lumivoid.gui.CalcScreen
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
@@ -8,7 +8,7 @@ import net.minecraft.client.option.KeyBinding
 import net.minecraft.client.util.InputUtil
 import org.lwjgl.glfw.GLFW
 
-object KeyBindings {
+object KeyBindingsRegistration {
     private val calcKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
         KeyBinding("key.redstone-helper.calc_keybinding",
             InputUtil.Type.KEYSYM,
