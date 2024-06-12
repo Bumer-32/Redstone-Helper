@@ -1,24 +1,36 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
   "key.redstone-helper.calc_keybinding": "Open calculator",
+  "key.redstone-helper.enable_autowire_keybinding": "Switch auto wire",
 
   "gui.redstone-helper.calculator": "Calculator",
   "gui.redstone-helper.expression": "Expression",
   "gui.redstone-helper.result": "Result: %d",
   "gui.redstone-helper.invalid_expression": "Result: invalid expression!",
 
-  "gui.redstone-helper.select_auto_wire": "Auto Wire",
+  "gui.redstone-helper.auto_wire": "Auto Wire",
   "gui.redstone-helper.enable_auto_wire": "Enable auto wire",
   "gui.redstone-helper.select_auto_wire_mode": "Select mode",
+  "gui.redstone-helper.select_auto_wire_block": "Select block",
   "gui.redstone-helper.current_mode": "Current mode: %d",
-  "gui.redstone-helper.auto_redstone": "redstone line",
+  "gui.redstone-helper.auto_redstone": "auto redstone",
   "gui.redstone-helper.auto_line": "redstone line with repeaters",
   "gui.redstone-helper.auto_repeater": "only repeaters",
   "gui.redstone-helper.auto_comparator": "only comparators",
   "gui.redstone-helper.cheap_auto_comparator": "comparators with blocks",
 
+  "gui.redstone-helper.auto_redstone_desc": "Places redstone on every block you placed",
+  "gui.redstone-helper.auto_line_desc": "Places redstone on every block you placed + places every 15 blocks repeater",
+  "gui.redstone-helper.auto_repeater_desc": "Places repeaters on every block you placed",
+  "gui.redstone-helper.auto_comparator_desc": "Places comparators on every block you placed",
+  "gui.redstone-helper.cheap_auto_comparator_desc": "Places comparators with blocks and redstone like redstone-comparator-block",
+
+  "needs.redstone-helper.creative_needs":  "You must be in creative mode to use this command!",
+
   "info.redstone-helper.insta_on": "Instant lamps enabled",
   "info.redstone-helper.insta_off": "Instant lamps disabled",
+  "info.redstone-helper.auto_wire_on": "Auto wire enabled",
+  "info.redstone-helper.auto_wire_off": "Auto wire disabled",
 
   "help.redstone-helper.version": "Mod version: %d",
   "help.redstone-helper.help": "Here all commands of redstone-helper:"
