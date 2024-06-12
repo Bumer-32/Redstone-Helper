@@ -1,5 +1,6 @@
 package ua.pp.lumivoid.registration
 
+import net.minecraft.block.enums.WireConnection
 import net.minecraft.registry.Registries
 import net.minecraft.state.property.Properties
 import net.minecraft.util.Identifier
@@ -19,6 +20,15 @@ object PacketReceiverRegistration {
                     if (message.direction != Direction.UP) {
                         blockState = blockState.with(Properties.HORIZONTAL_FACING, message.direction)
                     }
+
+                    if (message.block == Identifier("minecraft:redstone_wire")) {
+                        println("something")
+                        blockState = blockState.with(Properties.NORTH_WIRE_CONNECTION, WireConnection.SIDE)
+                        blockState = blockState.with(Properties.SOUTH_WIRE_CONNECTION, WireConnection.SIDE)
+                        blockState = blockState.with(Properties.EAST_WIRE_CONNECTION, WireConnection.SIDE)
+                        blockState = blockState.with(Properties.WEST_WIRE_CONNECTION, WireConnection.SIDE)
+                    }
+
                     access.player.serverWorld.setBlockState(message.blockPos, blockState)
                 }
             }
