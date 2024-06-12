@@ -3,7 +3,7 @@
 
 Redstone helper mod must you to help with redstone in minecraft :)
 
-<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/small_logo.png"?raw=true">
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/small_logo.png?raw=true">
 
 <div style="padding-top: 50px; padding-bottom: 50px">
     <div>
