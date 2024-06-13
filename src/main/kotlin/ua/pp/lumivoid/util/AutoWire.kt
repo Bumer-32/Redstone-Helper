@@ -81,7 +81,6 @@ enum class AutoWire {
             setBlock(blockPos.offset(direction).offset(direction), "minecraft:redstone_wire")
             setBlock(blockPos.offset(direction).offset(direction).offset(direction).down(), ClientOptions.autoWireBlock)
             setBlock(blockPos.offset(direction).offset(direction).offset(direction), ClientOptions.autoWireBlock)
-            // TODO : make redstone dust connected to all sides
             return "COMPACT_AUTO_COMPARATOR"
         }
     };

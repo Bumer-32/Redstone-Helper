@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory
 import ua.pp.lumivoid.registration.AutoWireRegistration
 import ua.pp.lumivoid.registration.ClientCommandsRegistration
 import ua.pp.lumivoid.registration.KeyBindingsRegistration
+import ua.pp.lumivoid.registration.LogginedInEvent
 
 
 object RedstoneHelperClient : ClientModInitializer {
@@ -18,6 +19,7 @@ object RedstoneHelperClient : ClientModInitializer {
         ClientCommandsRegistration.register() // Registering client commands
         KeyBindingsRegistration.register() // Registering keybindings
 		AutoWireRegistration.register() // Registering autowire function
+		LogginedInEvent.register() // For mod updates check
 
 	}
 }

@@ -32,6 +32,36 @@
   "info.redstone-helper.auto_wire_on": "Auto wire увімкнено",
   "info.redstone-helper.auto_wire_off": "Auto wire вимкнено",
 
+  "info.redstone-helper.up_to_date":  "Redstone Helper оновлений!",
+  "info.redstone-helper.need_update":  [
+    "Виявлено стару версію Redstone Helper! ",
+    {
+      "text": "Будь ласка, оновіть до ",
+      "color": "blue",
+      "bold":  true,
+      "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}
+    },
+    {
+      "index": 0,
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}
+    }
+  ],
+  "info.redstone-helper.unable_to_check_version": [
+    "Неможливо перевірити версію Redstone Helper! ",
+    {
+      "text":  "Ви можете це зробити самостійно ",
+      "color": "blue",
+      "bold":  true,
+      "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}
+    },
+    "Помилка: ",
+    {
+      "index": 0
+    }
+  ],
+
   "help.redstone-helper.version": "Версія моду: %d",
   "help.redstone-helper.help": "Ось весь список команд redstone-helper:"
 }

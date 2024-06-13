@@ -32,6 +32,36 @@
   "info.redstone-helper.auto_wire_on": "Auto wire enabled",
   "info.redstone-helper.auto_wire_off": "Auto wire disabled",
 
+  "info.redstone-helper.up_to_date":  "Redstone Helper is up to date!",
+  "info.redstone-helper.need_update":  [
+    "Old version of Redstone Helper detected! ",
+    {
+      "text": "Please update to ",
+      "color": "blue",
+      "bold":  true,
+      "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}
+    },
+    {
+      "index": 0,
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}
+    }
+  ],
+  "info.redstone-helper.unable_to_check_version": [
+    "Unable to check Redstone Helper version! ",
+    {
+      "text":  "You can check it itself ",
+      "color": "blue",
+      "bold":  true,
+      "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}
+    },
+    "Error: ",
+    {
+      "index": 0
+    }
+  ],
+
   "help.redstone-helper.version": "Mod version: %d",
   "help.redstone-helper.help": "Here all commands of redstone-helper:"
 }

@@ -46,7 +46,7 @@ Redstone helper mod must you to help with redstone in minecraft :)
             <p>Largest fuction in mod, you can activate it by typing /autowire or pressing B</p>
             <div>
                 <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/auto wire - interface.png?raw=true">
-                <p>Here you can enable/disable auto wire, select auto wire mode and select block, which redstone helper will use for some mods</p>
+                <p>Here you can enable/disable auto wire, select auto wire mode and select block, which redstone helper will use for some modes</p>
             </div>
             <div>
                 <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/autowire - auto redstone demonstration.gif?raw=true">
