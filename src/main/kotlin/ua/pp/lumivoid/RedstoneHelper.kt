@@ -8,6 +8,7 @@ import ua.pp.lumivoid.registration.PacketReceiverRegistration
 import ua.pp.lumivoid.util.VersionChecker
 
 
+@Suppress("unused")
 object RedstoneHelper : ModInitializer {
     private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
 

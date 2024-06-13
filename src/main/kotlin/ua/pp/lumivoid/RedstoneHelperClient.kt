@@ -9,6 +9,7 @@ import ua.pp.lumivoid.registration.KeyBindingsRegistration
 import ua.pp.lumivoid.registration.LogginedInEvent
 
 
+@Suppress("unused")
 object RedstoneHelperClient : ClientModInitializer {
 	private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
 
