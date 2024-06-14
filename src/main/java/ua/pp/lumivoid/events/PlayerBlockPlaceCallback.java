@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public interface PlayerBlockPlaceCallback {
-    //idk how to do this with kotlin then we can use java with  official fabric wiki
+    //idk how to do this with kotlin then we can use java with official fabric wiki
 
     Event<PlayerBlockPlaceCallback> EVENT = EventFactory.createArrayBacked(PlayerBlockPlaceCallback.class,
             (listeners) -> (player, world, blockState, blockPos) -> {

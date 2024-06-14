@@ -11,13 +11,13 @@ import net.minecraft.client.gui.widget.TextFieldWidget
 import net.minecraft.registry.Registries
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
-import org.slf4j.LoggerFactory
 import ua.pp.lumivoid.ClientOptions
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.util.AutoWire
 
 class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier("redstone-helper", "autowire_ui_model"))) {
-    private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
+    private val logger = Constants.LOGGER
+
     override fun build(rootComponent: FlowLayout) {
         val autowireState = rootComponent.childById(CheckboxComponent::class.java, "autowireState")
         val selectMode = rootComponent.childById(ButtonComponent::class.java, "selectMode")

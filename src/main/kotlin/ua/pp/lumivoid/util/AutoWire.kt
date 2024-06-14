@@ -10,7 +10,7 @@ import ua.pp.lumivoid.ClientOptions
 import kotlin.math.abs
 
 enum class AutoWire {
-    AUTO_REDSTONE { //temporary not awail because wire cannot place and drops (idk why)
+    AUTO_REDSTONE {
         override fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String {
             setBlock(blockPos, "minecraft:redstone_wire") //wtf? why wire? IT'S DUST!
             return "AUTO_REDSTONE"

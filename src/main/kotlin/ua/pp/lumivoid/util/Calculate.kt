@@ -1,12 +1,12 @@
 package ua.pp.lumivoid.util
 
-import ua.pp.lumivoid.Constants
 import net.minecraft.text.Text
 import org.mariuszgromada.math.mxparser.Expression
-import org.slf4j.LoggerFactory
+import ua.pp.lumivoid.Constants
 
 object Calculate {
-    private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
+    private val logger = Constants.LOGGER
+
     fun calc(expression: String): Text {
         logger.debug("Calculating expression: $expression")
         val result = Expression(expression).calculate()

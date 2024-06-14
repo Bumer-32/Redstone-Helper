@@ -9,7 +9,10 @@ import ua.pp.lumivoid.Constants
 import java.net.URL
 
 object VersionChecker {
+    private val logger = Constants.LOGGER
+
     private fun checkModrinthVersion(): Triple<Boolean, Boolean, String> {
+        logger.info("Checking version of Redstone-Helper")
         var newestVersion = ""
         try {
             val response = URL("https://api.modrinth.com/v2/project/${Constants.MOD_MODRINTH_ID}/version").readText()
