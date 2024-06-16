@@ -10,7 +10,7 @@ import ua.pp.lumivoid.ClientOptions
 import kotlin.math.abs
 
 enum class AutoWire {
-    AUTO_REDSTONE { //temporary not awail because wire cannot place and drops (idk why)
+    AUTO_REDSTONE {
         override fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String {
             setBlock(blockPos, "minecraft:redstone_wire") //wtf? why wire? IT'S DUST!
             return "AUTO_REDSTONE"
@@ -81,14 +81,13 @@ enum class AutoWire {
             setBlock(blockPos.offset(direction).offset(direction), "minecraft:redstone_wire")
             setBlock(blockPos.offset(direction).offset(direction).offset(direction).down(), ClientOptions.autoWireBlock)
             setBlock(blockPos.offset(direction).offset(direction).offset(direction), ClientOptions.autoWireBlock)
-            // TODO : make redstone dust connected to all sides
             return "COMPACT_AUTO_COMPARATOR"
         }
     };
     
     fun setBlock(blockPos: BlockPos, block: String, direction: Direction = Direction.UP) { //idk why but we can't receive null, server will crash, so I can only use direction up as null
-        val blockToSet = Identifier(block)
-        SendPackage.SET_BLOCK.sendPacket(blockPos.up(), blockToSet, direction)
+        val blockToSet = Identifier.of(block)
+        SendPacket.clientSetBlockPacket(blockPos.up(), blockToSet, direction)
     }
 
     abstract fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String

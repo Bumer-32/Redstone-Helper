@@ -2,14 +2,12 @@ package ua.pp.lumivoid
 
 import net.fabricmc.api.ClientModInitializer
 import org.mariuszgromada.math.mxparser.License
-import org.slf4j.LoggerFactory
-import ua.pp.lumivoid.registration.AutoWireRegistration
-import ua.pp.lumivoid.registration.ClientCommandsRegistration
-import ua.pp.lumivoid.registration.KeyBindingsRegistration
+import ua.pp.lumivoid.registration.*
 
 
+@Suppress("unused")
 object RedstoneHelperClient : ClientModInitializer {
-	private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
+	private val logger = Constants.LOGGER
 
 	override fun onInitializeClient() {
 		logger.info("Initializing client ${Constants.MOD_ID}")
@@ -18,6 +16,8 @@ object RedstoneHelperClient : ClientModInitializer {
         ClientCommandsRegistration.register() // Registering client commands
         KeyBindingsRegistration.register() // Registering keybindings
 		AutoWireRegistration.register() // Registering autowire function
+		LogginedInEvent.register() // For mod updates check
+		ClientPacketReveiverRegistration.register() // Registering packets
 
 	}
 }

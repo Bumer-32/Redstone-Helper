@@ -11,13 +11,13 @@ import net.minecraft.client.gui.widget.TextFieldWidget
 import net.minecraft.registry.Registries
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
-import org.slf4j.LoggerFactory
 import ua.pp.lumivoid.ClientOptions
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.util.AutoWire
 
-class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier("redstone-helper", "autowire_ui_model"))) {
-    private val logger = LoggerFactory.getLogger(Constants.MOD_ID)
+class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of("redstone-helper", "autowire_ui_model"))) {
+    private val logger = Constants.LOGGER
+
     override fun build(rootComponent: FlowLayout) {
         val autowireState = rootComponent.childById(CheckboxComponent::class.java, "autowireState")
         val selectMode = rootComponent.childById(ButtonComponent::class.java, "selectMode")
@@ -69,7 +69,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
         }
 
         selectBlock.setChangedListener {
-            if (Registries.BLOCK.containsId(Identifier(selectBlock.text))) {
+            if (Registries.BLOCK.containsId(Identifier.of(selectBlock.text))) {
                 ClientOptions.autoWireBlock = selectBlock.text
                 selectBlock.setEditableColor(0x00FF00)
                 logger.debug("selected new auto wire block: " + ClientOptions.autoWireBlock)

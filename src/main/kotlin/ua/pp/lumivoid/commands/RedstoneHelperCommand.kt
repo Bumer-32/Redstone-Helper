@@ -5,9 +5,6 @@ import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.text.Text
-import net.minecraft.util.Identifier
-import net.minecraft.util.math.BlockPos
-import ua.pp.lumivoid.util.SendPackage
 
 object RedstoneHelperCommand {
     private val commandsList = setOf( // Not sure is it ok to keep commands list here, but IT'S MY MOD! I CAN DO WHAT I WANT
