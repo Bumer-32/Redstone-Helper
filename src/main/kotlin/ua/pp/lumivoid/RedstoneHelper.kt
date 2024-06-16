@@ -12,6 +12,7 @@ object RedstoneHelper : ModInitializer {
 	private val logger = Constants.LOGGER
 
 	override fun onInitialize() {
+		logger.info("Hello from Bumer_32!")
 		logger.info("Initializing ${Constants.MOD_ID}!")
 
 		logger.info(VersionChecker.checkRedstoneHelperVersionString())

@@ -86,8 +86,8 @@ enum class AutoWire {
     };
     
     fun setBlock(blockPos: BlockPos, block: String, direction: Direction = Direction.UP) { //idk why but we can't receive null, server will crash, so I can only use direction up as null
-        val blockToSet = Identifier(block)
-        SendPackage.SET_BLOCK.sendPacket(blockPos.up(), blockToSet, direction)
+        val blockToSet = Identifier.of(block)
+        SendPacket.clientSetBlockPacket(blockPos.up(), blockToSet, direction)
     }
 
     abstract fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String

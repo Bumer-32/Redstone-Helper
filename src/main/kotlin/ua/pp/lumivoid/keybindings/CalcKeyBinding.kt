@@ -1,5 +1,6 @@
 package ua.pp.lumivoid.keybindings
 
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.option.KeyBinding
@@ -17,8 +18,10 @@ object CalcKeyBinding {
     )
 
     fun register() {
-        while (calcKeyBinding.wasPressed()) {
-            MinecraftClient.getInstance().setScreen(CalcScreen())
+        ClientTickEvents.END_CLIENT_TICK.register { client ->
+            while (calcKeyBinding.wasPressed()) {
+                MinecraftClient.getInstance().setScreen(CalcScreen())
+            }
         }
     }
 }

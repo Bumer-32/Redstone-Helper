@@ -15,7 +15,7 @@ import ua.pp.lumivoid.ClientOptions
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.util.AutoWire
 
-class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier("redstone-helper", "autowire_ui_model"))) {
+class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of("redstone-helper", "autowire_ui_model"))) {
     private val logger = Constants.LOGGER
 
     override fun build(rootComponent: FlowLayout) {
@@ -69,7 +69,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
         }
 
         selectBlock.setChangedListener {
-            if (Registries.BLOCK.containsId(Identifier(selectBlock.text))) {
+            if (Registries.BLOCK.containsId(Identifier.of(selectBlock.text))) {
                 ClientOptions.autoWireBlock = selectBlock.text
                 selectBlock.setEditableColor(0x00FF00)
                 logger.debug("selected new auto wire block: " + ClientOptions.autoWireBlock)
