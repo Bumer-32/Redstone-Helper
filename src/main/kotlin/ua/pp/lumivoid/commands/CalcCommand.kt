@@ -6,6 +6,7 @@ import com.mojang.brigadier.context.CommandContext
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.MinecraftClient
+import net.minecraft.text.Text
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.gui.CalcScreen
 import ua.pp.lumivoid.util.Calculate
@@ -25,7 +26,12 @@ object CalcCommand {
             .then(ClientCommandManager.argument("expression", StringArgumentType.greedyString())
                 .executes { context: CommandContext<FabricClientCommandSource> ->
                     val expression = StringArgumentType.getString(context, "expression")
-                    context.source.sendFeedback(Calculate.calc(expression))
+                    val calcResult = Calculate.calc(expression)
+                    if (calcResult.isNaN()) {
+                        context.source.sendFeedback(Text.translatable("gui.redstone-helper.invalid_expression"))
+                    } else {
+                        context.source.sendFeedback(Text.translatable("gui.redstone-helper.result", calcResult))
+                    }
                     1
                 }
             )

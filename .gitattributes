@@ -8,4 +8,3 @@
 *.bat           text eol=crlf
 
 *.gradle        linguist-language=Groovy
-

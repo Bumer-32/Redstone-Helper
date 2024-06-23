@@ -1,32 +1,10 @@
-Hey! After small break I can show you Redstone Helper 0.1.4!
+Howdy! update 0.1.6!
 
-New feature is: Auto Wire
+/redstone-fill <item> <count> - fills Inventory which you are looking with selected item and count, you may to be an operator
 
-<div>
-    <p style="font-size: 18px">Auto wire</p>
-    <p>Largest fuction in mod, you can activate it by typing /autowire or pressing B</p>
-    <div>
-        <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/auto wire - interface.png?raw=true">
-        <p>Here you can enable/disable auto wire, select auto wire mode and select block, which redstone helper will use for some modes</p>
-    </div>
-    <div>
-        <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/autowire - auto redstone demonstration.gif?raw=true">
-        <p>Places redstone on every block you placed</p>
-    </div>
-    <div>
-        <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/autowire - auto redstoneline demonstration.gif?raw=true">
-        <p>Places redstone on every block you placed + places every 15 blocks repeater</p>
-    </div>
-    <div>
-        <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/autowire - auto repeater demonstration.gif?raw=true">
-        <p>Places repeaters on every block you placed</p>
-    </div>
-    <div>
-        <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/autowire - auto comparator demonstration.gif?raw=true">
-        <p>Places comparators on every block you placed</p>
-    </div>
-    <div>
-        <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/autowire - cheap auto comparator demonstration.gif?raw=true">
-        <p>Places comparators with blocks and redstone like redstone-comparator-block</p>
-    </div>
-</div>
+<!--suppress ALL -->
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill demonstration.gif?raw=true">
+
+/redstone-fill <signal> [\<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator
+
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill signal demonstration.gif?raw=true">
