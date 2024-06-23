@@ -1,3 +1,4 @@
+<!--suppress ALL -->
 <div style="display: flex; flex-direction: column; align-items: center;">
 <p style="font-size: 40px; font-weight: bold;">Redstone-Helper</p>
 
@@ -68,6 +69,14 @@ Redstone helper mod must you to help with redstone in minecraft :)
                 <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/autowire - cheap auto comparator demonstration.gif?raw=true">
                 <p>Places comparators with blocks and redstone like redstone-comparator-block</p>
             </div>
+        </details>
+        <details>
+            <summary style="font-size: 18px">/redstone-fill &lt item &gt &lt count &gt - fills Inventory which you are looking with selected item and count, you may to be an operator</summary>
+            <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill demonstration.gif?raw=true">
+        </details>
+        <details>
+            <summary style="font-size: 18px">/redstone-fill &lt signal &gt [&lt item &gt] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator</summary>
+            <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill signal demonstration.gif?raw=true">
         </details>
     </div>
 </details>

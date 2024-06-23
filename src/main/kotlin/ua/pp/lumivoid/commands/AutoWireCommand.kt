@@ -14,7 +14,7 @@ object AutoWireCommand {
 
     fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>) {
         dispatcher.register(ClientCommandManager.literal("autowire")
-            .requires { MinecraftClient.getInstance().interactionManager!!.currentGameMode == GameMode.CREATIVE } // YEYEYEYEYEYYE! I HAVE GAMEMODE ALREADY.
+            .requires {source -> source.hasPermissionLevel(2)}
             .executes { context: CommandContext<FabricClientCommandSource> ->
                 if (MinecraftClient.getInstance().interactionManager!!.currentGameMode == GameMode.CREATIVE) {
                     logger.debug("opening autowire menu")

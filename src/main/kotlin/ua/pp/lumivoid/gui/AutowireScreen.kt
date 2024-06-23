@@ -26,6 +26,8 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
 
         autowireState.checked(ClientOptions.isAutoWireEnabled)
 
+        println(autowireState.message)
+
         currentMode.text(Text.translatable("gui.redstone-helper.current_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
 
         selectBlock.setEditableColor(0x00FF00)
@@ -46,7 +48,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
                 dropdown.zIndex(150)
 
                 for (mode in AutoWire.entries) {
-                    dropdown.button(Text.translatable("gui.redstone-helper.${mode.toString().lowercase()}")) { button ->
+                    dropdown.button(Text.translatable("gui.redstone-helper.${mode.toString().lowercase()}")) {
                         dropdown.remove()
                         ClientOptions.autoWireMode = AutoWire.valueOf(mode.toString())
                         currentMode.text(Text.translatable("gui.redstone-helper.current_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))

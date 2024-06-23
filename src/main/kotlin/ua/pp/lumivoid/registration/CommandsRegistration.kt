@@ -1,13 +1,16 @@
 package ua.pp.lumivoid.registration
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
-import ua.pp.lumivoid.commands.InstaLamp
+import ua.pp.lumivoid.commands.InstaLampCommand
+import ua.pp.lumivoid.commands.RedstoneFillCommand
+import ua.pp.lumivoid.commands.RedstoneFillSignalCommand
 
 object CommandsRegistration {
     fun register() {
         CommandRegistrationCallback.EVENT.register { dispatcher, registryAccess, environment ->
-            InstaLamp.register(dispatcher)
-            //RedstoneFill.register(dispatcher)
+            InstaLampCommand.register(dispatcher)
+            RedstoneFillCommand.register(dispatcher, registryAccess)
+            RedstoneFillSignalCommand.register(dispatcher, registryAccess)
         }
     }
 }
