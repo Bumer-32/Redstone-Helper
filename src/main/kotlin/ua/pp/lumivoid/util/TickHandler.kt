@@ -1,11 +1,15 @@
 package ua.pp.lumivoid.util
 
+import ua.pp.lumivoid.Constants
 import java.util.concurrent.ConcurrentLinkedQueue
 
 object TickHandler {
+    private val logger = Constants.LOGGER
+
     private val taskQueue: ConcurrentLinkedQueue<DelayedTask> = ConcurrentLinkedQueue()
 
     fun scheduleAction(delayTicks: Int, action: () -> Unit) {
+        logger.debug("Scheduling action with delay: $delayTicks ticks")
         taskQueue.add(DelayedTask(delayTicks, action))
     }
 

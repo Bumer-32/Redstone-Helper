@@ -8,8 +8,11 @@ import net.minecraft.client.util.InputUtil
 import net.minecraft.text.Text
 import org.lwjgl.glfw.GLFW
 import ua.pp.lumivoid.ClientOptions
+import ua.pp.lumivoid.Constants
 
 object AutoWireKeyBinding {
+    private val logger = Constants.LOGGER
+
     private val autoWireKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
         KeyBinding("key.redstone-helper.enable_autowire_keybinding",
             InputUtil.Type.KEYSYM,
@@ -19,6 +22,8 @@ object AutoWireKeyBinding {
     )
 
     fun register() {
+        logger.debug("Registering AutoWireKeyBinding")
+
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (autoWireKeyBinding.wasPressed()) {
                 ClientOptions.isAutoWireEnabled = !ClientOptions.isAutoWireEnabled

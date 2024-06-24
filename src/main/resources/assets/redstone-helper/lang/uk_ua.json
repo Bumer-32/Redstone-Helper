@@ -25,8 +25,6 @@
   "gui.redstone-helper.auto_comparator_desc": "Ставить компаратори на кожен блок що ви ставите",
   "gui.redstone-helper.cheap_auto_comparator_desc": "Ставить компаратори з блоками і редстоуном за схемою редстоун-компаратор-блок",
 
-  "needs.redstone-helper.creative_needs":  "Ви повинні бути в креативі для використання цієї команди!",
-
   "info.redstone-helper.insta_on": "Миттєві лампи увімкнені",
   "info.redstone-helper.insta_off": "Миттєві лампи вимкнені",
   "info.redstone-helper.auto_wire_on": "Auto wire™ увімкнено",
@@ -62,6 +60,21 @@
     }
   ],
 
+  "info.redstone-helper.calculated_signal": [
+    "Вирахуваний сигнал: ",
+    {
+      "index": 0
+    },
+    ", предмет: ",
+    {
+      "index": 1
+    }
+  ],
+  "info.redstone-helper.success": "Вдалося!",
+  "info_error.redstone-helper.not_block_found": "Не знайдено блок!",
+  "info_error.redstone-helper.invalid_block_inventory": "Не можу знайти інвентар блоку!",
+  "info_error.redstone-helper.missing_arguments": "Недостатньо аргументів!",
+
   "help.redstone-helper.version": "Версія моду: %d",
   "help.redstone-helper.help": [
     "Ось список всіх команд Redstone Helper:\n",
@@ -70,6 +83,7 @@
     "/autowire - відкриває меню auto wire, ви повинні бути оператором\n",
     "/instaLamp <state> - прибирає затримку вимикання для редстоун ламп, якщо \"state\" аргумент був введений він покаже поточний стан instaLamps, ви повинні бути оператором\n",
     "/redstone-fill <item> <count> - заповнює інвентар, на який ви дивитесь, вибраним предметом та кількістю, ви повинні бути оператором\n",
-    "/redstone-fill <signal> [<item>] - заповнює інвентар на який ви дивитесь предметами так, щоб отримати сигнал червоного каменю з компаратора, який ви ввели, якщо предмет не вказано інвентар буде заповнено дерев’яною лопатою, ви повинні бути оператором\n"
+    "/redstone-fill-signal <signal> [<item>] - заповнює інвентар на який ви дивитесь предметами так, щоб отримати сигнал червоного каменю з компаратора, який ви ввели, якщо предмет не вказано інвентар буде заповнено дерев’яною лопатою, ви повинні бути оператором\n",
+    "/calc-redstone-signal <signal> [<item>] - аналог /redstone-fill-signal для виживання, просто рахує скільки предметів потрібно для отримання сигнала, якщо предмет не вказано сигнал буде рахуватись з дерев’яною лопатою\n"
   ]
 }

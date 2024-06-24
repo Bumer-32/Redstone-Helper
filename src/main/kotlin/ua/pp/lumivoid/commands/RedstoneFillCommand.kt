@@ -1,3 +1,5 @@
+@file:Suppress("LoggingStringTemplateAsArgument", "DuplicatedCode")
+
 package ua.pp.lumivoid.commands
 
 import com.mojang.brigadier.CommandDispatcher
@@ -9,19 +11,35 @@ import net.minecraft.inventory.Inventory
 import net.minecraft.item.ItemStack
 import net.minecraft.server.command.CommandManager
 import net.minecraft.server.command.ServerCommandSource
+import net.minecraft.text.Text
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
+import ua.pp.lumivoid.Constants
 
 
 object RedstoneFillCommand {
+    private val logger = Constants.LOGGER
 
     fun register(dispatcher: CommandDispatcher<ServerCommandSource?>, registryAccess: CommandRegistryAccess) {
+        logger.debug("/redstone-fill: Registering redstone-fill command")
+
         dispatcher.register(CommandManager.literal("redstone-fill")
             .requires { source -> source.hasPermissionLevel(2) }
+            .executes { context ->
+                logger.debug("/redstone-fill: Missing arguments!")
+                context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
+                1
+            }
             .then(CommandManager.argument("item", ItemStackArgumentType.itemStack(registryAccess))
+                .executes { context ->
+                    logger.debug("/redstone-fill: Missing arguments!")
+                    context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
+                    1
+                }
                 .then(CommandManager.argument("count", IntegerArgumentType.integer(1, 3456))
                     .executes { context ->
+                        logger.debug("/redstone-fill: Trying to fill inventory with blocks")
                         val hit: HitResult = MinecraftClient.getInstance().crosshairTarget!!
 
                         if (hit.type == Type.BLOCK) {
@@ -56,7 +74,13 @@ object RedstoneFillCommand {
                                         }
                                     }
                                 }
-                            } finally {}
+
+                                logger.debug("/redstone-fill: Success!")
+                                context.source.sendFeedback({ Text.translatable("info.redstone-helper.success") }, false)
+                            } catch (e: NullPointerException) {
+                                logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
+                                context.source.sendError(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
+                            }
                         }
                         1
                     }

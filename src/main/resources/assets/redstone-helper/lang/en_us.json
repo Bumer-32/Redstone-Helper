@@ -25,8 +25,6 @@
   "gui.redstone-helper.auto_comparator_desc": "Places comparators on every block you placed",
   "gui.redstone-helper.cheap_auto_comparator_desc": "Places comparators with blocks and redstone like redstone-comparator-block",
 
-  "needs.redstone-helper.creative_needs":  "You must be in creative mode to use this command!",
-
   "info.redstone-helper.insta_on": "Instant lamps enabled",
   "info.redstone-helper.insta_off": "Instant lamps disabled",
   "info.redstone-helper.auto_wire_on": "Auto wire™ enabled",
@@ -62,6 +60,21 @@
     }
   ],
 
+  "info.redstone-helper.calculated_signal": [
+    "Calculated signal: ",
+    {
+      "index": 0
+    },
+    ", item: ",
+    {
+      "index": 1
+    }
+  ],
+  "info.redstone-helper.success": "Success!",
+  "info_error.redstone-helper.not_block_found": "Block not found!",
+  "info_error.redstone-helper.invalid_block_inventory": "Can't get block inventory!",
+  "info_error.redstone-helper.missing_arguments": "Missing arguments!",
+
   "help.redstone-helper.version": "Mod version: %d",
   "help.redstone-helper.help": [
     "Here all commands of Redstone Helper:\n",
@@ -70,6 +83,7 @@
     "/autowire - opens auto wire menu, you may to be an operator\n",
     "/instaLamp [<state>] - makes lamps to turn off instantly, if \"state\" argument it will show you current state of instaLamps, you may to be an operator\n",
     "/redstone-fill <item> <count> - fills Inventory which you are looking with selected item and count, you may to be an operator\n",
-    "/redstone-fill <signal> [<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator\n"
+    "/redstone-fill-signal <signal> [<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator\n",
+    "/calc-redstone-signal <signal> [<item>] - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel\n"
   ]
 }
