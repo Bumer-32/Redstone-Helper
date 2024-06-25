@@ -9,29 +9,34 @@
                             <positioning type="relative">50,0</positioning>
                             <text translate="true">gui.redstone-helper.auto_wire</text>
                         </label>
+                            <checkbox id="autowireState">
+                                <positioning type="relative">22,10</positioning>
+                                <checked>false</checked>
+                            </checkbox>
 
-                        <checkbox id="autowireState">
-                            <checked>false</checked>
-<!--                            TODO fix bug-->
-                            <text translate="true">gui.redstone-helper.enable_auto_wire</text>
-                        </checkbox>
+                            <label>
+                                <!--                                IDK why but text in checkbox fully BROKEN-->
+                                <positioning type="relative">50,17</positioning>
+                                <text translate="true">gui.redstone-helper.enable_auto_wire</text>
+                            </label>
 
-                        <button id="selectMode">
-                            <text translate="true">gui.redstone-helper.select_auto_wire_mode</text>
-                        </button>
+                            <button id="selectMode">
+                                <text translate="true">gui.redstone-helper.select_auto_wire_mode</text>
+                            </button>
 
-                        <label id="currentMode">
-                            <!--suppress CheckTagEmptyBody -->
-                            <text></text>
-                        </label>
+                            <label id="currentMode">
+                                <!--suppress CheckTagEmptyBody -->
+                                <text></text>
+                            </label>
 
-                        <text-box id="selectBlock">
-                            <sizing>
-                                <horizontal method="fixed">120</horizontal>
-                            </sizing>
-                            <text>smooth_stone</text>
-                            <tooltip-text translate="true">gui.redstone-helper.select_auto_wire_block</tooltip-text>
-                        </text-box>
+                            <text-box id="selectBlock">
+                                <sizing>
+                                    <horizontal method="fixed">120</horizontal>
+                                </sizing>
+                                <positioning type="relative">50,90</positioning>
+                                <text>smooth_stone</text>
+                                <tooltip-text translate="true">gui.redstone-helper.select_auto_wire_block</tooltip-text>
+                            </text-box>
                     </children>
 
 

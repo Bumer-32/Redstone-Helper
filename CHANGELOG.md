@@ -1,10 +1,6 @@
-Howdy! update 0.1.6!
+Halo! Very small update 0.1.7!
 
-/redstone-fill <item> <count> - fills Inventory which you are looking with selected item and count, you may to be an operator
-
-<!--suppress ALL -->
-<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill demonstration.gif?raw=true">
-
-/redstone-fill <signal> [\<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator
-
-<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill signal demonstration.gif?raw=true">
+Changes:
+New command! /calc-redstone-signal <signal> [\<item>] - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel
+<img src="doc/calc redstone signall demonstation.gif">
+Small bugfix which returns label to check box at AutoWire menu

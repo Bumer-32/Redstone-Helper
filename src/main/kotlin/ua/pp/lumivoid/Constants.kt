@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory
 
 object Constants {
     const val MOD_ID = "redstone-helper"
-    const val MOD_VERSION = "0.1.6"
+    const val MOD_VERSION = "0.1.7"
     const val MOD_MODRINTH_ID = "cwYR2Bh1"
     @Suppress("DEPRECATION")
     const val MINECRAFT_VERSION = SharedConstants.VERSION_NAME

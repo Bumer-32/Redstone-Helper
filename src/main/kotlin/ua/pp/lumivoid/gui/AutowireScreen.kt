@@ -19,16 +19,14 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
     private val logger = Constants.LOGGER
 
     override fun build(rootComponent: FlowLayout) {
+        logger.debug("Building AutowireScreen UI")
+
         val autowireState = rootComponent.childById(CheckboxComponent::class.java, "autowireState")
         val selectMode = rootComponent.childById(ButtonComponent::class.java, "selectMode")
         val currentMode = rootComponent.childById(LabelComponent::class.java, "currentMode")
         val selectBlock = rootComponent.childById(TextFieldWidget::class.java, "selectBlock")
 
         autowireState.checked(ClientOptions.isAutoWireEnabled)
-
-        println(autowireState.message)
-
-        currentMode.text(Text.translatable("gui.redstone-helper.current_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
 
         selectBlock.setEditableColor(0x00FF00)
 
@@ -52,7 +50,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
                         dropdown.remove()
                         ClientOptions.autoWireMode = AutoWire.valueOf(mode.toString())
                         currentMode.text(Text.translatable("gui.redstone-helper.current_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
-                        logger.debug("selected new auto wire mode: " + ClientOptions.autoWireMode)
+                        logger.debug("Selected new auto wire mode: " + ClientOptions.autoWireMode)
                     }
                 }
 
@@ -74,11 +72,11 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
             if (Registries.BLOCK.containsId(Identifier.of(selectBlock.text))) {
                 ClientOptions.autoWireBlock = selectBlock.text
                 selectBlock.setEditableColor(0x00FF00)
-                logger.debug("selected new auto wire block: " + ClientOptions.autoWireBlock)
+                logger.debug("Selected new auto wire block: " + ClientOptions.autoWireBlock)
             } else {
                 ClientOptions.autoWireBlock = "minecraft:smooth_stone"
                 selectBlock.setEditableColor(0xFF0000)
-                logger.debug("wrong auto wire block selected, reject, new block is: " + ClientOptions.autoWireBlock)
+                logger.debug("Wrong auto wire block selected, reject, new block is: " + ClientOptions.autoWireBlock)
             }
         }
     }

@@ -1,3 +1,5 @@
+@file:Suppress("LoggingStringTemplateAsArgument")
+
 package ua.pp.lumivoid.util
 
 import net.minecraft.entity.player.PlayerEntity
@@ -7,6 +9,7 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
 import net.minecraft.world.World
 import ua.pp.lumivoid.ClientOptions
+import ua.pp.lumivoid.Constants
 import kotlin.math.abs
 
 enum class AutoWire {
@@ -84,8 +87,12 @@ enum class AutoWire {
             return "COMPACT_AUTO_COMPARATOR"
         }
     };
+
+    private val logger = Constants.LOGGER
     
     fun setBlock(blockPos: BlockPos, block: String, direction: Direction = Direction.UP) { //idk why but we can't receive null, server will crash, so I can only use direction up as null
+        logger.debug("Trying to set $block block at $blockPos")
+
         val blockToSet = Identifier.of(block)
         SendPacket.setBlockPacket(blockPos.up(), blockToSet, direction)
     }

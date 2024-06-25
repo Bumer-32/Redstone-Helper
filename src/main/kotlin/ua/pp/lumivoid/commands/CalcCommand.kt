@@ -15,9 +15,11 @@ object CalcCommand {
     private val logger = Constants.LOGGER
 
     fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>) {
+        logger.debug("/calc: Registering calc command")
+
         dispatcher.register(ClientCommandManager.literal("calc")
             .executes {
-                logger.debug("opening calc menu")
+                logger.debug("/calc: Opening calc menu")
                 MinecraftClient.getInstance().send(Runnable {
                     MinecraftClient.getInstance().setScreen(CalcScreen())
                 })
@@ -25,6 +27,7 @@ object CalcCommand {
             }
             .then(ClientCommandManager.argument("expression", StringArgumentType.greedyString())
                 .executes { context: CommandContext<FabricClientCommandSource> ->
+                    logger.debug("/calc: Calculating expression from chat")
                     val expression = StringArgumentType.getString(context, "expression")
                     val calcResult = Calculate.calc(expression)
                     if (calcResult.isNaN()) {
