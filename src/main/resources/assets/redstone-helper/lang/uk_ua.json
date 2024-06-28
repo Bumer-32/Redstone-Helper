@@ -25,6 +25,8 @@
   "gui.redstone-helper.auto_comparator_desc": "Ставить компаратори на кожен блок що ви ставите",
   "gui.redstone-helper.cheap_auto_comparator_desc": "Ставить компаратори з блоками і редстоуном за схемою редстоун-компаратор-блок",
 
+  "gui.redstone-helper.bits_operations": "Bits Operations™",
+
   "info.redstone-helper.insta_on": "Миттєві лампи увімкнені",
   "info.redstone-helper.insta_off": "Миттєві лампи вимкнені",
   "info.redstone-helper.auto_wire_on": "Auto wire™ увімкнено",

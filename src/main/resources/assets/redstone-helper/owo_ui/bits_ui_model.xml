@@ -1,0 +1,41 @@
+<owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+    <components>
+        <flow-layout direction="vertical">
+            <children>
+                <flow-layout direction="vertical">
+                    <children>
+                        <label id="label">
+                            <positioning type="relative">50,0</positioning>
+                            <text translate="true">gui.redstone-helper.bits_operations</text>
+                        </label>
+                    </children>
+
+
+                    <horizontal-alignment>center</horizontal-alignment>
+                    <vertical-alignment>center</vertical-alignment>
+
+                    <surface>
+                        <panel dark="true"/>
+                    </surface>
+
+                    <padding>
+                        <all>5</all>
+                    </padding>
+
+                    <sizing>
+                        <horizontal method="fixed">230</horizontal>
+                        <vertical method="fixed">85</vertical>
+                    </sizing>
+                </flow-layout>
+            </children>
+
+            <vertical-alignment>center</vertical-alignment>
+            <horizontal-alignment>center</horizontal-alignment>
+
+            <surface>
+                <vanilla-translucent/>
+            </surface>
+        </flow-layout>
+    </components>
+</owo-ui>

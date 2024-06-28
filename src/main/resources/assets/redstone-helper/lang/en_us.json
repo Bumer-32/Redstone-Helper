@@ -25,6 +25,8 @@
   "gui.redstone-helper.auto_comparator_desc": "Places comparators on every block you placed",
   "gui.redstone-helper.cheap_auto_comparator_desc": "Places comparators with blocks and redstone like redstone-comparator-block",
 
+  "gui.redstone-helper.bits_operations": "Bits Operations™",
+
   "info.redstone-helper.insta_on": "Instant lamps enabled",
   "info.redstone-helper.insta_off": "Instant lamps disabled",
   "info.redstone-helper.auto_wire_on": "Auto wire™ enabled",
