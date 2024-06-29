@@ -87,5 +87,22 @@
     "/redstone-fill <item> <count> - заполняет инвентарь, на который вы смотрите, выбранным предметом и количеством, вы должны быть оператором\n",
     "/redstone-fill-signal <signal> [<item>] - заполняет инвентарь, на который вы смотрите, предметами так, чтобы получить сигнал красного камня с компаратора, который вы ввели, если предмет не указан, инвентарь будет заполнен деревянной лопатой, вы должны быть оператором\n",
     "/calc-redstone-signal <signal> [<item>] - аналог /redstone-fill-signal для выживания, просто вычисляет, сколько предметов нужно для получения сигнала, если предмет не указан, сигнал будет вычисляться с деревянной лопатой\n"
-  ]
+  ],
+
+  "text.config.redstone-helper-config.title": "Настройки Redstone Helper",
+
+  "text.config.redstone-helper-config.section.general": "Главные настройки",
+  "text.config.redstone-helper-config.option.enableUpdateCheck": "Проверять на обновления",
+
+  "text.config.redstone-helper-config.section.interface": "Интерфейс",
+  "text.config.redstone-helper-config.option.darkPanels": "Тёмные панели",
+  "text.config.redstone-helper-config.option.enableBackgroundBlur": "Размытие заднего фона",
+
+  "text.config.redstone-helper-config.section.autoWire": "Auto Wire™",
+  "text.config.redstone-helper-config.option.defaultAutoWireMode": "Auto Wire™ режим по умолчанию",
+  "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "авто редстоун",
+  "text.config.redstone-helper-config.enum.autoWire.auto_line": "редстоун линия с повторителями",
+  "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "только повторители",
+  "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "только компараторы",
+  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "компараторы с блоками"
 }

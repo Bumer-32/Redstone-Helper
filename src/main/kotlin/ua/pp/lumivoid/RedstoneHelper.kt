@@ -20,5 +20,8 @@ object RedstoneHelper : ModInitializer {
 		CommandsRegistration.register() // Registering commands
 		PacketReceiverRegistration.register() // Registering packets
 		EachTickRegistration.register() // Register something for each tick
+
+		// Sync config and Options
+		ClientOptions.autoWireMode = Config().defaultAutoWireMode
 	}
 }

@@ -3,7 +3,7 @@
     <components>
         <flow-layout direction="vertical">
             <children>
-                <flow-layout direction="vertical">
+                <flow-layout id="layout" direction="vertical">
                     <children>
                         <label>
                             <positioning type="relative">50,0</positioning>
@@ -28,7 +28,7 @@
                     <vertical-alignment>center</vertical-alignment>
 
                     <surface>
-                        <panel dark="true"/>
+                        <panel/>
                     </surface>
 
                     <padding>

@@ -7,11 +7,11 @@ import io.wispforest.owo.ui.component.DropdownComponent
 import io.wispforest.owo.ui.component.LabelComponent
 import io.wispforest.owo.ui.container.FlowLayout
 import io.wispforest.owo.ui.core.Component
-import net.minecraft.client.gui.widget.TextFieldWidget
-import net.minecraft.registry.Registries
+import io.wispforest.owo.ui.core.Surface
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import ua.pp.lumivoid.ClientOptions
+import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.util.AutoWire
 
@@ -21,14 +21,24 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building AutowireScreen UI")
 
+        val layout = rootComponent.childById(FlowLayout::class.java, "layout")
         val autowireState = rootComponent.childById(CheckboxComponent::class.java, "autowireState")
         val selectMode = rootComponent.childById(ButtonComponent::class.java, "selectMode")
         val currentMode = rootComponent.childById(LabelComponent::class.java, "currentMode")
-        val selectBlock = rootComponent.childById(TextFieldWidget::class.java, "selectBlock")
+
+        if (Config().darkPanels) {
+            layout.surface(Surface.DARK_PANEL)
+        } else {
+            layout.surface(Surface.PANEL)
+        }
+        if (Config().enableBackgroundBlur) {
+            rootComponent.surface(Surface.blur(100F, 10F))
+        } else {
+            rootComponent.surface(Surface.VANILLA_TRANSLUCENT)
+        }
 
         autowireState.checked(ClientOptions.isAutoWireEnabled)
-
-        selectBlock.setEditableColor(0x00FF00)
+        currentMode.text(Text.translatable("gui.redstone-helper.current_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
 
         autowireState.onChanged {
             ClientOptions.isAutoWireEnabled = autowireState.isChecked
@@ -65,18 +75,6 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
                 descends.zip(enumValues<AutoWire>().map { it.name }).forEach { (descendant, tooltip) ->
                     descendant.tooltip(Text.translatable("gui.redstone-helper.${tooltip.lowercase()}_desc"))
                 }
-            }
-        }
-
-        selectBlock.setChangedListener {
-            if (Registries.BLOCK.containsId(Identifier.of(selectBlock.text))) {
-                ClientOptions.autoWireBlock = selectBlock.text
-                selectBlock.setEditableColor(0x00FF00)
-                logger.debug("Selected new auto wire block: " + ClientOptions.autoWireBlock)
-            } else {
-                ClientOptions.autoWireBlock = "minecraft:smooth_stone"
-                selectBlock.setEditableColor(0xFF0000)
-                logger.debug("Wrong auto wire block selected, reject, new block is: " + ClientOptions.autoWireBlock)
             }
         }
     }

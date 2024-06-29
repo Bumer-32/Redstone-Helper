@@ -3,7 +3,7 @@
     <components>
         <flow-layout direction="vertical">
             <children>
-                <flow-layout direction="vertical">
+                <flow-layout id="layout" direction="vertical">
                     <children>
                         <label id="label">
                             <positioning type="relative">50,0</positioning>
@@ -17,27 +17,20 @@
 
                         <label>
                             <!--                                IDK why but text in checkbox fully BROKEN-->
-                            <positioning type="relative">50,17</positioning>
+                            <positioning type="relative">50,21</positioning>
                             <text translate="true">gui.redstone-helper.enable_auto_wire</text>
                         </label>
 
                         <button id="selectMode">
+                            <positioning type="relative">50,65</positioning>
                             <text translate="true">gui.redstone-helper.select_auto_wire_mode</text>
                         </button>
 
                         <label id="currentMode">
+                            <positioning type="relative">50,100</positioning>
                             <!--suppress CheckTagEmptyBody -->
                             <text></text>
                         </label>
-
-                        <text-box id="selectBlock">
-                            <sizing>
-                                <horizontal method="fixed">120</horizontal>
-                            </sizing>
-                            <positioning type="relative">50,90</positioning>
-                            <text>smooth_stone</text>
-                            <tooltip-text translate="true">gui.redstone-helper.select_auto_wire_block</tooltip-text>
-                        </text-box>
                     </children>
 
 
@@ -45,7 +38,7 @@
                     <vertical-alignment>center</vertical-alignment>
 
                     <surface>
-                        <panel dark="true"/>
+                        <panel/>
                     </surface>
 
                     <padding>
@@ -54,7 +47,7 @@
 
                     <sizing>
                         <horizontal method="fixed">230</horizontal>
-                        <vertical method="fixed">85</vertical>
+                        <vertical method="fixed">65</vertical>
                     </sizing>
                 </flow-layout>
             </children>

@@ -87,5 +87,22 @@
     "/redstone-fill <item> <count> - fills Inventory which you are looking with selected item and count, you may to be an operator\n",
     "/redstone-fill-signal <signal> [<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator\n",
     "/calc-redstone-signal <signal> [<item>] - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel\n"
-  ]
+  ],
+
+  "text.config.redstone-helper-config.title": "Redstone Helper Settings",
+
+  "text.config.redstone-helper-config.section.general": "General settings",
+  "text.config.redstone-helper-config.option.enableUpdateCheck": "Check for updates",
+
+  "text.config.redstone-helper-config.section.interface": "Interface",
+  "text.config.redstone-helper-config.option.darkPanels": "Dark panels",
+  "text.config.redstone-helper-config.option.enableBackgroundBlur": "Background blur",
+
+  "text.config.redstone-helper-config.section.autoWire": "Auto Wire™",
+  "text.config.redstone-helper-config.option.defaultAutoWireMode": "Default Auto Wire™ mode",
+  "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "auto redstone",
+  "text.config.redstone-helper-config.enum.autoWire.auto_line": "redstone line with repeaters",
+  "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "only repeaters",
+  "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "only comparators",
+  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "comparators with blocks"
 }
