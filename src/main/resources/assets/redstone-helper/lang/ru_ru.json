@@ -25,7 +25,14 @@
   "gui.redstone-helper.auto_comparator_desc": "Устанавливает компараторы на каждый блок, который вы ставите",
   "gui.redstone-helper.cheap_auto_comparator_desc": "Устанавливает компараторы с блоками и редстоуном по схеме редстоун-компаратор-блок",
 
-  "gui.redstone-helper.bits_operations": "Bits Operations™",
+  "gui.redstone-helper.bits_operations": "BIT Operations™",
+  "gui.redstone-helper.converter": "Конвертер",
+  "gui.redstone-helper.to_bit": "В BIT",
+  "gui.redstone-helper.to_hex": "В HEX",
+  "gui.redstone-helper.from_bit": "С BIT",
+  "gui.redstone-helper.from_hex": "С HEX",
+  "gui.redstone-helper.bit_calculator": "BIT калькулятор",
+  "gui.redstone-helper.bit_result": "Результат: %d : %d : %d",
 
   "info.redstone-helper.insta_on": "Мгновенные лампы включены",
   "info.redstone-helper.insta_off": "Мгновенные лампы выключены",

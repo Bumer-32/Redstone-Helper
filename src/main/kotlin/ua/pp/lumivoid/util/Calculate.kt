@@ -17,4 +17,21 @@ object Calculate {
             return result
         }
     }
+
+    fun convertToRadix10(input: String): String {
+        logger.debug("Converting $input to radix 10")
+
+        val regex = "(\\b[01]+\\b)|(\\b[0-9]+\\b)|(\\b[A-F]+\\b)".toRegex()
+
+        val result = regex.replace(input) { matchResult ->
+            val match = matchResult.value
+            when {
+                match.all { it in '0'..'1' } -> Integer.parseInt(match, 2).toString() // Radix 2
+                match.all { it in 'A'..'F' } -> Integer.parseInt(match, 16).toString() // Radix 16
+                else -> match // Radix 10
+            }
+        }
+
+        return result
+    }
 }

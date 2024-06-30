@@ -25,7 +25,14 @@
   "gui.redstone-helper.auto_comparator_desc": "Places comparators on every block you placed",
   "gui.redstone-helper.cheap_auto_comparator_desc": "Places comparators with blocks and redstone like redstone-comparator-block",
 
-  "gui.redstone-helper.bits_operations": "Bits Operations™",
+  "gui.redstone-helper.bits_operations": "BIT Operations™",
+  "gui.redstone-helper.converter": "Converter",
+  "gui.redstone-helper.to_bit": "To BIT",
+  "gui.redstone-helper.to_hex": "To HEX",
+  "gui.redstone-helper.from_bit": "From BIT",
+  "gui.redstone-helper.from_hex": "From HEX",
+  "gui.redstone-helper.bit_calculator": "BIT calculator",
+  "gui.redstone-helper.bit_result": "Result: %d : %d : %d",
 
   "info.redstone-helper.insta_on": "Instant lamps enabled",
   "info.redstone-helper.insta_off": "Instant lamps disabled",

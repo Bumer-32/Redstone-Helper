@@ -19,7 +19,8 @@
 
                         <label id="result">
                             <positioning type="relative">1,100</positioning>
-                            <text translate="true">gui.redstone-helper.result</text>
+                            <!--suppress CheckTagEmptyBody -->
+                            <text></text>
                         </label>
                     </children>
 

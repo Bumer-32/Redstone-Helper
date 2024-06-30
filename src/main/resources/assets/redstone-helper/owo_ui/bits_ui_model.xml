@@ -1,3 +1,4 @@
+<!--suppress CheckTagEmptyBody -->
 <owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
     <components>
@@ -8,6 +9,68 @@
                         <label id="label">
                             <positioning type="relative">50,0</positioning>
                             <text translate="true">gui.redstone-helper.bits_operations</text>
+                        </label>
+
+                        <label id="toBitText">
+                            <positioning type="relative">0,13</positioning>
+                            <text translate="true">gui.redstone-helper.to_bit</text>
+                        </label>
+                        <text-box id="toBitExpression">
+                            <positioning type="relative">0,25</positioning>
+                            <sizing>
+                                <horizontal method="fixed">135</horizontal>
+                            </sizing>
+                            <tooltip-text translate="true">gui.redstone-helper.expression</tooltip-text>
+                        </text-box>
+                        <label id="toBitResult">
+                            <positioning type="relative">0,48</positioning>
+                            <text></text>
+                        </label>
+
+                        <label>
+                            <positioning type="relative">50,13</positioning>
+                            <text translate="true">gui.redstone-helper.converter</text>
+                        </label>
+
+                        <label>
+                            <positioning type="relative">50,25</positioning>
+                            <text>HEX</text>
+                        </label>
+                        <checkbox id="HEX">
+                            <positioning type="relative">51,40</positioning>
+                        </checkbox>
+
+                        <label id="fromBitText">
+                            <positioning type="relative">100,13</positioning>
+                            <text translate="true">gui.redstone-helper.from_bit</text>
+                        </label>
+                        <text-box id="fromBitExpression">
+                            <positioning type="relative">100,25</positioning>
+                            <sizing>
+                                <horizontal method="fixed">135</horizontal>
+                            </sizing>
+                            <tooltip-text translate="true">gui.redstone-helper.expression</tooltip-text>
+                        </text-box>
+                        <label id="fromBitResult">
+                            <positioning type="relative">100,48</positioning>
+                            <text></text>
+                        </label>
+
+
+                        <label>
+                            <positioning type="relative">50,65</positioning>
+                            <text translate="true">gui.redstone-helper.bit_calculator</text>
+                        </label>
+                        <text-box id="bitExpression">
+                            <positioning type="relative">50,85</positioning>
+                            <sizing>
+                                <horizontal method="fixed">310</horizontal>
+                            </sizing>
+                            <tooltip-text translate="true">gui.redstone-helper.expression</tooltip-text>
+                        </text-box>
+                        <label id="bitResult">
+                            <positioning type="relative">1,100</positioning>
+                            <text></text>
                         </label>
                     </children>
 
@@ -24,8 +87,8 @@
                     </padding>
 
                     <sizing>
-                        <horizontal method="fixed">230</horizontal>
-                        <vertical method="fixed">85</vertical>
+                        <horizontal method="fixed">320</horizontal>
+                        <vertical method="fixed">120</vertical>
                     </sizing>
                 </flow-layout>
             </children>
