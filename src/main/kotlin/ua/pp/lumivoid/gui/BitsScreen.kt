@@ -33,6 +33,7 @@ class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
         val bitExpressionField = rootComponent.childById(TextFieldWidget::class.java, "bitExpression")
         val bitResult = rootComponent.childById(LabelComponent::class.java, "bitResult")
 
+        @Suppress("DuplicatedCode")
         if (Config().darkPanels) {
             layout.surface(Surface.DARK_PANEL)
         } else {
@@ -60,7 +61,7 @@ class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
                     toBitResult.text(Text.translatable("gui.redstone-helper.result", "#" + Integer.toHexString(toBitExpressionField.text.toInt())))
                 }
             } catch (e: NumberFormatException) {
-                logger.error("Not a number entered ${e}")
+                logger.error("Not a number entered $e")
                 toBitResult.text(Text.translatable("gui.redstone-helper.invalid_expression"))
             }
         }

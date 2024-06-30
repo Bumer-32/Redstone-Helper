@@ -16,10 +16,6 @@ base {
 
 repositories {
 	maven { url 'https://maven.wispforest.io' }
-	maven {
-		name = "Terraformers"
-		url = "https://maven.terraformersmc.com/"
-	}
 }
 
 modrinth {
