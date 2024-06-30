@@ -47,7 +47,7 @@ Redstone helper mod must you to help with redstone in minecraft :)
             <p>Largest fuction in mod, you can activate it by typing /autowire or pressing B</p>
             <div>
                 <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/auto wire - interface.png?raw=true">
-                <p>Here you can enable/disable auto wire, select auto wire mode and select block, which redstone helper will use for some modes</p>
+                <p>Here you can enable/disable auto wire and select auto wire mode</p>
             </div>
             <div>
                 <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/autowire - auto redstone demonstration.gif?raw=true">
@@ -81,6 +81,34 @@ Redstone helper mod must you to help with redstone in minecraft :)
         <details>
             <summary style="font-size: 18px;">/calc-redstone-signal &lt signal &gt [&lt item &gt] - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel</summary>
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/calc redstone signall demonstation.gif?raw=true">
+        </details>
+        <details>
+            <summary style="font-size: 18px;">BIT Operations™</summary>
+            <img src="doc/bit operations - interface.png">
+            <div>
+                Allows you to work with BITS and HEX
+                /bits to open
+                Has 4 converters:
+                <div>
+                    Int to BIT;
+                    BIT to INT;
+                    Int to HEX;
+                    HEX to Int;
+                </div>
+                Also You can calculate different numbers in BIT calculator, that allows to calculate BITS with HEX with INT!
+            </div>
+        </details>
+        <details>
+            <summary style="font-size: 18px;">ModMenu support!</summary>
+            <img src="doc/config - screen.png">
+            <div>
+                <p>Yeah You can configure mod and even disable mod version check! Also You can configure how Redstone Helper interface looks! And small config for Auto Wire™</p>
+                <p>Here all awailable settings:</p>
+                <p>Check for updates - enable Redstone Helper update checking after world is loaded</p>
+                <p>Dark panels - makes interface plates with dark texture</p>
+                <p>Background blur - blurs background while you open any Redstone Helper interface instead vanilla transluent background</p>
+                <p>Default Auto Wire™ mode - default Auto Wire™ will setted after world is loaded</p>
+            </div>
         </details>
     </div>
 </details>

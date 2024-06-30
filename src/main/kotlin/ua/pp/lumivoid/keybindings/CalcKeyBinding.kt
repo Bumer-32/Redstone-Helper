@@ -21,7 +21,7 @@ object CalcKeyBinding {
     )
 
     fun register() {
-        logger.info("Registering CalcKeyBinding")
+        logger.debug("Registering CalcKeyBinding")
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (calcKeyBinding.wasPressed()) {

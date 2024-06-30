@@ -39,10 +39,13 @@ enum class AutoWire {
             } else {
                 try {
                     if (world.getBlockState(oldBlockPos.up()).get(Properties.POWER) == 1) {
-                        setBlock(blockPos, "minecraft:repeater", Direction.fromVector(blockPosDiff.x, 0, blockPosDiff.z)!!)
-                        setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff).down(), ClientOptions.autoWireBlock)
-                        setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff), "minecraft:redstone_wire")
-                        setBlock(blockPos.subtract(blockPosDiff), ClientOptions.autoWireBlock)
+                        TickHandler.scheduleAction(1) {
+                            val block = world.getBlockState(blockPos).block.toString().replace("Block{", "").replace("}", "") // IDK how to get block ID so we can just delete Block{}
+                            setBlock(blockPos, "minecraft:repeater", Direction.fromVector(blockPosDiff.x, 0, blockPosDiff.z)!!)
+                            setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff).down(), block)
+                            setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff), "minecraft:redstone_wire")
+                            setBlock(blockPos.subtract(blockPosDiff), block)
+                        }
                     } else {
                         setBlock(blockPos, "minecraft:redstone_wire")
                     }
@@ -78,12 +81,16 @@ enum class AutoWire {
     CHEAP_AUTO_COMPARATOR {
         override fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String {
             val direction = Direction.fromRotation(player.getHeadYaw().toDouble() - 180)
-            setBlock(blockPos, "minecraft:comparator", Direction.fromRotation(player.getHeadYaw().toDouble()))
-            setBlock(blockPos.offset(direction), ClientOptions.autoWireBlock)
-            setBlock(blockPos.offset(direction).offset(direction).down(), ClientOptions.autoWireBlock)
-            setBlock(blockPos.offset(direction).offset(direction), "minecraft:redstone_wire")
-            setBlock(blockPos.offset(direction).offset(direction).offset(direction).down(), ClientOptions.autoWireBlock)
-            setBlock(blockPos.offset(direction).offset(direction).offset(direction), ClientOptions.autoWireBlock)
+
+            TickHandler.scheduleAction(1) { // sleep to find NEW block not old block
+                val block = world.getBlockState(blockPos).block.toString().replace("Block{", "").replace("}", "") // IDK how to get block ID so we can just delete Block{}
+                setBlock(blockPos, "minecraft:comparator", Direction.fromRotation(player.getHeadYaw().toDouble()))
+                setBlock(blockPos.offset(direction), block)
+                setBlock(blockPos.offset(direction).offset(direction).down(), block)
+                setBlock(blockPos.offset(direction).offset(direction), "minecraft:redstone_wire")
+                setBlock(blockPos.offset(direction).offset(direction).offset(direction).down(), block)
+                setBlock(blockPos.offset(direction).offset(direction).offset(direction), block)
+            }
             return "COMPACT_AUTO_COMPARATOR"
         }
     };

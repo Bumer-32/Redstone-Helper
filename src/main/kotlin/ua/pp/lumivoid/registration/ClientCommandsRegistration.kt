@@ -3,10 +3,7 @@ package ua.pp.lumivoid.registration
 import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
-import ua.pp.lumivoid.commands.AutoWireCommand
-import ua.pp.lumivoid.commands.CalcCommand
-import ua.pp.lumivoid.commands.CalcRedstoneSignalCommand
-import ua.pp.lumivoid.commands.RedstoneHelperCommand
+import ua.pp.lumivoid.commands.*
 
 object ClientCommandsRegistration {
     fun register() {
@@ -15,6 +12,7 @@ object ClientCommandsRegistration {
             AutoWireCommand.register(dispatcher)
             RedstoneHelperCommand.register(dispatcher)
             CalcRedstoneSignalCommand.register(dispatcher, registryAccess)
+            BitsCommand.register(dispatcher)
         }
     }
 }

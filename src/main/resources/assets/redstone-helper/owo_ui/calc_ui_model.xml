@@ -3,7 +3,7 @@
     <components>
         <flow-layout direction="vertical">
             <children>
-                <flow-layout direction="vertical">
+                <flow-layout id="layout" direction="vertical">
                     <children>
                         <label>
                             <positioning type="relative">50,0</positioning>
@@ -19,7 +19,8 @@
 
                         <label id="result">
                             <positioning type="relative">1,100</positioning>
-                            <text translate="true">gui.redstone-helper.result</text>
+                            <!--suppress CheckTagEmptyBody -->
+                            <text></text>
                         </label>
                     </children>
 
@@ -28,7 +29,7 @@
                     <vertical-alignment>center</vertical-alignment>
 
                     <surface>
-                        <panel dark="true"/>
+                        <panel/>
                     </surface>
 
                     <padding>

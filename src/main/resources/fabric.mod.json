@@ -8,7 +8,7 @@
 		"Bumer_32"
 	],
 	"contact": {
-		"homepage": "https://modrinth.com/mod/redstone-helper",
+		"homepage": "https://lumivoid.pp.ua",
 		"sources": "https://github.com/Bumer-32/Redstone-Helper",
 		"issues": "https://github.com/Bumer-32/Redstone-Helper/issues"
 	},
@@ -45,5 +45,12 @@
 	},
 	"suggests": {
 		"another-mod": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.modrinth": "https://modrinth.com/mod/redstone-helper"
+			}
+		}
 	}
 }

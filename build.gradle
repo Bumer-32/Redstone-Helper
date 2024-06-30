@@ -33,7 +33,8 @@ modrinth {
 	dependencies = [
 		new ModDependency(project.id_fabric_api, "required"),
 		new ModDependency(project.id_fabric_kotlin, "required"),
-		new ModDependency(project.owo_id, "required")
+		new ModDependency(project.id_owo, "required"),
+		new ModDependency(project.id_modmenu, "optional")
 	]
 }
 
@@ -47,7 +48,7 @@ dependencies {
 
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
 
-	modImplementation "io.wispforest:owo-lib:${project.owo_version}"
+	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
 }
 
 processResources {
