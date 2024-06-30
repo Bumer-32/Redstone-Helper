@@ -3,7 +3,7 @@ Kon'nichiwa! BIT Operations™ are here with update 0.1.8!
 Added:
 
 ModMenu support! Yeah now You can configure mod and even disable mod version check! Also You can configure how Redstone Helper interface looks! And small config for Auto Wire™
-<img src="doc/config - screen.png">
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/config - screen.png?raw=true">
 Here all awailable settings:
 
 Check for updates - enable Redstone Helper update checking after world is loaded
@@ -15,7 +15,7 @@ Background blur - blurs background while you open any Redstone Helper interface 
 Default Auto Wire™ mode - default Auto Wire™ will setted after world is loaded
 
 BIT Operations™
-<img src="doc/bit operations - interface.png">
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/bit operations - interface.png?raw=true">
 Allows you to work with BITS and HEX
 
 /bits to open

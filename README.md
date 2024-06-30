@@ -84,7 +84,7 @@ Redstone helper mod must you to help with redstone in minecraft :)
         </details>
         <details>
             <summary style="font-size: 18px;">BIT Operations™</summary>
-            <img src="doc/bit operations - interface.png">
+            <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/bit operations - interface.png?raw=true">
             <div>
                 Allows you to work with BITS and HEX
                 /bits to open
@@ -100,7 +100,7 @@ Redstone helper mod must you to help with redstone in minecraft :)
         </details>
         <details>
             <summary style="font-size: 18px;">ModMenu support!</summary>
-            <img src="doc/config - screen.png">
+            <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/config - screen.png?raw=true">
             <div>
                 <p>Yeah You can configure mod and even disable mod version check! Also You can configure how Redstone Helper interface looks! And small config for Auto Wire™</p>
                 <p>Here all awailable settings:</p>
