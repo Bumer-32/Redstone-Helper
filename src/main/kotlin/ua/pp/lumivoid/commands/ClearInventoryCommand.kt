@@ -31,7 +31,7 @@ object ClearInventoryCommand {
                     val blockPos = blockHit.blockPos
 
                     try {
-                        val blockInventory: Inventory = context.source.world.getBlockEntity(blockPos) as Inventory
+                        val blockInventory: Inventory = context.source.server.worlds.first().getBlockEntity(blockPos) as Inventory
                         blockInventory.clear()
 
                         logger.debug("/redstone-fill: Success!")

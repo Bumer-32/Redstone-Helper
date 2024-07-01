@@ -84,6 +84,17 @@
   "info_error.redstone-helper.invalid_block_inventory": "Не могу найти инвентарь блока!",
   "info_error.redstone-helper.missing_arguments": "Недостаточно аргументов!",
 
+  "info.redstone-helper.funny.1": "Зачем тебе это нужно??",
+  "info.redstone-helper.funny.2": "Для чего ты это собираешься использовать?",
+  "info.redstone-helper.funny.3": "Зачем?",
+  "info.redstone-helper.funny.4": "... Ладно, если ты уверен.",
+  "info.redstone-helper.funny.5": "Я на 99% уверен, что ты мог бы использовать любую другую вещь.",
+  "info.redstone-helper.funny.6": "Это кажется ненужным.",
+  "info.redstone-helper.funny.7": "Это опечатка?",
+  "info.redstone-helper.funny.8": "Вау, какая шикарная, но бесполезная вещь.",
+
+  "dontlocalize.stuff.redstone-helper.funny_count": "8",
+
   "help.redstone-helper.version": "Версия мода: %d",
   "help.redstone-helper.help": [
     "Вот список всех команд Redstone Helper:\n",

@@ -84,7 +84,18 @@
   "info_error.redstone-helper.invalid_block_inventory": "Can't get block inventory!",
   "info_error.redstone-helper.missing_arguments": "Missing arguments!",
 
-  "help.redstone-helper.version": "Mod version: %d",
+  "info.redstone-helper.funny.1": "Why would you want this??",
+  "info.redstone-helper.funny.2": "Wtf are you going to use this for?",
+  "info.redstone-helper.funny.3": "What for?",
+  "info.redstone-helper.funny.4": "... Ok, if you're sure.",
+  "info.redstone-helper.funny.5": "I'm 99% sure you could just use any other thing.",
+  "info.redstone-helper.funny.6": "This seems unnecessary.",
+  "info.redstone-helper.funny.7": "Is that a typo?",
+  "info.redstone-helper.funny.8": "Wow, what a fancy but otherwise useless thing.",
+
+  "dontlocalize.stuff.redstone-helper.funny_count": "8",
+
+"help.redstone-helper.version": "Mod version: %d",
   "help.redstone-helper.help": [
     "Here all commands of Redstone Helper:\n",
     "/redstone-helper <help, version> - mod info\n",
