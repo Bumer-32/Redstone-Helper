@@ -16,7 +16,7 @@ import ua.pp.lumivoid.Constants
 object ClearInventoryCommand {
     private val logger = Constants.LOGGER
 
-    fun register(dispatcher: CommandDispatcher<ServerCommandSource?>) {
+    fun register(dispatcher: CommandDispatcher<ServerCommandSource>) {
         logger.debug("/clear-inventory: Registering redstone-fill command")
 
         dispatcher.register(CommandManager.literal("clear-inventory")
@@ -40,6 +40,9 @@ object ClearInventoryCommand {
                         logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
                         context.source.sendError(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
                     }
+                } else {
+                    logger.debug("/calc-redstone-signal: No block in crosshair target")
+                    context.source.sendError(Text.translatable("info_error.redstone-helper.no_block_found"))
                 }
 
                 1

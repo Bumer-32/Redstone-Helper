@@ -11,11 +11,10 @@ import net.minecraft.command.argument.ItemStackArgumentType
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
-import net.minecraft.registry.Registries
+import net.minecraft.item.Items
 import net.minecraft.server.command.CommandManager
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.Text
-import net.minecraft.util.Identifier
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
@@ -27,7 +26,7 @@ import kotlin.random.Random
 object RedstoneFillSignalCommand {
     private val logger = Constants.LOGGER
 
-    fun register(dispatcher: CommandDispatcher<ServerCommandSource?>, registryAccess: CommandRegistryAccess) {
+    fun register(dispatcher: CommandDispatcher<ServerCommandSource>, registryAccess: CommandRegistryAccess) {
         logger.debug("/redstone-fill-signal: Registering redstone-fill-signal command")
 
         dispatcher.register(CommandManager.literal("redstone-fill-signal")
@@ -39,7 +38,7 @@ object RedstoneFillSignalCommand {
             }
             .then(CommandManager.argument("signal", IntegerArgumentType.integer(0, 15))
                 .executes { context ->
-                    execute(context, Registries.ITEM.get(Identifier.of("minecraft:wooden_shovel")), IntegerArgumentType.getInteger(context, "signal"))
+                    execute(context, Items.WOODEN_SHOVEL, IntegerArgumentType.getInteger(context, "signal"))
                     1
                 }
                 .then(CommandManager.argument("item", ItemStackArgumentType.itemStack(registryAccess))
@@ -68,7 +67,7 @@ object RedstoneFillSignalCommand {
                     val blockInventory: Inventory = context.source.server.worlds.first().getBlockEntity(blockPos) as Inventory // Omg I can get server world from context
                     blockInventory.clear()
 
-                    var amount = Calculate.calculateRedstoneSignal(redstoneSignal, item, blockInventory)
+                    var amount = Calculate.calculateRedstoneSignal(redstoneSignal, item, blockInventory.size())
 
                     logger.debug("/redstone-fill-signal: Calculated amount of items: $amount")
 
@@ -100,6 +99,9 @@ object RedstoneFillSignalCommand {
                     logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
                     context.source.sendError(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
                 }
+            } else {
+                logger.debug("/calc-redstone-signal: No block in crosshair target")
+                context.source.sendError(Text.translatable("info_error.redstone-helper.no_block_found"))
             }
         }
     }

@@ -1,4 +1,4 @@
-@file:Suppress("LoggingStringTemplateAsArgument", "DuplicatedCode")
+@file:Suppress("LoggingStringTemplateAsArgument", "DuplicatedCode", "LoggingSimilarMessage")
 
 package ua.pp.lumivoid.commands
 
@@ -22,7 +22,7 @@ import kotlin.random.Random
 object RedstoneFillCommand {
     private val logger = Constants.LOGGER
 
-    fun register(dispatcher: CommandDispatcher<ServerCommandSource?>, registryAccess: CommandRegistryAccess) {
+    fun register(dispatcher: CommandDispatcher<ServerCommandSource>, registryAccess: CommandRegistryAccess) {
         logger.debug("/redstone-fill: Registering redstone-fill command")
 
         dispatcher.register(CommandManager.literal("redstone-fill")
@@ -59,8 +59,7 @@ object RedstoneFillCommand {
                                 val blockPos = blockHit.blockPos
 
                                 try {
-                                    val blockInventory: Inventory =
-                                        context.source.server.worlds.first().getBlockEntity(blockPos) as Inventory // Omg I can get server world from context
+                                    val blockInventory: Inventory = context.source.server.worlds.first().getBlockEntity(blockPos) as Inventory // Omg I can get server world from context
                                     blockInventory.clear()
 
                                     val item = ItemStackArgumentType.getItemStackArgument(context, "item").item
@@ -94,6 +93,9 @@ object RedstoneFillCommand {
                                     logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
                                     context.source.sendError(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
                                 }
+                            } else {
+                                logger.debug("/calc-redstone-signal: No block in crosshair target")
+                                context.source.sendError(Text.translatable("info_error.redstone-helper.no_block_found"))
                             }
                         }
                         1

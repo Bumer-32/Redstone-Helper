@@ -11,6 +11,8 @@ object CommandsRegistration {
             RedstoneFillSignalCommand.register(dispatcher, registryAccess)
             ClearInventoryCommand.register(dispatcher)
             QuickTpCommand.register(dispatcher)
+            RedstoneGiveCommand.register(dispatcher, registryAccess)
+            RedstoneGiveSignalCommandCommand.register(dispatcher, registryAccess)
         }
     }
 }
