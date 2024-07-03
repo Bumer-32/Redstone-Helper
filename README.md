@@ -8,8 +8,10 @@ Redstone helper mod must you to help with redstone in minecraft :)
 
 <div style="padding-top: 50px; padding-bottom: 50px">
     <div>
-        <img src="https://img.shields.io/badge/environment-client%2c%20opt%20server-536a9e?style=flat-square">
-        <img src="https://img.shields.io/badge/environment-client-1976d2?style=flat-square">
+        <img src="https://img.shields.io/badge/environments-536a9e?style=flat-square">
+        <img src="https://img.shields.io/badge/client-optional-536a9e?style=flat-square">
+        <img src="https://img.shields.io/badge/server-optional-536a9e?style=flat-square">
+        <a href="https://crowdin.com/project/redstone-helper"><img src="https://badges.crowdin.net/redstone-helper/localized.svg"></a>
     </div>
     <img src="https://wakatime.com/badge/user/318edbcd-1d83-4173-b4ef-f0dd523b7526/project/17e5cf6f-645c-4aff-bf68-80a14c073738.svg?style=for-the-badge">
     <div>
