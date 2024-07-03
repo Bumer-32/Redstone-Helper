@@ -75,7 +75,7 @@ Redstone helper mod must you to help with redstone in minecraft :)
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill demonstration.gif?raw=true">
         </details>
         <details>
-            <summary style="font-size: 18px">/redstone-fill &lt signal &gt [&lt item &gt] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator</summary>
+            <summary style="font-size: 18px">/redstone-fill-signal &lt signal &gt [&lt item &gt] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator</summary>
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill signal demonstration.gif?raw=true">
         </details>
         <details>
