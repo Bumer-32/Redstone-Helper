@@ -9,15 +9,14 @@
   "gui.redstone-helper.invalid_expression": "Result: invalid expression!",
 
   "gui.redstone-helper.auto_wire": "Auto Wire™",
-  "gui.redstone-helper.enable_auto_wire": "Enable auto wire™",
+  "gui.redstone-helper.enable_auto_wire": "Enable Auto Wire™",
   "gui.redstone-helper.select_auto_wire_mode": "Select mode",
-  "gui.redstone-helper.select_auto_wire_block": "Select block",
   "gui.redstone-helper.current_mode": "Current mode: %d",
-  "gui.redstone-helper.auto_redstone": "auto redstone",
-  "gui.redstone-helper.auto_line": "redstone line with repeaters",
-  "gui.redstone-helper.auto_repeater": "only repeaters",
-  "gui.redstone-helper.auto_comparator": "only comparators",
-  "gui.redstone-helper.cheap_auto_comparator": "comparators with blocks",
+  "gui.redstone-helper.auto_redstone": "Auto redstone",
+  "gui.redstone-helper.auto_line": "Redstone line with repeaters",
+  "gui.redstone-helper.auto_repeater": "Only repeaters",
+  "gui.redstone-helper.auto_comparator": "Only comparators",
+  "gui.redstone-helper.cheap_auto_comparator": "Comparators with blocks",
 
   "gui.redstone-helper.auto_redstone_desc": "Places redstone on every block you placed",
   "gui.redstone-helper.auto_line_desc": "Places redstone on every block you placed + places every 15 blocks repeater",
@@ -109,9 +108,9 @@
 
   "text.config.redstone-helper-config.section.autoWire": "Auto Wire™",
   "text.config.redstone-helper-config.option.defaultAutoWireMode": "Default Auto Wire™ mode",
-  "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "auto redstone",
-  "text.config.redstone-helper-config.enum.autoWire.auto_line": "redstone line with repeaters",
-  "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "only repeaters",
-  "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "only comparators",
-  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "comparators with blocks"
+  "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "Auto redstone",
+  "text.config.redstone-helper-config.enum.autoWire.auto_line": "Redstone line with repeaters",
+  "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "Only repeaters",
+  "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "Only comparators",
+  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparators with blocks"
 }
