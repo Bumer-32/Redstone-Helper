@@ -69,16 +69,7 @@
     }
   ],
 
-  "info.redstone-helper.calculated_signal": [
-    "Calculated signal: ",
-    {
-      "index": 0
-    },
-    ", item: ",
-    {
-      "index": 1
-    }
-  ],
+  "info.redstone-helper.calculated_signal": "Calculated signal: %d, item: %d",
   "info.redstone-helper.success": "Success!",
   "info_error.redstone-helper.not_block_found": "Block not found!",
   "info_error.redstone-helper.invalid_block_inventory": "Can't get block inventory!",
