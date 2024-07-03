@@ -1,0 +1,112 @@
+{
+  "key.redstone-helper.category.basic": "Redstone Helper",
+  "key.redstone-helper.calc_keybinding": "Open calculator",
+  "key.redstone-helper.enable_autowire_keybinding": "Switch auto wire™",
+  "gui.redstone-helper.calculator": "Calculator",
+  "gui.redstone-helper.expression": "Expression",
+  "gui.redstone-helper.result": "Result: %d",
+  "gui.redstone-helper.invalid_expression": "Result: invalid expression!",
+  "gui.redstone-helper.auto_wire": "Auto Wire™",
+  "gui.redstone-helper.enable_auto_wire": "Enable auto wire™",
+  "gui.redstone-helper.select_auto_wire_mode": "Select mode",
+  "gui.redstone-helper.select_auto_wire_block": "Select block",
+  "gui.redstone-helper.current_mode": "Current mode: %d",
+  "gui.redstone-helper.auto_redstone": "auto redstone",
+  "gui.redstone-helper.auto_line": "redstone line with repeaters",
+  "gui.redstone-helper.auto_repeater": "only repeaters",
+  "gui.redstone-helper.auto_comparator": "only comparators",
+  "gui.redstone-helper.cheap_auto_comparator": "comparators with blocks",
+  "gui.redstone-helper.auto_redstone_desc": "Places redstone on every block you placed",
+  "gui.redstone-helper.auto_line_desc": "Places redstone on every block you placed + places every 15 blocks repeater",
+  "gui.redstone-helper.auto_repeater_desc": "Places repeaters on every block you placed",
+  "gui.redstone-helper.auto_comparator_desc": "Places comparators on every block you placed",
+  "gui.redstone-helper.cheap_auto_comparator_desc": "Places comparators with blocks and redstone like redstone-comparator-block",
+  "gui.redstone-helper.bits_operations": "BIT Operations™",
+  "gui.redstone-helper.converter": "Converter",
+  "gui.redstone-helper.to_bit": "To BIT",
+  "gui.redstone-helper.to_hex": "To HEX",
+  "gui.redstone-helper.from_bit": "From BIT",
+  "gui.redstone-helper.from_hex": "From HEX",
+  "gui.redstone-helper.bit_calculator": "BIT calculator",
+  "gui.redstone-helper.bit_result": "Result: %d : %d : %d",
+  "info.redstone-helper.insta_on": "Instant lamps enabled",
+  "info.redstone-helper.insta_off": "Instant lamps disabled",
+  "info.redstone-helper.auto_wire_on": "Auto wire™ enabled",
+  "info.redstone-helper.auto_wire_off": "Auto wire™ disabled",
+  "info.redstone-helper.up_to_date": "Redstone Helper is up to date!",
+  "info.redstone-helper.need_update": [
+    "Old version of Redstone Helper detected! ",
+    {
+      "text": "Please update to ",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    },
+    {
+      "index": 0,
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "info.redstone-helper.unable_to_check_version": [
+    "Unable to check Redstone Helper version! ",
+    {
+      "text": "You can check it itself ",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    },
+    "Error: ",
+    {
+      "index": 0
+    }
+  ],
+  "info.redstone-helper.calculated_signal": [
+    "Calculated signal: ",
+    {
+      "index": 0
+    },
+    ", item: ",
+    {
+      "index": 1
+    }
+  ],
+  "info.redstone-helper.success": "Success!",
+  "info_error.redstone-helper.not_block_found": "Block not found!",
+  "info_error.redstone-helper.invalid_block_inventory": "Can't get block inventory!",
+  "info_error.redstone-helper.missing_arguments": "Missing arguments!",
+  "help.redstone-helper.version": "Mod version: %d",
+  "help.redstone-helper.help": [
+    "Here all commands of Redstone Helper:\n",
+    "/redstone-helper <help, version> - mod info\n",
+    "/calc [<\"2+2\">] - calculates your expression if no expression, it will open calculator\n",
+    "/autowire - opens auto wire menu, you may to be an operator\n",
+    "/instaLamp [<state>] - makes lamps to turn off instantly, if \"state\" argument it will show you current state of instaLamps, you may to be an operator\n",
+    "/redstone-fill <item> <count> - fills Inventory which you are looking with selected item and count, you may to be an operator\n",
+    "/redstone-fill-signal <signal> [<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator\n",
+    "/calc-redstone-signal <signal> [<item>] - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel\n"
+  ],
+  "text.config.redstone-helper-config.title": "Redstone Helper Settings",
+  "text.config.redstone-helper-config.section.general": "General settings",
+  "text.config.redstone-helper-config.option.enableUpdateCheck": "Check for updates",
+  "text.config.redstone-helper-config.section.interface": "Interface",
+  "text.config.redstone-helper-config.option.darkPanels": "Dark panels",
+  "text.config.redstone-helper-config.option.enableBackgroundBlur": "Background blur",
+  "text.config.redstone-helper-config.section.autoWire": "Auto Wire™",
+  "text.config.redstone-helper-config.option.defaultAutoWireMode": "Default Auto Wire™ mode",
+  "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "auto redstone",
+  "text.config.redstone-helper-config.enum.autoWire.auto_line": "redstone line with repeaters",
+  "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "only repeaters",
+  "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "only comparators",
+  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "comparators with blocks"
+}
