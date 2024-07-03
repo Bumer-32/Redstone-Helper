@@ -8,13 +8,13 @@ Redstone helper mod must you to help with redstone in minecraft :)
 
 <div style="padding-top: 50px; padding-bottom: 50px">
     <div>
-        <img src="https://img.shields.io/badge/environments-536a9e?style=flat-square">
-        <img src="https://img.shields.io/badge/client-optional-536a9e?style=flat-square">
-        <img src="https://img.shields.io/badge/server-optional-536a9e?style=flat-square">
+        <img src="https://img.shields.io/badge/environments-536a9e">
+        <img src="https://img.shields.io/badge/client-optional-536a9e">
+        <img src="https://img.shields.io/badge/server-optional-536a9e">
         <a href="https://crowdin.com/project/redstone-helper"><img src="https://badges.crowdin.net/redstone-helper/localized.svg"></a>
+        <img src="https://wakatime.com/badge/user/318edbcd-1d83-4173-b4ef-f0dd523b7526/project/17e5cf6f-645c-4aff-bf68-80a14c073738.svg">
     </div>
-    <img src="https://wakatime.com/badge/user/318edbcd-1d83-4173-b4ef-f0dd523b7526/project/17e5cf6f-645c-4aff-bf68-80a14c073738.svg?style=for-the-badge">
-    <div>
+    <div style="display: flex; justify-content: center;">
         <a href="https://modrinth.com/mod/fabric-language-kotlin">
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/requires fabric kotlin.png?raw=true">
         </a>
@@ -30,6 +30,8 @@ Redstone helper mod must you to help with redstone in minecraft :)
         <p style="font-size: 20px; font-weight: bolder">Thank you owo team!</p>
     </div>
 </div>
+
+<p style="font-size: 20px; font-weight: bold;">Want to see your language in Redstone helper? <a href="https://crowdin.com/project/redstone-helper">Translate it!</a></p>
 
 <details>
     <summary style="font-size: 40px; font-weight: bold;">FEATURES</summary>
