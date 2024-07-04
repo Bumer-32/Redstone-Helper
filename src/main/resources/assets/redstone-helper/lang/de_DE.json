@@ -89,7 +89,7 @@
     "Here all commands of Redstone Helper:\n",
     "/redstone-helper <help, version> - mod info\n",
     "/calc [<\"2+2\">] - calculates your expression if no expression, it will open calculator\n",
-    "/autowire - opens auto wire menu, you may to be an operator\n",
+    "/autowire - opens Auto Wire™ menu, you may to be an operator\n",
     "/instaLamp [<state>] - makes lamps to turn off instantly, if \"state\" argument it will show you current state of instaLamps, you may to be an operator\n",
     "/redstone-fill <item> <count> - fills Inventory which you are looking with selected item and count, you may to be an operator\n",
     "/redstone-fill-signal <signal> [<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator\n",
