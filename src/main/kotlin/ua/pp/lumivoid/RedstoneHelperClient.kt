@@ -21,5 +21,8 @@ object RedstoneHelperClient : ClientModInitializer {
 		AutoWireRegistration.register() // Registering autowire function
 		LogginedInEvent.register() // For mod updates check
 
+		// Sync config screen
+		Config()
+
 	}
 }
