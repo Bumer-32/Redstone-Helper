@@ -1,7 +1,7 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
   "key.redstone-helper.calc_keybinding": "Open calculator",
-  "key.redstone-helper.enable_autowire_keybinding": "Switch auto wire™",
+  "key.redstone-helper.enable_autowire_keybinding": "Switch Auto Wire™",
   "gui.redstone-helper.calculator": "Calculator",
   "gui.redstone-helper.expression": "Expression",
   "gui.redstone-helper.result": "Result: %d",
