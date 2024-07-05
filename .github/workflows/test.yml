@@ -14,7 +14,7 @@ on:
 
 jobs:
   build:
-    if: !contains(github.event.pull_request.title, 'New Crowdin updates')
+    if: "!contains(github.event.pull_request.title, 'New Crowdin updates')"
     strategy:
       matrix:
         # Use these Java versions
