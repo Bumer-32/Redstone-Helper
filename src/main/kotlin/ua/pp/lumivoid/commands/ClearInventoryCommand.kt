@@ -3,23 +3,25 @@
 package ua.pp.lumivoid.commands
 
 import com.mojang.brigadier.CommandDispatcher
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.MinecraftClient
-import net.minecraft.inventory.Inventory
-import net.minecraft.server.command.CommandManager
-import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.Text
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.packets.ClearInventoryPacket
+import ua.pp.lumivoid.util.SendPacket
 
 object ClearInventoryCommand {
     private val logger = Constants.LOGGER
 
-    fun register(dispatcher: CommandDispatcher<ServerCommandSource>) {
+    fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>) {
         logger.debug("/clear-inventory: Registering redstone-fill command")
 
-        dispatcher.register(CommandManager.literal("clear-inventory")
+        dispatcher.register(
+            ClientCommandManager.literal("clear-inventory")
             .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/clear-inventory: Trying to clear inventory!")
@@ -30,19 +32,10 @@ object ClearInventoryCommand {
                     val blockHit = hit as BlockHitResult
                     val blockPos = blockHit.blockPos
 
-                    try {
-                        val blockInventory: Inventory = context.source.server.worlds.first().getBlockEntity(blockPos) as Inventory
-                        blockInventory.clear()
-
-                        logger.debug("/redstone-fill: Success!")
-                        context.source.sendFeedback({ Text.translatable("info.redstone-helper.success") }, false)
-                    } catch (e: NullPointerException) {
-                        logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
-                        context.source.sendError(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
-                    }
+                    SendPacket.sendPacket(ClearInventoryPacket(blockPos, Constants.aMinecraftClass))
                 } else {
-                    logger.debug("/calc-redstone-signal: No block in crosshair target")
-                    context.source.sendError(Text.translatable("info_error.redstone-helper.no_block_found"))
+                    logger.debug("/clear-inventory: No block in crosshair target")
+                    context.source.sendError(Text.translatable("info_error.redstone-helper.block_not_found"))
                 }
 
                 1

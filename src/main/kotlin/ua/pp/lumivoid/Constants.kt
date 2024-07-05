@@ -13,4 +13,5 @@ object Constants {
     val MOD_VERSION = FabricLoader.getInstance().getModContainer(MOD_ID).get().metadata.version.toString()
     val LOGGER = LoggerFactory.getLogger(MOD_ID)!!
     val NET_CHANNEL: OwoNetChannel = OwoNetChannel.create(Identifier.of(MOD_ID, "main"))
+    val aMinecraftClass = Identifier.of(MOD_ID, "main")
 }

@@ -13,6 +13,10 @@ object ClientCommandsRegistration {
             RedstoneHelperCommand.register(dispatcher)
             CalcRedstoneSignalCommand.register(dispatcher, registryAccess)
             BitsCommand.register(dispatcher)
+            QuickTpCommand.register(dispatcher)
+            RedstoneFillCommand.register(dispatcher, registryAccess)
+            RedstoneFillSignalCommand.register(dispatcher, registryAccess)
+            ClearInventoryCommand.register(dispatcher)
         }
     }
 }

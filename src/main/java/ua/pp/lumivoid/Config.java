@@ -1,6 +1,6 @@
 package ua.pp.lumivoid;
 
-import ua.pp.lumivoid.util.AutoWire;
+import ua.pp.lumivoid.util.features.AutoWire;
 import ua.pp.lumivoid.util.RedstoneHelperConfig;
 
 public class Config {
@@ -15,4 +15,7 @@ public class Config {
     public Boolean enableBackgroundBlur = CONFIG.enableBackgroundBlur();
 
     public AutoWire defaultAutoWireMode = CONFIG.defaultAutoWireMode();
+
+    public Integer quickTpDistance = CONFIG.quickTp.quickTpDistance();
+    public Boolean quickTpIncludeFluids = CONFIG.quickTp.quickTpIncludeFluids();
 }

@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier
 import ua.pp.lumivoid.ClientOptions
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.util.AutoWire
+import ua.pp.lumivoid.util.features.AutoWire
 
 class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of("redstone-helper", "autowire_ui_model"))) {
     private val logger = Constants.LOGGER

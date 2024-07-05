@@ -2,10 +2,7 @@ package ua.pp.lumivoid
 
 import net.fabricmc.api.ClientModInitializer
 import org.mariuszgromada.math.mxparser.License
-import ua.pp.lumivoid.registration.AutoWireRegistration
-import ua.pp.lumivoid.registration.ClientCommandsRegistration
-import ua.pp.lumivoid.registration.KeyBindingsRegistration
-import ua.pp.lumivoid.registration.LogginedInEvent
+import ua.pp.lumivoid.registration.*
 
 
 @Suppress("unused")
@@ -20,6 +17,7 @@ object RedstoneHelperClient : ClientModInitializer {
         KeyBindingsRegistration.register() // Registering keybindings
 		AutoWireRegistration.register() // Registering autowire function
 		LogginedInEvent.register() // For mod updates check
+		ClientPacketReceiverRegistration.register() // Registering packet receiver
 
 		// Sync config screen
 		Config()

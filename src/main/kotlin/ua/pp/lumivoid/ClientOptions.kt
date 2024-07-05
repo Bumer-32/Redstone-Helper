@@ -1,7 +1,7 @@
 package ua.pp.lumivoid
 
 import net.minecraft.util.math.BlockPos
-import ua.pp.lumivoid.util.AutoWire
+import ua.pp.lumivoid.util.features.AutoWire
 
 object ClientOptions {
     var isAutoWireEnabled: Boolean = false

@@ -3,49 +3,39 @@ package ua.pp.lumivoid.commands
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.BoolArgumentType
 import com.mojang.brigadier.arguments.IntegerArgumentType
-import com.mojang.brigadier.context.CommandContext
-import net.minecraft.client.MinecraftClient
-import net.minecraft.entity.Entity
-import net.minecraft.network.packet.s2c.play.PositionFlag
-import net.minecraft.server.command.CommandManager
-import net.minecraft.server.command.ServerCommandSource
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
+import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
-import java.util.*
+import ua.pp.lumivoid.packets.QuickTeleportPacket
+import ua.pp.lumivoid.util.SendPacket
 
 object QuickTpCommand {
     private val logger = Constants.LOGGER
 
-    fun register(dispatcher: CommandDispatcher<ServerCommandSource>) {
+    fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>) {
         logger.debug("/quicktp: Registering autowire command")
 
-        dispatcher.register(CommandManager.literal("quicktp")
+        dispatcher.register(
+            ClientCommandManager.literal("quicktp")
             .requires { source -> source.hasPermissionLevel(2) }
-            .executes { context ->
-                execute(context)
+            .executes {
+                val config = Config()
+                SendPacket.sendPacket(QuickTeleportPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
                 1
             }
-            .then(CommandManager.argument("distance", IntegerArgumentType.integer(1, 1000))
+            .then(ClientCommandManager.argument("distance", IntegerArgumentType.integer(1, 1000))
                 .executes { context ->
-                    execute(context, IntegerArgumentType.getInteger(context, "distance").toDouble())
+                    SendPacket.sendPacket(QuickTeleportPacket(IntegerArgumentType.getInteger(context, "distance"), Config().quickTpIncludeFluids, Constants.aMinecraftClass))
                     1
                 }
-                .then(CommandManager.argument("includeFluids", BoolArgumentType.bool())
+                .then(ClientCommandManager.argument("includeFluids", BoolArgumentType.bool())
                     .executes { context ->
-                        execute(context, IntegerArgumentType.getInteger(context, "distance").toDouble(), BoolArgumentType.getBool(context, "includeFluids"))
+                        SendPacket.sendPacket(QuickTeleportPacket(IntegerArgumentType.getInteger(context, "distance"), BoolArgumentType.getBool(context, "includeFluids"), Constants.aMinecraftClass))
                         1
                     }
                 )
             )
         )
-    }
-
-    private fun execute(context: CommandContext<ServerCommandSource>, distance: Double = 50.0, includeFluids: Boolean = false) {
-        logger.debug("/quicktp: Teleporting player")
-
-        val hit = MinecraftClient.getInstance().cameraEntity!!.raycast(distance, 1.0F, includeFluids)
-
-        val player = context.source.player
-        val target = player as Entity
-        target.teleport(context.source.server.worlds.first(), hit.pos.x, hit.pos.y, hit.pos.z, EnumSet.noneOf(PositionFlag::class.java), player.getHeadYaw(), player.pitch)
     }
 }
