@@ -10,6 +10,8 @@ plugins {
 version = project.mod_version
 group = project.maven_group
 
+archives_base_name = "${project.archives_base_name}-${project.minecraft_version}"
+
 base {
 	archivesName = project.archives_base_name
 }

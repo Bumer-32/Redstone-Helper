@@ -4,7 +4,9 @@ import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.text.Text
+import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.util.VersionChecker
 
 object RedstoneHelperCommand {
     private val logger = Constants.LOGGER
@@ -29,6 +31,31 @@ object RedstoneHelperCommand {
                     context.source.sendFeedback(Text.translatable("help.redstone-helper.version", Constants.MOD_VERSION))
                     1
                 }
+            )
+            .then(ClientCommandManager.literal("check-updates")
+                .executes { context ->
+                    context.source.sendFeedback(
+                        VersionChecker.checkRedstoneHelperVersionLocalized(
+                            true,
+                            true,
+                            true
+                        )
+                    )
+                    1
+                }
+                .then(ClientCommandManager.literal("by-config")
+                    .executes { context ->
+                        val config = Config()
+                        context.source.sendFeedback(
+                            VersionChecker.checkRedstoneHelperVersionLocalized(
+                                config.checkForRelease,
+                                config.checkForBeta,
+                                config.checkForAlpha
+                            )
+                        )
+                        1
+                    }
+                )
             )
         )
     }

@@ -88,7 +88,7 @@
 "help.redstone-helper.version": "Mod version: %d",
   "help.redstone-helper.help": [
     "Here all commands of Redstone Helper:\n",
-    "/redstone-helper <help, version> - mod info\n",
+    "/redstone-helper <help, version, check-updates [<by-config>]> - mod info\n",
     "/calc [<\"2+2\">] - calculates your expression if no expression, it will open calculator\n",
     "/autowire - opens auto wire menu, you may to be an operator\n",
     "/instaLamp [<state>] - makes lamps to turn off instantly, if \"state\" argument it will show you current state of instaLamps, you may to be an operator\n",
@@ -100,7 +100,11 @@
   "text.config.redstone-helper-config.title": "Redstone Helper Settings",
 
   "text.config.redstone-helper-config.section.general": "General settings",
-  "text.config.redstone-helper-config.option.enableUpdateCheck": "Check for updates",
+  "text.config.redstone-helper-config.category.updateCheckNest": "Update checking",
+  "text.config.redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Automatic check for updates",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForRelease": "Check for release updates",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForBeta": "Check for beta updates",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForAlpha": "Check for alpha updates",
 
   "text.config.redstone-helper-config.section.interface": "Interface",
   "text.config.redstone-helper-config.option.darkPanels": "Dark panels",

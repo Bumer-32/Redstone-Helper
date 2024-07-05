@@ -10,8 +10,16 @@ object LogginedInEvent {
     fun register() {
         ClientLoginConnectionEvents.INIT.register { _, _ ->
             //check for mod updates
-            if (Config().enableUpdateCheck) {
-                MinecraftClient.getInstance().inGameHud.chatHud.addMessage(VersionChecker.checkRedstoneHelperVersionLocalized())
+            val config = Config()
+
+            if (config.enableUpdateCheck) {
+                MinecraftClient.getInstance().inGameHud.chatHud.addMessage(
+                    VersionChecker.checkRedstoneHelperVersionLocalized(
+                        config.checkForRelease,
+                        config.checkForBeta,
+                        config.checkForAlpha
+                    )
+                )
             }
 
             ClientOptions.autoWireMode = Config().defaultAutoWireMode

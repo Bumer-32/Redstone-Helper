@@ -1,8 +1,6 @@
 package ua.pp.lumivoid.util;
 
-import io.wispforest.owo.config.annotation.Config;
-import io.wispforest.owo.config.annotation.Modmenu;
-import io.wispforest.owo.config.annotation.SectionHeader;
+import io.wispforest.owo.config.annotation.*;
 import ua.pp.lumivoid.ClientOptions;
 import ua.pp.lumivoid.Constants;
 
@@ -11,7 +9,16 @@ import ua.pp.lumivoid.Constants;
 @Config(name = "redstone-helper-config", wrapperName = "RedstoneHelperConfig")
 public class RedstoneHelperConfigModel {
     @SectionHeader("general")
-    public Boolean enableUpdateCheck = true;
+    @Nest
+    @Expanded
+    public UpdateCheckNest updateCheckNest = new UpdateCheckNest();
+
+    public static class  UpdateCheckNest {
+        public Boolean enableUpdateCheck = true;
+        public Boolean checkForRelease = true;
+        public Boolean checkForBeta = false;
+        public Boolean checkForAlpha = false;
+    }
 
     @SectionHeader("interface")
     public Boolean darkPanels = true;
