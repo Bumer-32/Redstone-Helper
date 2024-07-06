@@ -1,7 +1,8 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
   "key.redstone-helper.calc_keybinding": "Відкрити калькулятор",
-  "key.redstone-helper.enable_autowire_keybinding": "Перемкнути Auto Wire™",
+  "key.redstone-helper.enable_autowire_keybinding": "Switch Auto Wire™",
+  "key.redstone-helper.quickTp_keybinding": "Quick TP",
   "gui.redstone-helper.calculator": "Калькулятор",
   "gui.redstone-helper.expression": "Вираз",
   "gui.redstone-helper.result": "Результат: %d",
@@ -72,11 +73,26 @@
   ],
   "info.redstone-helper.calculated_signal": "Вирахуваний сигнал: %d, предмет: %d",
   "info.redstone-helper.success": "Вдалося!",
-  "info_error.redstone-helper.not_block_found": "Блок не знайдено!",
-  "info_error.redstone-helper.invalid_block_inventory": "Не можу знайти інвентар блоку!",
-  "info_error.redstone-helper.missing_arguments": "Недостатньо аргументів!",
+  "info_error.redstone-helper.block_not_found": [
+    {
+      "text": "Block not found!",
+      "color": "red"
+    }
+  ],
+  "info_error.redstone-helper.invalid_block_inventory": [
+    {
+      "text": "Can't get block inventory!",
+      "color": "red"
+    }
+  ],
+  "info_error.redstone-helper.missing_arguments": [
+    {
+      "text": "Missing arguments!",
+      "color": "red"
+    }
+  ],
   "info.redstone-helper.funny.1": "Нащо тобі це потрібно??",
-  "info.redstone-helper.funny.2": "Нащо ти це збираєшся використовувати?",
+  "info.redstone-helper.funny.2": "Wtf are you going to use this for?",
   "info.redstone-helper.funny.3": "Для чого?",
   "info.redstone-helper.funny.4": "... Гаразд, якщо ти впевнений.",
   "info.redstone-helper.funny.5": "Я на 99% впевнений, що ти міг би використати щось інше.",
@@ -87,25 +103,38 @@
   "help.redstone-helper.version": "Версія моду: %d",
   "help.redstone-helper.help": [
     "Ось список всіх команд Redstone Helper:\n",
-    "/redstone-helper <help, version> - інформація про Redstone Helper\n",
+    "/redstone-helper <help, version, check-updates [<by-config>]> - mod info\n",
     "/calc [<\"2+2\">] - обчислює вираз, якщо немає виразу, відкриє калькулятор\n",
-    "/autowire - відкриває меню Auto Wire™, ви повинні бути оператором\n",
-    "/instaLamp [<state>] - прибирає затримку вимикання для редстоун ламп, якщо \"state\" аргумент був введений він покаже поточний стан instaLamps, ви повинні бути оператором\n",
-    "/redstone-fill <item> <count> - заповнює інвентар, на який ви дивитесь, вибраним предметом та кількістю, ви повинні бути оператором\n",
-    "/redstone-fill-signal <signal> [<item>] - заповнює інвентар на який ви дивитесь предметами так, щоб отримати сигнал червоного каменю з компаратора, який ви ввели, якщо предмет не вказано інвентар буде заповнено дерев’яною лопатою, ви повинні бути оператором\n",
-    "/calc-redstone-signal <signal> [<item>] - аналог /redstone-fill-signal для виживання, просто рахує скільки предметів потрібно для отримання сигналу, якщо предмет не вказано сигнал буде рахуватись з дерев’яною лопатою\n"
+    "/autowire - opens auto wire menu, you may to be an operator\n",
+    "/autodust - alias for /Auto Wire™",
+    "/instaLamp [<state>] - makes lamps to turn off instantly, if \"state\" argument it will show you current state of instaLamps, you may to be an operator\n",
+    "/redstone-fill <item> <count> - fills Inventory which you are looking with selected item and count, you may to be an operator\n",
+    "/redstone-fill-signal <signal> [<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator\n",
+    "/calc-redstone-signal <signal> [<item>] - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel\n",
+    "/redstone-give <count> [<item>] [<block>] - almost same as /redstone-fill but instead of filling block it gives it to you, you may to be an operator\n",
+    "/redstone-give-signal <signal> [<item>] [<block>] - almost same as /redstone-fill-signal but instead of filling block it gives it to you, you may to be an operator\n",
+    "/ss - alias for /redstone-give-signal",
+    "/clear-inventory - clears block inventory which you looking, you may to be an operator",
+    "/quicktp [<distance>], [<includeFluids>]"
   ],
   "text.config.redstone-helper-config.title": "Параметри Redstone Helper",
   "text.config.redstone-helper-config.section.general": "Загальні параметри",
-  "text.config.redstone-helper-config.option.enableUpdateCheck": "Перевіряти на оновлення",
+  "text.config.redstone-helper-config.category.updateCheckNest": "Update checking",
+  "text.config.redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Automatic check for updates",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForRelease": "Check for release updates",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForBeta": "Check for beta updates",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForAlpha": "Check for alpha updates",
   "text.config.redstone-helper-config.section.interface": "Інтерфейс",
   "text.config.redstone-helper-config.option.darkPanels": "Темні панелі",
   "text.config.redstone-helper-config.option.enableBackgroundBlur": "Розмиття фону",
-  "text.config.redstone-helper-config.section.autoWire": "Auto Wire™",
+  "text.config.redstone-helper-config.section.features": "Mod features options",
   "text.config.redstone-helper-config.option.defaultAutoWireMode": "Режим Auto Wire™ за замовчуванням",
   "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "Авто редстоун",
   "text.config.redstone-helper-config.enum.autoWire.auto_line": "Редстоун лінія з повторювачами",
   "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "Тільки повторювачі",
   "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "Тільки компаратори",
-  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Компаратори з блоками"
+  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Компаратори з блоками",
+  "text.config.redstone-helper-config.category.quickTp": "Quick TP",
+  "text.config.redstone-helper-config.option.quickTp.quickTpDistance": "Distance",
+  "text.config.redstone-helper-config.option.quickTp.quickTpIncludeFluids": "IncludeFluids"
 }
