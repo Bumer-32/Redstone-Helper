@@ -71,6 +71,12 @@ object RedstoneHelperCommand {
                         }
                     )
                 )
+                .then(ClientCommandManager.literal("raw-notification")
+                    .executes {
+                        HudToast.showToast(Text.literal("test"), false)
+                        1
+                    }
+                )
             )
         )
     }

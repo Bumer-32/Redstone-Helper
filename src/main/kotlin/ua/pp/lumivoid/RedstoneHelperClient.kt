@@ -38,7 +38,7 @@ object RedstoneHelperClient : ClientModInitializer {
 			)
 			.surface(Surface.flat(0x77000000).and(Surface.outline(-0xededee)))
 			.padding(Insets.of(5))
-			.positioning(Positioning.relative(155, 35))
+			.positioning(Positioning.relative(200, 35))
 		}
 	}
 }
