@@ -1,13 +1,13 @@
 package ua.pp.lumivoid.registration
 
-import ua.pp.lumivoid.keybindings.AutoWireKeyBinding
-import ua.pp.lumivoid.keybindings.CalcKeyBinding
-import ua.pp.lumivoid.keybindings.QuickTpKeyBinding
+import ua.pp.lumivoid.keybindings.*
 
 object KeyBindingsRegistration {
     fun register() {
         CalcKeyBinding.register()
-        AutoWireKeyBinding.register()
+        SwitchAutoWireKeyBinding.register()
+        PreviousAutoWireModeKeyBinding.register()
+        NextAutoWireModeKeyBinding.register()
         QuickTpKeyBinding.register()
     }
 }

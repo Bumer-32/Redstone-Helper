@@ -10,11 +10,11 @@ import ua.pp.lumivoid.ClientOptions
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.gui.HudToast
 
-object AutoWireKeyBinding {
+object SwitchAutoWireKeyBinding {
     private val logger = Constants.LOGGER
 
-    private val autoWireKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding("key.redstone-helper.enable_autowire_keybinding",
+    private val switchAutoWireKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
+        KeyBinding("key.redstone-helper.switch_autowire_keybinding",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_B,
             "key.redstone-helper.category.basic"
@@ -22,15 +22,15 @@ object AutoWireKeyBinding {
     )
 
     fun register() {
-        logger.debug("Registering AutoWireKeyBinding") // TODO make toast sounds and location
+        logger.debug("Registering SwitchAutoWireKeyBinding")
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
-            while (autoWireKeyBinding.wasPressed()) {
+            while (switchAutoWireKeyBinding.wasPressed()) {
                 ClientOptions.isAutoWireEnabled = !ClientOptions.isAutoWireEnabled
                 if (ClientOptions.isAutoWireEnabled) {
-                    HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_on"))
+                    HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_on"), true)
                 } else {
-                    HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_off"))
+                    HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_off"), true)
                 }
             }
         }

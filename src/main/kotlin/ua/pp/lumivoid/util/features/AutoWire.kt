@@ -99,7 +99,21 @@ enum class AutoWire {
     };
 
     private val logger = Constants.LOGGER
-    
+
+    companion object {
+        private val values = entries
+
+        fun previous(current: AutoWire): AutoWire {
+            val ordinal = current.ordinal
+            return if (ordinal == 0) values.last() else values[ordinal - 1]
+        }
+
+        fun next(current: AutoWire): AutoWire {
+            val ordinal = current.ordinal
+            return if (ordinal == values.lastIndex) values.first() else values[ordinal + 1]
+        }
+    }
+
     fun setBlock(blockPos: BlockPos, block: String, direction: Direction = Direction.UP) { //idk why but we can't receive null, server will crash, so I can only use direction up as null
         logger.debug("Trying to set $block block at $blockPos")
 

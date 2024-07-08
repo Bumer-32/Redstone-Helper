@@ -1,7 +1,9 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
   "key.redstone-helper.calc_keybinding": "Open calculator",
-  "key.redstone-helper.enable_autowire_keybinding": "Switch Auto Wire™",
+  "key.redstone-helper.switch_autowire_keybinding": "Switch Auto Wire™",
+  "key.redstone-helper.previous_autowire_mode_keybinding": "Previous Auto Wire™ mode",
+  "key.redstone-helper.next_autowire_mode_keybinding": "Next Auto Wire™ mode",
   "key.redstone-helper.quickTp_keybinding": "Quick TP",
 
   "gui.redstone-helper.calculator": "Calculator",
@@ -12,7 +14,7 @@
   "gui.redstone-helper.auto_wire": "Auto Wire™",
   "gui.redstone-helper.enable_auto_wire": "Enable Auto Wire™",
   "gui.redstone-helper.select_auto_wire_mode": "Select mode",
-  "gui.redstone-helper.current_mode": "Current mode: %d",
+  "gui.redstone-helper.current_auto_wire_mode": "Current Auto Wire™ mode: %d",
   "gui.redstone-helper.auto_redstone": "Auto redstone",
   "gui.redstone-helper.auto_line": "Redstone line with repeaters",
   "gui.redstone-helper.auto_repeater": "Only repeaters",

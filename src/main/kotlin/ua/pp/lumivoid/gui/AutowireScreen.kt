@@ -38,7 +38,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
         }
 
         autowireState.checked(ClientOptions.isAutoWireEnabled)
-        currentMode.text(Text.translatable("gui.redstone-helper.current_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
+        currentMode.text(Text.translatable("gui.redstone-helper.current_auto_wire_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
 
         autowireState.onChanged {
             ClientOptions.isAutoWireEnabled = autowireState.isChecked
@@ -59,7 +59,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
                     dropdown.button(Text.translatable("gui.redstone-helper.${mode.toString().lowercase()}")) {
                         dropdown.remove()
                         ClientOptions.autoWireMode = AutoWire.valueOf(mode.toString())
-                        currentMode.text(Text.translatable("gui.redstone-helper.current_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
+                        currentMode.text(Text.translatable("gui.redstone-helper.current_auto_wire_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
                         logger.debug("Selected new auto wire mode: " + ClientOptions.autoWireMode)
                     }
                 }
