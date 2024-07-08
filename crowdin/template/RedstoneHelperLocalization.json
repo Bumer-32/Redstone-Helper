@@ -41,7 +41,7 @@
 
   "info.redstone-helper.up_to_date":  "Redstone Helper is up to date!",
   "info.redstone-helper.need_update":  [
-    "Old version of Redstone Helper detected! ",
+    "Old version of Redstone Helper detected!\n",
     {
       "text": "Please update to ",
       "color": "blue",
@@ -56,7 +56,7 @@
     }
   ],
   "info.redstone-helper.unable_to_check_version": [
-    "Unable to check Redstone Helper version! ",
+    "Unable to check Redstone Helper version!\n",
     {
       "text":  "You can check it itself ",
       "color": "blue",
@@ -68,6 +68,7 @@
       "index": 0
     }
   ],
+  "info.redstone-helper.to_check_version": "To check version type:\n/redstone-helper check-updates",
 
   "info.redstone-helper.calculated_signal": "Calculated signal: %d, item: %d",
   "info.redstone-helper.success": "Success!",

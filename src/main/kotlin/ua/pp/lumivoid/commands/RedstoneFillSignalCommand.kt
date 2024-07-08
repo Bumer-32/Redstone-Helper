@@ -19,6 +19,7 @@ import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.gui.HudToast
 import ua.pp.lumivoid.packets.FillInventoryPacket
 import ua.pp.lumivoid.util.Calculate
 import ua.pp.lumivoid.util.SendPacket
@@ -75,11 +76,11 @@ object RedstoneFillSignalCommand {
                     SendPacket.sendPacket(FillInventoryPacket(blockPos, Registries.ITEM.getId(item), amount, Constants.aMinecraftClass))
                 } catch (e: NullPointerException) {
                     logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
-                    context.source.sendError(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
+                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
                 }
             } else {
                 logger.debug("/calc-redstone-signal: No block in crosshair target")
-                context.source.sendError(Text.translatable("info_error.redstone-helper.block_not_found"))
+                HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.block_not_found"))
             }
         }
     }

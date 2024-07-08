@@ -1,11 +1,13 @@
 package ua.pp.lumivoid.commands
 
 import com.mojang.brigadier.CommandDispatcher
+import com.mojang.brigadier.arguments.IntegerArgumentType
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.text.Text
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.gui.HudToast
 import ua.pp.lumivoid.util.VersionChecker
 
 object RedstoneHelperCommand {
@@ -36,9 +38,9 @@ object RedstoneHelperCommand {
                 .executes { context ->
                     context.source.sendFeedback(
                         VersionChecker.checkRedstoneHelperVersionLocalized(
-                            true,
-                            true,
-                            true
+                            checkForRealease = true,
+                            checkForBeta = true,
+                            checkForAlpha = true
                         )
                     )
                     1
@@ -55,6 +57,19 @@ object RedstoneHelperCommand {
                         )
                         1
                     }
+                )
+            )
+            .then(ClientCommandManager.literal("test")
+                .then(ClientCommandManager.literal("notification")
+                    .then(ClientCommandManager.argument("count", IntegerArgumentType.integer())
+                        .executes { context ->
+                            context.source.sendFeedback(Text.literal("Testing notification"))
+                            for (i in 1..IntegerArgumentType.getInteger(context, "count")) {
+                                HudToast.addToastToQueue(Text.literal(" Test notification $i\n Hello World!\nYour ad here"))
+                            }
+                            1
+                        }
+                    )
                 )
             )
         )

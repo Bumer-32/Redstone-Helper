@@ -18,6 +18,7 @@ import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.gui.HudToast
 import ua.pp.lumivoid.util.Calculate
 import kotlin.random.Random
 
@@ -71,19 +72,15 @@ object CalcRedstoneSignalCommand {
 
                     logger.debug("/calc-redstone-signal: Calculated redstone signal: $amount, item: ${item.name}")
                     context.source.sendFeedback(
-                        Text.translatable(
-                            "info.redstone-helper.calculated_signal",
-                            amount,
-                            item.name
-                        )
+                        Text.translatable("info.redstone-helper.calculated_signal", amount, item.name)
                     )
                 } catch (e: NullPointerException) {
                     logger.debug("/calc-redstone-signal: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
-                    context.source.sendError(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
+                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
                 }
             } else {
                 logger.debug("/calc-redstone-signal: No block in crosshair target")
-                context.source.sendError(Text.translatable("info_error.redstone-helper.no_block_found"))
+                HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.no_block_found"))
             }
         }
     }

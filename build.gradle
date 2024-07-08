@@ -50,6 +50,8 @@ dependencies {
 
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
 
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${project.kotlinx_coroutines_version}"
+
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
 }
 

@@ -11,6 +11,7 @@ import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.gui.HudToast
 import ua.pp.lumivoid.packets.ClearInventoryPacket
 import ua.pp.lumivoid.util.SendPacket
 
@@ -35,7 +36,7 @@ object ClearInventoryCommand {
                     SendPacket.sendPacket(ClearInventoryPacket(blockPos, Constants.aMinecraftClass))
                 } else {
                     logger.debug("/clear-inventory: No block in crosshair target")
-                    context.source.sendError(Text.translatable("info_error.redstone-helper.block_not_found"))
+                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.block_not_found"))
                 }
 
                 1

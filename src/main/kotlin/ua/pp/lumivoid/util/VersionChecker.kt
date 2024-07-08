@@ -67,7 +67,11 @@ object VersionChecker {
     fun checkRedstoneHelperVersionString(): String {
         val version: String
         try {
-            val (isUpToDate, thisVersion) = checkModrinthVersion(true, true, true)
+            val (isUpToDate, thisVersion) = checkModrinthVersion(
+                checkForRealease = true,
+                checkForBeta = true,
+                checkForAlpha = true
+            )
             version = thisVersion
 
             if (isUpToDate) {
