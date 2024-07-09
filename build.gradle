@@ -10,6 +10,8 @@ plugins {
 version = project.mod_version
 group = project.maven_group
 
+archives_base_name = "${project.archives_base_name}-${project.minecraft_version}"
+
 base {
 	archivesName = project.archives_base_name
 }
@@ -47,6 +49,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
+
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${project.kotlinx_coroutines_version}"
 
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
 }

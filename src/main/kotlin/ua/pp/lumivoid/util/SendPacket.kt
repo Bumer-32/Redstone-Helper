@@ -1,18 +1,20 @@
 package ua.pp.lumivoid.util
 
-import net.minecraft.util.Identifier
-import net.minecraft.util.math.BlockPos
-import net.minecraft.util.math.Direction
+import net.minecraft.server.network.ServerPlayerEntity
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.packets.SetBlockPacket
 
 
 object SendPacket {
     private val logger = Constants.LOGGER
 
-    fun setBlockPacket(pos: BlockPos, block: Identifier, direction: Direction) {
-        logger.debug("Sending setBlockPacket to server")
-        Constants.NET_CHANNEL.clientHandle().send(SetBlockPacket(pos, block, direction, Identifier.of(Constants.MOD_ID, "main")))
+    fun sendPacket(sendingClass: Record) {
+        logger.debug("Sending packet to server")
+        Constants.NET_CHANNEL.clientHandle().send(sendingClass)
+    }
+
+    fun sendToPlayer(player: ServerPlayerEntity, sendingClass: Record) {
+        logger.debug("Sending packet to player")
+        Constants.NET_CHANNEL.serverHandle(player).send(sendingClass)
     }
 }
 

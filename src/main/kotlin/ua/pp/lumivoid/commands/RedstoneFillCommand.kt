@@ -1,85 +1,78 @@
-@file:Suppress("LoggingStringTemplateAsArgument", "DuplicatedCode")
+@file:Suppress("LoggingStringTemplateAsArgument", "LoggingSimilarMessage")
 
 package ua.pp.lumivoid.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.IntegerArgumentType
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.MinecraftClient
 import net.minecraft.command.CommandRegistryAccess
 import net.minecraft.command.argument.ItemStackArgumentType
 import net.minecraft.inventory.Inventory
-import net.minecraft.item.ItemStack
-import net.minecraft.server.command.CommandManager
-import net.minecraft.server.command.ServerCommandSource
+import net.minecraft.registry.Registries
 import net.minecraft.text.Text
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.gui.HudToast
+import ua.pp.lumivoid.packets.FillInventoryPacket
+import ua.pp.lumivoid.util.SendPacket
+import kotlin.random.Random
 
 
 object RedstoneFillCommand {
     private val logger = Constants.LOGGER
 
-    fun register(dispatcher: CommandDispatcher<ServerCommandSource?>, registryAccess: CommandRegistryAccess) {
+    fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>, registryAccess: CommandRegistryAccess) {
         logger.debug("/redstone-fill: Registering redstone-fill command")
 
-        dispatcher.register(CommandManager.literal("redstone-fill")
+        dispatcher.register(ClientCommandManager.literal("redstone-fill")
             .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/redstone-fill: Missing arguments!")
                 context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
                 1
             }
-            .then(CommandManager.argument("item", ItemStackArgumentType.itemStack(registryAccess))
+            .then(ClientCommandManager.argument("item", ItemStackArgumentType.itemStack(registryAccess))
                 .executes { context ->
                     logger.debug("/redstone-fill: Missing arguments!")
                     context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
                     1
                 }
-                .then(CommandManager.argument("count", IntegerArgumentType.integer(1, 3456))
+                .then(
+                    ClientCommandManager.argument("count", IntegerArgumentType.integer(0, 1728))
                     .executes { context ->
-                        logger.debug("/redstone-fill: Trying to fill inventory with blocks")
-                        val hit: HitResult = MinecraftClient.getInstance().crosshairTarget!!
+                        if (IntegerArgumentType.getInteger(context, "count") == 0) {
+                            val funnyInt = Random.nextInt(
+                                1,
+                                Text.translatable("dontlocalize.stuff.redstone-helper.funny_count").string.toInt() + 1
+                            )
+                            context.source.sendFeedback(Text.translatable("info.redstone-helper.funny.$funnyInt"))
+                        } else {
+                            logger.debug("/redstone-fill: Trying to fill inventory with blocks")
 
-                        if (hit.type == Type.BLOCK) {
-                            val blockHit = hit as BlockHitResult
-                            val blockPos = blockHit.blockPos
+                            val hit: HitResult = MinecraftClient.getInstance().crosshairTarget!!
 
-                            try {
-                                val blockInventory: Inventory = context.source.server.worlds.first().getBlockEntity(blockPos) as Inventory // Omg I can get server world from context
-                                blockInventory.clear()
+                            if (hit.type == Type.BLOCK) {
+                                val blockHit = hit as BlockHitResult
+                                val blockPos = blockHit.blockPos
 
-                                val item = ItemStackArgumentType.getItemStackArgument(context, "item").item
-                                var amount = IntegerArgumentType.getInteger(context, "count")
+                                try {
+                                    context.source.world.getBlockEntity(blockPos) as Inventory // just to testing is it block entity
 
-                                if (item.maxCount == 1) {
-                                    if (amount > blockInventory.size()) {
-                                        amount = blockInventory.size()
-                                    }
-                                    for (i in 0 until amount) {
-                                        blockInventory.setStack(i, ItemStack(item))
-                                    }
-                                } else {
-                                    if (amount > blockInventory.size() * item.maxCount) {
-                                        amount = blockInventory.size() * item.maxCount
-                                    }
+                                    val item = ItemStackArgumentType.getItemStackArgument(context, "item").item
+                                    val amount = IntegerArgumentType.getInteger(context, "count")
 
-                                    for (i in 0 until amount / item.maxCount + 1) {
-                                        if (amount >= item.maxCount) {
-                                            blockInventory.setStack(i, ItemStack(item, item.maxCount))
-                                            amount -= item.maxCount
-                                        } else if (amount > 0) {
-                                            blockInventory.setStack(i, ItemStack(item, amount))
-                                        }
-                                    }
+                                    SendPacket.sendPacket(FillInventoryPacket(blockPos, Registries.ITEM.getId(item), amount, Constants.aMinecraftClass))
+                                } catch (e: NullPointerException) {
+                                    logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
+                                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
                                 }
-
-                                logger.debug("/redstone-fill: Success!")
-                                context.source.sendFeedback({ Text.translatable("info.redstone-helper.success") }, false)
-                            } catch (e: NullPointerException) {
-                                logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
-                                context.source.sendError(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
+                            } else {
+                                logger.debug("/calc-redstone-signal: No block in crosshair target")
+                                HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.block_not_found"))
                             }
                         }
                         1

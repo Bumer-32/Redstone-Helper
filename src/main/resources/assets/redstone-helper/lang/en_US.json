@@ -1,0 +1,154 @@
+{
+  "key.redstone-helper.category.basic": "Redstone Helper",
+  "key.redstone-helper.calc_keybinding": "Open calculator",
+  "key.redstone-helper.switch_autowire_keybinding": "Switch Auto Wire™",
+  "key.redstone-helper.previous_autowire_mode_keybinding": "Previous Auto Wire™ mode",
+  "key.redstone-helper.next_autowire_mode_keybinding": "Next Auto Wire™ mode",
+  "key.redstone-helper.quickTp_keybinding": "Quick TP",
+  "gui.redstone-helper.calculator": "Calculator",
+  "gui.redstone-helper.expression": "Expression",
+  "gui.redstone-helper.result": "Result: %d",
+  "gui.redstone-helper.invalid_expression": "Result: invalid expression!",
+  "gui.redstone-helper.auto_wire": "Auto Wire™",
+  "gui.redstone-helper.enable_auto_wire": "Enable auto wire™",
+  "gui.redstone-helper.select_auto_wire_mode": "Select mode",
+  "gui.redstone-helper.current_auto_wire_mode": "Current Auto Wire™ mode: %d",
+  "gui.redstone-helper.auto_redstone": "Auto Redstone",
+  "gui.redstone-helper.auto_line": "Redstone line with repeaters",
+  "gui.redstone-helper.auto_repeater": "Only repeaters",
+  "gui.redstone-helper.auto_comparator": "Only comparators",
+  "gui.redstone-helper.cheap_auto_comparator": "Comparators with blocks",
+  "gui.redstone-helper.auto_redstone_desc": "Places redstone on every block you placed",
+  "gui.redstone-helper.auto_line_desc": "Places redstone on every block you placed + places every 15 blocks repeater",
+  "gui.redstone-helper.auto_repeater_desc": "Places repeaters on every block you placed",
+  "gui.redstone-helper.auto_comparator_desc": "Places comparators on every block you placed",
+  "gui.redstone-helper.cheap_auto_comparator_desc": "Places comparators with blocks and redstone like redstone - comparator - block",
+  "gui.redstone-helper.bits_operations": "BIT Operations™",
+  "gui.redstone-helper.converter": "Converter",
+  "gui.redstone-helper.to_bit": "To BIT",
+  "gui.redstone-helper.to_hex": "To HEX",
+  "gui.redstone-helper.from_bit": "From BIT",
+  "gui.redstone-helper.from_hex": "From HEX",
+  "gui.redstone-helper.bit_calculator": "BIT calculator",
+  "gui.redstone-helper.bit_result": "Result: %d : %d : %d",
+  "info.redstone-helper.insta_on": "Instant lamps enabled",
+  "info.redstone-helper.insta_off": "Instant lamps disabled",
+  "info.redstone-helper.auto_wire_on": "Auto Wire™ enabled",
+  "info.redstone-helper.auto_wire_off": "Auto Wire™ disabled",
+  "info.redstone-helper.up_to_date": "Redstone Helper is up-to-date!",
+  "info.redstone-helper.need_update": [
+    "Old version of Redstone Helper detected!\n",
+    {
+      "text": "Please update to ",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    },
+    {
+      "index": 0,
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "info.redstone-helper.unable_to_check_version": [
+    "Unable to check Redstone Helper version!\n",
+    {
+      "text": "You can check it itself ",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    },
+    "Error: ",
+    {
+      "index": 0
+    }
+  ],
+  "info.redstone-helper.to_check_version": "To check version enter in chat:\n/redstone-helper check-updates",
+  "info.redstone-helper.calculated_signal": "Calculated signal: %d, item: %d",
+  "info.redstone-helper.success": "Success!",
+  "info_error.redstone-helper.block_not_found": [
+    {
+      "text": "Block not found!",
+      "color": "red"
+    }
+  ],
+  "info_error.redstone-helper.invalid_block_inventory": [
+    {
+      "text": "Can't get block inventory!",
+      "color": "red"
+    }
+  ],
+  "info_error.redstone-helper.missing_arguments": [
+    {
+      "text": "Missing arguments!",
+      "color": "red"
+    }
+  ],
+  "info.redstone-helper.funny.1": "Why would you want this??",
+  "info.redstone-helper.funny.2": "Wtf are you going to use this for?",
+  "info.redstone-helper.funny.3": "What for?",
+  "info.redstone-helper.funny.4": "... Ok, if you're sure.",
+  "info.redstone-helper.funny.5": "I'm 99% sure you could just use any other thing.",
+  "info.redstone-helper.funny.6": "This seems unnecessary.",
+  "info.redstone-helper.funny.7": "Is that a typo?",
+  "info.redstone-helper.funny.8": "Wow, what a fancy but otherwise useless thing.",
+  "dontlocalize.stuff.redstone-helper.funny_count": "8",
+  "help.redstone-helper.version": "Mod version: %d",
+  "help.redstone-helper.help": [
+    "Here all commands of Redstone Helper:\n",
+    "/redstone-helper\n",
+    "/calc\n",
+    "/autowire\n",
+    "/autodust",
+    "/instaLamp\n",
+    "/redstone-fill\n",
+    "/redstone-fill-signal\n",
+    "/calc-redstone-signal\n",
+    "/redstone-give\n",
+    "/redstone-give-signal\n",
+    "/ss\n",
+    "/clear-inventory\n",
+    "/quicktp\n"
+  ],
+  "text.config.redstone-helper-config.title": "Redstone Helper Settings",
+  "text.config.redstone-helper-config.section.general": "General settings",
+  "text.config.redstone-helper-config.category.updateCheckNest": "Update checking",
+  "text.config.redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Automatic check for updates",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForRelease": "Check for release versions",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForBeta": "Check for beta versions",
+  "text.config.redstone-helper-config.option.updateCheckNest.checkForAlpha": "Check for alpha versions",
+  "text.config.redstone-helper-config.section.interface": "Interface",
+  "text.config.redstone-helper-config.option.darkPanels": "Dark panels",
+  "text.config.redstone-helper-config.option.enableBackgroundBlur": "Background blur",
+  "text.config.redstone-helper-config.option.toastPosition": "Toast position",
+  "text.config.redstone-helper-config.enum.toastPositions.top_left": "Top left",
+  "text.config.redstone-helper-config.enum.toastPositions.top_middle_left": "Top left closer to center",
+  "text.config.redstone-helper-config.enum.toastPositions.middle_left": "Middle left",
+  "text.config.redstone-helper-config.enum.toastPositions.bottom_middle_left": "Bottom left closer to center",
+  "text.config.redstone-helper-config.enum.toastPositions.bottom_left": "Bottom left",
+  "text.config.redstone-helper-config.enum.toastPositions.top_right": "Top right",
+  "text.config.redstone-helper-config.enum.toastPositions.top_middle_right": "Top right closer to center",
+  "text.config.redstone-helper-config.enum.toastPositions.middle_right": "Middle right",
+  "text.config.redstone-helper-config.enum.toastPositions.bottom_middle_right": "Bottom right closer to center",
+  "text.config.redstone-helper-config.enum.toastPositions.bottom_right": "Bottom right",
+  "text.config.redstone-helper-config.section.features": "Mod features options",
+  "text.config.redstone-helper-config.option.defaultAutoWireMode": "Default Auto Wire™ mode",
+  "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "Auto Redstone",
+  "text.config.redstone-helper-config.enum.autoWire.auto_line": "Redstone line with repeaters",
+  "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "Only repeaters",
+  "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "Only comparators",
+  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparators with blocks",
+  "text.config.redstone-helper-config.category.quickTp": "Quick TP",
+  "text.config.redstone-helper-config.option.quickTp.quickTpDistance": "Distance",
+  "text.config.redstone-helper-config.option.quickTp.quickTpIncludeFluids": "Include fluids"
+}

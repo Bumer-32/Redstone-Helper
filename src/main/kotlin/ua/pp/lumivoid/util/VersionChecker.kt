@@ -11,29 +11,46 @@ import java.net.URL
 object VersionChecker {
     private val logger = Constants.LOGGER
 
-    private fun checkModrinthVersion(): Pair<Boolean, String> {
+    private fun checkModrinthVersion(checkForRealease: Boolean, checkForBeta: Boolean, checkForAlpha: Boolean): Pair<Boolean, String> {
         logger.info("Checking version of Redstone-Helper")
         var newestVersion = ""
+        var versionType = ""
 
         @Suppress("DEPRECATION")
         val response = URL("https://api.modrinth.com/v2/project/${Constants.MOD_MODRINTH_ID}/version").readText()
         Json.parseToJsonElement(response).jsonArray.forEach { version ->
             newestVersion = version.jsonObject["version_number"]!!.jsonPrimitive.content
+            versionType = version.jsonObject["version_type"]!!.jsonPrimitive.content // alpha, beta, release
+
+            when {
+                versionType == "alpha" && !checkForAlpha -> {
+                    return Pair(false, "$newestVersion-$versionType")
+                }
+                versionType == "beta" && !checkForBeta -> {
+                    return Pair(true, "$newestVersion-$versionType")
+                }
+                versionType == "release" && !checkForRealease -> {
+                    return Pair(false, "$newestVersion-$versionType")
+                }
+            }
+
+            // else check
+
             if (version.jsonObject["game_versions"]!!.jsonArray.first().jsonPrimitive.content == Constants.MINECRAFT_VERSION) {
                 if (newestVersion == Constants.MOD_VERSION) {
-                    return Pair(true, newestVersion)
+                    return Pair(true, "$newestVersion-$versionType")
                 }
-                return Pair(false, newestVersion)
+                return Pair(false, "$newestVersion-$versionType")
             }
         }
-        return Pair(false, newestVersion)
+        return Pair(false, "$newestVersion-$versionType")
     }
 
-    fun checkRedstoneHelperVersionLocalized(): Text {
+    fun checkRedstoneHelperVersionLocalized(checkForRealease: Boolean, checkForBeta: Boolean, checkForAlpha: Boolean): Text {
         val version: String
 
         try {
-            val (isUpToDate, thisVersion) = checkModrinthVersion()
+            val (isUpToDate, thisVersion) = checkModrinthVersion(checkForRealease, checkForBeta, checkForAlpha)
             version = thisVersion
 
             if (isUpToDate) {
@@ -50,7 +67,11 @@ object VersionChecker {
     fun checkRedstoneHelperVersionString(): String {
         val version: String
         try {
-            val (isUpToDate, thisVersion) = checkModrinthVersion()
+            val (isUpToDate, thisVersion) = checkModrinthVersion(
+                checkForRealease = true,
+                checkForBeta = true,
+                checkForAlpha = true
+            )
             version = thisVersion
 
             if (isUpToDate) {

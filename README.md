@@ -8,11 +8,13 @@ Redstone helper mod must you to help with redstone in minecraft :)
 
 <div style="padding-top: 50px; padding-bottom: 50px">
     <div>
-        <img src="https://img.shields.io/badge/environment-client%2c%20opt%20server-536a9e?style=flat-square">
-        <img src="https://img.shields.io/badge/environment-client-1976d2?style=flat-square">
+        <img src="https://img.shields.io/badge/environments-536a9e">
+        <img src="https://img.shields.io/badge/client-optional-536a9e">
+        <img src="https://img.shields.io/badge/server-optional-536a9e">
+        <a href="https://crowdin.com/project/redstone-helper"><img src="https://badges.crowdin.net/redstone-helper/localized.svg"></a>
+        <img src="https://wakatime.com/badge/user/318edbcd-1d83-4173-b4ef-f0dd523b7526/project/17e5cf6f-645c-4aff-bf68-80a14c073738.svg">
     </div>
-    <img src="https://wakatime.com/badge/user/318edbcd-1d83-4173-b4ef-f0dd523b7526/project/17e5cf6f-645c-4aff-bf68-80a14c073738.svg?style=for-the-badge">
-    <div>
+    <div style="display: flex; justify-content: center;">
         <a href="https://modrinth.com/mod/fabric-language-kotlin">
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/requires fabric kotlin.png?raw=true">
         </a>
@@ -28,6 +30,8 @@ Redstone helper mod must you to help with redstone in minecraft :)
         <p style="font-size: 20px; font-weight: bolder">Thank you owo team!</p>
     </div>
 </div>
+
+<p style="font-size: 20px; font-weight: bold;">Want to see your language in Redstone helper? <a href="https://crowdin.com/project/redstone-helper">Translate it!</a></p>
 
 <details>
     <summary style="font-size: 40px; font-weight: bold;">FEATURES</summary>
@@ -71,16 +75,34 @@ Redstone helper mod must you to help with redstone in minecraft :)
             </div>
         </details>
         <details>
-            <summary style="font-size: 18px">/redstone-fill &lt item &gt &lt count &gt - fills Inventory which you are looking with selected item and count, you may to be an operator</summary>
+            <summary style="font-size: 18px">/redstone-fill - fills Inventory which you are looking with selected item and count, you may to be an operator</summary>
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill demonstration.gif?raw=true">
         </details>
         <details>
-            <summary style="font-size: 18px">/redstone-fill &lt signal &gt [&lt item &gt] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator</summary>
+            <summary style="font-size: 18px">/redstone-fill-signal - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator</summary>
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone fill signal demonstration.gif?raw=true">
         </details>
         <details>
-            <summary style="font-size: 18px;">/calc-redstone-signal &lt signal &gt [&lt item &gt] - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel</summary>
+            <summary style="font-size: 18px;">/calc-redstone-signal - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel</summary>
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/calc redstone signall demonstation.gif?raw=true">
+        </details>
+        <details>
+            <summary style="font-size: 18px;">/clear-inventory - clears block inventory which you looks</summary>
+            <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/clear-inventory - demonstration.gif?raw=true">
+        </details>
+        <details>
+            <summary style="font-size: 18px;">/redstone-give - gives you block with inventory filled with items you choose</summary>
+            <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone-give - demonstration.gif?raw=true">
+        </details>
+        <details>
+            <summary style="font-size: 18px;">/redstone-give-signal - same as /redstone-give but gives you items by calculated redstone signal</summary>
+            <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone-give-signal - demonstration.gif?raw=true">
+        </details>
+        <details>
+            <summary style="font-size: 18px;">From Redstone Tools:</summary>
+            <p>/quicktp - teleports you in your look direction, also you can bind it for button (Default G) and configure it in config menu</p>
+            <p>/autodust - redirect for /autowire</p>
+            <p>/ss - redirect for redstone give signal</p>
         </details>
         <details>
             <summary style="font-size: 18px;">BIT Operations™</summary>
@@ -97,6 +119,10 @@ Redstone helper mod must you to help with redstone in minecraft :)
                 </div>
                 Also You can calculate different numbers in BIT calculator, that allows to calculate BITS with HEX with INT!
             </div>
+        </details>
+        <details>
+            <summary style="font-size: 18px;">toast system</summary>
+            <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/toast - demonstration.gif?raw=true">
         </details>
         <details>
             <summary style="font-size: 18px;">ModMenu support!</summary>
@@ -116,3 +142,4 @@ Redstone helper mod must you to help with redstone in minecraft :)
 If you have an idea which can help with redstone you always can report it to <a href="https://github.com/Bumer-32/Redstone-Helper/issues">issues</a> ! Also you can report bugs)
 
 </div>
+

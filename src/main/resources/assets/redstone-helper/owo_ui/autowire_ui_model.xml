@@ -46,7 +46,7 @@
                     </padding>
 
                     <sizing>
-                        <horizontal method="fixed">230</horizontal>
+                        <horizontal method="fixed">280</horizontal>
                         <vertical method="fixed">65</vertical>
                     </sizing>
                 </flow-layout>

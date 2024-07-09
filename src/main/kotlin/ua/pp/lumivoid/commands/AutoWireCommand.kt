@@ -14,13 +14,21 @@ object AutoWireCommand {
         logger.debug("/autowire: Registering autowire command")
 
         dispatcher.register(ClientCommandManager.literal("autowire")
-            .requires {source -> source.hasPermissionLevel(2)}
+            .requires { source -> source.hasPermissionLevel(2) }
             .executes {
                 logger.debug("/autowire: Opening autowire menu")
                 MinecraftClient.getInstance().send(Runnable {
                     MinecraftClient.getInstance().setScreen(AutowireScreen())
                 })
                 1
+            }
+        )
+
+        dispatcher.register(ClientCommandManager.literal("autodust")
+            .requires { source -> source.hasPermissionLevel(2) }
+            // We can't use .redirect because https://github.com/Mojang/brigadier/issues/46 wtf mojang! 2018!!!
+            .executes { context ->
+                dispatcher.execute("autowire", context.source)
             }
         )
     }

@@ -1,5 +1,6 @@
 package ua.pp.lumivoid.util
 
+import net.minecraft.item.Item
 import org.mariuszgromada.math.mxparser.Expression
 import ua.pp.lumivoid.Constants
 
@@ -33,5 +34,9 @@ object Calculate {
         }
 
         return result
+    }
+
+    fun calculateRedstoneSignal(redstoneSignal: Int, item: Item, inventorySize: Int): Int {
+        return ((redstoneSignal - 1) * item.maxCount * inventorySize / 14.0).toInt() + 1
     }
 }

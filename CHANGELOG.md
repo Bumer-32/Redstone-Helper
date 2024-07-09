@@ -1,37 +1,31 @@
-Kon'nichiwa! BIT Operations™ are here with update 0.1.8!
+Kon'nichiwa! Update 0.1.9 are here! I started to implement <a href="https://modrinth.com/mod/redstone-tools">Redstone Tools</a> into Redstone Helper! And many more!
+
+
+<div>
+
 
 Added:
+<p><a href="https://crowdin.com/project/redstone-helper">crowdin support</a></p>
+<p>funny feedback - just try to fill something with 0 items xdd</p>
+<p>/clear-inventory - clears block inventory which you looks</p>
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/clear-inventory - demonstration.gif?raw=true">
+<p>/redstone-give - gives you block with inventory filled with items you choose</p>
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone-give - demonstration.gif?raw=true">
+<p>/redstone-give-signal - same as /redstone-give but gives you items by calculated redstone signal</p>
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone-give-signal - demonstration.gif?raw=true">
+<p>Auto Wire™ key binds for next and previous modes</p>
+<p>toast system</p>
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/toast - demonstration.gif?raw=true">
 
-ModMenu support! Yeah now You can configure mod and even disable mod version check! Also You can configure how Redstone Helper interface looks! And small config for Auto Wire™
-<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/config - screen.png?raw=true">
-Here all awailable settings:
+From Redstone Tools:
+<p>/quicktp - teleports you in your look direction, also you can bind it for button (Default G) and configure it in config menu</p>
+<p>/autodust - redirect for /autowire</p>
+<p>/ss - redirect for redstone give signal</p>
 
-Check for updates - enable Redstone Helper update checking after world is loaded
+Fixed:
+<p>Now all features awail on server</p>
 
-Dark panels - makes interface plates with dark texture
+Deleted:
+<p>Arguments text in /redstone-helper help and README</p>
 
-Background blur - blurs background while you open any Redstone Helper interface instead vanilla transluent background
-
-Default Auto Wire™ mode - default Auto Wire™ will setted after world is loaded
-
-BIT Operations™
-<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/bit operations - interface.png?raw=true">
-Allows you to work with BITS and HEX
-
-/bits to open
-
-Has 4 converters:
-
-Int to BIT
-
-BIT to INT
-
-Int to HEX
-
-HEX to Int
-
-Also You can calculate different numbers in BIT calculator, that allows to calculate BITS with HEX with INT!
-
-Removed:
-
-Chosing Auto Wire™ block, now it use block which you placed instead old variant
+</div>
