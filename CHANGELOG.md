@@ -15,7 +15,7 @@ Added:
 <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/redstone-give-signal - demonstration.gif?raw=true">
 <p>Auto Wire™ key binds for next and previous modes</p>
 <p>toast system</p>
-<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/toast - demonstration.gif?raw=true">
+<img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/toast - demonstration.gif?raw=true">
 
 From Redstone Tools:
 <p>/quicktp - teleports you in your look direction, also you can bind it for button (Default G) and configure it in config menu</p>
