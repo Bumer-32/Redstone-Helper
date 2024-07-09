@@ -1,7 +1,9 @@
 {
   "key.redstone-helper.category.basic": "Redstone Helper",
   "key.redstone-helper.calc_keybinding": "Відкрити калькулятор",
-  "key.redstone-helper.enable_autowire_keybinding": "Switch Auto Wire™",
+  "key.redstone-helper.switch_autowire_keybinding": "Switch Auto Wire™",
+  "key.redstone-helper.previous_autowire_mode_keybinding": "Previous Auto Wire™ mode",
+  "key.redstone-helper.next_autowire_mode_keybinding": "Next Auto Wire™ mode",
   "key.redstone-helper.quickTp_keybinding": "Quick TP",
   "gui.redstone-helper.calculator": "Калькулятор",
   "gui.redstone-helper.expression": "Вираз",
@@ -10,7 +12,7 @@
   "gui.redstone-helper.auto_wire": "Auto Wire™",
   "gui.redstone-helper.enable_auto_wire": "Enable auto wire™",
   "gui.redstone-helper.select_auto_wire_mode": "Виберіть режим",
-  "gui.redstone-helper.current_mode": "Поточний режим: %d",
+  "gui.redstone-helper.current_auto_wire_mode": "Current Auto Wire™ mode: %d",
   "gui.redstone-helper.auto_redstone": "Авто редстоун",
   "gui.redstone-helper.auto_line": "Редстоун лінія з повторювачами",
   "gui.redstone-helper.auto_repeater": "Тільки повторювачі",
@@ -35,7 +37,7 @@
   "info.redstone-helper.auto_wire_off": "Auto Wire™ вимкнено",
   "info.redstone-helper.up_to_date": "Redstone Helper оновлений!",
   "info.redstone-helper.need_update": [
-    "Виявлено стару версію Redstone Helper! ",
+    "Old version of Redstone Helper detected!\n",
     {
       "text": "Будь ласка, оновіть до ",
       "color": "blue",
@@ -56,7 +58,7 @@
     }
   ],
   "info.redstone-helper.unable_to_check_version": [
-    "Не вдалося перевірити версію Redstone Helper! ",
+    "Unable to check Redstone Helper version!\n",
     {
       "text": "Ви можете перевірити неї самостійно ",
       "color": "blue",
@@ -71,6 +73,7 @@
       "index": 0
     }
   ],
+  "info.redstone-helper.to_check_version": "To check version enter in chat:\n/redstone-helper check-updates",
   "info.redstone-helper.calculated_signal": "Вирахуваний сигнал: %d, предмет: %d",
   "info.redstone-helper.success": "Вдалося!",
   "info_error.redstone-helper.block_not_found": [
@@ -103,19 +106,19 @@
   "help.redstone-helper.version": "Версія моду: %d",
   "help.redstone-helper.help": [
     "Ось список всіх команд Redstone Helper:\n",
-    "/redstone-helper <help, version, check-updates [<by-config>]> - mod info\n",
-    "/calc [<\"2+2\">] - обчислює вираз, якщо немає виразу, відкриє калькулятор\n",
-    "/autowire - opens auto wire menu, you may to be an operator\n",
-    "/autodust - alias for /Auto Wire™",
-    "/instaLamp [<state>] - makes lamps to turn off instantly, if \"state\" argument it will show you current state of instaLamps, you may to be an operator\n",
-    "/redstone-fill <item> <count> - fills Inventory which you are looking with selected item and count, you may to be an operator\n",
-    "/redstone-fill-signal <signal> [<item>] - fills Inventory which you are looking with items to get redstone signal you entered from comparator, if no item it will be fills with wooden shovel, you may to be an operator\n",
-    "/calc-redstone-signal <signal> [<item>] - analog of /redstone-fill-signal for survival, just calculates how much items you need for signal, if no item it will be calc with wooden shovel\n",
-    "/redstone-give <count> [<item>] [<block>] - almost same as /redstone-fill but instead of filling block it gives it to you, you may to be an operator\n",
-    "/redstone-give-signal <signal> [<item>] [<block>] - almost same as /redstone-fill-signal but instead of filling block it gives it to you, you may to be an operator\n",
-    "/ss - alias for /redstone-give-signal",
-    "/clear-inventory - clears block inventory which you looking, you may to be an operator",
-    "/quicktp [<distance>], [<includeFluids>]"
+    "/redstone-helper\n",
+    "/calc\n",
+    "/autowire\n",
+    "/autodust",
+    "/instaLamp\n",
+    "/redstone-fill\n",
+    "/redstone-fill-signal\n",
+    "/calc-redstone-signal\n",
+    "/redstone-give\n",
+    "/redstone-give-signal\n",
+    "/ss\n",
+    "/clear-inventory\n",
+    "/quicktp\n"
   ],
   "text.config.redstone-helper-config.title": "Параметри Redstone Helper",
   "text.config.redstone-helper-config.section.general": "Загальні параметри",
@@ -127,6 +130,17 @@
   "text.config.redstone-helper-config.section.interface": "Інтерфейс",
   "text.config.redstone-helper-config.option.darkPanels": "Темні панелі",
   "text.config.redstone-helper-config.option.enableBackgroundBlur": "Розмиття фону",
+  "text.config.redstone-helper-config.option.toastPosition": "Toast position",
+  "text.config.redstone-helper-config.enum.toastPositions.top_left": "Top left",
+  "text.config.redstone-helper-config.enum.toastPositions.top_middle_left": "Top middle left",
+  "text.config.redstone-helper-config.enum.toastPositions.middle_left": "Middle left",
+  "text.config.redstone-helper-config.enum.toastPositions.bottom_middle_left": "Bottom middle left",
+  "text.config.redstone-helper-config.enum.toastPositions.bottom_left": "Bottom left",
+  "text.config.redstone-helper-config.enum.toastPositions.top_right": "Top right",
+  "text.config.redstone-helper-config.enum.toastPositions.top_middle_right": "Top middle right",
+  "text.config.redstone-helper-config.enum.toastPositions.middle_right": "Middle right",
+  "text.config.redstone-helper-config.enum.toastPositions.bottom_middle_right": "Bottom middle right",
+  "text.config.redstone-helper-config.enum.toastPositions.bottom_right": "Bottom right",
   "text.config.redstone-helper-config.section.features": "Mod features options",
   "text.config.redstone-helper-config.option.defaultAutoWireMode": "Режим Auto Wire™ за замовчуванням",
   "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "Авто редстоун",
