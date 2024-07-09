@@ -24,6 +24,7 @@ public class RedstoneHelperConfigModel {
     @SectionHeader("interface")
     public Boolean darkPanels = true;
     public Boolean enableBackgroundBlur = true;
+    public ToastPositions toastPosition = ToastPositions.TOP_MIDDLE_RIGHT;
 
     @SectionHeader("features")
     public AutoWire defaultAutoWireMode = ClientOptions.INSTANCE.getAutoWireMode();

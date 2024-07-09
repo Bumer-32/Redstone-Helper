@@ -1,5 +1,6 @@
 package ua.pp.lumivoid;
 
+import ua.pp.lumivoid.util.ToastPositions;
 import ua.pp.lumivoid.util.features.AutoWire;
 import ua.pp.lumivoid.util.RedstoneHelperConfig;
 
@@ -13,6 +14,7 @@ public class Config {
 
     public Boolean darkPanels = CONFIG.darkPanels();
     public Boolean enableBackgroundBlur = CONFIG.enableBackgroundBlur();
+    public ToastPositions toastPosition = CONFIG.toastPosition();
 
     public AutoWire defaultAutoWireMode = CONFIG.defaultAutoWireMode();
 

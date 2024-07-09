@@ -1,6 +1,9 @@
+@file:Suppress("LoggingSimilarMessage")
+
 package ua.pp.lumivoid.commands
 
 import com.mojang.brigadier.CommandDispatcher
+import com.mojang.brigadier.arguments.BoolArgumentType
 import com.mojang.brigadier.arguments.IntegerArgumentType
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
@@ -59,23 +62,41 @@ object RedstoneHelperCommand {
                     }
                 )
             )
+            .then(ClientCommandManager.literal("notification")
+                .executes { context ->
+                    logger.debug("/redstone-helper: Missing arguments!")
+                    context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
+                    1
+                }
+                .then(ClientCommandManager.literal("clear-queue")
+                    .executes {
+                        HudToast.clearQueue()
+                        1
+                    }
+                )
+            )
             .then(ClientCommandManager.literal("test")
                 .then(ClientCommandManager.literal("notification")
                     .then(ClientCommandManager.argument("count", IntegerArgumentType.integer())
-                        .executes { context ->
-                            context.source.sendFeedback(Text.literal("Testing notification"))
-                            for (i in 1..IntegerArgumentType.getInteger(context, "count")) {
-                                HudToast.addToastToQueue(Text.literal(" Test notification $i\n Hello World!\nYour ad here"))
+                        .then(ClientCommandManager.argument("short", BoolArgumentType.bool())
+                            .executes { context ->
+                                context.source.sendFeedback(Text.literal("Testing notification"))
+                                for (i in 1..IntegerArgumentType.getInteger(context, "count")) {
+                                    HudToast.addToastToQueue(Text.literal(" Test notification $i\n Hello World!\nYour ad here"), BoolArgumentType.getBool(context, "short"))
+                                }
+                                1
                             }
-                            1
-                        }
+                        )
                     )
                 )
                 .then(ClientCommandManager.literal("raw-notification")
-                    .executes {
-                        HudToast.showToast(Text.literal("test"), false)
-                        1
-                    }
+                    .then(ClientCommandManager.argument("short", BoolArgumentType.bool())
+                        .executes { context ->
+                            context.source.sendFeedback(Text.literal("Testing raw notification"))
+                            HudToast.showToast(Text.literal("Test raw notification"), BoolArgumentType.getBool(context, "short"))
+                            1
+                        }
+                    )
                 )
             )
         )

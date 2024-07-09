@@ -13,13 +13,13 @@ import net.minecraft.client.MinecraftClient
 import net.minecraft.registry.Registries
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
+import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 
 
 object HudToast {
     private val logger = Constants.LOGGER
 
-    private val scope = CoroutineScope(Dispatchers.Default)
     private val queue = mutableListOf<() -> Unit>()
     private var isToastActive = false
 
@@ -30,6 +30,9 @@ object HudToast {
 
         isToastActive = true
 
+        val scope = CoroutineScope(Dispatchers.Default)
+        val config = Config()
+
         component!!.root().childById(LabelComponent::class.java, "text")?.text(text)
 
         scope.launch {
@@ -37,19 +40,25 @@ object HudToast {
 
             player!!.playSound(Registries.SOUND_EVENT.get(Identifier.of("minecraft", "ui.toast.in")))
 
-            component.positioning().animate(500, Easing.LINEAR, Positioning.relative(100, 35)).forwards()
+            component.positioning().animate(500, Easing.LINEAR, Positioning.relative(config.toastPosition.xPos(), config.toastPosition.yPos())).forwards()
 
             if (short) {
-                Thread.sleep(1000)
+                Thread.sleep(1500)
             } else {
                 Thread.sleep(5000)
             }
 
             player.playSound(Registries.SOUND_EVENT.get(Identifier.of("minecraft", "ui.toast.out")))
 
-            component.positioning().animate(500, Easing.LINEAR, Positioning.relative(300, 35)).forwards()
+            component.positioning().animate(500, Easing.LINEAR, Positioning.relative(config.toastPosition.hidedXPos(), config.toastPosition.yPos())).forwards()
 
-            Thread.sleep(1000)
+            if (short) {
+                Thread.sleep(500)
+            } else {
+                Thread.sleep(1000)
+            }
+
+            component.root().childById(LabelComponent::class.java, "text")?.text(Text.empty())
 
             if (queue.isNotEmpty()) {
                 updateQueue()
@@ -64,6 +73,10 @@ object HudToast {
         if (!isToastActive) {
             updateQueue()
         }
+    }
+
+    fun clearQueue() {
+        queue.clear()
     }
 
     private fun updateQueue() {

@@ -27,8 +27,8 @@ object RedstoneHelperClient : ClientModInitializer {
 		LogginedInEvent.register() // For mod updates check
 		ClientPacketReceiverRegistration.register() // Registering packet receiver
 
-		// Sync config screen
-		Config()
+		// Sync config screen also get config here
+		val config = Config()
 
 		// Adding toast to hud
 		Hud.add(Constants.TOAST_ID) { Containers.verticalFlow(Sizing.content(), Sizing.content())
@@ -38,7 +38,7 @@ object RedstoneHelperClient : ClientModInitializer {
 			)
 			.surface(Surface.flat(0x77000000).and(Surface.outline(-0xededee)))
 			.padding(Insets.of(5))
-			.positioning(Positioning.relative(200, 35))
+			.positioning(Positioning.relative(config.toastPosition.hidedXPos(), config.toastPosition.yPos()))
 		}
 	}
 }
