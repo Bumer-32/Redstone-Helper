@@ -27,8 +27,12 @@ object PreviousAutoWireModeKeyBinding {
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (previousAutoWireKeyBinding.wasPressed()) {
-                ClientOptions.autoWireMode = AutoWire.previous(ClientOptions.autoWireMode)
-                HudToast.addToastToQueue(Text.translatable("gui.redstone-helper.current_auto_wire_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")), true)
+                if (client.player!!.commandSource.hasPermissionLevel(2)) {
+                    ClientOptions.autoWireMode = AutoWire.previous(ClientOptions.autoWireMode)
+                    HudToast.addToastToQueue(Text.translatable("gui.redstone-helper.current_auto_wire_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")), true)
+                } else {
+                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.no_permission"), true)
+                }
             }
         }
     }

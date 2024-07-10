@@ -4,9 +4,11 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.minecraft.client.option.KeyBinding
 import net.minecraft.client.util.InputUtil
+import net.minecraft.text.Text
 import org.lwjgl.glfw.GLFW
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.gui.HudToast
 import ua.pp.lumivoid.packets.QuickTeleportPacket
 import ua.pp.lumivoid.util.SendPacket
 
@@ -26,8 +28,12 @@ object QuickTpKeyBinding {
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (quickTpKeyBinding.wasPressed()) {
-                val config = Config()
-                SendPacket.sendPacket(QuickTeleportPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
+                if (client.player!!.commandSource.hasPermissionLevel(2)) {
+                    val config = Config()
+                    SendPacket.sendPacket(QuickTeleportPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
+                } else {
+                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.no_permission"), true)
+                }
             }
         }
     }

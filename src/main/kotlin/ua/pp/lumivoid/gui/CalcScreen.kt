@@ -11,7 +11,7 @@ import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.util.Calculate
 
-class CalcScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of("redstone-helper", "calc_ui_model"))) {
+class CalcScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of(Constants.MOD_ID, "calc_ui_model"))) {
     private val logger = Constants.LOGGER
 
     override fun build(rootComponent: FlowLayout) {
