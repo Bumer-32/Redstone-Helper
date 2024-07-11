@@ -92,6 +92,12 @@
       "color": "red"
     }
   ],
+  "info_error.redstone-helper.no_permission": [
+    {
+      "text": "You don't have permission to use this",
+      "color": "red"
+    }
+  ],
 
   "info.redstone-helper.funny.1": "Why would you want this??",
   "info.redstone-helper.funny.2": "Wtf are you going to use this for?",
@@ -104,23 +110,27 @@
 
   "dontlocalize.stuff.redstone-helper.funny_count": "8",
 
-"help.redstone-helper.version": "Mod version: %d",
-  "help.redstone-helper.help": [
-    "Here all commands of Redstone Helper:\n",
-    "/redstone-helper\n",
-    "/calc\n",
-    "/autowire\n",
-    "/autodust",
-    "/instaLamp\n",
-    "/redstone-fill\n",
-    "/redstone-fill-signal\n",
-    "/calc-redstone-signal\n",
-    "/redstone-give\n",
-    "/redstone-give-signal\n",
-    "/ss\n",
-    "/clear-inventory\n",
-    "/quicktp\n"
-  ],
+  "help.redstone-helper.version": "Mod version: %d",
+    "help.redstone-helper.help": [
+      "Here all commands of Redstone Helper:\n",
+      "/redstone-helper\n",
+      "/calc\n",
+      "/autowire\n",
+      "/autodust",
+      "/instaLamp\n",
+      "/redstone-fill\n",
+      "/redstone-fill-signal\n",
+      "/calc-redstone-signal\n",
+      "/redstone-give\n",
+      "/redstone-give-signal\n",
+      "/ss\n",
+      "/clear-inventory\n",
+      "/quicktp\n"
+    ],
+
+  "gui.redstone-helper.manual.manual": "Manual",
+  "gui.redstone-helper.manual.previous": "Previous",
+  "gui.redstone-helper.manual.next": "Next",
 
   "text.config.redstone-helper-config.title": "Redstone Helper Settings",
 

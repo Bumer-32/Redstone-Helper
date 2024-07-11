@@ -26,11 +26,15 @@ object SwitchAutoWireKeyBinding {
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (switchAutoWireKeyBinding.wasPressed()) {
-                ClientOptions.isAutoWireEnabled = !ClientOptions.isAutoWireEnabled
-                if (ClientOptions.isAutoWireEnabled) {
-                    HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_on"), true)
+                if (client.player!!.commandSource.hasPermissionLevel(2)) {
+                    ClientOptions.isAutoWireEnabled = !ClientOptions.isAutoWireEnabled
+                    if (ClientOptions.isAutoWireEnabled) {
+                        HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_on"), true)
+                    } else {
+                        HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_off"), true)
+                    }
                 } else {
-                    HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_off"), true)
+                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.no_permission"), true)
                 }
             }
         }

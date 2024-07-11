@@ -11,25 +11,42 @@ import java.net.URL
 object VersionChecker {
     private val logger = Constants.LOGGER
 
+
+    private var isUpdate: Boolean? = null
+    private var newestVersion: String? = null
+    private var versionType: String? = null
+
     private fun checkModrinthVersion(checkForRealease: Boolean, checkForBeta: Boolean, checkForAlpha: Boolean): Pair<Boolean, String> {
         logger.info("Checking version of Redstone-Helper")
+        if (isUpdate != null ) {
+            logger.info("Version of Redstone-Helper is already checked, returning cached result")
+            // return cached result
+            return Pair(isUpdate!!, "$newestVersion-$versionType")
+        }
+
         var newestVersion = ""
         var versionType = ""
 
         @Suppress("DEPRECATION")
-        val response = URL("https://api.modrinth.com/v2/project/${Constants.MOD_MODRINTH_ID}/version").readText()
+        val response = URL(Constants.MODRINTH_API_URL).readText()
         Json.parseToJsonElement(response).jsonArray.forEach { version ->
             newestVersion = version.jsonObject["version_number"]!!.jsonPrimitive.content
             versionType = version.jsonObject["version_type"]!!.jsonPrimitive.content // alpha, beta, release
 
+            this.newestVersion = newestVersion
+            this.versionType = versionType
+
             when {
                 versionType == "alpha" && !checkForAlpha -> {
+                    isUpdate = false
                     return Pair(false, "$newestVersion-$versionType")
                 }
                 versionType == "beta" && !checkForBeta -> {
+                    isUpdate = true
                     return Pair(true, "$newestVersion-$versionType")
                 }
                 versionType == "release" && !checkForRealease -> {
+                    isUpdate = false
                     return Pair(false, "$newestVersion-$versionType")
                 }
             }
@@ -38,11 +55,14 @@ object VersionChecker {
 
             if (version.jsonObject["game_versions"]!!.jsonArray.first().jsonPrimitive.content == Constants.MINECRAFT_VERSION) {
                 if (newestVersion == Constants.MOD_VERSION) {
+                    isUpdate = true
                     return Pair(true, "$newestVersion-$versionType")
                 }
+                isUpdate = false
                 return Pair(false, "$newestVersion-$versionType")
             }
         }
+        isUpdate = false
         return Pair(false, "$newestVersion-$versionType")
     }
 
