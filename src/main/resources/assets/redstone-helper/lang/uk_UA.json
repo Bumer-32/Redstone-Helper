@@ -96,7 +96,7 @@
   ],
   "info_error.redstone-helper.no_permission": [
     {
-      "text": "You don't have permission to use this",
+      "text": "У вас немає права використовувати це",
       "color": "red"
     }
   ],
@@ -126,9 +126,9 @@
     "/clear-inventory\n",
     "/quicktp\n"
   ],
-  "gui.redstone-helper.manual.manual": "Manual",
-  "gui.redstone-helper.manual.previous": "Previous",
-  "gui.redstone-helper.manual.next": "Next",
+  "gui.redstone-helper.manual.manual": "Посібник",
+  "gui.redstone-helper.manual.previous": "Назад",
+  "gui.redstone-helper.manual.next": "Далі",
   "text.config.redstone-helper-config.title": "Параметри Redstone Helper",
   "text.config.redstone-helper-config.section.general": "Загальні параметри",
   "text.config.redstone-helper-config.category.updateCheckNest": "Перевірка оновлень",
