@@ -94,6 +94,12 @@
       "color": "red"
     }
   ],
+  "info_error.redstone-helper.no_permission": [
+    {
+      "text": "У вас немає права використовувати це",
+      "color": "red"
+    }
+  ],
   "info.redstone-helper.funny.1": "Нащо тобі це потрібно??",
   "info.redstone-helper.funny.2": "Нащо ти це збираєшся використовувати?",
   "info.redstone-helper.funny.3": "Для чого?",
@@ -120,6 +126,9 @@
     "/clear-inventory\n",
     "/quicktp\n"
   ],
+  "gui.redstone-helper.manual.manual": "Посібник",
+  "gui.redstone-helper.manual.previous": "Назад",
+  "gui.redstone-helper.manual.next": "Далі",
   "text.config.redstone-helper-config.title": "Параметри Redstone Helper",
   "text.config.redstone-helper-config.section.general": "Загальні параметри",
   "text.config.redstone-helper-config.category.updateCheckNest": "Перевірка оновлень",
