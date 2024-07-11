@@ -96,7 +96,7 @@
   ],
   "info_error.redstone-helper.no_permission": [
     {
-      "text": "You don't have permission to use this",
+      "text": "У вас недостаточно прав для этого",
       "color": "red"
     }
   ],
@@ -126,9 +126,9 @@
     "/clear-inventory\n",
     "/quicktp\n"
   ],
-  "gui.redstone-helper.manual.manual": "Manual",
-  "gui.redstone-helper.manual.previous": "Previous",
-  "gui.redstone-helper.manual.next": "Next",
+  "gui.redstone-helper.manual.manual": "Руководство",
+  "gui.redstone-helper.manual.previous": "Назад",
+  "gui.redstone-helper.manual.next": "Далее",
   "text.config.redstone-helper-config.title": "Параметры Redstone Helper",
   "text.config.redstone-helper-config.section.general": "Общие параметры",
   "text.config.redstone-helper-config.category.updateCheckNest": "Проверка обновлений",
