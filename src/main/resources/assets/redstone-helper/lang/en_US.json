@@ -94,6 +94,12 @@
       "color": "red"
     }
   ],
+  "info_error.redstone-helper.no_permission": [
+    {
+      "text": "You don't have permission to use this",
+      "color": "red"
+    }
+  ],
   "info.redstone-helper.funny.1": "Why would you want this??",
   "info.redstone-helper.funny.2": "Wtf are you going to use this for?",
   "info.redstone-helper.funny.3": "What for?",
@@ -120,6 +126,9 @@
     "/clear-inventory\n",
     "/quicktp\n"
   ],
+  "gui.redstone-helper.manual.manual": "Manual",
+  "gui.redstone-helper.manual.previous": "Previous",
+  "gui.redstone-helper.manual.next": "Next",
   "text.config.redstone-helper-config.title": "Redstone Helper Settings",
   "text.config.redstone-helper-config.section.general": "General settings",
   "text.config.redstone-helper-config.category.updateCheckNest": "Update checking",

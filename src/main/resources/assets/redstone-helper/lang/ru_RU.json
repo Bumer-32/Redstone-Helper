@@ -94,6 +94,12 @@
       "color": "red"
     }
   ],
+  "info_error.redstone-helper.no_permission": [
+    {
+      "text": "У вас недостаточно прав для этого",
+      "color": "red"
+    }
+  ],
   "info.redstone-helper.funny.1": "Зачем это тебе??",
   "info.redstone-helper.funny.2": "Зачем ты хочешь это сделать?",
   "info.redstone-helper.funny.3": "Для чего?",
@@ -120,6 +126,9 @@
     "/clear-inventory\n",
     "/quicktp\n"
   ],
+  "gui.redstone-helper.manual.manual": "Руководство",
+  "gui.redstone-helper.manual.previous": "Назад",
+  "gui.redstone-helper.manual.next": "Далее",
   "text.config.redstone-helper-config.title": "Параметры Redstone Helper",
   "text.config.redstone-helper-config.section.general": "Общие параметры",
   "text.config.redstone-helper-config.category.updateCheckNest": "Проверка обновлений",
