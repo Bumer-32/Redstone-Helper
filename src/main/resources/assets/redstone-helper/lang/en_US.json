@@ -129,6 +129,39 @@
   "gui.redstone-helper.manual.manual": "Manual",
   "gui.redstone-helper.manual.previous": "Previous",
   "gui.redstone-helper.manual.next": "Next",
+  "gui.redstone-helper.manual.modrinth": [
+    {
+      "text": "Modrinth",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "gui.redstone-helper.manual.github": [
+    {
+      "text": "Github",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://github.com/Bumer-32/Redstone-Helper"
+      }
+    }
+  ],
+  "gui.redstone-helper.manual.crowdin": [
+    {
+      "text": "Crowdin",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://crowdin.com/project/redstone-helper"
+      }
+    }
+  ],
   "text.config.redstone-helper-config.title": "Redstone Helper Settings",
   "text.config.redstone-helper-config.section.general": "General settings",
   "text.config.redstone-helper-config.category.updateCheckNest": "Update checking",
