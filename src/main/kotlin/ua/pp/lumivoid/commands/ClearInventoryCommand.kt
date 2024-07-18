@@ -24,7 +24,7 @@ object ClearInventoryCommand {
         dispatcher.register(
             ClientCommandManager.literal("clear-inventory")
             .requires { source -> source.hasPermissionLevel(2) }
-            .executes { context ->
+            .executes {
                 logger.debug("/clear-inventory: Trying to clear inventory!")
 
                 val hit: HitResult = MinecraftClient.getInstance().crosshairTarget!!

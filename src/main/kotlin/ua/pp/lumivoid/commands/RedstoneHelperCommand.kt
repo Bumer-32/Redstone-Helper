@@ -7,10 +7,13 @@ import com.mojang.brigadier.arguments.BoolArgumentType
 import com.mojang.brigadier.arguments.IntegerArgumentType
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
+import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.gui.HudToast
+import ua.pp.lumivoid.gui.ManualWelcomePageScreen
+import ua.pp.lumivoid.util.DownloadManager
 import ua.pp.lumivoid.util.VersionChecker
 
 object RedstoneHelperCommand {
@@ -98,6 +101,22 @@ object RedstoneHelperCommand {
                         }
                     )
                 )
+                .then(ClientCommandManager.literal("help")
+                    .executes {
+                        logger.debug("/redstone-helper: Opening manual menu")
+                        MinecraftClient.getInstance().send(Runnable {
+                            MinecraftClient.getInstance().setScreen(ManualWelcomePageScreen())
+                        })
+                        1
+                    }
+                )
+            )
+            .then(ClientCommandManager.literal("cleanUp")
+                .executes {
+                    logger.debug("/redstone-helper: Cleaning up")
+                    DownloadManager.cleanUp()
+                    1
+                }
             )
         )
     }

@@ -27,6 +27,14 @@ object RedstoneHelperClient : ClientModInitializer {
 		LogginedInEvent.register() // For mod updates check
 		ClientPacketReceiverRegistration.register() // Registering packet receiver
 
+		// ! Enable if downloading is using
+//		// Verify files for version
+//		if (JsonConfig.readConfig()?.modVersion != Constants.MOD_VERSION) {
+//			logger.info("Other version found! cleanUp!")
+//			DownloadManager.cleanUp()
+//			JsonConfig.writeConfig(Data(modVersion = Constants.MOD_VERSION))
+//		}
+
 		// Sync config screen also get config here
 		val config = Config()
 
@@ -36,7 +44,7 @@ object RedstoneHelperClient : ClientModInitializer {
 				Components.label(Text.literal("Your ad here"))
 					.id("text")
 			)
-			.surface(Surface.flat(0x77000000).and(Surface.outline(-0xededee)))
+			.surface(Surface.flat(0x77000000).and(Surface.outline((0xFF121212).toInt())))
 			.padding(Insets.of(5))
 			.positioning(Positioning.relative(config.toastPosition.hidedXPos(), config.toastPosition.yPos()))
 		}

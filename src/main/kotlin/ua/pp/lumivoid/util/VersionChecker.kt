@@ -16,7 +16,7 @@ object VersionChecker {
     private var newestVersion: String? = null
     private var versionType: String? = null
 
-    private fun checkModrinthVersion(checkForRealease: Boolean, checkForBeta: Boolean, checkForAlpha: Boolean): Pair<Boolean, String> {
+    private fun checkModrinthVersion(checkForRelease: Boolean, checkForBeta: Boolean, checkForAlpha: Boolean): Pair<Boolean, String> {
         logger.info("Checking version of Redstone-Helper")
         if (isUpdate != null ) {
             logger.info("Version of Redstone-Helper is already checked, returning cached result")
@@ -26,6 +26,8 @@ object VersionChecker {
 
         var newestVersion = ""
         var versionType = ""
+
+        // TODO make "skip this version function"
 
         @Suppress("DEPRECATION")
         val response = URL(Constants.MODRINTH_API_URL).readText()
@@ -45,7 +47,7 @@ object VersionChecker {
                     isUpdate = true
                     return Pair(true, "$newestVersion-$versionType")
                 }
-                versionType == "release" && !checkForRealease -> {
+                versionType == "release" && !checkForRelease -> {
                     isUpdate = false
                     return Pair(false, "$newestVersion-$versionType")
                 }
@@ -88,7 +90,7 @@ object VersionChecker {
         val version: String
         try {
             val (isUpToDate, thisVersion) = checkModrinthVersion(
-                checkForRealease = true,
+                checkForRelease = true,
                 checkForBeta = true,
                 checkForAlpha = true
             )
