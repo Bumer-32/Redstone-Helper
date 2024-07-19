@@ -95,55 +95,51 @@
   "gui.redstone-helper.manual.manual": "Manual",
   "gui.redstone-helper.manual.previous": "Previous",
   "gui.redstone-helper.manual.next": "Next",
-  "gui.redstone-helper.manual.modrinth": [
-    {"text": "Modrinth", "color": "blue", "bold": true, "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}}
-  ],
-  "gui.redstone-helper.manual.github": [
-    {"text": "Github", "color": "blue", "bold": true, "clickEvent": {"action": "open_url", "value": "https://github.com/Bumer-32/Redstone-Helper"}}
-  ],
-  "gui.redstone-helper.manual.crowdin": [
-    {"text": "Crowdin", "color": "blue", "bold": true, "clickEvent": {"action": "open_url", "value": "https://crowdin.com/project/redstone-helper"}}
-  ],
+  "gui.redstone-helper.manual.modrinth": [{"text": "Modrinth", "color": "blue", "bold": true, "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}}],
+  "gui.redstone-helper.manual.github": [{"text": "Github", "color": "blue", "bold": true, "clickEvent": {"action": "open_url", "value": "https://github.com/Bumer-32/Redstone-Helper"}}],
+  "gui.redstone-helper.manual.crowdin": [{"text": "Crowdin", "color": "blue", "bold": true, "clickEvent": {"action": "open_url", "value": "https://crowdin.com/project/redstone-helper"}}],
 
-  "text.config.redstone-helper-config.title": "Redstone Helper Settings",
+  "gui.redstone-helper.manual.welcome.1": "",
 
-  "text.config.redstone-helper-config.section.general": "General settings",
+  "text.config.redstone-helper/redstone-helper-config.title": "Redstone Helper Settings",
 
-  "text.config.redstone-helper-config.category.updateCheckNest": "Update checking",
-  "text.config.redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Automatic check for updates",
-  "text.config.redstone-helper-config.option.updateCheckNest.checkForRelease": "Check for release updates",
-  "text.config.redstone-helper-config.option.updateCheckNest.checkForBeta": "Check for beta updates",
-  "text.config.redstone-helper-config.option.updateCheckNest.checkForAlpha": "Check for alpha updates",
+  "text.config.redstone-helper/redstone-helper-config.section.general": "General settings",
 
-  "text.config.redstone-helper-config.section.interface": "Interface",
+  "text.config.redstone-helper/redstone-helper-config.category.updateCheckNest": "Update checking",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Automatic check for updates",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForRelease": "Check for release updates",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForBeta": "Check for beta updates",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForAlpha": "Check for alpha updates",
 
-  "text.config.redstone-helper-config.option.darkPanels": "Dark panels",
+  "text.config.redstone-helper/redstone-helper-config.section.interface": "Interface",
 
-  "text.config.redstone-helper-config.option.enableBackgroundBlur": "Background blur",
+  "text.config.redstone-helper/redstone-helper-config.option.darkPanels": "Dark panels",
 
-  "text.config.redstone-helper-config.option.toastPosition": "Toast position",
+  "text.config.redstone-helper/redstone-helper-config.option.enableBackgroundBlur": "Background blur",
 
-  "text.config.redstone-helper-config.enum.toastPositions.top_left": "Top left",
-  "text.config.redstone-helper-config.enum.toastPositions.top_middle_left": "Top middle left",
-  "text.config.redstone-helper-config.enum.toastPositions.middle_left": "Middle left",
-  "text.config.redstone-helper-config.enum.toastPositions.bottom_middle_left": "Bottom middle left",
-  "text.config.redstone-helper-config.enum.toastPositions.bottom_left": "Bottom left",
-  "text.config.redstone-helper-config.enum.toastPositions.top_right": "Top right",
-  "text.config.redstone-helper-config.enum.toastPositions.top_middle_right": "Top middle right",
-  "text.config.redstone-helper-config.enum.toastPositions.middle_right": "Middle right",
-  "text.config.redstone-helper-config.enum.toastPositions.bottom_middle_right": "Bottom middle right",
-  "text.config.redstone-helper-config.enum.toastPositions.bottom_right": "Bottom right",
+  "text.config.redstone-helper/redstone-helper-config.option.toastPosition": "Toast position",
 
-  "text.config.redstone-helper-config.section.features": "Mod features options",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_left": "Top left",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_left": "Top middle left",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_left": "Middle left",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_left": "Bottom middle left",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_left": "Bottom left",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_right": "Top right",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_right": "Top middle right",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_right": "Middle right",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_right": "Bottom middle right",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_right": "Bottom right",
 
-  "text.config.redstone-helper-config.option.defaultAutoWireMode": "Default Auto Wire™ mode",
-  "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "Auto redstone",
-  "text.config.redstone-helper-config.enum.autoWire.auto_line": "Redstone line with repeaters",
-  "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "Only repeaters",
-  "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "Only comparators",
-  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparators with blocks",
+  "text.config.redstone-helper/redstone-helper-config.section.features": "Mod features options",
 
-  "text.config.redstone-helper-config.category.quickTp": "Quick TP",
-  "text.config.redstone-helper-config.option.quickTp.quickTpDistance": "Distance",
-  "text.config.redstone-helper-config.option.quickTp.quickTpIncludeFluids": "IncludeFluids"
+  "text.config.redstone-helper/redstone-helper-config.option.defaultAutoWireMode": "Default Auto Wire™ mode",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_redstone": "Auto redstone",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_line": "Redstone line with repeaters",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_repeater": "Only repeaters",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_comparator": "Only comparators",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparators with blocks",
+
+  "text.config.redstone-helper/redstone-helper-config.category.quickTp": "Quick TP",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTp.quickTpDistance": "Distance",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTp.quickTpIncludeFluids": "IncludeFluids"
 }
