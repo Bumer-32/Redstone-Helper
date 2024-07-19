@@ -42,13 +42,15 @@ object RedstoneHelperCommand {
             )
             .then(ClientCommandManager.literal("check-updates")
                 .executes { context ->
-                    context.source.sendFeedback(
-                        VersionChecker.checkRedstoneHelperVersionLocalized(
-                            checkForRealease = true,
-                            checkForBeta = true,
-                            checkForAlpha = true
-                        )
+                    val checkerText = VersionChecker.checkRedstoneHelperVersionLocalized(
+                        checkForRelease = true,
+                        checkForBeta = true,
+                        checkForAlpha = true
                     )
+                    context.source.sendFeedback(checkerText)
+                    if (checkerText != Text.translatable("info.redstone-helper.up_to_date") && checkerText != Text.translatable("info.redstone-helper.unable_to_check_version")) {
+                        context.source.sendFeedback(Text.translatable("info.redstone-helper.skip_version"))
+                    }
                     1
                 }
                 .then(ClientCommandManager.literal("by-config")
@@ -61,6 +63,22 @@ object RedstoneHelperCommand {
                                 config.checkForAlpha
                             )
                         )
+                        1
+                    }
+                )
+                .then(ClientCommandManager.literal("skip")
+                    .executes { context ->
+                        context.source.sendFeedback(Text.translatable("info.redstone-helper.skipping"))
+                        VersionChecker.skipVersion()
+                        VersionChecker.checkRedstoneHelperVersionWithToast()
+                        1
+                    }
+                )
+                .then(ClientCommandManager.literal("clear-skips")
+                    .executes { context ->
+                        context.source.sendFeedback(Text.translatable("info.redstone-helper.clear_skips"))
+                        VersionChecker.clearSkippedVersion()
+                        VersionChecker.checkRedstoneHelperVersionWithToast()
                         1
                     }
                 )

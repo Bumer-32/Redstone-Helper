@@ -11,6 +11,9 @@ import net.fabricmc.api.ClientModInitializer
 import net.minecraft.text.Text
 import org.mariuszgromada.math.mxparser.License
 import ua.pp.lumivoid.registration.*
+import ua.pp.lumivoid.util.JsonConfig
+import ua.pp.lumivoid.util.JsonConfigData
+import java.io.File
 
 
 @Suppress("unused")
@@ -27,13 +30,12 @@ object RedstoneHelperClient : ClientModInitializer {
 		LogginedInEvent.register() // For mod updates check
 		ClientPacketReceiverRegistration.register() // Registering packet receiver
 
-		// ! Enable if downloading is using
-//		// Verify files for version
-//		if (JsonConfig.readConfig()?.modVersion != Constants.MOD_VERSION) {
-//			logger.info("Other version found! cleanUp!")
-//			DownloadManager.cleanUp()
-//			JsonConfig.writeConfig(Data(modVersion = Constants.MOD_VERSION))
-//		}
+		// Verify files for version
+		if (JsonConfig.readConfig()?.modVersion != Constants.MOD_VERSION) {
+			logger.info("Other version found! cleanUp!")
+			File(Constants.CONFIG_FOLDER_PATH).listFiles()?.forEach { it.delete() }
+			JsonConfig.writeConfig(JsonConfigData(modVersion = Constants.MOD_VERSION))
+		}
 
 		// Sync config screen also get config here
 		val config = Config()

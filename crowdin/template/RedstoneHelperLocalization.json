@@ -49,12 +49,15 @@
   ],
   "info.redstone-helper.unable_to_check_version": [
     "Unable to check Redstone Helper version!\n",
-    {
-      "text":  "You can check it itself ", "color": "blue", "bold":  true, "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}},
-    "Error: ",
-    {"index": 0}
+    {"text":  "You can check it itself ", "color": "blue", "bold":  true, "clickEvent": {"action": "open_url", "value": "https://modrinth.com/mod/redstone-helper"}}
   ],
   "info.redstone-helper.to_check_version": "To check version enter in chat:\n/redstone-helper check-updates",
+  "info.redstone-helper.skip_version": [
+    "You can ",
+    {"text": "skip this version", "color": "blue", "bold": true, "clickEvent": {"action": "suggest_command", "value": "/redstone-helper check-updates skip"}}
+  ],
+  "info.redstone-helper.skipping": "skipping version",
+  "info.redstone-helper.clear_skips": "clear skipped versions",
 
   "info.redstone-helper.calculated_signal": "Calculated signal: %d, item: %d",
   "info.redstone-helper.success": "Success!",
@@ -110,6 +113,7 @@
   "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForRelease": "Check for release updates",
   "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForBeta": "Check for beta updates",
   "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForAlpha": "Check for alpha updates",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.showUpToDateNotification": "Show \"Redstone Helper up to date!\" notification",
 
   "text.config.redstone-helper/redstone-helper-config.section.interface": "Interface",
 

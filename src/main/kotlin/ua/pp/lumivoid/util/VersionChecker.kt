@@ -5,7 +5,9 @@ import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import net.minecraft.text.Text
+import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.gui.HudToast
 import java.net.URL
 
 object VersionChecker {
@@ -19,15 +21,13 @@ object VersionChecker {
     private fun checkModrinthVersion(checkForRelease: Boolean, checkForBeta: Boolean, checkForAlpha: Boolean): Pair<Boolean, String> {
         logger.info("Checking version of Redstone-Helper")
         if (isUpdate != null ) {
-            logger.info("Version of Redstone-Helper is already checked, returning cached result")
+            logger.info("Returning cached version of Redstone-Helper")
             // return cached result
             return Pair(isUpdate!!, "$newestVersion-$versionType")
         }
 
         var newestVersion = ""
         var versionType = ""
-
-        // TODO make "skip this version function"
 
         @Suppress("DEPRECATION")
         val response = URL(Constants.MODRINTH_API_URL).readText()
@@ -68,19 +68,55 @@ object VersionChecker {
         return Pair(false, "$newestVersion-$versionType")
     }
 
-    fun checkRedstoneHelperVersionLocalized(checkForRealease: Boolean, checkForBeta: Boolean, checkForAlpha: Boolean): Text {
+    fun  skipVersion() {
+        val jsonConfig = JsonConfig.readConfig()
+        jsonConfig!!.versionCheckSkip = "$newestVersion-$versionType"
+        JsonConfig.writeConfig(jsonConfig)
+    }
+
+    fun clearSkippedVersion() {
+        val jsonConfig = JsonConfig.readConfig()
+        jsonConfig!!.versionCheckSkip = null
+        JsonConfig.writeConfig(jsonConfig)
+    }
+
+    fun checkRedstoneHelperVersionWithToast() {
+        val config = Config()
+        if (config.enableUpdateCheck) {
+            val checkerText = VersionChecker.checkRedstoneHelperVersionLocalized(
+                config.checkForRelease,
+                config.checkForBeta,
+                config.checkForAlpha
+            )
+
+            if (checkerText == Text.translatable("info.redstone-helper.up_to_date")) {
+                if (config.showUpToDateNotification) {
+                    HudToast.addToastToQueue(checkerText)
+                }
+            } else {
+                HudToast.addToastToQueue(checkerText)
+                HudToast.addToastToQueue(Text.translatable("info.redstone-helper.to_check_version"))
+            }
+        }
+    }
+
+    fun checkRedstoneHelperVersionLocalized(checkForRelease: Boolean, checkForBeta: Boolean, checkForAlpha: Boolean): Text {
         val version: String
 
         try {
-            val (isUpToDate, thisVersion) = checkModrinthVersion(checkForRealease, checkForBeta, checkForAlpha)
+            val (isUpToDate, thisVersion) = checkModrinthVersion(checkForRelease, checkForBeta, checkForAlpha)
             version = thisVersion
+
+            if (JsonConfig.readConfig()!!.versionCheckSkip == version) {
+                return Text.translatable("info.redstone-helper.up_to_date")
+            }
 
             if (isUpToDate) {
                 return Text.translatable("info.redstone-helper.up_to_date")
             }
         } catch (e: Exception) {
             logger.error("Error while checking version of Redstone-Helper", e)
-            return Text.translatable("info.redstone-helper.unable_to_check_version", e)
+            return Text.translatable("info.redstone-helper.unable_to_check_version")
         }
 
         return Text.translatable("info.redstone-helper.need_update", version)

@@ -1,28 +1,36 @@
 package ua.pp.lumivoid.util
 
-import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import ua.pp.lumivoid.Constants
 import java.io.File
 
 object JsonConfig {
+    private val logger = Constants.LOGGER
     private val json = Json { prettyPrint = true }
+    private var cachedConfig: JsonConfigData? = null
 
-    fun readConfig(): Data? {
+    fun readConfig(): JsonConfigData {
+        if (cachedConfig != null) return cachedConfig!!
+
         val file = File(Constants.CONFIG_FOLDER_PATH + "\\config.json")
         if (file.exists()) {
             val jsonData = file.readText()
-            return json.decodeFromString<Data>(jsonData)
+            try {
+                return json.decodeFromString<JsonConfigData>(jsonData)
+            } catch (e: RuntimeException) {
+                logger.warn("Error while reading config file, rewriting")
+                e.printStackTrace()
+            }
         }
-        return null
+        val data = JsonConfigData(modVersion = Constants.MOD_VERSION)
+        writeConfig(data)
+        return data
     }
 
-    fun writeConfig(data: Data) {
+    fun writeConfig(data: JsonConfigData) {
+        cachedConfig = data
         val file = File(Constants.CONFIG_FOLDER_PATH + "\\config.json")
         file.writeText(json.encodeToString(data))
     }
 }
-
-@Serializable
-data class Data(val modVersion: String)

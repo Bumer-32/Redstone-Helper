@@ -11,6 +11,7 @@ public class Config {
     public Boolean checkForRelease = CONFIG.updateCheckNest.checkForRelease();
     public Boolean checkForBeta = CONFIG.updateCheckNest.checkForBeta();
     public Boolean checkForAlpha = CONFIG.updateCheckNest.checkForAlpha();
+    public Boolean showUpToDateNotification = CONFIG.updateCheckNest.showUpToDateNotification();
 
     public Boolean darkPanels = CONFIG.darkPanels();
     public Boolean enableBackgroundBlur = CONFIG.enableBackgroundBlur();

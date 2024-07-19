@@ -19,6 +19,7 @@ public class RedstoneHelperConfigModel {
         public Boolean checkForRelease = true;
         public Boolean checkForBeta = false;
         public Boolean checkForAlpha = false;
+        public Boolean showUpToDateNotification = true;
     }
 
     @SectionHeader("interface")
