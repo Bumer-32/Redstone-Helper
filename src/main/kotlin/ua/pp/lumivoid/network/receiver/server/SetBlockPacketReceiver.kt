@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.receiver
+package ua.pp.lumivoid.network.receiver.server
 
 import net.minecraft.block.enums.WireConnection
 import net.minecraft.registry.Registries
@@ -6,7 +6,7 @@ import net.minecraft.state.property.Properties
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.Direction
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.packets.SetBlockPacket
+import ua.pp.lumivoid.network.packets.c2s.SetBlockC2SPacket
 import ua.pp.lumivoid.util.TickHandler
 
 object SetBlockPacketReceiver {
@@ -15,7 +15,7 @@ object SetBlockPacketReceiver {
     fun register() {
         logger.debug("Registering SetBlockPacketReceiver")
 
-        Constants.NET_CHANNEL.registerServerbound(SetBlockPacket::class.java) { message, access ->
+        Constants.NET_CHANNEL.registerServerbound(SetBlockC2SPacket::class.java) { message, access ->
             TickHandler.scheduleAction(1) { // delay, need to place dust because it thinks there's no block under it
                 var blockState = Registries.BLOCK.get(message.block).defaultState
 

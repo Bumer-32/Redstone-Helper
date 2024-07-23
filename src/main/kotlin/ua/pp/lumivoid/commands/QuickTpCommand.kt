@@ -7,8 +7,8 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.packets.QuickTeleportPacket
-import ua.pp.lumivoid.util.SendPacket
+import ua.pp.lumivoid.network.packets.c2s.QuickTeleportC2SPacket
+import ua.pp.lumivoid.network.SendPacket
 
 object QuickTpCommand {
     private val logger = Constants.LOGGER
@@ -21,17 +21,17 @@ object QuickTpCommand {
             .requires { source -> source.hasPermissionLevel(2) }
             .executes {
                 val config = Config()
-                SendPacket.sendPacket(QuickTeleportPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
+                SendPacket.sendPacket(QuickTeleportC2SPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
                 1
             }
             .then(ClientCommandManager.argument("distance", IntegerArgumentType.integer(1, 1000))
                 .executes { context ->
-                    SendPacket.sendPacket(QuickTeleportPacket(IntegerArgumentType.getInteger(context, "distance"), Config().quickTpIncludeFluids, Constants.aMinecraftClass))
+                    SendPacket.sendPacket(QuickTeleportC2SPacket(IntegerArgumentType.getInteger(context, "distance"), Config().quickTpIncludeFluids, Constants.aMinecraftClass))
                     1
                 }
                 .then(ClientCommandManager.argument("includeFluids", BoolArgumentType.bool())
                     .executes { context ->
-                        SendPacket.sendPacket(QuickTeleportPacket(IntegerArgumentType.getInteger(context, "distance"), BoolArgumentType.getBool(context, "includeFluids"), Constants.aMinecraftClass))
+                        SendPacket.sendPacket(QuickTeleportC2SPacket(IntegerArgumentType.getInteger(context, "distance"), BoolArgumentType.getBool(context, "includeFluids"), Constants.aMinecraftClass))
                         1
                     }
                 )

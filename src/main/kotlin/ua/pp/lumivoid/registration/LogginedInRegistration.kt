@@ -6,7 +6,7 @@ import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.util.TickHandler
 import ua.pp.lumivoid.util.VersionChecker
 
-object LogginedInEvent {
+object LogginedInRegistration {
     fun register() {
         ClientLoginConnectionEvents.INIT.register { _, _ ->
             val config = Config()

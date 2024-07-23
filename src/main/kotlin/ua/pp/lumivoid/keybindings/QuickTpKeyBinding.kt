@@ -9,8 +9,8 @@ import org.lwjgl.glfw.GLFW
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.packets.QuickTeleportPacket
-import ua.pp.lumivoid.util.SendPacket
+import ua.pp.lumivoid.network.packets.c2s.QuickTeleportC2SPacket
+import ua.pp.lumivoid.network.SendPacket
 
 object QuickTpKeyBinding {
     private val logger = Constants.LOGGER
@@ -30,7 +30,7 @@ object QuickTpKeyBinding {
             while (quickTpKeyBinding.wasPressed()) {
                 if (client.player!!.commandSource.hasPermissionLevel(2)) {
                     val config = Config()
-                    SendPacket.sendPacket(QuickTeleportPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
+                    SendPacket.sendPacket(QuickTeleportC2SPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
                 } else {
                     HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.no_permission"), true)
                 }

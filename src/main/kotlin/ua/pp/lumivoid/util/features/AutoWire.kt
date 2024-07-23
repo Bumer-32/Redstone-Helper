@@ -11,8 +11,8 @@ import net.minecraft.util.math.Direction
 import net.minecraft.world.World
 import ua.pp.lumivoid.ClientOptions
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.packets.SetBlockPacket
-import ua.pp.lumivoid.util.SendPacket
+import ua.pp.lumivoid.network.packets.c2s.SetBlockC2SPacket
+import ua.pp.lumivoid.network.SendPacket
 import ua.pp.lumivoid.util.TickHandler
 import kotlin.math.abs
 
@@ -119,7 +119,7 @@ enum class AutoWire {
         logger.debug("Trying to set $block block at $blockPos")
 
         val blockToSet = Identifier.of(block)
-        SendPacket.sendPacket(SetBlockPacket(blockPos.up(), blockToSet, direction, Constants.aMinecraftClass))
+        SendPacket.sendPacket(SetBlockC2SPacket(blockPos.up(), blockToSet, direction, Constants.aMinecraftClass))
     }
 
     abstract fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String
