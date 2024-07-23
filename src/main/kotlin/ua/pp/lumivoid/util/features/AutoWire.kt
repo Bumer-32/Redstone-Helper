@@ -3,6 +3,7 @@
 package ua.pp.lumivoid.util.features
 
 import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.registry.Registries
 import net.minecraft.state.property.Properties
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
@@ -43,7 +44,7 @@ enum class AutoWire {
                 try {
                     if (world.getBlockState(oldBlockPos.up()).get(Properties.POWER) == 1) {
                         TickHandler.scheduleAction(1) {
-                            val block = world.getBlockState(blockPos).block.toString().replace("Block{", "").replace("}", "") // IDK how to get block ID so we can just delete Block{}
+                            val block = Registries.BLOCK.getId(world.getBlockState(blockPos).block).toString()
                             setBlock(blockPos, "minecraft:repeater", Direction.fromVector(blockPosDiff.x, 0, blockPosDiff.z)!!)
                             setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff).down(), block)
                             setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff), "minecraft:redstone_wire")
@@ -86,7 +87,7 @@ enum class AutoWire {
             val direction = Direction.fromRotation(player.getHeadYaw().toDouble() - 180)
 
             TickHandler.scheduleAction(1) { // sleep to find NEW block not old block
-                val block = world.getBlockState(blockPos).block.toString().replace("Block{", "").replace("}", "") // IDK how to get block ID so we can just delete Block{}
+                val block = Registries.BLOCK.getId(world.getBlockState(blockPos).block).toString()
                 setBlock(blockPos, "minecraft:comparator", Direction.fromRotation(player.getHeadYaw().toDouble()))
                 setBlock(blockPos.offset(direction), block)
                 setBlock(blockPos.offset(direction).offset(direction).down(), block)
