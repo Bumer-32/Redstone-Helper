@@ -27,11 +27,11 @@ object RedstoneHelperClient : ClientModInitializer {
         ClientCommandsRegistration.register() // Registering client commands
         KeyBindingsRegistration.register() // Registering keybindings
 		AutoWireRegistration.register() // Registering autowire function
-		LogginedInEvent.register() // For mod updates check
+		LogginedInRegistration.register() // For mod updates check
 		ClientPacketReceiverRegistration.register() // Registering packet receiver
 
 		// Verify files for version
-		if (JsonConfig.readConfig()?.modVersion != Constants.MOD_VERSION) {
+		if (JsonConfig.readConfig().modVersion != Constants.MOD_VERSION) {
 			logger.info("Other version found! cleanUp!")
 			File(Constants.CONFIG_FOLDER_PATH).listFiles()?.forEach { it.delete() }
 			JsonConfig.writeConfig(JsonConfigData(modVersion = Constants.MOD_VERSION))

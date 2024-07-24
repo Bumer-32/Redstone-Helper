@@ -40,6 +40,8 @@
   "info.redstone-helper.insta_off": "Instant lamps disabled",
   "info.redstone-helper.auto_wire_on": "Auto Wire™ enabled",
   "info.redstone-helper.auto_wire_off": "Auto Wire™ disabled",
+  "info.redstone-helper.airplace_on": "Airplace enabled",
+  "info.redstone-helper.airplace_off": "Airplace disabled",
 
   "info.redstone-helper.up_to_date":  "Redstone Helper is up to date!",
   "info.redstone-helper.need_update":  [

@@ -17,6 +17,7 @@ object ClientCommandsRegistration {
             RedstoneFillCommand.register(dispatcher, registryAccess)
             RedstoneFillSignalCommand.register(dispatcher, registryAccess)
             ClearInventoryCommand.register(dispatcher)
+            AirPlaceCommand.register(dispatcher)
         }
     }
 }
