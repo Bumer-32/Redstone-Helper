@@ -70,20 +70,20 @@ object VersionChecker {
 
     fun  skipVersion() {
         val jsonConfig = JsonConfig.readConfig()
-        jsonConfig!!.versionCheckSkip = "$newestVersion-$versionType"
+        jsonConfig.versionCheckSkip = "$newestVersion-$versionType"
         JsonConfig.writeConfig(jsonConfig)
     }
 
     fun clearSkippedVersion() {
         val jsonConfig = JsonConfig.readConfig()
-        jsonConfig!!.versionCheckSkip = null
+        jsonConfig.versionCheckSkip = null
         JsonConfig.writeConfig(jsonConfig)
     }
 
     fun checkRedstoneHelperVersionWithToast() {
         val config = Config()
         if (config.enableUpdateCheck) {
-            val checkerText = VersionChecker.checkRedstoneHelperVersionLocalized(
+            val checkerText = checkRedstoneHelperVersionLocalized(
                 config.checkForRelease,
                 config.checkForBeta,
                 config.checkForAlpha
