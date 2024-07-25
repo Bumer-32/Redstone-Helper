@@ -7,8 +7,8 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.packets.c2s.QuickTeleportC2SPacket
 import ua.pp.lumivoid.network.SendPacket
+import ua.pp.lumivoid.network.packets.c2s.QuickTeleportC2SPacket
 
 object QuickTpCommand {
     private val logger = Constants.LOGGER
@@ -16,8 +16,7 @@ object QuickTpCommand {
     fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>) {
         logger.debug("/quicktp: Registering autowire command")
 
-        dispatcher.register(
-            ClientCommandManager.literal("quicktp")
+        dispatcher.register(ClientCommandManager.literal("quicktp")
             .requires { source -> source.hasPermissionLevel(2) }
             .executes {
                 val config = Config()

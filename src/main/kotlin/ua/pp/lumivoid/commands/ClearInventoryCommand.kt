@@ -36,7 +36,7 @@ object ClearInventoryCommand {
                     SendPacket.sendPacket(ClearInventoryC2SPacket(blockPos, Constants.aMinecraftClass))
                 } else {
                     logger.debug("/clear-inventory: No block in crosshair target")
-                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.block_not_found"))
+                    HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.block_not_found"))
                 }
 
                 1

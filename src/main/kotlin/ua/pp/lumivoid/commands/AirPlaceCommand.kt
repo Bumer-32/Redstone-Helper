@@ -19,9 +19,9 @@ object AirPlaceCommand {
                 ClientOptions.isAirPlaceEnabled = !ClientOptions.isAirPlaceEnabled
                 logger.debug("/airplace: Switch Instant Lamps state to: ${ClientOptions.isAirPlaceEnabled}")
                 if (ClientOptions.isAirPlaceEnabled) {
-                    context.source.sendFeedback(Text.translatable("info.redstone-helper.airplace_on"))
+                    context.source.sendFeedback(Text.translatable("redstone-helper.feature.airplace.airplace_on"))
                 } else {
-                    context.source.sendFeedback(Text.translatable("info.redstone-helper.airplace_off"))
+                    context.source.sendFeedback(Text.translatable("redstone-helper.feature.airplace.airplace_off"))
                 }
                 1
             }
@@ -30,9 +30,9 @@ object AirPlaceCommand {
                 .executes { context ->
                     logger.debug("/airplace: Current airplace state: ${ClientOptions.isAirPlaceEnabled}")
                     if (ClientOptions.isAirPlaceEnabled) {
-                        context.source.sendFeedback(Text.translatable("info.redstone-helper.airplace_on"))
+                        context.source.sendFeedback(Text.translatable("redstone-helper.feature.airplace.airplace_on"))
                     } else {
-                        context.source.sendFeedback(Text.translatable("info.redstone-helper.airplace_off"))
+                        context.source.sendFeedback(Text.translatable("redstone-helper.feature.airplace.airplace_off"))
                     }
                     1
                 }

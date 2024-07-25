@@ -89,13 +89,13 @@ object VersionChecker {
                 config.checkForAlpha
             )
 
-            if (checkerText == Text.translatable("info.redstone-helper.up_to_date")) {
+            if (checkerText == Text.translatable("redstone-helper.stuff.version_checker.up_to_date")) {
                 if (config.showUpToDateNotification) {
                     HudToast.addToastToQueue(checkerText)
                 }
             } else {
                 HudToast.addToastToQueue(checkerText)
-                HudToast.addToastToQueue(Text.translatable("info.redstone-helper.to_check_version"))
+                HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.version_checker.to_check_version"))
             }
         }
     }
@@ -107,19 +107,19 @@ object VersionChecker {
             val (isUpToDate, thisVersion) = checkModrinthVersion(checkForRelease, checkForBeta, checkForAlpha)
             version = thisVersion
 
-            if (JsonConfig.readConfig()!!.versionCheckSkip == version) {
-                return Text.translatable("info.redstone-helper.up_to_date")
+            if (JsonConfig.readConfig().versionCheckSkip == version) {
+                return Text.translatable("redstone-helper.stuff.version_checker.up_to_date")
             }
 
             if (isUpToDate) {
-                return Text.translatable("info.redstone-helper.up_to_date")
+                return Text.translatable("redstone-helper.stuff.version_checker.up_to_date")
             }
         } catch (e: Exception) {
             logger.error("Error while checking version of Redstone-Helper", e)
-            return Text.translatable("info.redstone-helper.unable_to_check_version")
+            return Text.translatable("redstone-helper.stuff.version_checker.unable_to_check_version")
         }
 
-        return Text.translatable("info.redstone-helper.need_update", version)
+        return Text.translatable("redstone-helper.stuff.version_checker.up_to_date", version)
     }
 
     fun checkRedstoneHelperVersionString(): String {

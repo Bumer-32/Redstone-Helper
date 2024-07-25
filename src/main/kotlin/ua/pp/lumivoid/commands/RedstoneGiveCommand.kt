@@ -29,13 +29,13 @@ object RedstoneGiveCommand {
             .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/redstone-give: Missing arguments!")
-                context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
+                context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
                 1
             }
             .then(CommandManager.argument("count", IntegerArgumentType.integer(0, 1728))
                 .executes { context ->
                     logger.debug("/redstone-give: Missing arguments!")
-                    context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
+                    context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
                     1
                 }
                 .then(CommandManager.argument("item", ItemStackArgumentType.itemStack(registryAccess))

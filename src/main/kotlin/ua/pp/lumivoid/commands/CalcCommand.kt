@@ -31,9 +31,9 @@ object CalcCommand {
                     val expression = StringArgumentType.getString(context, "expression")
                     val calcResult = Calculate.calc(expression)
                     if (calcResult.isNaN()) {
-                        context.source.sendFeedback(Text.translatable("gui.redstone-helper.invalid_expression"))
+                        context.source.sendFeedback(Text.translatable("redstone-helper.feature.calculator.invalid_expression"))
                     } else {
-                        context.source.sendFeedback(Text.translatable("gui.redstone-helper.result", calcResult))
+                        context.source.sendFeedback(Text.translatable("redstone-helper.feature.calculator.result", calcResult))
                     }
                     1
                 }

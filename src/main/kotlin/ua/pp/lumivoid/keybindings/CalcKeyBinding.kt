@@ -13,10 +13,10 @@ object CalcKeyBinding {
     private val logger = Constants.LOGGER
 
     private val calcKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding("key.redstone-helper.calc_keybinding",
+        KeyBinding("redstone-helper.keybinding.key.calc",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_N,
-            "key.redstone-helper.category.basic"
+            "redstone-helper.keybinding.category.basic"
         )
     )
 
