@@ -135,14 +135,14 @@
   "text.config.redstone-helper/redstone-helper-config.option.toastPosition": "Toast position",
 
   "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_left": "Top left",
-  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_left": "Top middle left",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_left": "Top left closer to center",
   "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_left": "Middle left",
-  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_left": "Bottom middle left",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_left": "Bottom left closer to center",
   "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_left": "Bottom left",
   "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_right": "Top right",
-  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_right": "Top middle right",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_right": "Top right closer to center",
   "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_right": "Middle right",
-  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_right": "Bottom middle right",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_right": "Bottom right closer to center",
   "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_right": "Bottom right",
 
   "text.config.redstone-helper/redstone-helper-config.section.features": "Mod features options",
