@@ -7,7 +7,7 @@
                     <children>
                         <label id="label">
                             <positioning type="relative">50,0</positioning>
-                            <text translate="true">gui.redstone-helper.auto_wire</text>
+                            <text translate="true">redstone-helper.feature.auto_wire.title</text>
                         </label>
                         
                         <checkbox id="autowireState">
@@ -16,14 +16,14 @@
                         </checkbox>
 
                         <label>
-                            <!--                                IDK why but text in checkbox fully BROKEN-->
+                            <!--IDK why but text in checkbox fully BROKEN-->
                             <positioning type="relative">50,21</positioning>
-                            <text translate="true">gui.redstone-helper.enable_auto_wire</text>
+                            <text translate="true">redstone-helper.feature.auto_wire.enable_auto_wire</text>
                         </label>
 
                         <button id="selectMode">
                             <positioning type="relative">50,65</positioning>
-                            <text translate="true">gui.redstone-helper.select_auto_wire_mode</text>
+                            <text translate="true">redstone-helper.feature.auto_wire.auto_wire_on</text>
                         </button>
 
                         <label id="currentMode">

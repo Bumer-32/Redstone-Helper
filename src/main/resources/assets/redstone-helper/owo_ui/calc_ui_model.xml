@@ -7,14 +7,14 @@
                     <children>
                         <label>
                             <positioning type="relative">50,0</positioning>
-                            <text translate="true">gui.redstone-helper.calculator</text>
+                            <text translate="true">redstone-helper.feature.calculator.title</text>
                         </label>
 
                         <text-box id="expression">
                             <sizing>
                                 <horizontal method="fixed">245</horizontal>
                             </sizing>
-                            <tooltip-text translate="true">gui.redstone-helper.expression</tooltip-text>
+                            <tooltip-text translate="true">redstone-helper.feature.calculator.expression</tooltip-text>
                         </text-box>
 
                         <label id="result">

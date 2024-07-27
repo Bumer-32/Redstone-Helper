@@ -1,0 +1,129 @@
+<owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+<!-- COPY OF https://github.com/wisp-forest/owo-lib/blob/1.21/src/main/resources/assets/owo/owo_ui/config.xml-->
+    <components>
+        <flow-layout direction="vertical">
+            <children>
+                <flow-layout direction="vertical">
+                    <children>
+                        <label id="title">
+                            <text translate="true">redstone-helper.feature.macro.title</text>
+                            <shadow>true</shadow>
+
+                            <margins>
+                                <vertical>10</vertical>
+                            </margins>
+                        </label>
+                    </children>
+                    
+                    <vertical-alignment>center</vertical-alignment>
+                </flow-layout>
+
+                <stack-layout>
+                    <children>
+                        <flow-layout direction="horizontal" id="main-panel">
+                            <children>
+                                <flow-layout direction="vertical" id="macros_panel_container">
+                                    <children>
+                                        <scroll direction="vertical" id="macros_panel_scroll">
+                                            <flow-layout direction="vertical" id="macros_panel">
+                                                <children>
+                                                </children>
+                                                <padding>
+                                                    <right>3</right>
+                                                </padding>
+                                            </flow-layout>
+
+                                            <scrollbar-thiccness>3</scrollbar-thiccness>
+
+                                            <sizing>
+                                                <horizontal method="fill">100</horizontal>
+                                                <vertical method="fill">100</vertical>
+                                            </sizing>
+
+                                            <padding>
+                                                <all>1</all>
+                                            </padding>
+                                        </scroll>
+                                    </children>
+
+                                    <sizing>
+                                        <horizontal method="expand">100</horizontal>
+                                        <vertical method="fill">100</vertical>
+                                    </sizing>
+                                </flow-layout>
+                            </children>
+
+                            <padding>
+                                <horizontal>50</horizontal>
+                            </padding>
+
+                            <sizing>
+                                <horizontal method="fill">100</horizontal>
+                                <vertical method="fill">100</vertical>
+                            </sizing>
+
+                            <surface>
+                                <flat>#77000000</flat>
+                                <outline>#99121212</outline>
+                            </surface>
+                        </flow-layout>
+                    </children>
+
+                    <padding>
+                        <all>1</all>
+                    </padding>
+
+                    <sizing>
+                        <horizontal method="fill">101</horizontal>
+                        <!--suppress XmlUnresolvedReference -->
+                        <vertical method="expand">100</vertical>
+                    </sizing>
+
+                    <surface>
+                        <outline>#33FFFFFF</outline>
+                    </surface>
+                </stack-layout>
+
+                <flow-layout direction="horizontal">
+                    <children>
+                        <button id="done_button">
+                            <text translate="true">redstone-helper.feature.macro.done</text>
+                            <sizing>
+                                <horizontal method="fill">20</horizontal>
+                            </sizing>
+                            <margins>
+                                <right>5</right>
+                            </margins>
+                        </button>
+
+                        <button id="new_macro_button">
+                            <text translate="true">redstone-helper.feature.macro.new_macro_button</text>
+                            <sizing>
+                                <horizontal method="fill">20</horizontal>
+                            </sizing>
+                        </button>
+                    </children>
+
+                    <horizontal-alignment>center</horizontal-alignment>
+                    <vertical-alignment>center</vertical-alignment>
+
+                    <margins>
+                        <vertical>5</vertical>
+                    </margins>
+
+                    <sizing>
+                        <horizontal method="fill">100</horizontal>
+                    </sizing>
+                </flow-layout>
+            </children>
+
+            <vertical-alignment>center</vertical-alignment>
+            <horizontal-alignment>center</horizontal-alignment>
+
+            <surface>
+                <options-background>0</options-background>
+            </surface>
+        </flow-layout>
+    </components>
+</owo-ui>

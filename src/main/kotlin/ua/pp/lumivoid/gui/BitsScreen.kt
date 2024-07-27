@@ -75,8 +75,8 @@ class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
             }
         }
 
-        hex.onChanged {
-            if (hex.isChecked) {
+        hex.onChanged { checked ->
+            if (checked) {
                 radix = 16
                 toBitText.text(Text.translatable("redstone-helper.feature.bits_operations.to_hex"))
                 fromBitText.text(Text.translatable("redstone-helper.feature.bits_operations.from_hex"))

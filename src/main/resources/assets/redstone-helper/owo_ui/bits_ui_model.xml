@@ -8,19 +8,19 @@
                     <children>
                         <label id="label">
                             <positioning type="relative">50,0</positioning>
-                            <text translate="true">gui.redstone-helper.bits_operations</text>
+                            <text translate="true">redstone-helper.feature.bits_operations.title</text>
                         </label>
 
                         <label id="toBitText">
                             <positioning type="relative">0,13</positioning>
-                            <text translate="true">gui.redstone-helper.to_bit</text>
+                            <text translate="true">redstone-helper.feature.bits_operations.to_bit</text>
                         </label>
                         <text-box id="toBitExpression">
                             <positioning type="relative">0,25</positioning>
                             <sizing>
                                 <horizontal method="fixed">135</horizontal>
                             </sizing>
-                            <tooltip-text translate="true">gui.redstone-helper.expression</tooltip-text>
+                            <tooltip-text translate="true">redstone-helper.feature.bits_operations.expression</tooltip-text>
                         </text-box>
                         <label id="toBitResult">
                             <positioning type="relative">0,48</positioning>
@@ -29,7 +29,7 @@
 
                         <label>
                             <positioning type="relative">50,13</positioning>
-                            <text translate="true">gui.redstone-helper.converter</text>
+                            <text translate="true">redstone-helper.feature.bits_operations.converter</text>
                         </label>
 
                         <label>
@@ -42,14 +42,14 @@
 
                         <label id="fromBitText">
                             <positioning type="relative">100,13</positioning>
-                            <text translate="true">gui.redstone-helper.from_bit</text>
+                            <text translate="true">redstone-helper.feature.bits_operations.from_bit</text>
                         </label>
                         <text-box id="fromBitExpression">
                             <positioning type="relative">100,25</positioning>
                             <sizing>
                                 <horizontal method="fixed">135</horizontal>
                             </sizing>
-                            <tooltip-text translate="true">gui.redstone-helper.expression</tooltip-text>
+                            <tooltip-text translate="true">redstone-helper.feature.bits_operations.expression</tooltip-text>
                         </text-box>
                         <label id="fromBitResult">
                             <positioning type="relative">100,48</positioning>
