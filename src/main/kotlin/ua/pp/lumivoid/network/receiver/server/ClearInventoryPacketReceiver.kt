@@ -4,10 +4,10 @@ package ua.pp.lumivoid.network.receiver.server
 
 import net.minecraft.inventory.Inventory
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.network.SendPacket
 import ua.pp.lumivoid.network.packets.c2s.ClearInventoryC2SPacket
 import ua.pp.lumivoid.network.packets.s2c.InfoBlockNotFoundS2CPacket
 import ua.pp.lumivoid.network.packets.s2c.InfoSuccessS2CPacket
-import ua.pp.lumivoid.network.SendPacket
 
 object ClearInventoryPacketReceiver {
     private val logger = Constants.LOGGER
@@ -21,6 +21,8 @@ object ClearInventoryPacketReceiver {
             try {
                 val blockInventory = player.serverWorld.getBlockEntity(blockPos) as Inventory
                 blockInventory.clear()
+
+                player.serverWorld.updateNeighbors(blockPos, player.serverWorld.getBlockState(blockPos).block)
 
                 SendPacket.sendToPlayer(player, InfoSuccessS2CPacket(Constants.aMinecraftClass))
             } catch (e: NullPointerException) {
