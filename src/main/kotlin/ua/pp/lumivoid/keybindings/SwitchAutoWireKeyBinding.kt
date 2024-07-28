@@ -14,10 +14,10 @@ object SwitchAutoWireKeyBinding {
     private val logger = Constants.LOGGER
 
     private val switchAutoWireKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding("key.redstone-helper.switch_autowire_keybinding",
+        KeyBinding("redstone-helper.keybinding.key.switch_autowire",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_B,
-            "key.redstone-helper.category.basic"
+            "redstone-helper.keybinding.category.basic"
         )
     )
 
@@ -29,12 +29,12 @@ object SwitchAutoWireKeyBinding {
                 if (client.player!!.commandSource.hasPermissionLevel(2)) {
                     ClientOptions.isAutoWireEnabled = !ClientOptions.isAutoWireEnabled
                     if (ClientOptions.isAutoWireEnabled) {
-                        HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_on"), true)
+                        HudToast.addToastToQueue(Text.translatable("redstone-helper.feature.auto_wire.auto_wire_on"), true)
                     } else {
-                        HudToast.addToastToQueue(Text.translatable("info.redstone-helper.auto_wire_off"), true)
+                        HudToast.addToastToQueue(Text.translatable("redstone-helper.feature.auto_wire.auto_wire_off"), true)
                     }
                 } else {
-                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.no_permission"), true)
+                    HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.no_permission"), true)
                 }
             }
         }

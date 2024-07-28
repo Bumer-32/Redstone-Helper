@@ -1,8 +1,8 @@
 package ua.pp.lumivoid
 
 import net.fabricmc.api.ModInitializer
-import ua.pp.lumivoid.packets.InfoBlockNotFoundPacket
-import ua.pp.lumivoid.packets.InfoSuccessPacket
+import ua.pp.lumivoid.network.packets.s2c.InfoBlockNotFoundS2CPacket
+import ua.pp.lumivoid.network.packets.s2c.InfoSuccessS2CPacket
 import ua.pp.lumivoid.registration.CommandsRegistration
 import ua.pp.lumivoid.registration.EachTickRegistration
 import ua.pp.lumivoid.registration.PacketReceiverRegistration
@@ -24,7 +24,7 @@ object RedstoneHelper : ModInitializer {
 		EachTickRegistration.register() // Register something for each tick
 
 		// OwO Packets
-		Constants.NET_CHANNEL.registerClientboundDeferred(InfoSuccessPacket::class.java)
-		Constants.NET_CHANNEL.registerClientboundDeferred(InfoBlockNotFoundPacket::class.java)
+		Constants.NET_CHANNEL.registerClientboundDeferred(InfoSuccessS2CPacket::class.java)
+		Constants.NET_CHANNEL.registerClientboundDeferred(InfoBlockNotFoundS2CPacket::class.java)
 	}
 }

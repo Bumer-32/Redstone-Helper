@@ -9,17 +9,17 @@ import org.lwjgl.glfw.GLFW
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.packets.QuickTeleportPacket
-import ua.pp.lumivoid.util.SendPacket
+import ua.pp.lumivoid.network.SendPacket
+import ua.pp.lumivoid.network.packets.c2s.QuickTeleportC2SPacket
 
 object QuickTpKeyBinding {
     private val logger = Constants.LOGGER
 
     private val quickTpKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding("key.redstone-helper.quickTp_keybinding",
+        KeyBinding("redstone-helper.keybinding.key.quickTp",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_G,
-            "key.redstone-helper.category.basic"
+            "redstone-helper.keybinding.category.basic"
         )
     )
 
@@ -30,9 +30,9 @@ object QuickTpKeyBinding {
             while (quickTpKeyBinding.wasPressed()) {
                 if (client.player!!.commandSource.hasPermissionLevel(2)) {
                     val config = Config()
-                    SendPacket.sendPacket(QuickTeleportPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
+                    SendPacket.sendPacket(QuickTeleportC2SPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
                 } else {
-                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.no_permission"), true)
+                    HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.no_permission"), true)
                 }
             }
         }

@@ -1,9 +1,9 @@
 package ua.pp.lumivoid.registration
 
-import ua.pp.lumivoid.receiver.ClearInventoryPacketReceiver
-import ua.pp.lumivoid.receiver.FillInventoryPacketReceiver
-import ua.pp.lumivoid.receiver.QuickTeleportPacketReceiver
-import ua.pp.lumivoid.receiver.SetBlockPacketReceiver
+import ua.pp.lumivoid.network.receiver.server.ClearInventoryPacketReceiver
+import ua.pp.lumivoid.network.receiver.server.FillInventoryPacketReceiver
+import ua.pp.lumivoid.network.receiver.server.QuickTeleportPacketReceiver
+import ua.pp.lumivoid.network.receiver.server.SetBlockPacketReceiver
 
 object PacketReceiverRegistration {
     fun register() {

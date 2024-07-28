@@ -1,9 +1,9 @@
-package ua.pp.lumivoid.receiver
+package ua.pp.lumivoid.network.receiver.server
 
 import net.minecraft.entity.Entity
 import net.minecraft.network.packet.s2c.play.PositionFlag
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.packets.QuickTeleportPacket
+import ua.pp.lumivoid.network.packets.c2s.QuickTeleportC2SPacket
 import java.util.*
 
 object QuickTeleportPacketReceiver {
@@ -12,7 +12,7 @@ object QuickTeleportPacketReceiver {
     fun register() {
         logger.debug("Registering QuickTeleportPacketReceiver")
 
-        Constants.NET_CHANNEL.registerServerbound(QuickTeleportPacket::class.java) { message, access ->
+        Constants.NET_CHANNEL.registerServerbound(QuickTeleportC2SPacket::class.java) { message, access ->
             val player = access.player
             val world = access.player.serverWorld
             val distance = message.distance

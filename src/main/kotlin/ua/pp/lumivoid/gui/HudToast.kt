@@ -8,6 +8,7 @@ import io.wispforest.owo.ui.core.Positioning
 import io.wispforest.owo.ui.hud.Hud
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import net.minecraft.client.MinecraftClient
 import net.minecraft.registry.Registries
@@ -43,9 +44,9 @@ object HudToast {
             component.positioning().animate(500, Easing.LINEAR, Positioning.relative(config.toastPosition.xPos(), config.toastPosition.yPos())).forwards()
 
             if (short) {
-                Thread.sleep(1500)
+                delay(1500)
             } else {
-                Thread.sleep(5000)
+                delay(5000)
             }
 
             player.playSound(Registries.SOUND_EVENT.get(Identifier.of("minecraft", "ui.toast.out")))
@@ -53,9 +54,9 @@ object HudToast {
             component.positioning().animate(500, Easing.LINEAR, Positioning.relative(config.toastPosition.hidedXPos(), config.toastPosition.yPos())).forwards()
 
             if (short) {
-                Thread.sleep(500)
+                delay(500)
             } else {
-                Thread.sleep(1000)
+                delay(1000)
             }
 
             component.root().childById(LabelComponent::class.java, "text")?.text(Text.empty())

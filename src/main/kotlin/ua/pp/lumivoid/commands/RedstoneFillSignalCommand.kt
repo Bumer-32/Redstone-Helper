@@ -20,9 +20,9 @@ import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.packets.FillInventoryPacket
+import ua.pp.lumivoid.network.SendPacket
+import ua.pp.lumivoid.network.packets.c2s.FillInventoryC2SPacket
 import ua.pp.lumivoid.util.Calculate
-import ua.pp.lumivoid.util.SendPacket
 import kotlin.random.Random
 
 
@@ -36,7 +36,7 @@ object RedstoneFillSignalCommand {
             .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/redstone-fill-signal: Missing arguments!")
-                context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
+                context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
                 1
             }
             .then(ClientCommandManager.argument("signal", IntegerArgumentType.integer(0, 15))
@@ -57,8 +57,8 @@ object RedstoneFillSignalCommand {
 
     private fun execute(context: CommandContext<FabricClientCommandSource>, item: Item, redstoneSignal: Int) {
         if (redstoneSignal == 0) {
-            val funnyInt = Random.nextInt(1, Text.translatable("dontlocalize.stuff.redstone-helper.funny_count").string.toInt() + 1)
-            context.source.sendFeedback(Text.translatable("info.redstone-helper.funny.$funnyInt"))
+            val funnyInt = Random.nextInt(1, Text.translatable("dontlocalize.redstone-helper.stuff.funny_count").string.toInt() + 1)
+            context.source.sendFeedback(Text.translatable("redstone-helper.stuff.funny.$funnyInt"))
         } else {
             logger.debug("/redstone-fill-signal: Trying to fill inventory with blocks by signal")
 
@@ -73,14 +73,14 @@ object RedstoneFillSignalCommand {
 
                     logger.debug("/redstone-fill-signal: Calculated amount of items: $amount")
 
-                    SendPacket.sendPacket(FillInventoryPacket(blockPos, Registries.ITEM.getId(item), amount, Constants.aMinecraftClass))
+                    SendPacket.sendPacket(FillInventoryC2SPacket(blockPos, Registries.ITEM.getId(item), amount, Constants.aMinecraftClass))
                 } catch (e: NullPointerException) {
                     logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
-                    HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.invalid_block_inventory"))
+                    HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.invalid_block_inventory"))
                 }
             } else {
                 logger.debug("/calc-redstone-signal: No block in crosshair target")
-                HudToast.addToastToQueue(Text.translatable("info_error.redstone-helper.block_not_found"))
+                HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.block_not_found"))
             }
         }
     }

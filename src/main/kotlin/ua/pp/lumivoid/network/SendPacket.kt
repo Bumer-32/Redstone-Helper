@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.util
+package ua.pp.lumivoid.network
 
 import net.minecraft.server.network.ServerPlayerEntity
 import ua.pp.lumivoid.Constants

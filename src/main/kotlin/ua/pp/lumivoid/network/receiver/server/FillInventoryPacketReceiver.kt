@@ -1,12 +1,12 @@
-package ua.pp.lumivoid.receiver
+package ua.pp.lumivoid.network.receiver.server
 
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.Registries
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.packets.FillInventoryPacket
-import ua.pp.lumivoid.packets.InfoSuccessPacket
-import ua.pp.lumivoid.util.SendPacket
+import ua.pp.lumivoid.network.packets.c2s.FillInventoryC2SPacket
+import ua.pp.lumivoid.network.packets.s2c.InfoSuccessS2CPacket
+import ua.pp.lumivoid.network.SendPacket
 
 object FillInventoryPacketReceiver {
     private val logger = Constants.LOGGER
@@ -14,7 +14,7 @@ object FillInventoryPacketReceiver {
     fun register() {
         logger.debug("Registering FillInventoryPacketReceiver")
 
-        Constants.NET_CHANNEL.registerServerbound(FillInventoryPacket::class.java) { message, access ->
+        Constants.NET_CHANNEL.registerServerbound(FillInventoryC2SPacket::class.java) { message, access ->
             val blockPos = message.blockPos
             val item = Registries.ITEM.get(message.item)
             var amount = message.count
@@ -44,7 +44,7 @@ object FillInventoryPacketReceiver {
                 }
             }
 
-            SendPacket.sendToPlayer(access.player, InfoSuccessPacket(Constants.aMinecraftClass))
+            SendPacket.sendToPlayer(access.player, InfoSuccessS2CPacket(Constants.aMinecraftClass))
         }
     }
 }

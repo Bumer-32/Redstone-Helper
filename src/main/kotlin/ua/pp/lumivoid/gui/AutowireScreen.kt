@@ -38,7 +38,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
         }
 
         autowireState.checked(ClientOptions.isAutoWireEnabled)
-        currentMode.text(Text.translatable("gui.redstone-helper.current_auto_wire_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
+        currentMode.text(Text.translatable("redstone-helper.feature.auto_wire.current_auto_wire_mode", Text.translatable("redstone-helper.feature.auto_wire.modes.${ClientOptions.autoWireMode.toString().lowercase()}")))
 
         autowireState.onChanged {
             ClientOptions.isAutoWireEnabled = autowireState.isChecked
@@ -56,24 +56,24 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
                 dropdown.zIndex(150)
 
                 for (mode in AutoWire.entries) {
-                    dropdown.button(Text.translatable("gui.redstone-helper.${mode.toString().lowercase()}")) {
+                    dropdown.button(Text.translatable("redstone-helper.feature.auto_wire.modes.${mode.toString().lowercase()}")) {
                         dropdown.remove()
                         ClientOptions.autoWireMode = AutoWire.valueOf(mode.toString())
-                        currentMode.text(Text.translatable("gui.redstone-helper.current_auto_wire_mode", Text.translatable("gui.redstone-helper.${ClientOptions.autoWireMode.toString().lowercase()}")))
+                        currentMode.text(Text.translatable("redstone-helper.feature.auto_wire.current_auto_wire_mode", Text.translatable("redstone-helper.feature.auto_wire.modes.${ClientOptions.autoWireMode.toString().lowercase()}")))
                         logger.debug("Selected new auto wire mode: " + ClientOptions.autoWireMode)
                     }
                 }
 
-                val descends: MutableList<Component> = mutableListOf()
-                dropdown.forEachDescendant { descendant ->
-                    descends.add(descendant)
+                val descriptions: MutableList<Component> = mutableListOf()
+                dropdown.forEachDescendant { description ->
+                    descriptions.add(description)
                 }
 
-                descends.remove(descends.first())
-                descends.remove(descends.first())
+                descriptions.remove(descriptions.first())
+                descriptions.remove(descriptions.first())
 
-                descends.zip(enumValues<AutoWire>().map { it.name }).forEach { (descendant, tooltip) ->
-                    descendant.tooltip(Text.translatable("gui.redstone-helper.${tooltip.lowercase()}_desc"))
+                descriptions.zip(enumValues<AutoWire>().map { it.name }).forEach { (description, tooltip) ->
+                    description.tooltip(Text.translatable("redstone-helper.feature.auto_wire.description.${tooltip.lowercase()}"))
                 }
             }
         }

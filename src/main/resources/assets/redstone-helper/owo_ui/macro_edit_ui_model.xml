@@ -1,0 +1,167 @@
+<owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+<!-- COPY OF https://github.com/wisp-forest/owo-lib/blob/1.21/src/main/resources/assets/owo/owo_ui/config.xml-->
+    <components>
+        <flow-layout direction="vertical">
+            <children>
+                <flow-layout direction="vertical">
+                    <children>
+                        <label id="title">
+                            <text translate="true">redstone-helper.feature.macro.edit_macro_title</text>
+                            <shadow>true</shadow>
+
+                            <margins>
+                                <vertical>10</vertical>
+                            </margins>
+                        </label>
+                    </children>
+                    
+                    <vertical-alignment>center</vertical-alignment>
+                </flow-layout>
+
+                <stack-layout>
+                    <children>
+                        <flow-layout direction="horizontal" id="main-panel">
+                            <children>
+                                <flow-layout direction="vertical" id="macro_panel_container">
+                                    <children>
+                                        <text-box id="macro_name">
+                                            <positioning type="relative">50,3</positioning>
+                                            <text>Macro name</text>
+                                            <sizing>
+                                                <horizontal method="fixed">200</horizontal>
+                                                <vertical method="fixed">20</vertical>
+                                            </sizing>
+                                        </text-box>
+
+                                        <label>
+                                            <positioning type="relative">35,18</positioning>
+                                            <text translate="true">redstone-helper.feature.macro.key_bind</text>
+                                        </label>
+
+                                        <button id="key_bind_button">
+                                            <text translate="true">redstone-helper.feature.macro.key_bind_none</text>
+                                            <positioning type="relative">53,15</positioning>
+                                            <sizing>
+                                                <horizontal method="fill">13</horizontal>
+                                                <vertical method="fill">9</vertical>
+                                            </sizing>
+                                        </button>
+                                        <button id="reset_button">
+                                            <text translate="true">redstone-helper.feature.macro.reset</text>
+                                            <positioning type="relative">65,15</positioning>
+                                            <sizing>
+                                                <horizontal method="fill">9</horizontal>
+                                                <vertical method="fill">9</vertical>
+                                            </sizing>
+                                        </button>
+
+                                        <scroll direction="vertical" id="commands_panel_scroll">
+                                            <flow-layout direction="vertical" id="commands_panel">
+                                                <children>
+                                                </children>
+                                                <padding>
+                                                    <right>3</right>
+                                                </padding>
+                                            </flow-layout>
+
+                                            <margins>
+                                                <bottom>5</bottom>
+                                            </margins>
+
+                                            <scrollbar-thiccness>3</scrollbar-thiccness>
+
+                                            <sizing>
+                                                <horizontal method="fixed">310</horizontal>
+                                                <vertical method="fill">70</vertical>
+                                            </sizing>
+
+                                            <padding>
+                                                <all>1</all>
+                                            </padding>
+                                        </scroll>
+                                    </children>
+
+                                    <horizontal-alignment>center</horizontal-alignment>
+                                    <vertical-alignment>bottom</vertical-alignment>
+
+                                    <sizing>
+                                        <horizontal method="expand">100</horizontal>
+                                        <vertical method="fill">100</vertical>
+                                    </sizing>
+                                </flow-layout>
+                            </children>
+
+                            <padding>
+                                <horizontal>50</horizontal>
+                            </padding>
+
+                            <sizing>
+                                <horizontal method="fill">100</horizontal>
+                                <vertical method="fill">100</vertical>
+                            </sizing>
+
+                            <surface>
+                                <flat>#77000000</flat>
+                                <outline>#99121212</outline>
+                            </surface>
+                        </flow-layout>
+                    </children>
+
+                    <padding>
+                        <all>1</all>
+                    </padding>
+
+                    <sizing>
+                        <horizontal method="fill">101</horizontal>
+                        <!--suppress XmlUnresolvedReference -->
+                        <vertical method="expand">100</vertical>
+                    </sizing>
+
+                    <surface>
+                        <outline>#33FFFFFF</outline>
+                    </surface>
+                </stack-layout>
+
+                <flow-layout direction="horizontal">
+                    <children>
+                        <button id="done_button">
+                            <text translate="true">redstone-helper.feature.macro.done</text>
+                            <sizing>
+                                <horizontal method="fill">20</horizontal>
+                            </sizing>
+                            <margins>
+                                <right>5</right>
+                            </margins>
+                        </button>
+
+                        <button id="cancel_button">
+                            <text translate="true">redstone-helper.feature.macro.cancel</text>
+                            <sizing>
+                                <horizontal method="fill">20</horizontal>
+                            </sizing>
+                        </button>
+                    </children>
+
+                    <horizontal-alignment>center</horizontal-alignment>
+                    <vertical-alignment>center</vertical-alignment>
+
+                    <margins>
+                        <vertical>5</vertical>
+                    </margins>
+
+                    <sizing>
+                        <horizontal method="fill">100</horizontal>
+                    </sizing>
+                </flow-layout>
+            </children>
+
+            <vertical-alignment>center</vertical-alignment>
+            <horizontal-alignment>center</horizontal-alignment>
+
+            <surface>
+                <options-background>0</options-background>
+            </surface>
+        </flow-layout>
+    </components>
+</owo-ui>

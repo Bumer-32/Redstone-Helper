@@ -39,4 +39,12 @@ object Calculate {
     fun calculateRedstoneSignal(redstoneSignal: Int, item: Item, inventorySize: Int): Int {
         return ((redstoneSignal - 1) * item.maxCount * inventorySize / 14.0).toInt() + 1
     }
+
+    fun hexToRGB(hex: Int): Quadruple<Float, Float, Float, Float> {
+        val alpha = (hex shr 24 and 0xFF) / 255.0f
+        val red = (hex shr 16 and 0xFF) / 255.0f
+        val green = (hex shr 8 and 0xFF) / 255.0f
+        val blue = (hex and 0xFF) / 255.0f
+        return Quadruple(red, green, blue, alpha)
+    }
 }

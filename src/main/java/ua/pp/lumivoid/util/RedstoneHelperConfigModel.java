@@ -7,7 +7,7 @@ import ua.pp.lumivoid.util.features.AutoWire;
 
 @SuppressWarnings("unused")
 @Modmenu(modId = Constants.MOD_ID)
-@Config(name = "redstone-helper-config", wrapperName = "RedstoneHelperConfig")
+@Config(name = "redstone-helper/redstone-helper-config", wrapperName = "RedstoneHelperConfig")
 public class RedstoneHelperConfigModel {
     @SectionHeader("general")
     @Nest
@@ -19,6 +19,7 @@ public class RedstoneHelperConfigModel {
         public Boolean checkForRelease = true;
         public Boolean checkForBeta = false;
         public Boolean checkForAlpha = false;
+        public Boolean showUpToDateNotification = true;
     }
 
     @SectionHeader("interface")

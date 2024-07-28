@@ -5,8 +5,8 @@ import ua.pp.lumivoid.util.TickHandler
 
 object EachTickRegistration {
     fun register() {
-        ServerTickEvents.END_SERVER_TICK.register(ServerTickEvents.EndTick {
+        ServerTickEvents.END_SERVER_TICK.register {
             TickHandler.onEndTick()
-        })
+        }
     }
 }

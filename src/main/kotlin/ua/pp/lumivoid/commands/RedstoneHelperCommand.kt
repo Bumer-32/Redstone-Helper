@@ -5,12 +5,16 @@ package ua.pp.lumivoid.commands
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.BoolArgumentType
 import com.mojang.brigadier.arguments.IntegerArgumentType
+import com.mojang.brigadier.arguments.StringArgumentType
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
+import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.gui.HudToast
+import ua.pp.lumivoid.gui.ManualWelcomePageScreen
+import ua.pp.lumivoid.util.DownloadManager
 import ua.pp.lumivoid.util.VersionChecker
 
 object RedstoneHelperCommand {
@@ -22,30 +26,32 @@ object RedstoneHelperCommand {
         dispatcher.register(ClientCommandManager.literal("redstone-helper")
             .executes { context ->
                 logger.debug("/redstone-helper: Missing arguments!")
-                context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
+                context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
                 1
             }
             .then(ClientCommandManager.literal("help")
                 .executes { context ->
-                    context.source.sendFeedback(Text.translatable("help.redstone-helper.help"))
+                    context.source.sendFeedback(Text.translatable("redstone-helper.help.help"))
                     1
                 }
             )
             .then(ClientCommandManager.literal("version")
                 .executes { context ->
-                    context.source.sendFeedback(Text.translatable("help.redstone-helper.version", Constants.MOD_VERSION))
+                    context.source.sendFeedback(Text.translatable("redstone-helper.help.version", Constants.MOD_VERSION))
                     1
                 }
             )
             .then(ClientCommandManager.literal("check-updates")
                 .executes { context ->
-                    context.source.sendFeedback(
-                        VersionChecker.checkRedstoneHelperVersionLocalized(
-                            checkForRealease = true,
-                            checkForBeta = true,
-                            checkForAlpha = true
-                        )
+                    val checkerText = VersionChecker.checkRedstoneHelperVersionLocalized(
+                        checkForRelease = true,
+                        checkForBeta = true,
+                        checkForAlpha = true
                     )
+                    context.source.sendFeedback(checkerText)
+                    if (checkerText != Text.translatable("redstone-helper.stuff.version_checker.up_to_date") && checkerText != Text.translatable("redstone-helper.stuff.version_checker.unable_to_check_version")) {
+                        context.source.sendFeedback(Text.translatable("redstone-helper.stuff.version_checker.skip_version"))
+                    }
                     1
                 }
                 .then(ClientCommandManager.literal("by-config")
@@ -61,11 +67,27 @@ object RedstoneHelperCommand {
                         1
                     }
                 )
+                .then(ClientCommandManager.literal("skip")
+                    .executes { context ->
+                        context.source.sendFeedback(Text.translatable("redstone-helper.stuff.version_checker.skipping"))
+                        VersionChecker.skipVersion()
+                        VersionChecker.checkRedstoneHelperVersionWithToast()
+                        1
+                    }
+                )
+                .then(ClientCommandManager.literal("clear-skips")
+                    .executes { context ->
+                        context.source.sendFeedback(Text.translatable("redstone-helper.stuff.version_checker.clear_skips"))
+                        VersionChecker.clearSkippedVersion()
+                        VersionChecker.checkRedstoneHelperVersionWithToast()
+                        1
+                    }
+                )
             )
             .then(ClientCommandManager.literal("notification")
                 .executes { context ->
                     logger.debug("/redstone-helper: Missing arguments!")
-                    context.source.sendError(Text.translatable("info_error.redstone-helper.missing_arguments"))
+                    context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
                     1
                 }
                 .then(ClientCommandManager.literal("clear-queue")
@@ -73,6 +95,26 @@ object RedstoneHelperCommand {
                         HudToast.clearQueue()
                         1
                     }
+                )
+                .then(ClientCommandManager.literal("add-to-queue")
+                    .executes { context ->
+                        logger.debug("/redstone-helper: Missing arguments!")
+                        context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
+                        1
+                    }
+                    .then(ClientCommandManager.argument("short", BoolArgumentType.bool())
+                        .executes { context ->
+                            logger.debug("/redstone-helper: Missing arguments!")
+                            context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
+                            1
+                        }
+                        .then(ClientCommandManager.argument("text", StringArgumentType.greedyString())
+                            .executes { context ->
+                                HudToast.addToastToQueue(Text.literal(StringArgumentType.getString(context, "text")), BoolArgumentType.getBool(context, "short"))
+                                1
+                            }
+                        )
+                    )
                 )
             )
             .then(ClientCommandManager.literal("test")
@@ -98,6 +140,22 @@ object RedstoneHelperCommand {
                         }
                     )
                 )
+                .then(ClientCommandManager.literal("help")
+                    .executes {
+                        logger.debug("/redstone-helper: Opening manual menu")
+                        MinecraftClient.getInstance().send(Runnable {
+                            MinecraftClient.getInstance().setScreen(ManualWelcomePageScreen())
+                        })
+                        1
+                    }
+                )
+            )
+            .then(ClientCommandManager.literal("cleanUp")
+                .executes {
+                    logger.debug("/redstone-helper: Cleaning up")
+                    DownloadManager.cleanUp()
+                    1
+                }
             )
         )
     }

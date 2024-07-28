@@ -4,6 +4,7 @@ plugins {
 	id 'fabric-loom' version '1.6.5'
 	id 'maven-publish'
   	id "org.jetbrains.kotlin.jvm" version "2.0.0"
+	id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.0'
 	id "com.modrinth.minotaur" version "2.+"
 }
 
@@ -51,6 +52,7 @@ dependencies {
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
 
 	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${project.kotlinx_coroutines_version}"
+	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${project.kotlinx_serialization}")
 
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
 }
