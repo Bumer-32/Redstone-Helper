@@ -43,15 +43,15 @@
   "redstone-helper.feature.macro.done": "Готово",
   "redstone-helper.feature.macro.cancel": "Скасувати",
   "redstone-helper.feature.macro.key_bind": "Клавіша бінда",
-  "redstone-helper.feature.macro.key_bind_none": "None",
+  "redstone-helper.feature.macro.key_bind_none": "Нічого",
   "redstone-helper.feature.macro.reset": "Скинути",
   "redstone-helper.feature.macro.enabled_for_keybinds": "Увімкнено для прив'язки клавіш",
   "redstone-helper.feature.macro.add_command": "Додати команду",
   "redstone-helper.feature.macro.macro_not_found": "Макрос не знайдено",
   "redstone-helper.feature.insta_lamps.insta_on": "Миттєві лампи ввімкнено",
   "redstone-helper.feature.insta_lamps.insta_off": "Миттєві лампи вимкнено",
-  "redstone-helper.feature.airplace.airplace_on": "Airplace enabled",
-  "redstone-helper.feature.airplace.airplace_off": "Airplace disabled",
+  "redstone-helper.feature.airplace.airplace_on": "Airplace увімкнуто",
+  "redstone-helper.feature.airplace.airplace_off": "Airplace вимкнуто",
   "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Вирахуваний сигнал: %d, предмет: %d",
   "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper оновлений!",
   "redstone-helper.stuff.version_checker.need_update": [
@@ -89,9 +89,9 @@
   ],
   "redstone-helper.stuff.version_checker.to_check_version": "Щоб перевірити версію, введіть в чат:\n/redstone-helper check-updates",
   "redstone-helper.stuff.version_checker.skip_version": [
-    "You can ",
+    "Ви можете ",
     {
-      "text": "skip this version",
+      "text": "пропустити цю версію",
       "color": "blue",
       "bold": true,
       "clickEvent": {
@@ -100,8 +100,8 @@
       }
     }
   ],
-  "redstone-helper.stuff.version_checker.skipping": "skipping version",
-  "redstone-helper.stuff.version_checker.clear_skips": "clear skipped versions",
+  "redstone-helper.stuff.version_checker.skipping": "пропуск версії",
+  "redstone-helper.stuff.version_checker.clear_skips": "очищую пропущені версії",
   "redstone-helper.stuff.info.success": "Вдалося!",
   "redstone-helper.stuff.info.error.block_not_found": [
     {
@@ -143,6 +143,7 @@
     "/calc\n",
     "/autowire\n",
     "/autodust",
+    "/bits\n",
     "/instaLamp\n",
     "/redstone-fill\n",
     "/redstone-fill-signal\n",
@@ -151,7 +152,9 @@
     "/redstone-give-signal\n",
     "/ss\n",
     "/clear-inventory\n",
-    "/quicktp\n"
+    "/quicktp\n",
+    "/airplace\n",
+    "/macro\n"
   ],
   "redstone-helper.manual.manual": "Посібник",
   "redstone-helper.manual.previous": "Назад",
@@ -197,7 +200,7 @@
   "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForRelease": "Перевіряти на релізні версії",
   "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForBeta": "Перевіряти на бета-версії",
   "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForAlpha": "Перевіряти на альфа-версії",
-  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.showUpToDateNotification": "Show \"Redstone Helper up to date!\" notification",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.showUpToDateNotification": "Показувати сповіщення \"Redstone Helper оновлено!\"",
   "text.config.redstone-helper/redstone-helper-config.section.interface": "Інтерфейс",
   "text.config.redstone-helper/redstone-helper-config.option.darkPanels": "Темні панелі",
   "text.config.redstone-helper/redstone-helper-config.option.enableBackgroundBlur": "Розмиття фону",
