@@ -143,6 +143,7 @@
     "/calc\n",
     "/autowire\n",
     "/autodust",
+    "/bits\n",
     "/instaLamp\n",
     "/redstone-fill\n",
     "/redstone-fill-signal\n",
@@ -151,7 +152,9 @@
     "/redstone-give-signal\n",
     "/ss\n",
     "/clear-inventory\n",
-    "/quicktp\n"
+    "/quicktp\n",
+    "/airplace\n",
+    "/macro\n"
   ],
   "redstone-helper.manual.manual": "Manuel",
   "redstone-helper.manual.previous": "Précédent",
