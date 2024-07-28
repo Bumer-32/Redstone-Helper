@@ -10,6 +10,12 @@ object JsonConfig {
     private val json = Json { prettyPrint = true }
     private var cachedConfig: JsonConfigData? = null
 
+    init {
+        if (!File(Constants.CONFIG_FOLDER_PATH).exists()) File(Constants.CONFIG_FOLDER_PATH).mkdirs()
+        val configFile = File(Constants.CONFIG_FOLDER_PATH + "\\config.json")
+        if (!configFile.exists()) configFile.createNewFile()
+    }
+
     fun readConfig(): JsonConfigData {
         if (cachedConfig != null) return cachedConfig!!
 
