@@ -1,4 +1,6 @@
-Kon'nichiwa! Update 0.1.9.1 HOTFIX
+Kon'nichiwa! Update 0.2.0
 
-fixed bug / now players need to be operator if it uses operator functions through key bindings
-optimized version checker
+added:
+<p>Macros! <a href="https://www.youtube.com/watch?v=jjEO940W72o&ab_channel=mattbatwings">How to use</a></p>
+<p>/Airplace</p>
+<p>French lang - thanks <a href="https://crowdin.com/profile/mlink0411">mlink (mzelda)</a></p>

@@ -103,6 +103,8 @@ Redstone helper mod must you to help with redstone in minecraft :)
             <p>/quicktp - teleports you in your look direction, also you can bind it for button (Default G) and configure it in config menu</p>
             <p>/autodust - redirect for /autowire</p>
             <p>/ss - redirect for redstone give signal</p>
+            <p>/Airplace - allows you to place blocks on air</p>
+            <p>Macros! <a href="https://www.youtube.com/watch?v=jjEO940W72o&ab_channel=mattbatwings">How to use</a></p>
         </details>
         <details>
             <summary style="font-size: 18px;">BIT Operations™</summary>
