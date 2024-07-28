@@ -31,14 +31,7 @@ object MacroCommand {
                     logger.debug("/macro: Executing macro")
                     val macro = Macros.readMacro(StringArgumentType.getString(context, "macro"))
                     if (macro != null) {
-                        macro.commands.forEach { command ->
-                            logger.debug("/macro: Executing command: $command")
-                            if (command.startsWith("/")) {
-                                context.source.player.networkHandler.sendCommand(command.replaceFirst("/", ""))
-                            } else {
-                                context.source.player.networkHandler.sendCommand(command)
-                            }
-                        }
+                        Macros.executeMacro(macro)
                     } else {
                         context.source.sendError(Text.translatable("redstone-helper.feature.macro.macro_not_found"))
                     }

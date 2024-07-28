@@ -32,7 +32,6 @@ object RedstoneHelperClient : ClientModInitializer {
 		AutoWireRegistration.register() // Registering autowire function
 		LogginedInRegistration.register() // For mod updates check
 		ClientPacketReceiverRegistration.register() // Registering packet receiver
-		ClientEachTickRegistration.register()
 
 		// Verify files for version
 		if (!File(Constants.CONFIG_FOLDER_PATH + "\\config.json").exists() || JsonConfig.readConfig().modVersion != Constants.MOD_VERSION) {

@@ -1,9 +1,12 @@
 package ua.pp.lumivoid.util.features
 
+import net.minecraft.client.MinecraftClient
+import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.util.JsonConfig
 import ua.pp.lumivoid.util.Macro
 
 object Macros {
+    private val logger = Constants.LOGGER
 
     private var macrosCache: MutableList<Macro>? = null
 
@@ -54,5 +57,25 @@ object Macros {
         }
 
         return null
+    }
+
+    fun executeMacro(name: String): Boolean {
+        val macro = readMacro(name)
+        if (macro != null) {
+            executeMacro(macro)
+            return true
+        }
+        return false
+    }
+
+    fun executeMacro(macro: Macro) {
+        macro.commands.forEach { command ->
+            logger.debug("/macro: Executing command: $command")
+            if (command.startsWith("/")) {
+                MinecraftClient.getInstance().player!!.networkHandler.sendCommand(command.replaceFirst("/", ""))
+            } else {
+                MinecraftClient.getInstance().player!!.networkHandler.sendCommand(command)
+            }
+        }
     }
 }

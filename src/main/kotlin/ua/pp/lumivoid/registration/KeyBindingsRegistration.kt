@@ -10,6 +10,7 @@ object KeyBindingsRegistration {
         PreviousAutoWireModeKeyBinding.register()
         NextAutoWireModeKeyBinding.register()
         QuickTpKeyBinding.register()
+        MacrosKeyBindings.register()
 
         // default minecraft
         UseKeyBinding.register()

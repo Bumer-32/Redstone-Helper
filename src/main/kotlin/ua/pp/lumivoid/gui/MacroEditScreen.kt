@@ -20,6 +20,7 @@ import net.minecraft.util.Formatting
 import net.minecraft.util.Identifier
 import org.lwjgl.glfw.GLFW
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.keybindings.MacrosKeyBindings
 import ua.pp.lumivoid.util.Macro
 import ua.pp.lumivoid.util.features.Macros
 
@@ -139,6 +140,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                 Macros.editMacro(macro!!.name, macro!!)
             }
 
+            MacrosKeyBindings.updateMacros()
             parent!!.update()
             this.client!!.setScreen(parent)
         }
