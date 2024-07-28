@@ -5,6 +5,7 @@ import ua.pp.lumivoid.network.packets.s2c.InfoBlockNotFoundS2CPacket
 import ua.pp.lumivoid.network.packets.s2c.InfoSuccessS2CPacket
 import ua.pp.lumivoid.registration.CommandsRegistration
 import ua.pp.lumivoid.registration.EachTickRegistration
+import ua.pp.lumivoid.registration.GamerulesRegistration
 import ua.pp.lumivoid.registration.PacketReceiverRegistration
 import ua.pp.lumivoid.util.VersionChecker
 
@@ -22,6 +23,7 @@ object RedstoneHelper : ModInitializer {
 		CommandsRegistration.register() // Registering commands
 		PacketReceiverRegistration.register() // Registering packets
 		EachTickRegistration.register() // Register something for each tick
+		GamerulesRegistration.register() // Registering gamerules
 
 		// OwO Packets
 		Constants.NET_CHANNEL.registerClientboundDeferred(InfoSuccessS2CPacket::class.java)

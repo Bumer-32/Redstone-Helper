@@ -51,7 +51,7 @@ object RedstoneHelperClient : ClientModInitializer {
 						"/gamerule doWeatherCycle false",
 						"/gamerule doDaylightCycle false",
 						"/gamerule doMobSpawning false",
-						// "/gamerule doContainerDrops false", TODO: add gamerule
+						"/gamerule doContainerDrops false",
 						"/time set noon",
 						"/weather clear"
 					)

@@ -126,6 +126,9 @@
 
   "redstone-helper.manual.welcome.1": "",
 
+  "gamerule.doContainerDrops": "Do container drops",
+  "gamerule.doContainerDrops.description": "Controls resource drops from containers",
+
   "text.config.redstone-helper/redstone-helper-config.title": "Redstone Helper Settings",
 
   "text.config.redstone-helper/redstone-helper-config.section.general": "General settings",
