@@ -1,42 +1,60 @@
 {
-  "key.redstone-helper.category.basic": "Redstone Helper",
-  "key.redstone-helper.calc_keybinding": "Відкрити калькулятор",
-  "key.redstone-helper.switch_autowire_keybinding": "Перемикнути Auto Wire™",
-  "key.redstone-helper.previous_autowire_mode_keybinding": "Попередній режим Auto Wire™",
-  "key.redstone-helper.next_autowire_mode_keybinding": "Наступний режим Auto Wire™",
-  "key.redstone-helper.quickTp_keybinding": "Швидкий телепорт",
-  "gui.redstone-helper.calculator": "Калькулятор",
-  "gui.redstone-helper.expression": "Вираз",
-  "gui.redstone-helper.result": "Результат: %d",
-  "gui.redstone-helper.invalid_expression": "Результат: невірний вираз!",
-  "gui.redstone-helper.auto_wire": "Auto Wire™",
-  "gui.redstone-helper.enable_auto_wire": "Enable auto wire™",
-  "gui.redstone-helper.select_auto_wire_mode": "Виберіть режим",
-  "gui.redstone-helper.current_auto_wire_mode": "Поточний режим Auto Wire™: %d",
-  "gui.redstone-helper.auto_redstone": "Авто редстоун",
-  "gui.redstone-helper.auto_line": "Редстоун лінія з повторювачами",
-  "gui.redstone-helper.auto_repeater": "Тільки повторювачі",
-  "gui.redstone-helper.auto_comparator": "Тільки компаратори",
-  "gui.redstone-helper.cheap_auto_comparator": "Компаратори з блоками",
-  "gui.redstone-helper.auto_redstone_desc": "Розміщує редстоун на кожному блоці, що ви розміщуєте",
-  "gui.redstone-helper.auto_line_desc": "Розміщує редстоун на кожному блоці, який що розміщуєте + розміщує кожні 15 блоків повторювач",
-  "gui.redstone-helper.auto_repeater_desc": "Розміщує повторювач на кожному блоці, що ви розміщуєте",
-  "gui.redstone-helper.auto_comparator_desc": "Розміщує компаратор на кожному блоці, що ви розміщуєте",
-  "gui.redstone-helper.cheap_auto_comparator_desc": "Розміщує компаратори з блоками та редстоуном за схемою редстоун - компаратор - блок",
-  "gui.redstone-helper.bits_operations": "BIT Operations™",
-  "gui.redstone-helper.converter": "Конвертер",
-  "gui.redstone-helper.to_bit": "В BIT",
-  "gui.redstone-helper.to_hex": "В HEX",
-  "gui.redstone-helper.from_bit": "З BIT",
-  "gui.redstone-helper.from_hex": "В HEX",
-  "gui.redstone-helper.bit_calculator": "BIT калькулятор",
-  "gui.redstone-helper.bit_result": "Результат: %d : %d : %d",
-  "info.redstone-helper.insta_on": "Миттєві лампи ввімкнено",
-  "info.redstone-helper.insta_off": "Миттєві лампи вимкнено",
-  "info.redstone-helper.auto_wire_on": "Auto Wire™ ввімкнено",
-  "info.redstone-helper.auto_wire_off": "Auto Wire™ вимкнено",
-  "info.redstone-helper.up_to_date": "Redstone Helper оновлений!",
-  "info.redstone-helper.need_update": [
+  "redstone-helper.keybinding.category.basic": "Redstone Helper",
+  "redstone-helper.keybinding.key.calc": "Відкрити калькулятор",
+  "redstone-helper.keybinding.key.switch_autowire": "Перемикнути Auto Wire™",
+  "redstone-helper.keybinding.key.previous_autowire_mode": "Попередній режим Auto Wire™",
+  "redstone-helper.keybinding.key.next_autowire_mode": "Наступний режим Auto Wire™",
+  "redstone-helper.keybinding.key.quickTp": "Швидкий телепорт",
+  "redstone-helper.feature.calculator.title": "Калькулятор",
+  "redstone-helper.feature.calculator.expression": "Вираз",
+  "redstone-helper.feature.calculator.result": "Результат: %d",
+  "redstone-helper.feature.calculator.invalid_expression": "Результат: невірний вираз!",
+  "redstone-helper.feature.auto_wire.title": "Auto Wire™",
+  "redstone-helper.feature.auto_wire.enable_auto_wire": "Enable auto wire™",
+  "redstone-helper.feature.auto_wire.auto_wire_on": "Auto Wire™ ввімкнено",
+  "redstone-helper.feature.auto_wire.auto_wire_off": "Auto Wire™ вимкнено",
+  "redstone-helper.feature.auto_wire.select_auto_wire_mode": "Виберіть режим",
+  "redstone-helper.feature.auto_wire.current_auto_wire_mode": "Поточний режим Auto Wire™: %d",
+  "redstone-helper.feature.auto_wire.modes.auto_redstone": "Авто редстоун",
+  "redstone-helper.feature.auto_wire.modes.auto_line": "Редстоун лінія з повторювачами",
+  "redstone-helper.feature.auto_wire.modes.auto_repeater": "Тільки повторювачі",
+  "redstone-helper.feature.auto_wire.modes.auto_comparator": "Тільки компаратори",
+  "redstone-helper.feature.auto_wire.modes.cheap_auto_comparator": "Компаратори з блоками",
+  "redstone-helper.feature.auto_wire.description.auto_redstone": "Розміщує редстоун на кожному блоці, що ви розміщуєте",
+  "redstone-helper.feature.auto_wire.description.auto_line": "Розміщує редстоун на кожному блоці, який що розміщуєте + розміщує кожні 15 блоків повторювач",
+  "redstone-helper.feature.auto_wire.description.auto_repeater": "Розміщує повторювач на кожному блоці, що ви розміщуєте",
+  "redstone-helper.feature.auto_wire.description.auto_comparator": "Розміщує компаратор на кожному блоці, що ви розміщуєте",
+  "redstone-helper.feature.auto_wire.description.cheap_auto_comparator": "Розміщує компаратори з блоками та редстоуном за схемою редстоун - компаратор - блок",
+  "redstone-helper.feature.bits_operations.title": "BIT Operations™",
+  "redstone-helper.feature.bits_operations.converter": "Конвертер",
+  "redstone-helper.feature.bits_operations.invalid_expression": "Результат: невірний вираз!",
+  "redstone-helper.feature.bits_operations.expression": "Вираз",
+  "redstone-helper.feature.bits_operations.to_bit": "В BIT",
+  "redstone-helper.feature.bits_operations.to_hex": "В HEX",
+  "redstone-helper.feature.bits_operations.from_bit": "З BIT",
+  "redstone-helper.feature.bits_operations.from_hex": "В HEX",
+  "redstone-helper.feature.bits_operations.bit_calculator": "BIT калькулятор",
+  "redstone-helper.feature.bits_operations.bit_result": "Результат: %d : %d : %d",
+  "redstone-helper.feature.bits_operations.result": "Результат: %d",
+  "redstone-helper.feature.macro.title": "Macros",
+  "redstone-helper.feature.macro.edit_macro_title": "Edit %d macro",
+  "redstone-helper.feature.macro.settings_macros_button": "Macros...",
+  "redstone-helper.feature.macro.new_macro_button": "Create new macro",
+  "redstone-helper.feature.macro.done": "Done",
+  "redstone-helper.feature.macro.cancel": "Cancel",
+  "redstone-helper.feature.macro.key_bind": "Key bind",
+  "redstone-helper.feature.macro.key_bind_none": "None",
+  "redstone-helper.feature.macro.reset": "Reset",
+  "redstone-helper.feature.macro.enabled_for_keybinds": "Enabled for key binds",
+  "redstone-helper.feature.macro.add_command": "Add command",
+  "redstone-helper.feature.macro.macro_not_found": "Macro not found",
+  "redstone-helper.feature.insta_lamps.insta_on": "Миттєві лампи ввімкнено",
+  "redstone-helper.feature.insta_lamps.insta_off": "Миттєві лампи вимкнено",
+  "redstone-helper.feature.airplace.airplace_on": "Airplace enabled",
+  "redstone-helper.feature.airplace.airplace_off": "Airplace disabled",
+  "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Вирахуваний сигнал: %d, предмет: %d",
+  "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper оновлений!",
+  "redstone-helper.stuff.version_checker.need_update": [
     "Виявлено стару версію Redstone Helper!\n",
     {
       "text": "Будь ласка, оновіть до ",
@@ -57,7 +75,7 @@
       }
     }
   ],
-  "info.redstone-helper.unable_to_check_version": [
+  "redstone-helper.stuff.version_checker.unable_to_check_version": [
     "Не вдалося перевірити версію Redstone Helper!\n",
     {
       "text": "Ви можете перевірити неї самостійно ",
@@ -67,50 +85,59 @@
         "action": "open_url",
         "value": "https://modrinth.com/mod/redstone-helper"
       }
-    },
-    "Помилка: ",
-    {
-      "index": 0
     }
   ],
-  "info.redstone-helper.to_check_version": "Щоб перевірити версію, введіть в чат:\n/redstone-helper check-updates",
-  "info.redstone-helper.calculated_signal": "Вирахуваний сигнал: %d, предмет: %d",
-  "info.redstone-helper.success": "Вдалося!",
-  "info_error.redstone-helper.block_not_found": [
+  "redstone-helper.stuff.version_checker.to_check_version": "Щоб перевірити версію, введіть в чат:\n/redstone-helper check-updates",
+  "redstone-helper.stuff.version_checker.skip_version": [
+    "You can ",
+    {
+      "text": "skip this version",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "suggest_command",
+        "value": "/redstone-helper check-updates skip"
+      }
+    }
+  ],
+  "redstone-helper.stuff.version_checker.skipping": "skipping version",
+  "redstone-helper.stuff.version_checker.clear_skips": "clear skipped versions",
+  "redstone-helper.stuff.info.success": "Вдалося!",
+  "redstone-helper.stuff.info.error.block_not_found": [
     {
       "text": "Блок не знайдено!",
       "color": "red"
     }
   ],
-  "info_error.redstone-helper.invalid_block_inventory": [
+  "redstone-helper.stuff.info.error.invalid_block_inventory": [
     {
       "text": "Не можу знайти інвентар блоку!",
       "color": "red"
     }
   ],
-  "info_error.redstone-helper.missing_arguments": [
+  "redstone-helper.stuff.info.error.missing_arguments": [
     {
       "text": "Недостатньо аргументів!",
       "color": "red"
     }
   ],
-  "info_error.redstone-helper.no_permission": [
+  "redstone-helper.stuff.info.error.no_permission": [
     {
       "text": "У вас немає права використовувати це",
       "color": "red"
     }
   ],
-  "info.redstone-helper.funny.1": "Нащо тобі це потрібно??",
-  "info.redstone-helper.funny.2": "Нащо ти це збираєшся використовувати?",
-  "info.redstone-helper.funny.3": "Для чого?",
-  "info.redstone-helper.funny.4": "... Гаразд, якщо ти впевнений.",
-  "info.redstone-helper.funny.5": "Я на 99% впевнений, що ти міг би використати щось інше.",
-  "info.redstone-helper.funny.6": "Це здається зайвим.",
-  "info.redstone-helper.funny.7": "Це помилка?",
-  "info.redstone-helper.funny.8": "Вау, яка шикарна, але непотрібна річ.",
-  "dontlocalize.stuff.redstone-helper.funny_count": "8",
-  "help.redstone-helper.version": "Версія моду: %d",
-  "help.redstone-helper.help": [
+  "redstone-helper.stuff.funny.1": "Нащо тобі це потрібно??",
+  "redstone-helper.stuff.funny.2": "Нащо ти це збираєшся використовувати?",
+  "redstone-helper.stuff.funny.3": "Для чого?",
+  "redstone-helper.stuff.funny.4": "... Гаразд, якщо ти впевнений.",
+  "redstone-helper.stuff.funny.5": "Я на 99% впевнений, що ти міг би використати щось інше.",
+  "redstone-helper.stuff.funny.6": "Це здається зайвим.",
+  "redstone-helper.stuff.funny.7": "Це помилка?",
+  "redstone-helper.stuff.funny.8": "Вау, яка шикарна, але непотрібна річ.",
+  "dontlocalize.redstone-helper.stuff.funny_count": "8",
+  "redstone-helper.help.version": "Версія моду: %d",
+  "redstone-helper.help.help": [
     "Ось список всіх команд Redstone Helper:\n",
     "/redstone-helper\n",
     "/calc\n",
@@ -126,38 +153,73 @@
     "/clear-inventory\n",
     "/quicktp\n"
   ],
-  "gui.redstone-helper.manual.manual": "Посібник",
-  "gui.redstone-helper.manual.previous": "Назад",
-  "gui.redstone-helper.manual.next": "Далі",
-  "text.config.redstone-helper-config.title": "Параметри Redstone Helper",
-  "text.config.redstone-helper-config.section.general": "Загальні параметри",
-  "text.config.redstone-helper-config.category.updateCheckNest": "Перевірка оновлень",
-  "text.config.redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Автоматично перевіряти на оновлення",
-  "text.config.redstone-helper-config.option.updateCheckNest.checkForRelease": "Перевіряти на релізні версії",
-  "text.config.redstone-helper-config.option.updateCheckNest.checkForBeta": "Перевіряти на бета-версії",
-  "text.config.redstone-helper-config.option.updateCheckNest.checkForAlpha": "Перевіряти на альфа-версії",
-  "text.config.redstone-helper-config.section.interface": "Інтерфейс",
-  "text.config.redstone-helper-config.option.darkPanels": "Темні панелі",
-  "text.config.redstone-helper-config.option.enableBackgroundBlur": "Розмиття фону",
-  "text.config.redstone-helper-config.option.toastPosition": "Розташування сповіщень",
-  "text.config.redstone-helper-config.enum.toastPositions.top_left": "Зверху зліва",
-  "text.config.redstone-helper-config.enum.toastPositions.top_middle_left": "Зверху зліва ближче до центру",
-  "text.config.redstone-helper-config.enum.toastPositions.middle_left": "Посередині ліворуч",
-  "text.config.redstone-helper-config.enum.toastPositions.bottom_middle_left": "Знизу зліва ближче до центру",
-  "text.config.redstone-helper-config.enum.toastPositions.bottom_left": "Знизу зліва",
-  "text.config.redstone-helper-config.enum.toastPositions.top_right": "Зверху справа",
-  "text.config.redstone-helper-config.enum.toastPositions.top_middle_right": "Зверху справа ближче до центру",
-  "text.config.redstone-helper-config.enum.toastPositions.middle_right": "Посередині справа",
-  "text.config.redstone-helper-config.enum.toastPositions.bottom_middle_right": "Знизу справа ближче до центру",
-  "text.config.redstone-helper-config.enum.toastPositions.bottom_right": "Знизу справа",
-  "text.config.redstone-helper-config.section.features": "Налаштування функцій моду",
-  "text.config.redstone-helper-config.option.defaultAutoWireMode": "Режим Auto Wire™ за замовчуванням",
-  "text.config.redstone-helper-config.enum.autoWire.auto_redstone": "Авто редстоун",
-  "text.config.redstone-helper-config.enum.autoWire.auto_line": "Редстоун лінія з повторювачами",
-  "text.config.redstone-helper-config.enum.autoWire.auto_repeater": "Тільки повторювачі",
-  "text.config.redstone-helper-config.enum.autoWire.auto_comparator": "Тільки компаратори",
-  "text.config.redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Компаратори з блоками",
-  "text.config.redstone-helper-config.category.quickTp": "Швидкий телепорт",
-  "text.config.redstone-helper-config.option.quickTp.quickTpDistance": "Відстань",
-  "text.config.redstone-helper-config.option.quickTp.quickTpIncludeFluids": "Враховувати рідини"
+  "redstone-helper.manual.manual": "Посібник",
+  "redstone-helper.manual.previous": "Назад",
+  "redstone-helper.manual.next": "Далі",
+  "redstone-helper.manual.modrinth": [
+    {
+      "text": "Modrinth",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.manual.github": [
+    {
+      "text": "Github",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://github.com/Bumer-32/Redstone-Helper"
+      }
+    }
+  ],
+  "redstone-helper.manual.crowdin": [
+    {
+      "text": "Crowdin",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://crowdin.com/project/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.manual.welcome.1": "",
+  "text.config.redstone-helper/redstone-helper-config.title": "Параметри Redstone Helper",
+  "text.config.redstone-helper/redstone-helper-config.section.general": "Загальні параметри",
+  "text.config.redstone-helper/redstone-helper-config.category.updateCheckNest": "Перевірка оновлень",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Автоматично перевіряти на оновлення",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForRelease": "Перевіряти на релізні версії",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForBeta": "Перевіряти на бета-версії",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForAlpha": "Перевіряти на альфа-версії",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.showUpToDateNotification": "Show \"Redstone Helper up to date!\" notification",
+  "text.config.redstone-helper/redstone-helper-config.section.interface": "Інтерфейс",
+  "text.config.redstone-helper/redstone-helper-config.option.darkPanels": "Темні панелі",
+  "text.config.redstone-helper/redstone-helper-config.option.enableBackgroundBlur": "Розмиття фону",
+  "text.config.redstone-helper/redstone-helper-config.option.toastPosition": "Розташування сповіщень",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_left": "Зверху зліва",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_left": "Зверху зліва ближче до центру",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_left": "Посередині ліворуч",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_left": "Знизу зліва ближче до центру",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_left": "Знизу зліва",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_right": "Зверху справа",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_right": "Зверху справа ближче до центру",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_right": "Посередині справа",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_right": "Знизу справа ближче до центру",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_right": "Знизу справа",
+  "text.config.redstone-helper/redstone-helper-config.section.features": "Налаштування функцій моду",
+  "text.config.redstone-helper/redstone-helper-config.option.defaultAutoWireMode": "Режим Auto Wire™ за замовчуванням",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_redstone": "Авто редстоун",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_line": "Редстоун лінія з повторювачами",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_repeater": "Тільки повторювачі",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_comparator": "Тільки компаратори",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Компаратори з блоками",
+  "text.config.redstone-helper/redstone-helper-config.category.quickTp": "Швидкий телепорт",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTp.quickTpDistance": "Відстань",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTp.quickTpIncludeFluids": "Враховувати рідини"
 }
