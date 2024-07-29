@@ -3,6 +3,7 @@
 package ua.pp.lumivoid.gui
 
 import io.wispforest.owo.ui.component.LabelComponent
+import io.wispforest.owo.ui.container.FlowLayout
 import io.wispforest.owo.ui.core.Easing
 import io.wispforest.owo.ui.core.Positioning
 import io.wispforest.owo.ui.hud.Hud
@@ -24,7 +25,7 @@ object HudToast {
     private val queue = mutableListOf<() -> Unit>()
     private var isToastActive = false
 
-    private val component = Hud.getComponent(Constants.TOAST_ID)
+    private val component = Hud.getComponent(Constants.TOAST_ID)!! as FlowLayout
 
     fun showToast(text: Text, short: Boolean) {
         logger.debug("Showing toast")
@@ -34,7 +35,7 @@ object HudToast {
         val scope = CoroutineScope(Dispatchers.Default)
         val config = Config()
 
-        component!!.root().childById(LabelComponent::class.java, "text")?.text(text)
+        component.childById(LabelComponent::class.java, "text")?.text(text)
 
         scope.launch {
             val player = MinecraftClient.getInstance().player
@@ -59,7 +60,7 @@ object HudToast {
                 delay(1000)
             }
 
-            component.root().childById(LabelComponent::class.java, "text")?.text(Text.empty())
+            component.childById(LabelComponent::class.java, "text")?.text(Text.empty())
 
             if (queue.isNotEmpty()) {
                 updateQueue()
