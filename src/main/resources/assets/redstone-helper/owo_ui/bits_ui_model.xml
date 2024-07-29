@@ -59,7 +59,7 @@
 
                         <label>
                             <positioning type="relative">50,65</positioning>
-                            <text translate="true">gui.redstone-helper.bit_calculator</text>
+                            <text translate="true">redstone-helper.feature.bits_operations.bit_calculator</text>
                         </label>
                         <text-box id="bitExpression">
                             <positioning type="relative">50,85</positioning>
