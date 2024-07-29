@@ -67,6 +67,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
             macro!!.commands.forEach {
                 addCommand(it)
             }
+            addCommand("")
         }
 
         if (new) {
