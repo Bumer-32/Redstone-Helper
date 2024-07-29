@@ -33,6 +33,7 @@ class CalcScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
         }
 
         result.text(Text.translatable("redstone-helper.feature.calculator.invalid_expression"))
+        expressionField.setMaxLength(999999999)
 
         expressionField.setChangedListener {
             logger.debug("Calculating new expression: ${expressionField.text}")
