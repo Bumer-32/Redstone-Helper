@@ -31,6 +31,7 @@ object SetBlockPacketReceiver {
                 }
 
                 access.player.serverWorld.setBlockState(message.blockPos, blockState)
+                access.player.serverWorld.updateNeighbors(message.blockPos.east(), blockState.block)
             }
 
         }
