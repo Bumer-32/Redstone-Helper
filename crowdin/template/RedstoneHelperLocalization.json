@@ -161,14 +161,16 @@
 
   "text.config.redstone-helper/redstone-helper-config.section.features": "Mod features options",
 
-  "text.config.redstone-helper/redstone-helper-config.option.defaultAutoWireMode": "Default Auto Wire™ mode",
+  "text.config.redstone-helper/redstone-helper-config.category.autoWireNest": "Auto Wire™",
+  "text.config.redstone-helper/redstone-helper-config.option.autoWireNest.defaultAutoWireMode": "Default Auto Wire™ mode",
+  "text.config.redstone-helper/redstone-helper-config.option.autoWireNest.rememberLastAutoWireMode": "Remember Auto Wire™ mode",
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_redstone": "Auto redstone",
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_line": "Redstone line with repeaters",
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_repeater": "Only repeaters",
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_comparator": "Only comparators",
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparators with blocks",
 
-  "text.config.redstone-helper/redstone-helper-config.category.quickTp": "Quick TP",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTp.quickTpDistance": "Distance",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTp.quickTpIncludeFluids": "IncludeFluids"
+  "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Quick TP",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Distance",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "IncludeFluids"
 }

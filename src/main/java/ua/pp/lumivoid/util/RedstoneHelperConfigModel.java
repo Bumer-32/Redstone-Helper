@@ -28,13 +28,20 @@ public class RedstoneHelperConfigModel {
     public ToastPositions toastPosition = ToastPositions.TOP_MIDDLE_RIGHT;
 
     @SectionHeader("features")
-    public AutoWire defaultAutoWireMode = ClientOptions.INSTANCE.getAutoWireMode();
+    @Nest
+    @Expanded
+    public AutoWireNest autoWireNest = new AutoWireNest();
+
+    public static class AutoWireNest {
+        public AutoWire defaultAutoWireMode = ClientOptions.INSTANCE.getAutoWireMode();
+        public Boolean rememberLastAutoWireMode = true;
+    }
 
     @Nest
     @Expanded
-    public QuickTp quickTp = new QuickTp();
+    public QuickTpNest quickTpNest = new QuickTpNest();
 
-    public static class QuickTp {
+    public static class QuickTpNest {
         @RangeConstraint(min = 1, max = 1000)
         public Integer quickTpDistance = 50;
         public Boolean quickTpIncludeFluids = false;

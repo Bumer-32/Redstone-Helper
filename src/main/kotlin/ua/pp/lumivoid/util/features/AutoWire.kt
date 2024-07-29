@@ -10,9 +10,11 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
 import net.minecraft.world.World
 import ua.pp.lumivoid.ClientOptions
+import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.packets.c2s.SetBlockC2SPacket
 import ua.pp.lumivoid.network.SendPacket
+import ua.pp.lumivoid.network.packets.c2s.SetBlockC2SPacket
+import ua.pp.lumivoid.util.JsonConfig
 import ua.pp.lumivoid.util.TickHandler
 import kotlin.math.abs
 
@@ -112,6 +114,15 @@ enum class AutoWire {
         fun next(current: AutoWire): AutoWire {
             val ordinal = current.ordinal
             return if (ordinal == values.lastIndex) values.first() else values[ordinal + 1]
+        }
+
+        fun setMode(mode: AutoWire) {
+            if (Config().rememberLastAutoWireMode) {
+                val data = JsonConfig.readConfig()
+                data.autoWireMode = mode
+                JsonConfig.writeConfig(data)
+            }
+            ClientOptions.autoWireMode = mode
         }
     }
 
