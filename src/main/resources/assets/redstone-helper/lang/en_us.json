@@ -196,7 +196,7 @@
   "gamerule.doContainerDrops": "Do container drops",
   "gamerule.doContainerDrops.description": "Controls resource drops from containers",
   "modmenu.nameTranslation.redstone-helper": "Redstone Helper",
-  "modmenu.descriptionTranslation.redstone-helper": "Mod which must to help you with redstone!",
+  "modmenu.descriptionTranslation.redstone-helper": "Mod which must you to help you with redstone!",
   "modmenu.summaryTranslation.redstone-helper": "Redstone helper - your friend!",
   "text.config.redstone-helper/redstone-helper-config.title": "Redstone Helper Settings",
   "text.config.redstone-helper/redstone-helper-config.section.general": "General settings",
@@ -231,5 +231,5 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparators with blocks",
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Quick TP",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Distance",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "IncludeFluids"
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids"
 }
