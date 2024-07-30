@@ -23,7 +23,7 @@
 
                         <button id="selectMode">
                             <positioning type="relative">50,65</positioning>
-                            <text translate="true">redstone-helper.feature.auto_wire.auto_wire_on</text>
+                            <text translate="true">redstone-helper.feature.auto_wire.select_auto_wire_mode</text>
                         </button>
 
                         <label id="currentMode">

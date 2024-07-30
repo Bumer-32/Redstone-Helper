@@ -2,7 +2,9 @@ package ua.pp.lumivoid.util
 
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
+import org.lwjgl.glfw.GLFW
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.util.features.Macros
 import java.io.File
 
 object JsonConfig {
@@ -31,6 +33,26 @@ object JsonConfig {
         }
         val data = JsonConfigData(modVersion = Constants.MOD_VERSION)
         writeConfig(data)
+
+        Macros.addMacro(
+            Macro(
+                "redstoner",
+                GLFW.GLFW_KEY_UNKNOWN,
+                false,
+                mutableListOf( // standard redstoner macro from redstone tools
+                    "/redstone-helper notification add-to-queue false Setting redstoner world!",
+                    "/gamerule doTileDrops false",
+                    "/gamerule doTraderSpawning false",
+                    "/gamerule doWeatherCycle false",
+                    "/gamerule doDaylightCycle false",
+                    "/gamerule doMobSpawning false",
+                    // "/gamerule doContainerDrops false", TODO: add gamerule
+                    "/time set noon",
+                    "/weather clear"
+                )
+            )
+        )
+
         return data
     }
 

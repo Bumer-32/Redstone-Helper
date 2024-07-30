@@ -17,8 +17,9 @@ public class Config {
     public Boolean enableBackgroundBlur = CONFIG.enableBackgroundBlur();
     public ToastPositions toastPosition = CONFIG.toastPosition();
 
-    public AutoWire defaultAutoWireMode = CONFIG.defaultAutoWireMode();
+    public AutoWire defaultAutoWireMode = CONFIG.autoWireNest.defaultAutoWireMode();
+    public Boolean rememberLastAutoWireMode = CONFIG.autoWireNest.rememberLastAutoWireMode();
 
-    public Integer quickTpDistance = CONFIG.quickTp.quickTpDistance();
-    public Boolean quickTpIncludeFluids = CONFIG.quickTp.quickTpIncludeFluids();
+    public Integer quickTpDistance = CONFIG.quickTpNest.quickTpDistance();
+    public Boolean quickTpIncludeFluids = CONFIG.quickTpNest.quickTpIncludeFluids();
 }
