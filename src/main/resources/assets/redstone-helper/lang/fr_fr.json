@@ -231,5 +231,5 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparateurs avec des blocs",
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Tp rapide",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Distance",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "IncludeFluids"
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "FluidesInclus"
 }
