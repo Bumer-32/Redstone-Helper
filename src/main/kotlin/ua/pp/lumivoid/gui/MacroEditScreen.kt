@@ -58,6 +58,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         commandsLayout!!.gap(1)
         macroName.text = macro!!.name
         macroName.setCursorToStart(false)
+        macroName.setMaxLength(999999999)
         title.text(Text.translatable("redstone-helper.feature.macro.edit_macro_title", macro!!.name))
 
         if (new) {
@@ -200,6 +201,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                                     textWidget.text = command
                                     textWidget.setCursorToStart(false)
                                     textWidget.id("text_widget")
+                                    textWidget.setMaxLength(256)
                                     if (textWidget.text == "") {
                                         textWidget.setSuggestion(Text.translatable("redstone-helper.feature.macro.add_command").string)
                                     } else {

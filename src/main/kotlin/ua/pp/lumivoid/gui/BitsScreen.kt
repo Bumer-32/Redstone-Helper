@@ -48,7 +48,9 @@ class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
         toBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
         fromBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
         bitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
+        toBitExpressionField.setMaxLength(999999999)
         bitExpressionField.setMaxLength(999999999)
+        fromBitExpressionField.setMaxLength(999999999)
 
         var radix = 2
 
