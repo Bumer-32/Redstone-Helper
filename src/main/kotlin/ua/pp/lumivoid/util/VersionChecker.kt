@@ -119,7 +119,7 @@ object VersionChecker {
             return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UNABLETOCHECKVERSION)
         }
 
-        return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE, version)
+        return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_NEEDUPDATE, version)
     }
 
     fun checkRedstoneHelperVersionString(): String {
