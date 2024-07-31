@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.util
+package ua.pp.lumivoid.commands.commandsuggestionproviders
 
 import com.mojang.brigadier.context.CommandContext
 import com.mojang.brigadier.suggestion.SuggestionProvider
@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import ua.pp.lumivoid.util.features.Macros
 import java.util.concurrent.CompletableFuture
 
-class MacrosCommandSuggestionProvider: SuggestionProvider<FabricClientCommandSource>{
+object MacrosCommandSuggestionProvider: SuggestionProvider<FabricClientCommandSource>{
     override fun getSuggestions(context: CommandContext<FabricClientCommandSource>, builder: SuggestionsBuilder): CompletableFuture<Suggestions> {
         val macros = Macros.listMacros()
 

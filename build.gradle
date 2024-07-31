@@ -19,6 +19,10 @@ base {
 
 repositories {
 	maven { url 'https://maven.wispforest.io' }
+	maven {
+		name = "WorldEdit Maven"
+		url = "https://maven.enginehub.org/repo/"
+	}
 }
 
 modrinth {
@@ -52,9 +56,14 @@ dependencies {
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
 
 	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${project.kotlinx_coroutines_version}"
-	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${project.kotlinx_serialization}")
+	implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${project.kotlinx_serialization_version}"
 
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
+
+	modImplementation("com.sk89q.worldedit:worldedit-fabric-mc${project.minecraft_version}:${project.world_edit_version}") {
+		exclude group: 'it.unimi.dsi', module: 'fastutil'
+		exclude group: 'com.google.guava', module: 'guava'
+	}
 }
 
 processResources {

@@ -1,4 +1,12 @@
 {
+  "redstone-helper.mod.redstone_helper_title": "Redstone Helper",
+  "redstone-helper.mod.short_redstone_helper_title": "RH",
+  "redstone-helper.mod.styled_short_redstone_helper_title": [
+    {"text": "[", "color": "red"},
+    {"text": "RH"},
+    {"text": "]", "color": "red"}
+  ],
+
   "redstone-helper.keybinding.category.basic": "Redstone Helper",
   "redstone-helper.keybinding.key.calc": "Open calculator",
   "redstone-helper.keybinding.key.switch_autowire": "Switch Auto Wire™",
@@ -61,6 +69,8 @@
 
   "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Calculated signal: %d, item: %d",
 
+  "redstone-helper.feature.colorcode.success": "Successfully colored %d blocks %d",
+
   "redstone-helper.stuff.version_checker.up_to_date":  "Redstone Helper is up to date!",
   "redstone-helper.stuff.version_checker.need_update":  [
     "Old version of Redstone Helper detected!\n",
@@ -84,6 +94,7 @@
   "redstone-helper.stuff.info.error.invalid_block_inventory": [{"text": "Can't get block inventory!", "color": "red"}],
   "redstone-helper.stuff.info.error.missing_arguments": [{"text": "Missing arguments!", "color": "red"}],
   "redstone-helper.stuff.info.error.no_permission": [{"text": "You don't have permission to use this", "color": "red"}],
+  "redstone-helper.stuff.info.error.select_region": [{"text": "Select region!", "color": "red"}],
 
   "redstone-helper.stuff.funny.1": "Why would you want this??",
   "redstone-helper.stuff.funny.2": "Wtf are you going to use this for?",
@@ -130,9 +141,8 @@
   "gamerule.doContainerDrops.description": "Controls resource drops from containers",
 
   "modmenu.nameTranslation.redstone-helper": "Redstone Helper",
-  "modmenu.descriptionTranslation.redstone-helper": "Mod which must to help you with redstone!",
+  "modmenu.descriptionTranslation.redstone-helper": "Mod which must you to help you with redstone!",
   "modmenu.summaryTranslation.redstone-helper": "Redstone helper - your friend!",
-
   "text.config.redstone-helper/redstone-helper-config.title": "Redstone Helper Settings",
 
   "text.config.redstone-helper/redstone-helper-config.section.general": "General settings",
@@ -164,7 +174,6 @@
   "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_right": "Bottom right",
 
   "text.config.redstone-helper/redstone-helper-config.section.features": "Mod features options",
-
   "text.config.redstone-helper/redstone-helper-config.category.autoWireNest": "Auto Wire™",
   "text.config.redstone-helper/redstone-helper-config.option.autoWireNest.defaultAutoWireMode": "Default Auto Wire™ mode",
   "text.config.redstone-helper/redstone-helper-config.option.autoWireNest.rememberLastAutoWireMode": "Remember Auto Wire™ mode",
@@ -173,8 +182,7 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_repeater": "Only repeaters",
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_comparator": "Only comparators",
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparators with blocks",
-
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Quick TP",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Distance",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "IncludeFluids"
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids"
 }
