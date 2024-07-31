@@ -31,7 +31,7 @@ object RedstoneGiveSignalCommandCommand {
             .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/redstone-give-signal: Missing arguments!")
-                context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
+                context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                 1
             }
             .then(CommandManager.argument("signal", IntegerArgumentType.integer(0, 15))
@@ -90,7 +90,7 @@ object RedstoneGiveSignalCommandCommand {
                 inventorySize = 9
             }
             else -> {
-                context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.invalid_block_inventory"))
+                context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_INVALIDBLOCKINVENTORY))
                 return
             }
         } // Yeah yeah, shit code

@@ -20,9 +20,9 @@ object InstaLampCommand {
                 Options.isInstantLamps = !Options.isInstantLamps
                 logger.debug("/instaLamp: Switch Instant Lamps state to: ${Options.isInstantLamps}")
                 if (Options.isInstantLamps) {
-                    context.source.sendFeedback({ Text.translatable("redstone-helper.feature.insta_lamps.insta_on") }, true)
+                    context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.FEATURE_INSTALAMPS_INSTAON) }, true)
                 } else {
-                    context.source.sendFeedback({ Text.translatable("redstone-helper.feature.insta_lamps.insta_off") }, true)
+                    context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.FEATURE_INSTALAMPS_INSTAOFF) }, true)
                 }
                 1
             }
@@ -30,9 +30,9 @@ object InstaLampCommand {
                 .executes { context: CommandContext<ServerCommandSource> ->
                     logger.debug("/instaLamp: Current instaLamp state: ${Options.isInstantLamps}")
                     if (Options.isInstantLamps) {
-                        context.source.sendFeedback({ Text.translatable("redstone-helper.feature.insta_lamps.insta_on") }, false)
+                        context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.FEATURE_INSTALAMPS_INSTAON) }, false)
                     } else {
-                        context.source.sendFeedback({ Text.translatable("redstone-helper.feature.insta_lamps.insta_off") }, false)
+                        context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.FEATURE_INSTALAMPS_INSTAOFF) }, false)
                     }
                     1
                 }

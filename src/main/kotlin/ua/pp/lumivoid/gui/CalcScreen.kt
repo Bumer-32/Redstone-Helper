@@ -32,7 +32,7 @@ class CalcScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
             rootComponent.surface(Surface.VANILLA_TRANSLUCENT)
         }
 
-        result.text(Text.translatable("redstone-helper.feature.calculator.invalid_expression"))
+        result.text(Text.translatable(Constants.LocalizeIds.FEATURE_CALCULATOR_INVALIDEXPRESSION))
         expressionField.setMaxLength(999999999)
 
         expressionField.setChangedListener {
@@ -40,9 +40,9 @@ class CalcScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
 
             val calcResult = Calculate.calc(expressionField.text)
             if (calcResult.isNaN()) {
-                result.text(Text.translatable("redstone-helper.feature.calculator.invalid_expression"))
+                result.text(Text.translatable(Constants.LocalizeIds.FEATURE_CALCULATOR_INVALIDEXPRESSION))
             } else {
-                result.text(Text.translatable("redstone-helper.feature.calculator.result", calcResult))
+                result.text(Text.translatable(Constants.LocalizeIds.FEATURE_CALCULATOR_RESULT, calcResult))
             }
         }
     }

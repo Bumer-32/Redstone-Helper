@@ -45,9 +45,9 @@ class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
             rootComponent.surface(Surface.VANILLA_TRANSLUCENT)
         }
 
-        toBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
-        fromBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
-        bitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
+        toBitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_INVALIDEXPRESSION))
+        fromBitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_INVALIDEXPRESSION))
+        bitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_INVALIDEXPRESSION))
         toBitExpressionField.setMaxLength(999999999)
         bitExpressionField.setMaxLength(999999999)
         fromBitExpressionField.setMaxLength(999999999)
@@ -59,33 +59,33 @@ class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
 
             try {
                 if (radix == 2) {
-                    toBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.result", Integer.toBinaryString(toBitExpressionField.text.toInt())))
+                    toBitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_RESULT, Integer.toBinaryString(toBitExpressionField.text.toInt())))
                 } else {
-                    toBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.result", "#" + Integer.toHexString(toBitExpressionField.text.toInt())))
+                    toBitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_RESULT, "#" + Integer.toHexString(toBitExpressionField.text.toInt())))
                 }
             } catch (e: NumberFormatException) {
                 logger.error("Not a number entered $e")
-                toBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
+                toBitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_INVALIDEXPRESSION))
             }
         }
         fromBitExpressionField.setChangedListener {
             logger.debug("Transform ${fromBitExpressionField.text} from bit")
 
             try {
-                fromBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.result", Integer.parseInt(fromBitExpressionField.text, radix)))
+                fromBitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_RESULT, Integer.parseInt(fromBitExpressionField.text, radix)))
             } catch (e: NumberFormatException) {
-                fromBitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
+                fromBitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_INVALIDEXPRESSION))
             }
         }
 
         hex.onChanged { checked ->
             if (checked) {
                 radix = 16
-                toBitText.text(Text.translatable("redstone-helper.feature.bits_operations.to_hex"))
-                fromBitText.text(Text.translatable("redstone-helper.feature.bits_operations.from_hex"))
+                toBitText.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_TOHEX))
+                fromBitText.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_FROMHEX))
             } else {
-                toBitText.text(Text.translatable("redstone-helper.feature.bits_operations.to_bit"))
-                fromBitText.text(Text.translatable("redstone-helper.feature.bits_operations.from_bit"))
+                toBitText.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_TOBIT))
+                fromBitText.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_FROMBIT))
                 radix = 2
             }
         }
@@ -97,9 +97,9 @@ class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
 
             val calcResult = Calculate.calc(Calculate.convertToRadix10(bitExpressionField.text))
             if (calcResult.isNaN()) {
-                bitResult.text(Text.translatable("redstone-helper.feature.bits_operations.invalid_expression"))
+                bitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_INVALIDEXPRESSION))
             } else {
-                bitResult.text(Text.translatable("redstone-helper.feature.bits_operations.bit_result", calcResult, Integer.toBinaryString(calcResult.toInt()), "#" + Integer.toHexString(calcResult.toInt())))
+                bitResult.text(Text.translatable(Constants.LocalizeIds.FEATURE_BITSOPERATIONS_BITRESULT, calcResult, Integer.toBinaryString(calcResult.toInt()), "#" + Integer.toHexString(calcResult.toInt())))
             }
         }
     }

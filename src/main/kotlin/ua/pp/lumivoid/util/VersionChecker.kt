@@ -30,7 +30,7 @@ object VersionChecker {
         var versionType = ""
 
         @Suppress("DEPRECATION")
-        val response = URL(Constants.MODRINTH_API_URL).readText()
+        val response = URL(Constants.URLS.MODRINTH_API_URL).readText()
         Json.parseToJsonElement(response).jsonArray.forEach { version ->
             newestVersion = version.jsonObject["version_number"]!!.jsonPrimitive.content
             versionType = version.jsonObject["version_type"]!!.jsonPrimitive.content // alpha, beta, release
@@ -89,13 +89,13 @@ object VersionChecker {
                 config.checkForAlpha
             )
 
-            if (checkerText == Text.translatable("redstone-helper.stuff.version_checker.up_to_date")) {
+            if (checkerText == Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE)) {
                 if (config.showUpToDateNotification) {
                     HudToast.addToastToQueue(checkerText)
                 }
             } else {
                 HudToast.addToastToQueue(checkerText)
-                HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.version_checker.to_check_version"))
+                HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_TOCHECKVERSION))
             }
         }
     }
@@ -108,18 +108,18 @@ object VersionChecker {
             version = thisVersion
 
             if (JsonConfig.readConfig().versionCheckSkip == version) {
-                return Text.translatable("redstone-helper.stuff.version_checker.up_to_date")
+                return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE)
             }
 
             if (isUpToDate) {
-                return Text.translatable("redstone-helper.stuff.version_checker.up_to_date")
+                return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE)
             }
         } catch (e: Exception) {
             logger.error("Error while checking version of Redstone-Helper", e)
-            return Text.translatable("redstone-helper.stuff.version_checker.unable_to_check_version")
+            return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UNABLETOCHECKVERSION)
         }
 
-        return Text.translatable("redstone-helper.stuff.version_checker.up_to_date", version)
+        return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE, version)
     }
 
     fun checkRedstoneHelperVersionString(): String {

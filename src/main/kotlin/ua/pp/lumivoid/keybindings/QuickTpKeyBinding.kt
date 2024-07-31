@@ -16,10 +16,10 @@ object QuickTpKeyBinding {
     private val logger = Constants.LOGGER
 
     private val quickTpKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding("redstone-helper.keybinding.key.quickTp",
+        KeyBinding(Constants.LocalizeIds.KEYBINDING_KEY_QUICKTP,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_G,
-            "redstone-helper.keybinding.category.basic"
+            Constants.LocalizeIds.KEYBINDING_CATEGORY_BASIC
         )
     )
 
@@ -32,7 +32,7 @@ object QuickTpKeyBinding {
                     val config = Config()
                     SendPacket.sendPacket(QuickTeleportC2SPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
                 } else {
-                    HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.no_permission"), true)
+                    HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_NOPERMISSION), true)
                 }
             }
         }

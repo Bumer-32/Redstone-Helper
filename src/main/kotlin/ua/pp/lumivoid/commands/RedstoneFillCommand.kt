@@ -32,23 +32,20 @@ object RedstoneFillCommand {
             .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/redstone-fill: Missing arguments!")
-                context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
+                context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                 1
             }
             .then(ClientCommandManager.argument("item", ItemStackArgumentType.itemStack(registryAccess))
                 .executes { context ->
                     logger.debug("/redstone-fill: Missing arguments!")
-                    context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
+                    context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                     1
                 }
                 .then(
                     ClientCommandManager.argument("count", IntegerArgumentType.integer(0, 1728))
                     .executes { context ->
                         if (IntegerArgumentType.getInteger(context, "count") == 0) {
-                            val funnyInt = Random.nextInt(
-                                1,
-                                Text.translatable("dontlocalize.redstone-helper.stuff.funny_count").string.toInt() + 1
-                            )
+                            val funnyInt = Random.nextInt(1, Constants.LocalizeIds.FUNNY_COUNT + 1)
                             context.source.sendFeedback(Text.translatable("redstone-helper.stuff.funny.$funnyInt"))
                         } else {
                             logger.debug("/redstone-fill: Trying to fill inventory with blocks")
@@ -68,11 +65,11 @@ object RedstoneFillCommand {
                                     SendPacket.sendPacket(FillInventoryC2SPacket(blockPos, Registries.ITEM.getId(item), amount, Constants.aMinecraftClass))
                                 } catch (e: NullPointerException) {
                                     logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
-                                    HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.invalid_block_inventory"))
+                                    HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_INVALIDBLOCKINVENTORY))
                                 }
                             } else {
                                 logger.debug("/calc-redstone-signal: No block in crosshair target")
-                                HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.block_not_found"))
+                                HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_BLOCKNOTFOUND))
                             }
                         }
                         1

@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import ua.pp.lumivoid.Constants;
 import ua.pp.lumivoid.gui.MacroScreen;
 
 import java.util.List;
@@ -23,6 +24,6 @@ public abstract class AddMacroButtonToSettingsMixin extends GameOptionsScreen {
 
 	@Inject(at = @At("TAIL"), method = "addOptions()V")
 	private void addMacroButton(CallbackInfo ci) {
-		Objects.requireNonNull(this.body).addAll(List.of(ButtonWidget.builder(Text.translatable("redstone-helper.feature.macro.settings_macros_button"), buttonWidget -> Objects.requireNonNull(this.client).setScreen(new MacroScreen(this))).build()));
+		Objects.requireNonNull(this.body).addAll(List.of(ButtonWidget.builder(Text.translatable(Constants.LocalizeIds.FEATURE_MACRO_SETTINGSMACROSBUTTON), buttonWidget -> Objects.requireNonNull(this.client).setScreen(new MacroScreen(this))).build()));
 	}
 }
