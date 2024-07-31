@@ -8,7 +8,7 @@ import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.util.DyeColor
 import java.util.concurrent.CompletableFuture
 
-object ColorCommandSuggestionProvider : SuggestionProvider<ServerCommandSource> {
+object ColorCommandSuggestionProvider: SuggestionProvider<ServerCommandSource> {
     override fun getSuggestions(context: CommandContext<ServerCommandSource>, builder: SuggestionsBuilder): CompletableFuture<Suggestions> {
         DyeColor.entries.forEach { dyeColor ->
             builder.suggest(dyeColor.name.lowercase())
