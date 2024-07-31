@@ -1,4 +1,19 @@
 {
+  "redstone-helper.mod.redstone_helper_title": "Redstone Helper",
+  "redstone-helper.mod.short_redstone_helper_title": "RH",
+  "redstone-helper.mod.styled_short_redstone_helper_title": [
+    {
+      "text": "[",
+      "color": "red"
+    },
+    {
+      "text": "RH"
+    },
+    {
+      "text": "]",
+      "color": "red"
+    }
+  ],
   "redstone-helper.keybinding.category.basic": "Redstone Helper",
   "redstone-helper.keybinding.key.calc": "Ouvrir la calculatrice",
   "redstone-helper.keybinding.key.switch_autowire": "Commuter le câble automatique",
@@ -53,6 +68,7 @@
   "redstone-helper.feature.airplace.airplace_on": "Airplace enabled",
   "redstone-helper.feature.airplace.airplace_off": "Airplace disabled",
   "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Signal calculé: %d, item: %d",
+  "redstone-helper.feature.colorcode.success": "Successfully colored %d blocks %d",
   "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper est à jour!",
   "redstone-helper.stuff.version_checker.need_update": [
     "Une version plus récente de Redstone Helper détectée!\n",
@@ -127,6 +143,12 @@
       "color": "red"
     }
   ],
+  "redstone-helper.stuff.info.error.select_region": [
+    {
+      "text": "Select region!",
+      "color": "red"
+    }
+  ],
   "redstone-helper.stuff.funny.1": "Pourquoi voulez-vous ça ??",
   "redstone-helper.stuff.funny.2": "Wtf qu'allez-vous faire avec cela ?",
   "redstone-helper.stuff.funny.3": "Pourquoi faire ?",
@@ -196,7 +218,7 @@
   "gamerule.doContainerDrops": "Do container drops",
   "gamerule.doContainerDrops.description": "Controls resource drops from containers",
   "modmenu.nameTranslation.redstone-helper": "Redstone Helper",
-  "modmenu.descriptionTranslation.redstone-helper": "Mod which must to help you with redstone!",
+  "modmenu.descriptionTranslation.redstone-helper": "Mod which must you to help you with redstone!",
   "modmenu.summaryTranslation.redstone-helper": "Redstone helper - your friend!",
   "text.config.redstone-helper/redstone-helper-config.title": "Paramètres de Redstone Helper",
   "text.config.redstone-helper/redstone-helper-config.section.general": "Paramètres généraux",
@@ -231,5 +253,5 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparateurs avec des blocs",
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Tp rapide",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Distance",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "FluidesInclus"
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids"
 }
