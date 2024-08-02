@@ -50,7 +50,6 @@ object ColorcodeCommand {
                 .executes { context ->
                     logger.debug("//colorcode: Executing colorcode command")
 
-                    @Suppress("ReplaceSizeCheckWithIsNotEmpty")
                     try {
                         val selection = WorldEdit.getInstance().sessionManager.get(FabricAdapter.adaptPlayer(context.source.player)).selection
 

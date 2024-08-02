@@ -19,6 +19,7 @@ object ClientCommandsRegistration {
             ClearInventoryCommand.register(dispatcher)
             AirPlaceCommand.register(dispatcher)
             MacroCommand.register(dispatcher)
+            GlassCommand.register(dispatcher)
         }
     }
 }
