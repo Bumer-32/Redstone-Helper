@@ -20,6 +20,7 @@ object ClientCommandsRegistration {
             AirPlaceCommand.register(dispatcher)
             MacroCommand.register(dispatcher)
             GlassCommand.register(dispatcher)
+            //CopyStateCommand.register(dispatcher)
         }
     }
 }

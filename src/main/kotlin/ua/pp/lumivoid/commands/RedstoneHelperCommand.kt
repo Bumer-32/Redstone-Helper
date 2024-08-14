@@ -4,7 +4,6 @@ package ua.pp.lumivoid.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.BoolArgumentType
-import com.mojang.brigadier.arguments.IntegerArgumentType
 import com.mojang.brigadier.arguments.StringArgumentType
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
@@ -29,18 +28,6 @@ object RedstoneHelperCommand {
                 context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                 1
             }
-            .then(ClientCommandManager.literal("help")
-                .executes { context ->
-                    context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.HELP_HELP))
-                    1
-                }
-            )
-            .then(ClientCommandManager.literal("version")
-                .executes { context ->
-                    context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.HELP_VERSION, Constants.MOD_VERSION))
-                    1
-                }
-            )
             .then(ClientCommandManager.literal("check-updates")
                 .executes { context ->
                     val checkerText = VersionChecker.checkRedstoneHelperVersionLocalized(
@@ -118,28 +105,6 @@ object RedstoneHelperCommand {
                 )
             )
             .then(ClientCommandManager.literal("test")
-                .then(ClientCommandManager.literal("notification")
-                    .then(ClientCommandManager.argument("count", IntegerArgumentType.integer())
-                        .then(ClientCommandManager.argument("short", BoolArgumentType.bool())
-                            .executes { context ->
-                                context.source.sendFeedback(Text.literal("Testing notification"))
-                                for (i in 1..IntegerArgumentType.getInteger(context, "count")) {
-                                    HudToast.addToastToQueue(Text.literal(" Test notification $i\n Hello World!\nYour ad here"), BoolArgumentType.getBool(context, "short"))
-                                }
-                                1
-                            }
-                        )
-                    )
-                )
-                .then(ClientCommandManager.literal("raw-notification")
-                    .then(ClientCommandManager.argument("short", BoolArgumentType.bool())
-                        .executes { context ->
-                            context.source.sendFeedback(Text.literal("Testing raw notification"))
-                            HudToast.showToast(Text.literal("Test raw notification"), BoolArgumentType.getBool(context, "short"))
-                            1
-                        }
-                    )
-                )
                 .then(ClientCommandManager.literal("help")
                     .executes {
                         logger.debug("/redstone-helper: Opening manual menu")

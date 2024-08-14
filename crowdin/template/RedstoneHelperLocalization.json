@@ -96,6 +96,8 @@
   "redstone-helper.stuff.info.error.no_permission": [{"text": "You don't have permission to use this", "color": "red"}],
   "redstone-helper.stuff.info.error.select_region": [{"text": "Select region!", "color": "red"}],
 
+  "redstone-helper.system.info.server_incompatible_version": "Redstone Helper version not same as client!\nSome functions isn't avail\nClient: %d Server: %d",
+
   "redstone-helper.stuff.funny.1": "Why would you want this??",
   "redstone-helper.stuff.funny.2": "Wtf are you going to use this for?",
   "redstone-helper.stuff.funny.3": "What for?",
@@ -106,27 +108,6 @@
   "redstone-helper.stuff.funny.8": "Wow, what a fancy but otherwise useless thing.",
 
   "dontlocalize.redstone-helper.stuff.funny_count": "8",
-
-  "redstone-helper.help.version": "Mod version: %d",
-  "redstone-helper.help.help": [
-    "Here all commands of Redstone Helper:\n",
-    "/redstone-helper\n",
-    "/calc\n",
-    "/autowire\n",
-    "/autodust\n",
-    "/bits\n",
-    "/instaLamp\n",
-    "/redstone-fill\n",
-    "/redstone-fill-signal\n",
-    "/calc-redstone-signal\n",
-    "/redstone-give\n",
-    "/redstone-give-signal\n",
-    "/ss\n",
-    "/clear-inventory\n",
-    "/quicktp\n",
-    "/airplace\n",
-    "/macro\n"
-  ],
 
   "redstone-helper.manual.manual": "Manual",
   "redstone-helper.manual.previous": "Previous",

@@ -103,15 +103,14 @@ object Constants {
         const val STUFF_VERSIONCHECKER_SKIPPING = "redstone-helper.stuff.version_checker.skipping"
         const val STUFF_VERSIONCHECKER_CLEARSKIPS = "redstone-helper.stuff.version_checker.clear_skips"
 
+        const val SYSTEM_INFO_SERVERINCOMPATIBLEVERSION = "redstone-helper.system.info.server_incompatible_version"
+
         const val STUFF_INFO_SUCCESS = "redstone-helper.stuff.info.success"
         const val STUFF_INFO_ERROR_BLOCKNOTFOUND = "redstone-helper.stuff.info.error.block_not_found"
         const val STUFF_INFO_ERROR_INVALIDBLOCKINVENTORY = "redstone-helper.stuff.info.error.invalid_block_inventory"
         const val STUFF_INFO_ERROR_MISSINGARGUMENTS = "redstone-helper.stuff.info.error.missing_arguments"
         const val STUFF_INFO_ERROR_NOPERMISSION = "redstone-helper.stuff.info.error.no_permission"
         const val STUFF_INFO_ERROR_SELECTREGION = "redstone-helper.stuff.info.error.select_region"
-
-        const val HELP_VERSION = "redstone-helper.help.version"
-        const val HELP_HELP = "redstone-helper.help.help"
 
         const val MANUAL_MANUAL = "redstone-helper.manual.manual"
         const val MANUAL_PREVIOUS = "redstone-helper.manual.previous"
