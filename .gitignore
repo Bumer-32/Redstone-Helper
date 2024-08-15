@@ -39,3 +39,5 @@ replay_*.log
 *.hprof
 *.jfr
 .lh/.lhignore
+
+.kotlin

@@ -24,7 +24,7 @@ object MacrosKeyBindings {
     fun register() {
         updateMacros()
         ClientTickEvents.END_CLIENT_TICK.register {
-            macrosKeys.forEach { name, key ->
+            macrosKeys.forEach { (name, key) ->
                 while (key.wasPressed()) {
                     logger.info("Executing macro $name")
                     Macros.executeMacro(name)

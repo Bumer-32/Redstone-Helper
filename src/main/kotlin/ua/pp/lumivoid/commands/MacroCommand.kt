@@ -7,8 +7,8 @@ import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.commands.commandsuggestionproviders.MacrosCommandSuggestionProvider
 import ua.pp.lumivoid.gui.MacroScreen
-import ua.pp.lumivoid.util.MacrosCommandSuggestionProvider
 import ua.pp.lumivoid.util.features.Macros
 
 object MacroCommand {
@@ -26,14 +26,14 @@ object MacroCommand {
                 1
             }
             .then(ClientCommandManager.argument("macro", StringArgumentType.greedyString())
-                .suggests(MacrosCommandSuggestionProvider())
+                .suggests(MacrosCommandSuggestionProvider)
                 .executes { context ->
                     logger.debug("/macro: Executing macro")
                     val macro = Macros.readMacro(StringArgumentType.getString(context, "macro"))
                     if (macro != null) {
                         Macros.executeMacro(macro)
                     } else {
-                        context.source.sendError(Text.translatable("redstone-helper.feature.macro.macro_not_found"))
+                        context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_MACRONOTFOUND))
                     }
                     1
                 }

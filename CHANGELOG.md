@@ -1,5 +1,5 @@
-Kon'nichiwa! Update 0.2.1
+Kon'nichiwa! Update 0.2.2
 
+<p>added /glass command</p>
+<p>added //colorcode command</p>
 <p>fixed few bugs</p>
-<p>increased limits for text areas in all redstone helper gui</p>
-<p>added remember last redstone helper mode</p>

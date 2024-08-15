@@ -3,6 +3,7 @@ package ua.pp.lumivoid.registration
 import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
+import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.commands.*
 
 object ClientCommandsRegistration {
@@ -19,6 +20,11 @@ object ClientCommandsRegistration {
             ClearInventoryCommand.register(dispatcher)
             AirPlaceCommand.register(dispatcher)
             MacroCommand.register(dispatcher)
+            GlassCommand.register(dispatcher)
+            //CopyStateCommand.register(dispatcher)
+
+            val config = Config()
+            if (config.customQuickTpEnabled) CustomQuickTpCommand.register(dispatcher)
         }
     }
 }

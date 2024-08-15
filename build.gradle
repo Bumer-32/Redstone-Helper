@@ -1,8 +1,8 @@
 import com.modrinth.minotaur.dependencies.ModDependency
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id 'fabric-loom' version '1.6.5'
-	id 'maven-publish'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
   	id "org.jetbrains.kotlin.jvm" version "2.0.10"
 	id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.10'
 	id "com.modrinth.minotaur" version "2.+"
@@ -19,6 +19,10 @@ base {
 
 repositories {
 	maven { url 'https://maven.wispforest.io' }
+	maven {
+		name = "WorldEdit Maven"
+		url = "https://maven.enginehub.org/repo/"
+	}
 }
 
 modrinth {
@@ -52,9 +56,14 @@ dependencies {
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
 
 	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${project.kotlinx_coroutines_version}"
-	implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${project.kotlinx_serialization}")
+	implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:${project.kotlinx_serialization_version}"
 
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
+
+	modImplementation("com.sk89q.worldedit:worldedit-fabric-mc${project.world_edit_version}") {
+		exclude group: 'it.unimi.dsi', module: 'fastutil'
+		exclude group: 'com.google.guava', module: 'guava'
+	}
 }
 
 processResources {
@@ -69,7 +78,7 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 21
 }
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+tasks.withType(KotlinCompile).configureEach {
 	kotlinOptions {
 		jvmTarget = 21
 	}

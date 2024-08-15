@@ -22,4 +22,8 @@ public class Config {
 
     public Integer quickTpDistance = CONFIG.quickTpNest.quickTpDistance();
     public Boolean quickTpIncludeFluids = CONFIG.quickTpNest.quickTpIncludeFluids();
+
+    public Boolean customQuickTpEnabled = CONFIG.customQuickTpNest.customQuickTpEnabled();
+    public Integer customQuickTpDistance = CONFIG.customQuickTpNest.customQuickTpDistance();
+    public Boolean customQuickTpIncludeFluids = CONFIG.customQuickTpNest.customQuickTpIncludeFluids();
 }

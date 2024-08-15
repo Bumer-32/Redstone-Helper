@@ -15,10 +15,10 @@ object NextAutoWireModeKeyBinding {
     private val logger = Constants.LOGGER
 
     private val nextAutoWireKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding("redstone-helper.keybinding.key.next_autowire_mode",
+        KeyBinding(Constants.LOCALIZEIDS.KEYBINDING_KEY_NEXTAUTOWIREMODE,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_PERIOD,
-            "redstone-helper.keybinding.category.basic"
+            Constants.LOCALIZEIDS.KEYBINDING_CATEGORY_BASIC
         )
     )
 
@@ -29,9 +29,9 @@ object NextAutoWireModeKeyBinding {
             while (nextAutoWireKeyBinding.wasPressed()) {
                 if (client.player!!.commandSource.hasPermissionLevel(2)) {
                     AutoWire.setMode(AutoWire.next(ClientOptions.autoWireMode))
-                    HudToast.addToastToQueue(Text.translatable("redstone-helper.feature.auto_wire.current_auto_wire_mode", Text.translatable("redstone-helper.feature.auto_wire.modes.${ClientOptions.autoWireMode.toString().lowercase()}")), true)
+                    HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.FEATURE_AUTOWIRE_CURRENTAUTOWIREMODE, Text.translatable("redstone-helper.feature.auto_wire.modes.${ClientOptions.autoWireMode.toString().lowercase()}")), true)
                 } else {
-                    HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.no_permission"), true)
+                    HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_NOPERMISSION), true)
                 }
             }
         }

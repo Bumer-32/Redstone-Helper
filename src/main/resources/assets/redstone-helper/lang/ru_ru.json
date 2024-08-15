@@ -1,4 +1,19 @@
 {
+  "redstone-helper.mod.redstone_helper_title": "Redstone Helper",
+  "redstone-helper.mod.short_redstone_helper_title": "RH",
+  "redstone-helper.mod.styled_short_redstone_helper_title": [
+    {
+      "text": "[",
+      "color": "red"
+    },
+    {
+      "text": "RH"
+    },
+    {
+      "text": "]",
+      "color": "red"
+    }
+  ],
   "redstone-helper.keybinding.category.basic": "Redstone Helper",
   "redstone-helper.keybinding.key.calc": "Открыть калькулятор",
   "redstone-helper.keybinding.key.switch_autowire": "Переключить Auto Wire™",
@@ -53,6 +68,7 @@
   "redstone-helper.feature.airplace.airplace_on": "Airplace включен",
   "redstone-helper.feature.airplace.airplace_off": "Airplace выключен",
   "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Вычисленный сигнал: %d, предмет: %d",
+  "redstone-helper.feature.colorcode.success": "Успешно окрашено %d блоков в %d",
   "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper обновлён!",
   "redstone-helper.stuff.version_checker.need_update": [
     "Обнаружена старая версия Redstone Helper!\n",
@@ -127,6 +143,18 @@
       "color": "red"
     }
   ],
+  "redstone-helper.stuff.info.error.select_region": [
+    {
+      "text": "Выберите область!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.warning.illegal_feature": [
+    {
+      "text": "Эта функция может быть незаконна на некоторых серверах! Вы можете получить бан!\nИспользуйте её ТОЛЬКО ЕСЛИ ОНА РАЗРЕШЕНА НА СЕРВЕРЕ\nАвтор мода не несёт ответственности за ваш бан на сервере!",
+      "color": "yellow"
+    }
+  ],
   "redstone-helper.stuff.funny.1": "Зачем это тебе??",
   "redstone-helper.stuff.funny.2": "Зачем ты хочешь это сделать?",
   "redstone-helper.stuff.funny.3": "Для чего?",
@@ -136,26 +164,6 @@
   "redstone-helper.stuff.funny.7": "Это опечатка?",
   "redstone-helper.stuff.funny.8": "Вау, какая шикарная, но не нужная вещь.",
   "dontlocalize.redstone-helper.stuff.funny_count": "8",
-  "redstone-helper.help.version": "Версия мода: %d",
-  "redstone-helper.help.help": [
-    "Вот список всех команд Redstone Helper:\n",
-    "/redstone-helper\n",
-    "/calc\n",
-    "/autowire\n",
-    "/autodust\n",
-    "/bits\n",
-    "/instaLamp\n",
-    "/redstone-fill\n",
-    "/redstone-fill-signal\n",
-    "/calc-redstone-signal\n",
-    "/redstone-give\n",
-    "/redstone-give-signal\n",
-    "/ss\n",
-    "/clear-inventory\n",
-    "/quicktp\n",
-    "/airplace\n",
-    "/macro\n"
-  ],
   "redstone-helper.manual.manual": "Руководство",
   "redstone-helper.manual.previous": "Назад",
   "redstone-helper.manual.next": "Далее",
@@ -231,5 +239,10 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Компараторы с блоками",
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Быстрый телепорт",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Дистанция",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Учитывать жидкости"
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Включать жидкости",
+  "text.config.redstone-helper/redstone-helper-config.section.becareful": "Будьте осторожны! Эти функции могут быть незаконны на некоторых серверах! Вы можете быть забанены!",
+  "text.config.redstone-helper/redstone-helper-config.category.customQuickTpNest": "Custom Quick TP без установки RH на сервер",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpEnabled": "Предупреждение! Вы можете быть забанены на некоторых серверах! Включить?",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpDistance": "Дистанция",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpIncludeFluids": "Включать жидкости"
 }

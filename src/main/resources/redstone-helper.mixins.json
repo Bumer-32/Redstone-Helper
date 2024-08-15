@@ -1,7 +1,7 @@
 {
 	"required": true,
 	"package": "ua.pp.lumivoid.mixin",
-	"compatibilityLevel": "JAVA_17",
+	"compatibilityLevel": "JAVA_21",
 	"mixins": [
       	"RedstoneLampMixin",
 		"PlayerBlockPlaceMixin",

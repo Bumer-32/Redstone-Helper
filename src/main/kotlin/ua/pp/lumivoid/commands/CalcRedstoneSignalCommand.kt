@@ -32,7 +32,7 @@ object CalcRedstoneSignalCommand {
             .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/redstone-give-signal: Missing arguments!")
-                context.source.sendError(Text.translatable("redstone-helper.stuff.info.error.missing_arguments"))
+                context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                 1
             }
             .then(ClientCommandManager.argument("signal", IntegerArgumentType.integer(1, 15))
@@ -54,10 +54,7 @@ object CalcRedstoneSignalCommand {
 
     private fun execute(context: CommandContext<FabricClientCommandSource>, item: Item, redstoneSignal: Int) {
         if (redstoneSignal == 0) {
-            val funnyInt = Random.nextInt(
-                1,
-                Text.translatable("dontlocalize.redstone-helper.stuff.funny_count").string.toInt() + 1
-            )
+            val funnyInt = Random.nextInt(1, Constants.LOCALIZEIDS.FUNNY_COUNT + 1)
             context.source.sendFeedback(Text.translatable("redstone-helper.stuff.funny.$funnyInt"))
         } else {
             val hit: HitResult = MinecraftClient.getInstance().crosshairTarget!!
@@ -70,15 +67,15 @@ object CalcRedstoneSignalCommand {
 
                     logger.debug("/calc-redstone-signal: Calculated redstone signal: $amount, item: ${item.name}")
                     context.source.sendFeedback(
-                        Text.translatable("redstone-helper.feature.calc_redstone_signal.calculated_signal", amount, item.name)
+                        Text.translatable(Constants.LOCALIZEIDS.FEATURE_CALCREDSTONESIGNAL_CALCULATEDSIGNAL, amount, item.name)
                     )
                 } catch (e: NullPointerException) {
                     logger.debug("/calc-redstone-signal: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
-                    HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.invalid_block_inventory"))
+                    HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_INVALIDBLOCKINVENTORY))
                 }
             } else {
                 logger.debug("/calc-redstone-signal: No block in crosshair target")
-                HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.info.error.block_not_found"))
+                HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_BLOCKNOTFOUND))
             }
         }
     }

@@ -27,7 +27,7 @@ object HudToast {
 
     private val component = Hud.getComponent(Constants.TOAST_ID)!! as FlowLayout
 
-    fun showToast(text: Text, short: Boolean) {
+    private fun showToast(text: Text, short: Boolean) {
         logger.debug("Showing toast")
 
         isToastActive = true

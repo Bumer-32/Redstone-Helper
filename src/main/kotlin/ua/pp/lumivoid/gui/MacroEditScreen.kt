@@ -59,7 +59,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         macroName.text = macro!!.name
         macroName.setCursorToStart(false)
         macroName.setMaxLength(999999999)
-        title.text(Text.translatable("redstone-helper.feature.macro.edit_macro_title", macro!!.name))
+        title.text(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_EDITMACROTITLE, macro!!.name))
 
         if (new) {
             addCommand("/redstone-helper notification add-to-queue false hello world!")
@@ -72,13 +72,13 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
 
         if (new) {
-            keyBindButton.message = Text.translatable("redstone-helper.feature.macro.key_bind_none")
+            keyBindButton.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
         } else {
             if (macro!!.key != GLFW.GLFW_KEY_UNKNOWN) {
                 macro!!.key = macro!!.key
                 keyBindButton.message = Text.literal(GLFW.glfwGetKeyName(macro!!.key, -1))
             } else {
-                keyBindButton.message = Text.translatable("redstone-helper.feature.macro.key_bind_none")
+                keyBindButton.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
             }
         }
 
@@ -96,7 +96,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                         for (key in GLFW.GLFW_KEY_SPACE..GLFW.GLFW_KEY_LAST) {
                             if (InputUtil.isKeyPressed(client!!.window.handle, key)) {
                                 if (key == GLFW.GLFW_KEY_ESCAPE) {
-                                    keyBindButton.message = Text.translatable("redstone-helper.feature.macro.key_bind_none")
+                                    keyBindButton.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
                                     macro!!.key = GLFW.GLFW_KEY_UNKNOWN
                                 } else {
                                     macro!!.key = key
@@ -112,12 +112,12 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
 
         resetButton.onPress {
-            keyBindButton.message = Text.translatable("redstone-helper.feature.macro.key_bind_none")
+            keyBindButton.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
         }
 
         macroName.setChangedListener {
             macro!!.name = macroName.text
-            title.text(Text.translatable("redstone-helper.feature.macro.edit_macro_title", macro!!.name))
+            title.text(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_EDITMACROTITLE, macro!!.name))
         }
 
 
@@ -203,13 +203,13 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                                     textWidget.id("text_widget")
                                     textWidget.setMaxLength(256)
                                     if (textWidget.text == "") {
-                                        textWidget.setSuggestion(Text.translatable("redstone-helper.feature.macro.add_command").string)
+                                        textWidget.setSuggestion(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_ADDCOMMAND).string)
                                     } else {
                                         textWidget.setSuggestion("")
                                     }
                                     textWidget.setChangedListener {
                                         if (textWidget.text == "") {
-                                            textWidget.setSuggestion(Text.translatable("redstone-helper.feature.macro.add_command").string)
+                                            textWidget.setSuggestion(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_ADDCOMMAND).string)
                                         } else {
                                             if (command == "" && (commandsLayout!!.children().last() as FlowLayout).childById(TextFieldWidget::class.java, "text_widget").text != "") {
                                                 addCommand("")

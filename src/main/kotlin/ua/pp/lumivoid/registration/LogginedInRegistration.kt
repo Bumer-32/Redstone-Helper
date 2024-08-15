@@ -22,6 +22,9 @@ object LogginedInRegistration {
             } else {
                 ClientOptions.autoWireMode = config.defaultAutoWireMode
             }
+
+            // Notifications for EVERY server or world
+            ClientOptions.illegalFeatureNotified = false
         }
     }
 }

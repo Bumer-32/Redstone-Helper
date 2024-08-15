@@ -11,6 +11,7 @@ import net.minecraft.client.gui.screen.Screen
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.keybindings.MacrosKeyBindings
 import ua.pp.lumivoid.util.Macro
 import ua.pp.lumivoid.util.features.Macros
 
@@ -87,14 +88,16 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
                         .child(
                             Components.checkbox(Text.empty())
                                 .positioning(Positioning.relative(2, 60))
-                                .tooltip(Text.translatable("redstone-helper.feature.macro.enabled_for_keybinds"))
+                                .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_ENABLEDFORKEYBINDS))
                                 .configure {
                                     val checkBox = it as CheckboxComponent
                                     checkBox.checked(enabled)
                                     checkBox.onChanged { checked ->
+                                        logger.debug("Macro $name enabled: $checked")
                                         val macro = Macros.readMacro(name)
                                         macro!!.enabled = checked
                                         Macros.editMacro(name, macro)
+                                        MacrosKeyBindings.updateMacros()
                                         update()
                                     }
                                 }

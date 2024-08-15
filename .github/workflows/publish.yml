@@ -1,14 +1,18 @@
 # Publishing to modrinth
 
 name: publish
+
 on:
   push:
     branches:
       - main
-
+    tags-ignore:
+      - skip-ci
 
 jobs:
   publish:
+    if: "!contains(github.ref, 'refs/tags/skip-ci')"
+
     name: build and publish to modrinth
     runs-on: ubuntu-latest
 

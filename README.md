@@ -106,6 +106,8 @@ Redstone helper mod must you to help with redstone in minecraft :)
             <p>/Airplace - allows you to place blocks on air</p>
             <p>Macros! <a href="https://www.youtube.com/watch?v=jjEO940W72o&ab_channel=mattbatwings">How to use</a></p>
             <p>/gamerule DoContainerDrops</p>
+            <p>/glass</p>
+            <p>//colorcode</p>
         </details>
         <details>
             <summary style="font-size: 18px;">BIT Operations™</summary>
