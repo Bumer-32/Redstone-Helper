@@ -164,7 +164,6 @@
   "redstone-helper.stuff.funny.7": "Це помилка?",
   "redstone-helper.stuff.funny.8": "Вау, яка шикарна, але непотрібна річ.",
   "dontlocalize.redstone-helper.stuff.funny_count": "8",
-  "redstone-helper.system.info.server_incompatible_version": "Redstone Helper version not same as client!\nSome functions isn't avail\nClient: %d Server: %d",
   "redstone-helper.manual.manual": "Посібник",
   "redstone-helper.manual.previous": "Назад",
   "redstone-helper.manual.next": "Далі",
