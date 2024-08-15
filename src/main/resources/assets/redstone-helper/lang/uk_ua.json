@@ -69,6 +69,7 @@
   "redstone-helper.feature.airplace.airplace_off": "Airplace вимкнуто",
   "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Вирахуваний сигнал: %d, предмет: %d",
   "redstone-helper.feature.colorcode.success": "Successfully colored %d blocks %d",
+  "redstone-helper.feature.update.success": "Successfully updated %d blocks",
   "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper оновлений!",
   "redstone-helper.stuff.version_checker.need_update": [
     "Виявлено стару версію Redstone Helper!\n",
@@ -149,6 +150,12 @@
       "color": "red"
     }
   ],
+  "redstone-helper.stuff.info.warning.illegal_feature": [
+    {
+      "text": "This feature can be illegal on some servers! You can get ban!\nUse it ONLY IF IT IS ALLOWED ON THE SERVER\nThe author of the mod is not responsible for your ban on the server!",
+      "color": "yellow"
+    }
+  ],
   "redstone-helper.stuff.funny.1": "Нащо тобі це потрібно??",
   "redstone-helper.stuff.funny.2": "Нащо ти це збираєшся використовувати?",
   "redstone-helper.stuff.funny.3": "Для чого?",
@@ -158,26 +165,7 @@
   "redstone-helper.stuff.funny.7": "Це помилка?",
   "redstone-helper.stuff.funny.8": "Вау, яка шикарна, але непотрібна річ.",
   "dontlocalize.redstone-helper.stuff.funny_count": "8",
-  "redstone-helper.help.version": "Версія моду: %d",
-  "redstone-helper.help.help": [
-    "Ось список всіх команд Redstone Helper:\n",
-    "/redstone-helper\n",
-    "/calc\n",
-    "/autowire\n",
-    "/autodust\n",
-    "/bits\n",
-    "/instaLamp\n",
-    "/redstone-fill\n",
-    "/redstone-fill-signal\n",
-    "/calc-redstone-signal\n",
-    "/redstone-give\n",
-    "/redstone-give-signal\n",
-    "/ss\n",
-    "/clear-inventory\n",
-    "/quicktp\n",
-    "/airplace\n",
-    "/macro\n"
-  ],
+  "redstone-helper.system.info.server_incompatible_version": "Redstone Helper version not same as client!\nSome functions isn't avail\nClient: %d Server: %d",
   "redstone-helper.manual.manual": "Посібник",
   "redstone-helper.manual.previous": "Назад",
   "redstone-helper.manual.next": "Далі",
@@ -253,5 +241,10 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Компаратори з блоками",
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Швидкий телепорт",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Відстань",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids"
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids",
+  "text.config.redstone-helper/redstone-helper-config.section.becareful": "Be careful! This features can be illegal on some servers! You can be banned!",
+  "text.config.redstone-helper/redstone-helper-config.category.customQuickTpNest": "Custom Quick TP without installing RH on server",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpEnabled": "Warning! You can be banned on some servers! Enable?",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpDistance": "Відстань",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpIncludeFluids": "Include Fluids"
 }
