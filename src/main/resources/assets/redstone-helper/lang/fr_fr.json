@@ -69,6 +69,7 @@
   "redstone-helper.feature.airplace.airplace_off": "Airplace disabled",
   "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Signal calculé: %d, item: %d",
   "redstone-helper.feature.colorcode.success": "Successfully colored %d blocks %d",
+  "redstone-helper.feature.update.success": "Successfully updated %d blocks",
   "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper est à jour!",
   "redstone-helper.stuff.version_checker.need_update": [
     "Une version plus récente de Redstone Helper détectée!\n",
@@ -149,6 +150,12 @@
       "color": "red"
     }
   ],
+  "redstone-helper.stuff.info.warning.illegal_feature": [
+    {
+      "text": "This feature can be illegal on some servers! You can get ban!\nUse it ONLY IF IT IS ALLOWED ON THE SERVER\nThe author of the mod is not responsible for your ban on the server!",
+      "color": "yellow"
+    }
+  ],
   "redstone-helper.stuff.funny.1": "Pourquoi voulez-vous ça ??",
   "redstone-helper.stuff.funny.2": "Wtf qu'allez-vous faire avec cela ?",
   "redstone-helper.stuff.funny.3": "Pourquoi faire ?",
@@ -158,26 +165,7 @@
   "redstone-helper.stuff.funny.7": "Est-ce une typo ?",
   "redstone-helper.stuff.funny.8": "Wow, quelle belle chose ..... mais totalement inutile.",
   "dontlocalize.redstone-helper.stuff.funny_count": "8",
-  "redstone-helper.help.version": "Version du mod: %d",
-  "redstone-helper.help.help": [
-    "Voici toutes les commandes de Redstone Helper:\n",
-    "/redstone-helper\n",
-    "/calc\n",
-    "/autowire\n",
-    "/autodust\n",
-    "/bits\n",
-    "/instaLamp\n",
-    "/redstone-fill\n",
-    "/redstone-fill-signal\n",
-    "/calc-redstone-signal\n",
-    "/redstone-give\n",
-    "/redstone-give-signal\n",
-    "/ss\n",
-    "/clear-inventory\n",
-    "/quicktp\n",
-    "/airplace\n",
-    "/macro\n"
-  ],
+  "redstone-helper.system.info.server_incompatible_version": "Redstone Helper version not same as client!\nSome functions isn't avail\nClient: %d Server: %d",
   "redstone-helper.manual.manual": "Manuel",
   "redstone-helper.manual.previous": "Précédent",
   "redstone-helper.manual.next": "Suivant",
@@ -253,5 +241,10 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparateurs avec des blocs",
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Tp rapide",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Distance",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids"
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids",
+  "text.config.redstone-helper/redstone-helper-config.section.becareful": "Be careful! This features can be illegal on some servers! You can be banned!",
+  "text.config.redstone-helper/redstone-helper-config.category.customQuickTpNest": "Custom Quick TP without installing RH on server",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpEnabled": "Warning! You can be banned on some servers! Enable?",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpDistance": "Distance",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpIncludeFluids": "Include Fluids"
 }
