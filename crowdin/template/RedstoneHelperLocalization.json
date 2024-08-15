@@ -71,8 +71,6 @@
 
   "redstone-helper.feature.colorcode.success": "Successfully colored %d blocks %d",
 
-  "redstone-helper.feature.update.success": "Successfully updated %d blocks",
-
   "redstone-helper.stuff.version_checker.up_to_date":  "Redstone Helper is up to date!",
   "redstone-helper.stuff.version_checker.need_update":  [
     "Old version of Redstone Helper detected!\n",

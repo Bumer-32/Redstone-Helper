@@ -116,8 +116,6 @@ object Constants {
         const val STUFF_INFO_ERROR_SELECTREGION = "redstone-helper.stuff.info.error.select_region"
         const val STUFF_INFO_WARNING_ILLEGALFEATURE = "redstone-helper.stuff.info.warning.illegal_feature"
 
-        const val SYSTEM_INFO_SERVERINCOMPATIBLEVERSION = "redstone-helper.system.info.server_incompatible_version"
-
         const val MANUAL_MANUAL = "redstone-helper.manual.manual"
         const val MANUAL_PREVIOUS = "redstone-helper.manual.previous"
         const val MANUAL_NEXT = "redstone-helper.manual.next"
