@@ -95,6 +95,9 @@ object Constants {
         const val FEATURE_CALCREDSTONESIGNAL_CALCULATEDSIGNAL = "redstone-helper.feature.calc_redstone_signal.calculated_signal"
 
         const val FEATURE_COLORCODE_SUCCESS = "redstone-helper.feature.colorcode.success"
+
+        const val FEATURE_UPDATE_SUCCESS = "redstone-helper.feature.update.success"
+
         const val STUFF_VERSIONCHECKER_UPTODATE = "redstone-helper.stuff.version_checker.up_to_date"
         const val STUFF_VERSIONCHECKER_NEEDUPDATE = "redstone-helper.stuff.version_checker.need_update"
         const val STUFF_VERSIONCHECKER_UNABLETOCHECKVERSION = "redstone-helper.stuff.version_checker.unable_to_check_version"

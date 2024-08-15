@@ -21,7 +21,7 @@ object AirPlaceCommand {
                 if (ClientOptions.isAirPlaceEnabled) {
                     context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.FEATURE_AIRPLACE_AIRPLACEON))
                 } else {
-                    context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.FEATURE_AIRPLACE_AIRPLACEON))
+                    context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.FEATURE_AIRPLACE_AIRPLACEOFF))
                 }
                 1
             }
