@@ -10,5 +10,6 @@ object ClientOptions {
     var autoWireLastBlock: BlockPos = BlockPos(0, 0, 0)
     var isAirPlaceEnabled: Boolean = false
     var rememberLastSelectedItems: ItemStack? = null
+    var illegalFeatureNotified: Boolean = false
     //var autoWireBlockCounter: Int = 1
 }

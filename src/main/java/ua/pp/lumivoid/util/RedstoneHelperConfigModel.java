@@ -46,4 +46,17 @@ public class RedstoneHelperConfigModel {
         public Integer quickTpDistance = 50;
         public Boolean quickTpIncludeFluids = false;
     }
+
+    @SectionHeader("becareful") // Dangerous features, because you can get ban on some servers
+    @Nest
+    //@Expanded // Not expanded because it's dangerous feature
+    public CustomQuickTpNest customQuickTpNest = new CustomQuickTpNest();
+
+    public static class CustomQuickTpNest {
+        @RestartRequired
+        public Boolean customQuickTpEnabled = false;
+        @RangeConstraint(min = 1, max = 1000)
+        public Integer customQuickTpDistance = 50;
+        public Boolean customQuickTpIncludeFluids = false;
+    }
 }
