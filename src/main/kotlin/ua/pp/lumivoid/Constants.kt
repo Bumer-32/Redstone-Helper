@@ -19,6 +19,8 @@ object Constants {
     val CONFIG_FOLDER_PATH = "${System.getProperty("user.dir")}\\config\\${MOD_ID}"
     val TEXT_SPACE = Text.literal(" ")!!
 
+    const val WORLD_EDIT_FABRIC_ID = "worldedit"
+
     //URLS
     object URLS {
         const val MODRINTH_API_URL = "https://api.modrinth.com/v2/project/${MOD_MODRINTH_ID}/version"

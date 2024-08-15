@@ -60,7 +60,7 @@ object RedstoneGiveSignalCommandCommand {
     private fun execute(context: CommandContext<ServerCommandSource>, redstoneSignal: Int, item: Item, block: Item) {
         logger.debug("/redstone-give-signal: Trying to give blockEntity")
 
-        var inventorySize = 0
+        var inventorySize: Int
 
         val blockID = Registries.ITEM.getId(block)
 
