@@ -149,6 +149,12 @@
       "color": "red"
     }
   ],
+  "redstone-helper.stuff.info.warning.illegal_feature": [
+    {
+      "text": "This feature can be illegal on some servers! You can get ban!\nUse it ONLY IF IT IS ALLOWED ON THE SERVER\nThe author of the mod is not responsible for your ban on the server!",
+      "color": "yellow"
+    }
+  ],
   "redstone-helper.stuff.funny.1": "Why would you want this??",
   "redstone-helper.stuff.funny.2": "Wtf are you going to use this for?",
   "redstone-helper.stuff.funny.3": "What for?",
@@ -158,26 +164,6 @@
   "redstone-helper.stuff.funny.7": "Is that a typo?",
   "redstone-helper.stuff.funny.8": "Wow, what a fancy but otherwise useless thing.",
   "dontlocalize.redstone-helper.stuff.funny_count": "8",
-  "redstone-helper.help.version": "Mod version: %d",
-  "redstone-helper.help.help": [
-    "Here all commands of Redstone Helper:\n",
-    "/redstone-helper\n",
-    "/calc\n",
-    "/autowire\n",
-    "/autodust\n",
-    "/bits\n",
-    "/instaLamp\n",
-    "/redstone-fill\n",
-    "/redstone-fill-signal\n",
-    "/calc-redstone-signal\n",
-    "/redstone-give\n",
-    "/redstone-give-signal\n",
-    "/ss\n",
-    "/clear-inventory\n",
-    "/quicktp\n",
-    "/airplace\n",
-    "/macro\n"
-  ],
   "redstone-helper.manual.manual": "Manual",
   "redstone-helper.manual.previous": "Previous",
   "redstone-helper.manual.next": "Next",
@@ -253,5 +239,10 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Comparators with blocks",
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Quick TP",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Distance",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids"
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids",
+  "text.config.redstone-helper/redstone-helper-config.section.becareful": "Be careful! This features can be illegal on some servers! You can be banned!",
+  "text.config.redstone-helper/redstone-helper-config.category.customQuickTpNest": "Custom Quick TP without installing RH on server",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpEnabled": "Warning! You can be banned on some servers! Enable?",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpDistance": "Distance",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpIncludeFluids": "Include Fluids"
 }
