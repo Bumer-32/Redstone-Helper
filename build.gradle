@@ -1,8 +1,8 @@
 import com.modrinth.minotaur.dependencies.ModDependency
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id 'fabric-loom' version '1.6.5'
-	id 'maven-publish'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
   	id "org.jetbrains.kotlin.jvm" version "2.0.0"
 	id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.0'
 	id "com.modrinth.minotaur" version "2.+"
@@ -60,7 +60,7 @@ dependencies {
 
 	annotationProcessor modImplementation("io.wispforest:owo-lib:${project.owo_version}")
 
-	modImplementation("com.sk89q.worldedit:worldedit-fabric-mc${project.minecraft_version}:${project.world_edit_version}") {
+	modImplementation("com.sk89q.worldedit:worldedit-fabric-mc${project.world_edit_version}") {
 		exclude group: 'it.unimi.dsi', module: 'fastutil'
 		exclude group: 'com.google.guava', module: 'guava'
 	}
@@ -78,7 +78,7 @@ tasks.withType(JavaCompile).configureEach {
 	it.options.release = 21
 }
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+tasks.withType(KotlinCompile).configureEach {
 	kotlinOptions {
 		jvmTarget = 21
 	}
