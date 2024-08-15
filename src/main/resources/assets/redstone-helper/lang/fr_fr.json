@@ -164,7 +164,6 @@
   "redstone-helper.stuff.funny.7": "Est-ce une typo ?",
   "redstone-helper.stuff.funny.8": "Wow, quelle belle chose ..... mais totalement inutile.",
   "dontlocalize.redstone-helper.stuff.funny_count": "8",
-  "redstone-helper.system.info.server_incompatible_version": "Redstone Helper version not same as client!\nSome functions isn't avail\nClient: %d Server: %d",
   "redstone-helper.manual.manual": "Manuel",
   "redstone-helper.manual.previous": "Précédent",
   "redstone-helper.manual.next": "Suivant",
