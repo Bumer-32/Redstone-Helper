@@ -68,8 +68,7 @@
   "redstone-helper.feature.airplace.airplace_on": "Airplace включен",
   "redstone-helper.feature.airplace.airplace_off": "Airplace выключен",
   "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Вычисленный сигнал: %d, предмет: %d",
-  "redstone-helper.feature.colorcode.success": "Successfully colored %d blocks %d",
-  "redstone-helper.feature.update.success": "Successfully updated %d blocks",
+  "redstone-helper.feature.colorcode.success": "Успешно окрашено %d блоков в %d",
   "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper обновлён!",
   "redstone-helper.stuff.version_checker.need_update": [
     "Обнаружена старая версия Redstone Helper!\n",
@@ -146,13 +145,13 @@
   ],
   "redstone-helper.stuff.info.error.select_region": [
     {
-      "text": "Select region!",
+      "text": "Выберите область!",
       "color": "red"
     }
   ],
   "redstone-helper.stuff.info.warning.illegal_feature": [
     {
-      "text": "This feature can be illegal on some servers! You can get ban!\nUse it ONLY IF IT IS ALLOWED ON THE SERVER\nThe author of the mod is not responsible for your ban on the server!",
+      "text": "Эта функция может быть незаконна на некоторых серверах! Вы можете получить бан!\nИспользуйте её ТОЛЬКО ЕСЛИ ОНА РАЗРЕШЕНА НА СЕРВЕРЕ\nАвтор мода не несёт ответственности за ваш бан на сервере!",
       "color": "yellow"
     }
   ],
@@ -206,7 +205,7 @@
   "gamerule.doContainerDrops": "Do container drops",
   "gamerule.doContainerDrops.description": "Контролирует выпадение ресурсов из контейнеров",
   "modmenu.nameTranslation.redstone-helper": "Redstone Helper",
-  "modmenu.descriptionTranslation.redstone-helper": "Mod which must you to help you with redstone!",
+  "modmenu.descriptionTranslation.redstone-helper": "Мод, который помогает вам с редстоуном!",
   "modmenu.summaryTranslation.redstone-helper": "Redstone helper - ваш друг!",
   "text.config.redstone-helper/redstone-helper-config.title": "Параметры Redstone Helper",
   "text.config.redstone-helper/redstone-helper-config.section.general": "Общие параметры",
@@ -241,10 +240,10 @@
   "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Компараторы с блоками",
   "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Быстрый телепорт",
   "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Дистанция",
-  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Include Fluids",
-  "text.config.redstone-helper/redstone-helper-config.section.becareful": "Be careful! This features can be illegal on some servers! You can be banned!",
-  "text.config.redstone-helper/redstone-helper-config.category.customQuickTpNest": "Custom Quick TP without installing RH on server",
-  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpEnabled": "Warning! You can be banned on some servers! Enable?",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Включать жидкости",
+  "text.config.redstone-helper/redstone-helper-config.section.becareful": "Будьте осторожны! Эти функции могут быть незаконны на некоторых серверах! Вы можете быть забанены!",
+  "text.config.redstone-helper/redstone-helper-config.category.customQuickTpNest": "Custom Quick TP без установки RH на сервер",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpEnabled": "Предупреждение! Вы можете быть забанены на некоторых серверах! Включить?",
   "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpDistance": "Дистанция",
-  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpIncludeFluids": "Include Fluids"
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpIncludeFluids": "Включать жидкости"
 }
