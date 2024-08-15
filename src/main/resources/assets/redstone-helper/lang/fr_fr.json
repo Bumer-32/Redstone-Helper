@@ -69,7 +69,6 @@
   "redstone-helper.feature.airplace.airplace_off": "Airplace disabled",
   "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Signal calculé: %d, item: %d",
   "redstone-helper.feature.colorcode.success": "Successfully colored %d blocks %d",
-  "redstone-helper.feature.update.success": "Successfully updated %d blocks",
   "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper est à jour!",
   "redstone-helper.stuff.version_checker.need_update": [
     "Une version plus récente de Redstone Helper détectée!\n",
