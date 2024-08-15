@@ -36,7 +36,7 @@ object ClearInventoryCommand {
                     SendPacket.sendPacket(ClearInventoryC2SPacket(blockPos, Constants.aMinecraftClass))
                 } else {
                     logger.debug("/clear-inventory: No block in crosshair target")
-                    HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_BLOCKNOTFOUND))
+                    HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_BLOCKNOTFOUND))
                 }
 
                 1

@@ -16,10 +16,10 @@ object QuickTpKeyBinding {
     private val logger = Constants.LOGGER
 
     private val quickTpKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding(Constants.LocalizeIds.KEYBINDING_KEY_QUICKTP,
+        KeyBinding(Constants.LOCALIZEIDS.KEYBINDING_KEY_QUICKTP,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_G,
-            Constants.LocalizeIds.KEYBINDING_CATEGORY_BASIC
+            Constants.LOCALIZEIDS.KEYBINDING_CATEGORY_BASIC
         )
     )
 
@@ -32,7 +32,7 @@ object QuickTpKeyBinding {
                     val config = Config()
                     SendPacket.sendPacket(QuickTeleportC2SPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
                 } else {
-                    HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_NOPERMISSION), true)
+                    HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_NOPERMISSION), true)
                 }
             }
         }

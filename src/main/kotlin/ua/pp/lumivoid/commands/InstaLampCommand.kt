@@ -20,9 +20,9 @@ object InstaLampCommand {
                 Options.isInstantLamps = !Options.isInstantLamps
                 logger.debug("/instaLamp: Switch Instant Lamps state to: ${Options.isInstantLamps}")
                 if (Options.isInstantLamps) {
-                    context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.FEATURE_INSTALAMPS_INSTAON) }, true)
+                    context.source.sendFeedback({ Text.translatable(Constants.LOCALIZEIDS.FEATURE_INSTALAMPS_INSTAON) }, true)
                 } else {
-                    context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.FEATURE_INSTALAMPS_INSTAOFF) }, true)
+                    context.source.sendFeedback({ Text.translatable(Constants.LOCALIZEIDS.FEATURE_INSTALAMPS_INSTAOFF) }, true)
                 }
                 1
             }
@@ -30,9 +30,9 @@ object InstaLampCommand {
                 .executes { context: CommandContext<ServerCommandSource> ->
                     logger.debug("/instaLamp: Current instaLamp state: ${Options.isInstantLamps}")
                     if (Options.isInstantLamps) {
-                        context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.FEATURE_INSTALAMPS_INSTAON) }, false)
+                        context.source.sendFeedback({ Text.translatable(Constants.LOCALIZEIDS.FEATURE_INSTALAMPS_INSTAON) }, false)
                     } else {
-                        context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.FEATURE_INSTALAMPS_INSTAOFF) }, false)
+                        context.source.sendFeedback({ Text.translatable(Constants.LOCALIZEIDS.FEATURE_INSTALAMPS_INSTAOFF) }, false)
                     }
                     1
                 }

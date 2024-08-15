@@ -89,13 +89,13 @@ object VersionChecker {
                 config.checkForAlpha
             )
 
-            if (checkerText == Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE)) {
+            if (checkerText == Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_UPTODATE)) {
                 if (config.showUpToDateNotification) {
                     HudToast.addToastToQueue(checkerText)
                 }
             } else {
                 HudToast.addToastToQueue(checkerText)
-                HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_TOCHECKVERSION))
+                HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_TOCHECKVERSION))
             }
         }
     }
@@ -108,18 +108,18 @@ object VersionChecker {
             version = thisVersion
 
             if (JsonConfig.readConfig().versionCheckSkip == version) {
-                return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE)
+                return Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_UPTODATE)
             }
 
             if (isUpToDate) {
-                return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE)
+                return Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_UPTODATE)
             }
         } catch (e: Exception) {
             logger.error("Error while checking version of Redstone-Helper", e)
-            return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UNABLETOCHECKVERSION)
+            return Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_UNABLETOCHECKVERSION)
         }
 
-        return Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_NEEDUPDATE, version)
+        return Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_NEEDUPDATE, version)
     }
 
     fun checkRedstoneHelperVersionString(): String {

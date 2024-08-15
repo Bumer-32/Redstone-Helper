@@ -13,10 +13,10 @@ object CalcKeyBinding {
     private val logger = Constants.LOGGER
 
     private val calcKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding(Constants.LocalizeIds.KEYBINDING_KEY_CALC,
+        KeyBinding(Constants.LOCALIZEIDS.KEYBINDING_KEY_CALC,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_N,
-            Constants.LocalizeIds.KEYBINDING_CATEGORY_BASIC
+            Constants.LOCALIZEIDS.KEYBINDING_CATEGORY_BASIC
         )
     )
 

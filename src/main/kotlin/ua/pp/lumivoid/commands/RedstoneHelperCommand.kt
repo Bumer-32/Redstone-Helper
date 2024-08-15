@@ -25,7 +25,7 @@ object RedstoneHelperCommand {
         dispatcher.register(ClientCommandManager.literal("redstone-helper")
             .executes { context ->
                 logger.debug("/redstone-helper: Missing arguments!")
-                context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
+                context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                 1
             }
             .then(ClientCommandManager.literal("check-updates")
@@ -36,8 +36,8 @@ object RedstoneHelperCommand {
                         checkForAlpha = true
                     )
                     context.source.sendFeedback(checkerText)
-                    if (checkerText != Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UPTODATE) && checkerText != Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_UNABLETOCHECKVERSION)) {
-                        context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_SKIPVERSION))
+                    if (checkerText != Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_UPTODATE) && checkerText != Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_UNABLETOCHECKVERSION)) {
+                        context.source.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_SKIPVERSION))
                     }
                     1
                 }
@@ -56,7 +56,7 @@ object RedstoneHelperCommand {
                 )
                 .then(ClientCommandManager.literal("skip")
                     .executes { context ->
-                        context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_SKIPPING))
+                        context.source.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_SKIPPING))
                         VersionChecker.skipVersion()
                         VersionChecker.checkRedstoneHelperVersionWithToast()
                         1
@@ -64,7 +64,7 @@ object RedstoneHelperCommand {
                 )
                 .then(ClientCommandManager.literal("clear-skips")
                     .executes { context ->
-                        context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.STUFF_VERSIONCHECKER_CLEARSKIPS))
+                        context.source.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.STUFF_VERSIONCHECKER_CLEARSKIPS))
                         VersionChecker.clearSkippedVersion()
                         VersionChecker.checkRedstoneHelperVersionWithToast()
                         1
@@ -74,7 +74,7 @@ object RedstoneHelperCommand {
             .then(ClientCommandManager.literal("notification")
                 .executes { context ->
                     logger.debug("/redstone-helper: Missing arguments!")
-                    context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
+                    context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                     1
                 }
                 .then(ClientCommandManager.literal("clear-queue")
@@ -86,13 +86,13 @@ object RedstoneHelperCommand {
                 .then(ClientCommandManager.literal("add-to-queue")
                     .executes { context ->
                         logger.debug("/redstone-helper: Missing arguments!")
-                        context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
+                        context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                         1
                     }
                     .then(ClientCommandManager.argument("short", BoolArgumentType.bool())
                         .executes { context ->
                             logger.debug("/redstone-helper: Missing arguments!")
-                            context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
+                            context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                             1
                         }
                         .then(ClientCommandManager.argument("text", StringArgumentType.greedyString())

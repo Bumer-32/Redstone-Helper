@@ -14,10 +14,10 @@ object SwitchAutoWireKeyBinding {
     private val logger = Constants.LOGGER
 
     private val switchAutoWireKeyBinding: KeyBinding = KeyBindingHelper.registerKeyBinding(
-        KeyBinding(Constants.LocalizeIds.KEYBINDING_KEY_SWITCHAUTOWIRE,
+        KeyBinding(Constants.LOCALIZEIDS.KEYBINDING_KEY_SWITCHAUTOWIRE,
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_B,
-            Constants.LocalizeIds.KEYBINDING_CATEGORY_BASIC
+            Constants.LOCALIZEIDS.KEYBINDING_CATEGORY_BASIC
         )
     )
 
@@ -29,12 +29,12 @@ object SwitchAutoWireKeyBinding {
                 if (client.player!!.commandSource.hasPermissionLevel(2)) {
                     ClientOptions.isAutoWireEnabled = !ClientOptions.isAutoWireEnabled
                     if (ClientOptions.isAutoWireEnabled) {
-                        HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.FEATURE_AUTOWIRE_AUTOWIREON), true)
+                        HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.FEATURE_AUTOWIRE_AUTOWIREON), true)
                     } else {
-                        HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.FEATURE_AUTOWIRE_AUTOWIREOFF), true)
+                        HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.FEATURE_AUTOWIRE_AUTOWIREOFF), true)
                     }
                 } else {
-                    HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_NOPERMISSION), true)
+                    HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_NOPERMISSION), true)
                 }
             }
         }

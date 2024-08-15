@@ -33,7 +33,7 @@ object MacroCommand {
                     if (macro != null) {
                         Macros.executeMacro(macro)
                     } else {
-                        context.source.sendError(Text.translatable(Constants.LocalizeIds.FEATURE_MACRO_MACRONOTFOUND))
+                        context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_MACRONOTFOUND))
                     }
                     1
                 }

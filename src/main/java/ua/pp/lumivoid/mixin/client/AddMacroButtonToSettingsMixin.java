@@ -24,6 +24,6 @@ public abstract class AddMacroButtonToSettingsMixin extends GameOptionsScreen {
 
 	@Inject(at = @At("TAIL"), method = "addOptions()V")
 	private void addMacroButton(CallbackInfo ci) {
-		Objects.requireNonNull(this.body).addAll(List.of(ButtonWidget.builder(Text.translatable(Constants.LocalizeIds.FEATURE_MACRO_SETTINGSMACROSBUTTON), buttonWidget -> Objects.requireNonNull(this.client).setScreen(new MacroScreen(this))).build()));
+		Objects.requireNonNull(this.body).addAll(List.of(ButtonWidget.builder(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_SETTINGSMACROSBUTTON), buttonWidget -> Objects.requireNonNull(this.client).setScreen(new MacroScreen(this))).build()));
 	}
 }

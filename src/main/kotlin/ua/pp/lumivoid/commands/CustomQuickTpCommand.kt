@@ -42,7 +42,7 @@ object CustomQuickTpCommand {
 
     private fun execute(context: CommandContext<FabricClientCommandSource?>, distance: Double, includeFluids: Boolean) {
         if (!ClientOptions.illegalFeatureNotified) {
-            context.source!!.sendFeedback(Text.translatable(Constants.LocalizeIds.STUFF_INFO_WARNING_ILLEGALFEATURE))
+            context.source!!.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_WARNING_ILLEGALFEATURE))
             ClientOptions.illegalFeatureNotified = true // Only 1 time on world login
         }
         val hit = MinecraftClient.getInstance().cameraEntity!!.raycast(distance, 1.0F, includeFluids)

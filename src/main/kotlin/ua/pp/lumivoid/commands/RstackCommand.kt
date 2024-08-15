@@ -25,7 +25,7 @@ object RstackCommand {
             .requires {source -> source.hasPermissionLevel(2)}
             .executes { context ->
                 logger.debug("//rstack: Missing arguments!")
-                context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
+                context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                 1
             }
             .then(CommandManager.argument("count", IntegerArgumentType.integer())
@@ -57,7 +57,7 @@ object RstackCommand {
             var playerFacing = actor.getLocation().directionEnum
 
         } catch (e: IncompleteRegionException) {
-            context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_SELECTREGION))
+            context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_SELECTREGION))
         }
     }
 }

@@ -42,7 +42,7 @@ object ColorcodeCommand {
             .requires {source -> source.hasPermissionLevel(2)}
             .executes { context ->
                 logger.debug("//colorcode: Missing arguments!")
-                context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
+                context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                 1
             }
             .then(CommandManager.argument("color", StringArgumentType.word())
@@ -75,9 +75,9 @@ object ColorcodeCommand {
                                 false
                             }
                         }
-                        context.source.sendFeedback({ Text.translatable(Constants.LocalizeIds.MOD_STYLEDSHORTREDSTONEHELPERTITLE).append(Constants.TEXT_SPACE).append(Text.translatable(Constants.LocalizeIds.FEATURE_COLORCODE_SUCCESS, totalBlocksColored, StringArgumentType.getString(context, "color"))) }, false)
+                        context.source.sendFeedback({ Text.translatable(Constants.LOCALIZEIDS.MOD_STYLEDSHORTREDSTONEHELPERTITLE).append(Constants.TEXT_SPACE).append(Text.translatable(Constants.LOCALIZEIDS.FEATURE_COLORCODE_SUCCESS, totalBlocksColored, StringArgumentType.getString(context, "color"))) }, false)
                     } catch (e: IncompleteRegionException) {
-                        context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_SELECTREGION))
+                        context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_SELECTREGION))
                     }
                     1
                 }

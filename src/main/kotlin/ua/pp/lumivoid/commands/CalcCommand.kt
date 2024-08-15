@@ -31,9 +31,9 @@ object CalcCommand {
                     val expression = StringArgumentType.getString(context, "expression")
                     val calcResult = Calculate.calc(expression)
                     if (calcResult.isNaN()) {
-                        context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.FEATURE_CALCULATOR_INVALIDEXPRESSION))
+                        context.source.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.FEATURE_CALCULATOR_INVALIDEXPRESSION))
                     } else {
-                        context.source.sendFeedback(Text.translatable(Constants.LocalizeIds.FEATURE_CALCULATOR_RESULT, calcResult))
+                        context.source.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.FEATURE_CALCULATOR_RESULT, calcResult))
                     }
                     1
                 }

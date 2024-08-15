@@ -27,7 +27,7 @@ object Constants {
 
     //TEXTS_ID
     @Suppress("unused")
-    object LocalizeIds {
+    object LOCALIZEIDS {
         const val MOD_REDSTONEHELPERTITLE = "redstone-helper.mod.redstone_helper_title"
         const val MOD_SHORTREDSTONEHELPERTITLE = "redstone-helper.mod.short_redstone_helper_title"
         const val MOD_STYLEDSHORTREDSTONEHELPERTITLE = "redstone-helper.mod.styled_short_redstone_helper_title"

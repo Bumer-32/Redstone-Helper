@@ -36,7 +36,7 @@ object RedstoneFillSignalCommand {
             .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/redstone-fill-signal: Missing arguments!")
-                context.source.sendError(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_MISSINGARGUMENTS))
+                context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))
                 1
             }
             .then(ClientCommandManager.argument("signal", IntegerArgumentType.integer(0, 15))
@@ -57,7 +57,7 @@ object RedstoneFillSignalCommand {
 
     private fun execute(context: CommandContext<FabricClientCommandSource>, item: Item, redstoneSignal: Int) {
         if (redstoneSignal == 0) {
-            val funnyInt = Random.nextInt(1, Constants.LocalizeIds.FUNNY_COUNT + 1)
+            val funnyInt = Random.nextInt(1, Constants.LOCALIZEIDS.FUNNY_COUNT + 1)
             context.source.sendFeedback(Text.translatable("redstone-helper.stuff.funny.$funnyInt"))
         } else {
             logger.debug("/redstone-fill-signal: Trying to fill inventory with blocks by signal")
@@ -76,11 +76,11 @@ object RedstoneFillSignalCommand {
                     SendPacket.sendPacket(FillInventoryC2SPacket(blockPos, Registries.ITEM.getId(item), amount, Constants.aMinecraftClass))
                 } catch (e: NullPointerException) {
                     logger.debug("/redstone-fill: Failed to get block inventory at $blockPos, think it`s not a block entity with inventory")
-                    HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_INVALIDBLOCKINVENTORY))
+                    HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_INVALIDBLOCKINVENTORY))
                 }
             } else {
                 logger.debug("/calc-redstone-signal: No block in crosshair target")
-                HudToast.addToastToQueue(Text.translatable(Constants.LocalizeIds.STUFF_INFO_ERROR_BLOCKNOTFOUND))
+                HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_BLOCKNOTFOUND))
             }
         }
     }

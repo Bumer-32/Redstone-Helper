@@ -88,7 +88,7 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
                         .child(
                             Components.checkbox(Text.empty())
                                 .positioning(Positioning.relative(2, 60))
-                                .tooltip(Text.translatable(Constants.LocalizeIds.FEATURE_MACRO_ENABLEDFORKEYBINDS))
+                                .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_ENABLEDFORKEYBINDS))
                                 .configure {
                                     val checkBox = it as CheckboxComponent
                                     checkBox.checked(enabled)
