@@ -4,6 +4,7 @@ import io.wispforest.owo.ui.base.BaseUIModelScreen
 import io.wispforest.owo.ui.component.CheckboxComponent
 import io.wispforest.owo.ui.component.LabelComponent
 import io.wispforest.owo.ui.container.FlowLayout
+import io.wispforest.owo.ui.core.Color
 import io.wispforest.owo.ui.core.Surface
 import net.minecraft.client.gui.widget.TextFieldWidget
 import net.minecraft.text.Text
@@ -15,6 +16,7 @@ import ua.pp.lumivoid.util.Calculate
 class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of(Constants.MOD_ID, "bits_ui_model"))) {
     private val logger = Constants.LOGGER
 
+    @Suppress("t")
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building AutowireScreen UI")
 
@@ -38,6 +40,18 @@ class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
             layout.surface(Surface.DARK_PANEL)
         } else {
             layout.surface(Surface.PANEL)
+
+            val color: Color
+            Calculate.hexToRGB(0x3F3F3F).let { (r, g, b, a) ->
+                color = Color(r, g, b, a)
+            }
+            layout.children().forEach { component ->
+                logger.info("child")
+                if (component is LabelComponent && !component.text().string.contains("__colored")) {
+                    logger.info(component.text().string)
+                    component.color(color)
+                }
+            }
         }
         if (Config().enableBackgroundBlur) {
             rootComponent.surface(Surface.blur(100F, 10F))

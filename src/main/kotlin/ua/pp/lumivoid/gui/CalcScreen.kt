@@ -3,6 +3,7 @@ package ua.pp.lumivoid.gui
 import io.wispforest.owo.ui.base.BaseUIModelScreen
 import io.wispforest.owo.ui.component.LabelComponent
 import io.wispforest.owo.ui.container.FlowLayout
+import io.wispforest.owo.ui.core.Color
 import io.wispforest.owo.ui.core.Surface
 import net.minecraft.client.gui.widget.TextFieldWidget
 import net.minecraft.text.Text
@@ -25,6 +26,18 @@ class CalcScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSour
             layout.surface(Surface.DARK_PANEL)
         } else {
             layout.surface(Surface.PANEL)
+
+            val color: Color
+            Calculate.hexToRGB(0x3F3F3F).let { (r, g, b, a) ->
+                color = Color(r, g, b, a)
+            }
+            layout.children().forEach { component ->
+                logger.info("child")
+                if (component is LabelComponent && !component.text().string.contains("__colored")) {
+                    logger.info(component.text().string)
+                    component.color(color)
+                }
+            }
         }
         if (Config().enableBackgroundBlur) {
             rootComponent.surface(Surface.blur(100F, 10F))
