@@ -41,7 +41,8 @@ modrinth {
 		new ModDependency(project.id_fabric_api, "required"),
 		new ModDependency(project.id_fabric_kotlin, "required"),
 		new ModDependency(project.id_owo, "required"),
-		new ModDependency(project.id_modmenu, "optional")
+		new ModDependency(project.id_modmenu, "optional"),
+		new ModDependency(project.id_world_edit, "optional")
 	]
 }
 
