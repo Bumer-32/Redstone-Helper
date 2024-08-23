@@ -38,10 +38,10 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
                 color = Color(r, g, b, a)
             }
             layout.children().forEach { component ->
-                logger.info("child")
-                if (component is LabelComponent && !component.text().string.contains("__colored")) {
-                    logger.info(component.text().string)
-                    component.color(color)
+                if (component is LabelComponent) {
+                    if (component.id()?.contains("__colored") != true) {
+                        component.color(color)
+                    }
                 }
             }
         }
