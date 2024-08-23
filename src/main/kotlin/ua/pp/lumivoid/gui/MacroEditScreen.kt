@@ -29,7 +29,10 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
     private val logger = Constants.LOGGER
     
     private var commandsLayout: FlowLayout? = null
+    private var keyBindButton: ButtonComponent? = null
     private var macro: Macro? = null
+
+    private var keyAssigned = true
 
     init {
         macro = if (!new) {
@@ -46,7 +49,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         val doneButton = rootComponent.childById(ButtonComponent::class.java, "done_button")
         val cancelButton = rootComponent.childById(ButtonComponent::class.java, "cancel_button")
         commandsLayout = rootComponent.childById(FlowLayout::class.java, "commands_panel")
-        val keyBindButton = rootComponent.childById(ButtonComponent::class.java, "key_bind_button")
+        keyBindButton = rootComponent.childById(ButtonComponent::class.java, "key_bind_button")
         val resetButton = rootComponent.childById(ButtonComponent::class.java, "reset_button")
         val macroName = rootComponent.childById(TextFieldWidget::class.java, "macro_name")
         val title = rootComponent.childById(LabelComponent::class.java, "title")
@@ -72,35 +75,38 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
 
         if (new) {
-            keyBindButton.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
+            keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
         } else {
             if (macro!!.key != GLFW.GLFW_KEY_UNKNOWN) {
                 macro!!.key = macro!!.key
-                keyBindButton.message = Text.literal(GLFW.glfwGetKeyName(macro!!.key, -1))
+                keyBindButton!!.message = Text.literal(GLFW.glfwGetKeyName(macro!!.key, -1))
             } else {
-                keyBindButton.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
+                keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
             }
         }
 
-        keyBindButton.onPress {
+        keyBindButton!!.onPress {
+            checkForAssigningActive()
+
             val scope = CoroutineScope(Dispatchers.Default)
 
-            keyBindButton.message = Text.literal(">").formatted(Formatting.YELLOW)
-                .append(keyBindButton.message.copy().formatted(Formatting.UNDERLINE, Formatting.WHITE))
+            keyAssigned = false
+
+            keyBindButton!!.message = Text.literal(">").formatted(Formatting.YELLOW)
+                .append(keyBindButton!!.message.copy().formatted(Formatting.UNDERLINE, Formatting.WHITE))
                 .append(Text.literal("<").formatted(Formatting.YELLOW))
 
-            var keyAssigned = false
             scope.launch {
                 while (!keyAssigned) {
                     MinecraftClient.getInstance().execute {
                         for (key in GLFW.GLFW_KEY_SPACE..GLFW.GLFW_KEY_LAST) {
                             if (InputUtil.isKeyPressed(client!!.window.handle, key)) {
                                 if (key == GLFW.GLFW_KEY_ESCAPE) {
-                                    keyBindButton.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
+                                    keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
                                     macro!!.key = GLFW.GLFW_KEY_UNKNOWN
                                 } else {
                                     macro!!.key = key
-                                    keyBindButton.message = Text.literal(GLFW.glfwGetKeyName(key, -1))
+                                    keyBindButton!!.message = Text.literal(GLFW.glfwGetKeyName(key, -1))
                                 }
                                 keyAssigned = true
                             }
@@ -112,16 +118,21 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
 
         resetButton.onPress {
-            keyBindButton.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
+            checkForAssigningActive()
+            keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
+            macro!!.key = GLFW.GLFW_KEY_UNKNOWN
         }
 
         macroName.setChangedListener {
+            checkForAssigningActive()
             macro!!.name = macroName.text
             title.text(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_EDITMACROTITLE, macro!!.name))
         }
 
 
         doneButton.onPress {
+            checkForAssigningActive()
+
             // saving
             if (!new) {
                 macro!!.commands.removeAll(macro!!.commands)
@@ -148,9 +159,24 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
 
         cancelButton.onPress {
+            checkForAssigningActive()
             this.client!!.setScreen(parent)
         }
 
+    }
+
+    /**
+    * Use to stop searching assigning key
+    * e.g: we started key search but didn't press any key on keyboard and press done button, then we should to stop searching and set key for none
+    */
+    private fun checkForAssigningActive() {
+        if (!keyAssigned) {
+            logger.warn("stop assigning")
+            keyAssigned = false
+            macro!!.key = GLFW.GLFW_KEY_UNKNOWN
+
+            keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
+        }
     }
 
     @Suppress("t")
@@ -208,6 +234,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                                         textWidget.setSuggestion("")
                                     }
                                     textWidget.setChangedListener {
+                                        checkForAssigningActive()
                                         if (textWidget.text == "") {
                                             textWidget.setSuggestion(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_ADDCOMMAND).string)
                                         } else {
