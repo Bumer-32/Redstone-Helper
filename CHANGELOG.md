@@ -1,3 +1,3 @@
-Kon'nichiwa! Update 0.2.2.1
+Kon'nichiwa! Update 0.2.2.2
 
-few fixes
+instant lamps now gamerule

@@ -88,9 +88,6 @@ object Constants {
         const val FEATURE_MACRO_ADDCOMMAND = "redstone-helper.feature.macro.add_command"
         const val FEATURE_MACRO_MACRONOTFOUND = "redstone-helper.feature.macro.macro_not_found"
 
-        const val FEATURE_INSTALAMPS_INSTAON = "redstone-helper.feature.insta_lamps.insta_on"
-        const val FEATURE_INSTALAMPS_INSTAOFF = "redstone-helper.feature.insta_lamps.insta_off"
-
         const val FEATURE_AIRPLACE_AIRPLACEON = "redstone-helper.feature.airplace.airplace_on"
         const val FEATURE_AIRPLACE_AIRPLACEOFF = "redstone-helper.feature.airplace.airplace_off"
 

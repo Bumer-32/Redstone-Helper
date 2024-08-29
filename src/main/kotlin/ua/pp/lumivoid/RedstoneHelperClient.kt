@@ -19,6 +19,7 @@ object RedstoneHelperClient : ClientModInitializer {
 
 	override fun onInitializeClient() {
 		logger.info("Initializing client ${Constants.MOD_ID}")
+
 		License.iConfirmNonCommercialUse("Artem")
 
         ClientCommandsRegistration.register() // Registering client commands

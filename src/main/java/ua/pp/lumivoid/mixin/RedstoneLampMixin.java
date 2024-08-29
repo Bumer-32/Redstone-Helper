@@ -35,6 +35,7 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import ua.pp.lumivoid.registration.GamerulesRegistration;
 
 @Mixin(RedstoneLampBlock.class)
 public abstract class RedstoneLampMixin extends Block {
@@ -45,7 +46,7 @@ public abstract class RedstoneLampMixin extends Block {
 
     @Redirect(method = "neighborUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;scheduleBlockTick(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/Block;I)V"))
     public void redirectScheduleBlockTick(World world, BlockPos pos, Block block, int delay) {
-        if (Options.INSTANCE.isInstantLamps()) {
+        if (world.getGameRules().getBoolean(GamerulesRegistration.INSTANCE.getINSTANT_LAMPS_TURN_OFF())) {
             world.scheduleBlockTick(pos, block, 0);
         } else {
             world.scheduleBlockTick(pos, block, delay);
