@@ -19,7 +19,9 @@ import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.gui.HudToast
 import ua.pp.lumivoid.util.Calculate
+import kotlin.random.Random
 
 object RedstoneGiveSignalCommandCommand {
     private val logger = Constants.LOGGER
@@ -58,65 +60,78 @@ object RedstoneGiveSignalCommandCommand {
     }
 
     private fun execute(context: CommandContext<ServerCommandSource>, redstoneSignal: Int, item: Item, block: Item) {
-        logger.debug("/redstone-give-signal: Trying to give blockEntity")
-
-        var inventorySize: Int
-
-        val blockID = Registries.ITEM.getId(block)
-
-        when (blockID) { // I don't want to do this but there's no way
-            Identifier.of("minecraft:hopper") -> {
-                inventorySize = 5
-            }
-            Identifier.of("minecraft:chest") -> {
-                inventorySize = 27
-            }
-            Identifier.of("minecraft:barrel") -> {
-                inventorySize = 27
-            }
-            Identifier.of("minecraft:furnace") -> {
-                inventorySize = 3
-            }
-            Identifier.of("minecraft:smoker") -> {
-                inventorySize = 3
-            }
-            Identifier.of("minecraft:blast_furnace") -> {
-                inventorySize = 3
-            }
-            Identifier.of("minecraft:dropper") -> {
-                inventorySize = 9
-            }
-            Identifier.of("minecraft:dispenser") -> {
-                inventorySize = 9
-            }
-            else -> {
-                context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_INVALIDBLOCKINVENTORY))
-                return
-            }
-        } // Yeah yeah, shit code
-
-        var amount = Calculate.calculateRedstoneSignal(redstoneSignal, item, inventorySize)
-        val blockItemStack = ItemStack(block)
-
-        val items = mutableListOf<ItemStack>()
-
-        if (item.maxCount == 1) {
-            for (i in 0 until amount) {
-                items.add(ItemStack(item))
-            }
+        if (redstoneSignal == 0) {
+            val funnyInt = Random.nextInt(1, Constants.LOCALIZEIDS.Counts.FUNNY_COUNT + 1)
+            HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.funny.$funnyInt"), false)
         } else {
-            for (i in 0 until amount / item.maxCount + 1) {
-                if (amount >= item.maxCount) {
-                    items.add(ItemStack(item, item.maxCount))
-                    amount -= item.maxCount
-                } else if (amount > 0) {
-                    items.add(ItemStack(item, amount))
+            logger.debug("/redstone-give-signal: Trying to give blockEntity")
+
+            var inventorySize: Int
+
+            val blockID = Registries.ITEM.getId(block)
+
+            when (blockID) { // I don't want to do this but there's no way
+                Identifier.of("minecraft:hopper") -> {
+                    inventorySize = 5
+                }
+
+                Identifier.of("minecraft:chest") -> {
+                    inventorySize = 27
+                }
+
+                Identifier.of("minecraft:barrel") -> {
+                    inventorySize = 27
+                }
+
+                Identifier.of("minecraft:furnace") -> {
+                    inventorySize = 3
+                }
+
+                Identifier.of("minecraft:smoker") -> {
+                    inventorySize = 3
+                }
+
+                Identifier.of("minecraft:blast_furnace") -> {
+                    inventorySize = 3
+                }
+
+                Identifier.of("minecraft:dropper") -> {
+                    inventorySize = 9
+                }
+
+                Identifier.of("minecraft:dispenser") -> {
+                    inventorySize = 9
+                }
+
+                else -> {
+                    context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_INVALIDBLOCKINVENTORY))
+                    return
+                }
+            } // Yeah yeah, shit code
+
+            var amount = Calculate.calculateRedstoneSignal(redstoneSignal, item, inventorySize)
+            val blockItemStack = ItemStack(block)
+
+            val items = mutableListOf<ItemStack>()
+
+            if (item.maxCount == 1) {
+                for (i in 0 until amount) {
+                    items.add(ItemStack(item))
+                }
+            } else {
+                for (i in 0 until amount / item.maxCount + 1) {
+                    if (amount >= item.maxCount) {
+                        items.add(ItemStack(item, item.maxCount))
+                        amount -= item.maxCount
+                    } else if (amount > 0) {
+                        items.add(ItemStack(item, amount))
+                    }
                 }
             }
-        }
 
-        blockItemStack.set(DataComponentTypes.CONTAINER, ContainerComponent.fromStacks(items))
-        blockItemStack.set(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true)
-        context.source.player!!.inventory.insertStack(blockItemStack)
+            blockItemStack.set(DataComponentTypes.CONTAINER, ContainerComponent.fromStacks(items))
+            blockItemStack.set(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true)
+            context.source.player!!.inventory.insertStack(blockItemStack)
+        }
     }
 }

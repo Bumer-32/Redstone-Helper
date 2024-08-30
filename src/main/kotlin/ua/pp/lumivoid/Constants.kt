@@ -113,15 +113,19 @@ object Constants {
         const val STUFF_INFO_ERROR_SELECTREGION = "redstone-helper.stuff.info.error.select_region"
         const val STUFF_INFO_WARNING_ILLEGALFEATURE = "redstone-helper.stuff.info.warning.illegal_feature"
 
+        const val STUFF_MODRINTH = "redstone-helper.stuff.modrinth"
+        const val STUFF_GITHUB = "redstone-helper.stuff.github"
+        const val STUFF_CROWDIN = "redstone-helper.stuff.crowdin"
+
         const val MANUAL_MANUAL = "redstone-helper.manual.manual"
         const val MANUAL_PREVIOUS = "redstone-helper.manual.previous"
         const val MANUAL_NEXT = "redstone-helper.manual.next"
-        const val MANUAL_MODRINTH = "redstone-helper.manual.modrinth"
-        const val MANUAL_GITHUB = "redstone-helper.manual.github"
-        const val MANUAL_CROWDIN = "redstone-helper.manual.crowdin"
         const val MANUAL_WELCOME_1 = "redstone-helper.manual.welcome.1"
 
-        val FUNNY_COUNT = Text.translatable("dontlocalize.redstone-helper.stuff.funny_count").string.toInt()
+        object Counts {
+            val HINTS_COUNT = Text.translatable("dontlocalize.redstone-helper.feature.hints.hints_count").string.toInt()
+            val FUNNY_COUNT = Text.translatable("dontlocalize.redstone-helper.stuff.funny_count").string.toInt()
+        }
 
     }
 }

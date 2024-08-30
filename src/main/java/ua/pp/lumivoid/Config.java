@@ -13,6 +13,8 @@ public class Config {
     public Boolean checkForAlpha = CONFIG.updateCheckNest.checkForAlpha();
     public Boolean showUpToDateNotification = CONFIG.updateCheckNest.showUpToDateNotification();
 
+    public Boolean enableHints = CONFIG.enableHints();
+
     public Boolean darkPanels = CONFIG.darkPanels();
     public Boolean enableBackgroundBlur = CONFIG.enableBackgroundBlur();
     public ToastPositions toastPosition = CONFIG.toastPosition();
