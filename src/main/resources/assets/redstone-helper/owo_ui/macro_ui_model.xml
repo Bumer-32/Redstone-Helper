@@ -87,22 +87,63 @@
 
                 <flow-layout direction="horizontal">
                     <children>
-                        <button id="done_button">
-                            <text translate="true">redstone-helper.feature.macro.done</text>
+                        <flow-layout direction="horizontal">
+                            <children>
+                                <button id="export_all_macro_button">
+                                    <text/>
+                                    <tooltip-text translate="true">redstone-helper.feature.macro.tooltip.export_all</tooltip-text>
+                                    <sizing>
+                                        <horizontal method="fixed">20</horizontal>
+                                    </sizing>
+                                </button>
+
+                                <texture texture="redstone-helper:textures/gui/macros/export.png" region-width="16" region-height="16" texture-width="16" texture-height="16" >
+                                    <positioning type="relative">50,50</positioning>
+                                </texture>
+                            </children>
+
+                            <margins>
+                                <right>5</right>
+                            </margins>
+                        </flow-layout>
+
+                        <flow-layout direction="horizontal">
+                            <children>
+                                <button id="import_macro_button">
+                                    <text/>
+                                    <tooltip-text translate="true">redstone-helper.feature.macro.tooltip.import</tooltip-text>
+                                    <sizing>
+                                        <horizontal method="fixed">20</horizontal>
+                                    </sizing>
+                                </button>
+
+                                <texture texture="redstone-helper:textures/gui/macros/import.png" region-width="16" region-height="16" texture-width="16" texture-height="16" >
+                                    <positioning type="relative">50,50</positioning>
+                                </texture>
+                            </children>
+
+                            <margins>
+                                <right>5</right>
+                            </margins>
+                        </flow-layout>
+
+                        <button id="new_macro_button">
+                            <text translate="true">redstone-helper.feature.macro.new_macro_button</text>
                             <sizing>
-                                <horizontal method="fill">20</horizontal>
+                                <horizontal method="fixed">120</horizontal>
                             </sizing>
                             <margins>
                                 <right>5</right>
                             </margins>
                         </button>
 
-                        <button id="new_macro_button">
-                            <text translate="true">redstone-helper.feature.macro.new_macro_button</text>
+                        <button id="done_button">
+                            <text translate="true">redstone-helper.feature.macro.done</text>
                             <sizing>
-                                <horizontal method="fill">20</horizontal>
+                                <horizontal method="fixed">70</horizontal>
                             </sizing>
                         </button>
+
                     </children>
 
                     <horizontal-alignment>center</horizontal-alignment>

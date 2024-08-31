@@ -27,7 +27,7 @@ object JsonConfig {
             try {
                 return json.decodeFromString<JsonConfigData>(jsonData)
             } catch (e: RuntimeException) {
-                logger.warn("Error while reading config file, rewriting")
+                logger.error("Error while reading config file, rewriting")
                 e.printStackTrace()
             }
         }

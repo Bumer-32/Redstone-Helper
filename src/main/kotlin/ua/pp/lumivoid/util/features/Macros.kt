@@ -1,13 +1,16 @@
 package ua.pp.lumivoid.util.features
 
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import net.minecraft.client.MinecraftClient
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.util.JsonConfig
 import ua.pp.lumivoid.util.Macro
+import java.io.File
 
 object Macros {
     private val logger = Constants.LOGGER
-
+    private val json = Json { prettyPrint = true }
     private var macrosCache: MutableList<Macro>? = null
 
     fun addMacro(macro: Macro) {
@@ -54,6 +57,37 @@ object Macros {
             if (macro.name == name) {
                 return macro
             }
+        }
+
+        return null
+    }
+
+    fun exportMacro(path: String, macros: MutableList<String>) {
+        val macrosForExport: MutableList<Macro> = mutableListOf()
+
+        macros.forEach { macro ->
+            val macroData = readMacro(macro)
+            if (macroData != null) macrosForExport.add(macroData)
+            else logger.error("Macro $macro not found")
+        }
+
+        val file = File(path)
+        file.writeText(json.encodeToString(macrosForExport))
+    }
+
+    /**
+     * Note, importMacro() isn't adds macro to config!!
+     * It just reads macro from file and returns it
+     */
+    fun importMacro(path: String): MutableList<Macro>? {
+        val file = File(path)
+        val jsonData = file.readText()
+
+        try {
+            return json.decodeFromString<MutableList<Macro>>(jsonData)
+        } catch (e: RuntimeException) {
+            logger.error("Error while reading macro file")
+            e.printStackTrace()
         }
 
         return null

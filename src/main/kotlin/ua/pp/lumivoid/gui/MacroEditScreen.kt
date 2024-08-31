@@ -25,6 +25,7 @@ import ua.pp.lumivoid.util.Macro
 import ua.pp.lumivoid.util.features.Macros
 
 
+@Suppress("UsePropertyAccessSyntax")
 class MacroEditScreen(private val parent: MacroScreen?, name:String, private val new: Boolean): BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of(Constants.MOD_ID, "macro_edit_ui_model"))) {
     private val logger = Constants.LOGGER
     
@@ -42,7 +43,6 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
     }
 
-    @Suppress("t")
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building MacroEditScreen UI")
 
@@ -179,7 +179,6 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
     }
 
-    @Suppress("t")
     private fun addCommand(command: String) {
         val id = (commandsLayout!!.children().size + 1).toString()
 
@@ -187,7 +186,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         commandsLayout!!.child(
             Containers.horizontalFlow(Sizing.fill(), Sizing.fixed(32))
                 .child(
-                    Containers.horizontalFlow(Sizing.fixed(300), Sizing.fill())
+                    Containers.horizontalFlow(Sizing.fixed(450), Sizing.fill())
                         .child(
                             Containers.horizontalFlow(Sizing.content(), Sizing.content())
                                 .child(
@@ -201,15 +200,9 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                                         }
                                 )
                                 .child(
-                                    Components.texture(
-                                        Identifier.of(Constants.MOD_ID, "textures/gui/macros/cross.png"),
-                                        0,
-                                        0,
-                                        250,
-                                        250
-                                    )
-                                        .sizing(Sizing.fixed(20), Sizing.fixed(20))
-                                        .positioning(Positioning.relative(0, 0))
+                                    Components.texture(Identifier.of(Constants.MOD_ID, "textures/gui/macros/cross.png"), 0, 0, 250, 250)
+                                        .sizing(Sizing.fixed(16), Sizing.fixed(16))
+                                        .positioning(Positioning.relative(50, 50))
                                         .configure {
                                             if (commandsLayout!!.children().isEmpty()) {
                                                 (it as TextureComponent).visibleArea(PositionedRectangle.of(0, 0, Size.zero()))
@@ -219,7 +212,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                                 .positioning(Positioning.relative(98, 50))
                         )
                         .child(
-                            Components.textBox(Sizing.fixed(250))
+                            Components.textBox(Sizing.fixed(400))
                                 .configure {
                                     val textWidget = (it as TextFieldWidget)
                                     textWidget.setMaxLength(999999999)
@@ -232,6 +225,9 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                                         textWidget.setSuggestion(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_ADDCOMMAND).string)
                                     } else {
                                         textWidget.setSuggestion("")
+                                    }
+                                    if (commandsLayout!!.children().isEmpty()) {
+                                        textWidget.sizing(Sizing.fixed(440), Sizing.fixed(20))
                                     }
                                     textWidget.setChangedListener {
                                         checkForAssigningActive()

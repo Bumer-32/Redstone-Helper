@@ -72,7 +72,7 @@
                                             <scrollbar-thiccness>3</scrollbar-thiccness>
 
                                             <sizing>
-                                                <horizontal method="fixed">310</horizontal>
+                                                <horizontal method="fixed">460</horizontal>
                                                 <vertical method="fill">70</vertical>
                                             </sizing>
 
