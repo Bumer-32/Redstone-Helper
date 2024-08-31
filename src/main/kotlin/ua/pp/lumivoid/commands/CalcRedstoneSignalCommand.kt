@@ -54,8 +54,8 @@ object CalcRedstoneSignalCommand {
 
     private fun execute(context: CommandContext<FabricClientCommandSource>, item: Item, redstoneSignal: Int) {
         if (redstoneSignal == 0) {
-            val funnyInt = Random.nextInt(1, Constants.LOCALIZEIDS.FUNNY_COUNT + 1)
-            context.source.sendFeedback(Text.translatable("redstone-helper.stuff.funny.$funnyInt"))
+            val funnyInt = Random.nextInt(1, Constants.LOCALIZEIDS.Counts.FUNNY_COUNT + 1)
+            HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.funny.$funnyInt"), false)
         } else {
             val hit: HitResult = MinecraftClient.getInstance().crosshairTarget!!
             if (hit.type == Type.BLOCK) {

@@ -43,7 +43,7 @@ Redstone helper mod must you to help with redstone in minecraft :)
             also you can open calculator window by pressing N (you can rebind it in settings)
         </details>
         <details>
-            <summary style="font-size: 18px">/instaLamp makes lamps to off instant!</summary>
+            <summary style="font-size: 18px">/gamerule instantLampsTurnOff makes lamps to off instant!</summary>
             <img src="https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/instaLamp demonstration.gif?raw=true">
         </details>
         <details>

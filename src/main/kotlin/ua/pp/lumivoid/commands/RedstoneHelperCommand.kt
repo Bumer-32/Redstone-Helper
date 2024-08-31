@@ -7,12 +7,10 @@ import com.mojang.brigadier.arguments.BoolArgumentType
 import com.mojang.brigadier.arguments.StringArgumentType
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
-import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
 import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.gui.ManualWelcomePageScreen
 import ua.pp.lumivoid.util.DownloadManager
 import ua.pp.lumivoid.util.VersionChecker
 
@@ -105,20 +103,27 @@ object RedstoneHelperCommand {
                 )
             )
             .then(ClientCommandManager.literal("test")
-                .then(ClientCommandManager.literal("help")
-                    .executes {
-                        logger.debug("/redstone-helper: Opening manual menu")
-                        MinecraftClient.getInstance().send(Runnable {
-                            MinecraftClient.getInstance().setScreen(ManualWelcomePageScreen())
-                        })
-                        1
-                    }
-                )
+                .executes {
+                    //for (i in 1..Constants.LOCALIZEIDS.Counts.HINTS_COUNT) HudToast.addToastToQueue(Text.translatable("redstone-helper.feature.hints.hint.$i"), false)
+                    1
+                }
             )
             .then(ClientCommandManager.literal("cleanUp")
                 .executes {
                     logger.debug("/redstone-helper: Cleaning up")
                     DownloadManager.cleanUp()
+                    1
+                }
+            )
+            .then(ClientCommandManager.literal("github")
+                .executes { context ->
+                    context.source.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.STUFF_GITHUB))
+                    1
+                }
+            )
+            .then(ClientCommandManager.literal("crowdin")
+                .executes { context ->
+                    context.source.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.STUFF_CROWDIN))
                     1
                 }
             )

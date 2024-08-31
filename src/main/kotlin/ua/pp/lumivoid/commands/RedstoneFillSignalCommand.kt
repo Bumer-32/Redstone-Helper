@@ -57,8 +57,8 @@ object RedstoneFillSignalCommand {
 
     private fun execute(context: CommandContext<FabricClientCommandSource>, item: Item, redstoneSignal: Int) {
         if (redstoneSignal == 0) {
-            val funnyInt = Random.nextInt(1, Constants.LOCALIZEIDS.FUNNY_COUNT + 1)
-            context.source.sendFeedback(Text.translatable("redstone-helper.stuff.funny.$funnyInt"))
+            val funnyInt = Random.nextInt(1, Constants.LOCALIZEIDS.Counts.FUNNY_COUNT + 1)
+            HudToast.addToastToQueue(Text.translatable("redstone-helper.stuff.funny.$funnyInt"), false)
         } else {
             logger.debug("/redstone-fill-signal: Trying to fill inventory with blocks by signal")
 

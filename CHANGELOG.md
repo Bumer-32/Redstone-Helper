@@ -1,3 +1,6 @@
-Kon'nichiwa! Update 0.2.2.1
+Kon'nichiwa! Update 0.2.3
 
-few fixes
+instant lamps now gamerule
+now you can import/export your macros
+
+some fixes

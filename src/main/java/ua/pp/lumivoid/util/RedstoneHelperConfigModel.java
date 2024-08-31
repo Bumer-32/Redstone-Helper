@@ -13,6 +13,7 @@ public class RedstoneHelperConfigModel {
     @Nest
     @Expanded
     public UpdateCheckNest updateCheckNest = new UpdateCheckNest();
+    public Boolean enableHints = true;
 
     public static class UpdateCheckNest {
         public Boolean enableUpdateCheck = true;

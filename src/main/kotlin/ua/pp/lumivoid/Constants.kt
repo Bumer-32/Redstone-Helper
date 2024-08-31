@@ -84,12 +84,17 @@ object Constants {
         const val FEATURE_MACRO_KEYBIND = "redstone-helper.feature.macro.key_bind"
         const val FEATURE_MACRO_KEYBINDNONE = "redstone-helper.feature.macro.key_bind_none"
         const val FEATURE_MACRO_RESET = "redstone-helper.feature.macro.reset"
-        const val FEATURE_MACRO_ENABLEDFORKEYBINDS = "redstone-helper.feature.macro.enabled_for_keybinds"
         const val FEATURE_MACRO_ADDCOMMAND = "redstone-helper.feature.macro.add_command"
         const val FEATURE_MACRO_MACRONOTFOUND = "redstone-helper.feature.macro.macro_not_found"
-
-        const val FEATURE_INSTALAMPS_INSTAON = "redstone-helper.feature.insta_lamps.insta_on"
-        const val FEATURE_INSTALAMPS_INSTAOFF = "redstone-helper.feature.insta_lamps.insta_off"
+        const val FEATURE_MACRO_DIALOG_EXPORT = "redstone-helper.feature.macro.dialog.export"
+        const val FEATURE_MACRO_DIALOG_IMPORT = "redstone-helper.feature.macro.dialog.import"
+        const val FEATURE_MACRO_DIALOG_FILENAME = "redstone-helper.feature.macro.dialog.fileName"
+        const val FEATURE_MACRO_TOOLTIP_ENABLEDFORKEYBINDS = "redstone-helper.feature.macro.tooltip.enabled_for_keybinds"
+        const val FEATURE_MACRO_TOOLTIP_EDIT = "redstone-helper.feature.macro.tooltip.edit"
+        const val FEATURE_MACRO_TOOLTIP_DELETE = "redstone-helper.feature.macro.tooltip.delete"
+        const val FEATURE_MACRO_TOOLTIP_EXPORT = "redstone-helper.feature.macro.tooltip.export"
+        const val FEATURE_MACRO_TOOLTIP_IMPORT = "redstone-helper.feature.macro.tooltip.import"
+        const val FEATURE_MACRO_TOOLTIP_EXPORTALL = "redstone-helper.feature.macro.tooltip.export_all"
 
         const val FEATURE_AIRPLACE_AIRPLACEON = "redstone-helper.feature.airplace.airplace_on"
         const val FEATURE_AIRPLACE_AIRPLACEOFF = "redstone-helper.feature.airplace.airplace_off"
@@ -116,15 +121,19 @@ object Constants {
         const val STUFF_INFO_ERROR_SELECTREGION = "redstone-helper.stuff.info.error.select_region"
         const val STUFF_INFO_WARNING_ILLEGALFEATURE = "redstone-helper.stuff.info.warning.illegal_feature"
 
+        const val STUFF_MODRINTH = "redstone-helper.stuff.modrinth"
+        const val STUFF_GITHUB = "redstone-helper.stuff.github"
+        const val STUFF_CROWDIN = "redstone-helper.stuff.crowdin"
+
         const val MANUAL_MANUAL = "redstone-helper.manual.manual"
         const val MANUAL_PREVIOUS = "redstone-helper.manual.previous"
         const val MANUAL_NEXT = "redstone-helper.manual.next"
-        const val MANUAL_MODRINTH = "redstone-helper.manual.modrinth"
-        const val MANUAL_GITHUB = "redstone-helper.manual.github"
-        const val MANUAL_CROWDIN = "redstone-helper.manual.crowdin"
         const val MANUAL_WELCOME_1 = "redstone-helper.manual.welcome.1"
 
-        val FUNNY_COUNT = Text.translatable("dontlocalize.redstone-helper.stuff.funny_count").string.toInt()
+        object Counts {
+            val HINTS_COUNT = Text.translatable("dontlocalize.redstone-helper.feature.hints.hints_count").string.toInt()
+            val FUNNY_COUNT = Text.translatable("dontlocalize.redstone-helper.stuff.funny_count").string.toInt()
+        }
 
     }
 }
