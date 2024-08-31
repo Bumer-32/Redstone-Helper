@@ -97,7 +97,7 @@
                                     </sizing>
                                 </button>
 
-                                <texture texture="redstone-helper:textures/gui/macros/export.png" region-width="16" region-height="16" texture-width="16" texture-height="16" >
+                                <texture texture="redstone-helper:textures/gui/macros/export_all.png" region-width="16" region-height="16" texture-width="16" texture-height="16" >
                                     <positioning type="relative">50,50</positioning>
                                 </texture>
                             </children>
