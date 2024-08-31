@@ -11,6 +11,7 @@ import net.fabricmc.api.ClientModInitializer
 import net.minecraft.text.Text
 import org.mariuszgromada.math.mxparser.License
 import ua.pp.lumivoid.registration.*
+import ua.pp.lumivoid.util.JsonConfig
 
 
 @Suppress("unused")
@@ -35,6 +36,10 @@ object RedstoneHelperClient : ClientModInitializer {
 //			File(Constants.CONFIG_FOLDER_PATH).listFiles()?.forEach { it.delete() }
 //			JsonConfig.writeConfig(JsonConfigData(modVersion = Constants.MOD_VERSION))
 //		}
+
+		val jsonConfig = JsonConfig.readConfig()
+		jsonConfig.modVersion = Constants.MOD_VERSION
+		JsonConfig.writeConfig(jsonConfig)
 
 		// Sync config screen also get config here
 		val config = Config()
