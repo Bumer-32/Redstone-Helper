@@ -11,13 +11,13 @@ object AirPlaceCommand {
     private val logger = Constants.LOGGER
 
     fun register(dispatcher: CommandDispatcher<FabricClientCommandSource?>) {
-        logger.debug("/airplace: Registering instaLamp command")
+        logger.debug("/airplace: Registering airplace command")
 
         dispatcher.register(ClientCommandManager.literal("airplace")
             .requires {source -> source.hasPermissionLevel(2)}
             .executes { context ->
                 ClientOptions.isAirPlaceEnabled = !ClientOptions.isAirPlaceEnabled
-                logger.debug("/airplace: Switch Instant Lamps state to: ${ClientOptions.isAirPlaceEnabled}")
+                logger.debug("/airplace: Switch airplace state to: ${ClientOptions.isAirPlaceEnabled}")
                 if (ClientOptions.isAirPlaceEnabled) {
                     context.source.sendFeedback(Text.translatable(Constants.LOCALIZEIDS.FEATURE_AIRPLACE_AIRPLACEON))
                 } else {
