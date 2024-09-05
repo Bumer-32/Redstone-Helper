@@ -32,7 +32,7 @@ modrinth {
 	versionName = "Redstone Helper ${project.mod_version}"
 	uploadFile = remapJar
 	//additionalFiles = [remapSourcesJar]
-	gameVersions = [project.minecraft_version]
+	gameVersions = Eval.me(project.release_minecraft_versions)
 	versionType = project.release_type
 	loaders = ["fabric"]
 	syncBodyFrom = rootProject.file("README.md").text

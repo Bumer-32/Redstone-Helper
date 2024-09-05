@@ -1,6 +1,5 @@
-Kon'nichiwa! Update 0.2.3
-
-instant lamps now gamerule
-now you can import/export your macros
+Hi! Version 0.2.4 avail!
 
 some fixes
+small changes in macros ui
+added loading animation to macros ui while it imports your macros
