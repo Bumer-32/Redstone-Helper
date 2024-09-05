@@ -136,7 +136,7 @@
                         <button id="new_macro_button">
                             <text translate="true">redstone-helper.feature.macro.new_macro_button</text>
                             <sizing>
-                                <horizontal method="fixed">120</horizontal>
+                                <horizontal method="fixed">150</horizontal>
                             </sizing>
                             <margins>
                                 <right>5</right>

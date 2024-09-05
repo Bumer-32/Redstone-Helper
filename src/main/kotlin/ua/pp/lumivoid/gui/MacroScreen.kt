@@ -68,7 +68,9 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
 
                     CoroutineScope(Dispatchers.Default).launch {
 
-                        loading.text(Text.literal("●"))
+                        MinecraftClient.getInstance().submit {
+                            loading.text(Text.literal("●"))
+                        }
 
                         while (animateLoading) {
                             loading.positioning().animate(1000, Easing.EXPO, Positioning.relative(55, 50)).forwards()
@@ -78,7 +80,9 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
                         }
                         loading.positioning().animate(1000, Easing.EXPO, Positioning.relative(50, 50)).forwards()
                         delay(1000)
-                        loading.text(Text.literal(""))
+                        MinecraftClient.getInstance().submit {
+                            loading.text(Text.literal(""))
+                        }
                     }
 
                     // File chooser
@@ -138,11 +142,12 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
         macrosLayout!!.child(
             Containers.horizontalFlow(Sizing.fill(), Sizing.fixed(32))
                 .child(
-                    Containers.horizontalFlow(Sizing.fixed(250), Sizing.fill())
+                    Containers.horizontalFlow(Sizing.fixed(450), Sizing.fill())
                         .child(
                             Containers.horizontalFlow(Sizing.content(), Sizing.content())
                                 .configure { layout: FlowLayout ->
-                                    layout.positioning(Positioning.relative(95, 50))
+                                    layout.positioning(Positioning.relative(100, 50))
+                                    layout.margins(Insets.right(10))
 
                                     layout.child(
                                         Containers.horizontalFlow(Sizing.content(), Sizing.content())
@@ -194,25 +199,31 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
                                 }
                         )
                         .child(
-                            Components.checkbox(Text.empty())
-                                .positioning(Positioning.relative(2, 60))
-                                .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_ENABLEDFORKEYBINDS))
-                                .configure {
-                                    val checkBox = it as CheckboxComponent
-                                    checkBox.checked(enabled)
-                                    checkBox.onChanged { checked ->
-                                        logger.debug("Macro $name enabled: $checked")
-                                        val macro = Macros.readMacro(name)
-                                        macro!!.enabled = checked
-                                        Macros.editMacro(name, macro)
-                                        MacrosKeyBindings.updateMacros()
-                                        update()
-                                    }
-                                }
-                        )
-                        .child(
-                            Components.label(Text.literal(name))
-                                .positioning(Positioning.relative(15, 50))
+                            Containers.horizontalFlow(Sizing.fixed(350), Sizing.content())
+                                .child(
+                                    Components.checkbox(Text.empty())
+                                        .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_ENABLEDFORKEYBINDS))
+                                        .margins(Insets.top(1))
+                                        .configure {
+                                            val checkBox = it as CheckboxComponent
+                                            checkBox.checked(enabled)
+                                            checkBox.onChanged { checked ->
+                                                logger.debug("Macro $name enabled: $checked")
+                                                val macro = Macros.readMacro(name)
+                                                macro!!.enabled = checked
+                                                Macros.editMacro(name, macro)
+                                                MacrosKeyBindings.updateMacros()
+                                                update()
+                                            }
+                                        }
+                                )
+                                .child(
+                                    Components.label(Text.literal(name))
+                                        .margins(Insets.of(5, 0, 5, 0))  //checkbox buggy and already has margin
+                                )
+                                .positioning(Positioning.relative(0, 50))
+                                .margins(Insets.left(10))
+
                         )
                         .surface(Surface.flat(0xFF0F0F0F.toInt()))
                         .verticalAlignment(VerticalAlignment.CENTER)
