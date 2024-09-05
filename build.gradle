@@ -2,7 +2,7 @@ import com.modrinth.minotaur.dependencies.ModDependency
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id 'fabric-loom' version '1.8.0-alpha.8'
+	id 'fabric-loom' version '1.8.0-alpha.10'
   	id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.20'
   	id "org.jetbrains.kotlin.jvm" version "2.0.20"
 	id "com.modrinth.minotaur" version "2.+"
@@ -32,7 +32,7 @@ modrinth {
 	versionName = "Redstone Helper ${project.mod_version}"
 	uploadFile = remapJar
 	//additionalFiles = [remapSourcesJar]
-	gameVersions = [project.minecraft_version]
+	gameVersions = Eval.me(project.release_minecraft_versions)
 	versionType = project.release_type
 	loaders = ["fabric"]
 	syncBodyFrom = rootProject.file("README.md").text

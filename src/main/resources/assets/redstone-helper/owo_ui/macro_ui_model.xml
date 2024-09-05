@@ -23,6 +23,12 @@
                     <children>
                         <flow-layout direction="horizontal" id="main-panel">
                             <children>
+                                <label id="loading">
+                                    <text/>
+                                    <positioning type="relative">50,50</positioning>
+                                    <z-index>5</z-index>
+                                </label>
+
                                 <flow-layout direction="vertical" id="macros_panel_container">
                                     <children>
                                         <scroll direction="vertical" id="macros_panel_scroll">
@@ -130,7 +136,7 @@
                         <button id="new_macro_button">
                             <text translate="true">redstone-helper.feature.macro.new_macro_button</text>
                             <sizing>
-                                <horizontal method="fixed">120</horizontal>
+                                <horizontal method="fixed">150</horizontal>
                             </sizing>
                             <margins>
                                 <right>5</right>
