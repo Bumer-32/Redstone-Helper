@@ -145,9 +145,10 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                 }
             }
 
+            macro!!.name = generateSequence(macro!!.name) { it + "_1" } // Don't allow to create macros with same name
+                .first { Macros.readMacro(it) == null }
+
             if (new) {
-                macro!!.name = generateSequence(macro!!.name) { it + "_1" }
-                    .first { Macros.readMacro(it) == null }
                 Macros.addMacro(macro!!)
             } else {
                 Macros.editMacro(macro!!.name, macro!!)

@@ -4,9 +4,15 @@ import io.wispforest.owo.ui.base.BaseUIModelScreen
 import io.wispforest.owo.ui.component.ButtonComponent
 import io.wispforest.owo.ui.component.CheckboxComponent
 import io.wispforest.owo.ui.component.Components
+import io.wispforest.owo.ui.component.LabelComponent
 import io.wispforest.owo.ui.container.Containers
 import io.wispforest.owo.ui.container.FlowLayout
 import io.wispforest.owo.ui.core.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.screen.Screen
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
@@ -27,6 +33,8 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building MacroScreen UI")
 
+//        val mainPanel = rootComponent.childById(FlowLayout::class.java, "main-panel")
+        val loading = rootComponent.childById(LabelComponent::class.java, "loading")
         val exportAllMacroButton = rootComponent.childById(ButtonComponent::class.java, "export_all_macro_button")
         val importMacroButton = rootComponent.childById(ButtonComponent::class.java, "import_macro_button")
         val newMacroButton = rootComponent.childById(ButtonComponent::class.java, "new_macro_button")
@@ -39,9 +47,7 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
 
         macrosLayout!!.gap(1)
 
-        Macros.listMacros().forEach { macro: Macro ->
-            addMacro(macro.name, macro.enabled)
-        }
+        update()
 
 
         exportAllMacroButton.onPress {
@@ -49,17 +55,37 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
         }
 
         importMacroButton.onPress {
+            val checkList = Macros.listMacros().toString()
+
             // Importing
             CompletableFuture.runAsync({
                 MemoryStack.stackPush().use { stack ->
                     val filters = stack.mallocPointer(1)
                     filters.put(stack.UTF8("*.json"))
                     filters.flip()
+                    // animation
+                    var animateLoading = true
 
-                    val path: String? = TinyFileDialogs.tinyfd_openFileDialog(
+                    CoroutineScope(Dispatchers.Default).launch {
+
+                        loading.text(Text.literal("●"))
+
+                        while (animateLoading) {
+                            loading.positioning().animate(1000, Easing.EXPO, Positioning.relative(55, 50)).forwards()
+                            delay(1000)
+                            loading.positioning().animate(1000, Easing.EXPO, Positioning.relative(45, 50)).forwards()
+                            delay(1000)
+                        }
+                        loading.positioning().animate(1000, Easing.EXPO, Positioning.relative(50, 50)).forwards()
+                        delay(1000)
+                        loading.text(Text.literal(""))
+                    }
+
+                    // File chooser
+                    var path = TinyFileDialogs.tinyfd_openFileDialog(
                         Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_DIALOG_IMPORT).string,
                         null,
-                        filters,
+                        null,
                         Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_DIALOG_FILENAME).string,
                         true
                     )
@@ -72,22 +98,30 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
                             val importedMacros = Macros.importMacro(macroPath)
                             importedMacros?.forEach { macro ->
                                 macro.enabled = false // Import ALWAYS disabled
+                                macro.name = generateSequence(macro.name) { it + "_1" } // Don't allow to create macros with same name
+                                    .first { Macros.readMacro(it) == null }
                                 Macros.addMacro(macro)
-                                update()
                             }
                         }
                     } else {
                         logger.info("Import canceled")
                     }
+
+                    animateLoading = false
                 }
             }, Util.getMainWorkerExecutor()).whenComplete { unused, throwable ->
                 logger.info("End of import")
+                if (checkList != Macros.listMacros().toString()) {
+                    MinecraftClient.getInstance().submit { // In RENDER THREAD!!! IT'S VERY IMPORTANT
+                        logger.info("Update")
+                        update()
+                    }
+                }
             }
-
         }
 
         newMacroButton.onPress {
-            this.client!!.setScreen(MacroEditScreen(this, "test", true))
+            this.client!!.setScreen(MacroEditScreen(this, "My Super Macro", true))
         }
 
         doneButton.onPress {
@@ -205,8 +239,8 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
                 )
 
                 if (path != null) {
-                    macros.forEach { macro ->
-                        logger.info("Exporting macro $macro to $path")
+                    macros.forEachIndexed { index, macro ->
+                        logger.info("Exporting macro $macro to $path:$index")
                     }
                     Macros.exportMacro(path, macros)
                 } else {

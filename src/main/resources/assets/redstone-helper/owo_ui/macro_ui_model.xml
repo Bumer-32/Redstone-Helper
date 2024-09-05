@@ -23,6 +23,12 @@
                     <children>
                         <flow-layout direction="horizontal" id="main-panel">
                             <children>
+                                <label id="loading">
+                                    <text/>
+                                    <positioning type="relative">50,50</positioning>
+                                    <z-index>5</z-index>
+                                </label>
+
                                 <flow-layout direction="vertical" id="macros_panel_container">
                                     <children>
                                         <scroll direction="vertical" id="macros_panel_scroll">
