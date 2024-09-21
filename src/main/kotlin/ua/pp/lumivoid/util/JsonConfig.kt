@@ -28,7 +28,7 @@ object JsonConfig {
                 return json.decodeFromString<JsonConfigData>(jsonData)
             } catch (e: RuntimeException) {
                 logger.error("Error while reading config file, rewriting")
-                e.printStackTrace()
+                e.stackTrace.forEach { logger.error(it.toString()) }
             }
         }
         val data = JsonConfigData(modVersion = Constants.MOD_VERSION)

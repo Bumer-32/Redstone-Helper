@@ -13,10 +13,10 @@ import ua.pp.lumivoid.Config
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.util.Calculate
 
+@Suppress("UsePropertyAccessSyntax")
 class BitsScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of(Constants.MOD_ID, "bits_ui_model"))) {
     private val logger = Constants.LOGGER
 
-    @Suppress("t")
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building AutowireScreen UI")
 
