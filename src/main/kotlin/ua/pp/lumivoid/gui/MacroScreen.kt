@@ -21,6 +21,7 @@ import org.lwjgl.system.MemoryStack
 import org.lwjgl.util.tinyfd.TinyFileDialogs
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.keybindings.MacrosKeyBindings
+import ua.pp.lumivoid.owocomponents.TexturedButton
 import ua.pp.lumivoid.util.Macro
 import ua.pp.lumivoid.util.features.Macros
 import java.util.concurrent.CompletableFuture
@@ -29,100 +30,32 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
     private val logger = Constants.LOGGER
 
     private var macrosLayout: FlowLayout? = null
+    private var loading: LabelComponent? = null
 
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building MacroScreen UI")
 
 //        val mainPanel = rootComponent.childById(FlowLayout::class.java, "main-panel")
-        val loading = rootComponent.childById(LabelComponent::class.java, "loading")
-        val exportAllMacroButton = rootComponent.childById(ButtonComponent::class.java, "export_all_macro_button")
-        val importMacroButton = rootComponent.childById(ButtonComponent::class.java, "import_macro_button")
+        loading = rootComponent.childById(LabelComponent::class.java, "loading")
+        val instrumentsContainer = rootComponent.childById(FlowLayout::class.java, "instruments_container")
         val newMacroButton = rootComponent.childById(ButtonComponent::class.java, "new_macro_button")
         val doneButton = rootComponent.childById(ButtonComponent::class.java, "done_button")
         macrosLayout = rootComponent.childById(FlowLayout::class.java, "macros_panel")
 
-        // icons
-        // textures/gui/macros/cross.png
-        // textures/gui/macros/edit.png
+        instrumentsContainer.child(0,
+            TexturedButton(Identifier.of(Constants.MOD_ID, "export_all")) {
+                export(Macros.listMacros().map { it.name }.toMutableList())
+            }.sizing(Sizing.fixed(20)).tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_EXPORTALL)).margins(Insets.right(5))
+        )
+        instrumentsContainer.child(1,
+            TexturedButton(Identifier.of(Constants.MOD_ID, "import")) {
+                import()
+            }.sizing(Sizing.fixed(20)).tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_IMPORT)).margins(Insets.right(5))
+        )
 
         macrosLayout!!.gap(1)
 
         update()
-
-
-        exportAllMacroButton.onPress {
-            export(Macros.listMacros().map { it.name }.toMutableList())
-        }
-
-        importMacroButton.onPress {
-            val checkList = Macros.listMacros().toString()
-
-            // Importing
-            CompletableFuture.runAsync({
-                MemoryStack.stackPush().use { stack ->
-                    val filters = stack.mallocPointer(1)
-                    filters.put(stack.UTF8("*.json"))
-                    filters.flip()
-                    // animation
-                    var animateLoading = true
-
-                    CoroutineScope(Dispatchers.Default).launch {
-
-                        MinecraftClient.getInstance().submit {
-                            loading.text(Text.literal("●"))
-                        }
-
-                        while (animateLoading) {
-                            loading.positioning().animate(1000, Easing.EXPO, Positioning.relative(55, 50)).forwards()
-                            delay(1000)
-                            loading.positioning().animate(1000, Easing.EXPO, Positioning.relative(45, 50)).forwards()
-                            delay(1000)
-                        }
-                        loading.positioning().animate(1000, Easing.EXPO, Positioning.relative(50, 50)).forwards()
-                        delay(1000)
-                        MinecraftClient.getInstance().submit {
-                            loading.text(Text.literal(""))
-                        }
-                    }
-
-                    // File chooser
-                    var path = TinyFileDialogs.tinyfd_openFileDialog(
-                        Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_DIALOG_IMPORT).string,
-                        null,
-                        null,
-                        Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_DIALOG_FILENAME).string,
-                        true
-                    )
-
-                    if (path != null) {
-                        val paths = path.split("|")
-
-                        paths.forEach { macroPath ->
-                            logger.info("Importing macros from $macroPath")
-                            val importedMacros = Macros.importMacro(macroPath)
-                            importedMacros?.forEach { macro ->
-                                macro.enabled = false // Import ALWAYS disabled
-                                macro.name = generateSequence(macro.name) { it + "_1" } // Don't allow to create macros with same name
-                                    .first { Macros.readMacro(it) == null }
-                                Macros.addMacro(macro)
-                            }
-                        }
-                    } else {
-                        logger.info("Import canceled")
-                    }
-
-                    animateLoading = false
-                }
-            }, Util.getMainWorkerExecutor()).whenComplete { unused, throwable ->
-                logger.info("End of import")
-                if (checkList != Macros.listMacros().toString()) {
-                    MinecraftClient.getInstance().submit { // In RENDER THREAD!!! IT'S VERY IMPORTANT
-                        logger.info("Update")
-                        update()
-                    }
-                }
-            }
-        }
 
         newMacroButton.onPress {
             this.client!!.setScreen(MacroEditScreen(this, "My Super Macro", true))
@@ -150,51 +83,27 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
                                     layout.margins(Insets.right(10))
 
                                     layout.child(
-                                        Containers.horizontalFlow(Sizing.content(), Sizing.content())
-                                            .child(
-                                                Components.button(Text.literal("")) {
-                                                    export(mutableListOf(name))
-                                                }.sizing(Sizing.fixed(20), Sizing.fixed(20))
-                                                    .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_EXPORT))
-                                            )
-                                            .child(
-                                                Components.texture(Identifier.of(Constants.MOD_ID, "textures/gui/macros/export.png"), 0, 0, 250, 250)
-                                                    .sizing(Sizing.fixed(16), Sizing.fixed(16))
-                                                    .positioning(Positioning.relative(50, 50))
-                                            )
+                                        TexturedButton(Identifier.of(Constants.MOD_ID, "export")) {
+                                            export(mutableListOf(name))
+                                        }.sizing(Sizing.fixed(20), Sizing.fixed(20))
                                             .margins(Insets.right(5))
+                                            .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_EXPORT))
                                     )
 
                                     layout.child(
-                                        Containers.horizontalFlow(Sizing.content(), Sizing.content())
-                                            .child(
-                                                Components.button(Text.literal("")) {
-                                                    this.client!!.setScreen(MacroEditScreen(this, name, false))
-                                                }.sizing(Sizing.fixed(20), Sizing.fixed(20))
-                                                    .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_EDIT))
-                                            )
-                                            .child(
-                                                Components.texture(Identifier.of(Constants.MOD_ID, "textures/gui/macros/pencil.png"), 0, 0, 250, 250)
-                                                    .sizing(Sizing.fixed(16), Sizing.fixed(16))
-                                                    .positioning(Positioning.relative(50, 50))
-                                            )
+                                        TexturedButton(Identifier.of(Constants.MOD_ID, "pencil")) {
+                                            this.client!!.setScreen(MacroEditScreen(this, name, false))
+                                        }.sizing(Sizing.fixed(20), Sizing.fixed(20))
                                             .margins(Insets.right(5))
+                                            .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_EDIT))
                                     )
 
                                     layout.child(
-                                        Containers.horizontalFlow(Sizing.content(), Sizing.content())
-                                            .child(
-                                                Components.button(Text.literal("")) {
-                                                    Macros.removeMacro(name)
-                                                    update()
-                                                }.sizing(Sizing.fixed(20), Sizing.fixed(20))
-                                                    .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_DELETE))
-                                            )
-                                            .child(
-                                                Components.texture(Identifier.of(Constants.MOD_ID, "textures/gui/macros/cross.png"), 0, 0, 250, 250)
-                                                    .sizing(Sizing.fixed(16), Sizing.fixed(16))
-                                                    .positioning(Positioning.relative(50, 50))
-                                            )
+                                        TexturedButton(Identifier.of(Constants.MOD_ID, "cross")) {
+                                            Macros.removeMacro(name)
+                                            update()
+                                        }.sizing(Sizing.fixed(20), Sizing.fixed(20))
+                                            .tooltip(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_TOOLTIP_DELETE))
                                     )
                                 }
                         )
@@ -232,6 +141,76 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
                 .id(name)
 
         )
+    }
+
+    private fun import() {
+        val checkList = Macros.listMacros().toString()
+
+        // Importing
+        CompletableFuture.runAsync({
+            MemoryStack.stackPush().use { stack ->
+                val filters = stack.mallocPointer(1)
+                filters.put(stack.UTF8("*.json"))
+                filters.flip()
+                // animation
+                var animateLoading = true
+
+                CoroutineScope(Dispatchers.Default).launch {
+
+                    MinecraftClient.getInstance().submit {
+                        loading!!.text(Text.literal("●"))
+                    }
+
+                    while (animateLoading) {
+                        loading!!.positioning().animate(1000, Easing.EXPO, Positioning.relative(55, 50)).forwards()
+                        delay(1000)
+                        loading!!.positioning().animate(1000, Easing.EXPO, Positioning.relative(45, 50)).forwards()
+                        delay(1000)
+                    }
+                    loading!!.positioning().animate(1000, Easing.EXPO, Positioning.relative(50, 50)).forwards()
+                    delay(1000)
+                    MinecraftClient.getInstance().submit {
+                        loading!!.text(Text.literal(""))
+                    }
+                }
+
+                // File chooser
+                var path = TinyFileDialogs.tinyfd_openFileDialog(
+                    Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_DIALOG_IMPORT).string,
+                    null,
+                    null,
+                    Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_DIALOG_FILENAME).string,
+                    true
+                )
+
+                if (path != null) {
+                    val paths = path.split("|")
+
+                    paths.forEach { macroPath ->
+                        logger.info("Importing macros from $macroPath")
+                        val importedMacros = Macros.importMacro(macroPath)
+                        importedMacros?.forEach { macro ->
+                            macro.enabled = false // Import ALWAYS disabled
+                            macro.name = generateSequence(macro.name) { it + "_1" } // Don't allow to create macros with same name
+                                .first { Macros.readMacro(it) == null }
+                            Macros.addMacro(macro)
+                        }
+                    }
+                } else {
+                    logger.info("Import canceled")
+                }
+
+                animateLoading = false
+            }
+        }, Util.getMainWorkerExecutor()).whenComplete { unused, throwable ->
+            logger.info("End of import")
+            if (checkList != Macros.listMacros().toString()) {
+                MinecraftClient.getInstance().submit { // In RENDER THREAD!!! IT'S VERY IMPORTANT
+                    logger.info("Update")
+                    update()
+                }
+            }
+        }
     }
 
     private fun export(macros: MutableList<String>) {
