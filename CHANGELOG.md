@@ -1,5 +1,7 @@
-Hi! Version 0.2.4 avail!
+Hi! Version 0.2.5
 
-some fixes
-small changes in macros ui
-added loading animation to macros ui while it imports your macros
+updated dependencies
+fixed few bugs
+hints now disable by default
+Added 43% of Chinese language (thanks <a href="https://crowdin.com/profile/hotpad100c">Wangxi Ryan</a>)
+Added 100% of Portuguese, Brazilian language (thanks <a href="https://crowdin.com/profile/lucasofchirst">Lucasofchirstms</a>)
