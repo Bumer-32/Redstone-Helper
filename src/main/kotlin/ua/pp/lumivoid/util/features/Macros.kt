@@ -87,7 +87,7 @@ object Macros {
             return json.decodeFromString<MutableList<Macro>>(jsonData)
         } catch (e: RuntimeException) {
             logger.error("Error while reading macro file")
-            e.printStackTrace()
+            e.stackTrace.forEach { logger.error(it.toString()) }
         }
 
         return null

@@ -4,7 +4,6 @@ import io.wispforest.owo.ui.base.BaseUIModelScreen
 import io.wispforest.owo.ui.component.ButtonComponent
 import io.wispforest.owo.ui.component.Components
 import io.wispforest.owo.ui.component.LabelComponent
-import io.wispforest.owo.ui.component.TextureComponent
 import io.wispforest.owo.ui.container.Containers
 import io.wispforest.owo.ui.container.FlowLayout
 import io.wispforest.owo.ui.core.*
@@ -21,6 +20,7 @@ import net.minecraft.util.Identifier
 import org.lwjgl.glfw.GLFW
 import ua.pp.lumivoid.Constants
 import ua.pp.lumivoid.keybindings.MacrosKeyBindings
+import ua.pp.lumivoid.owocomponents.TexturedButton
 import ua.pp.lumivoid.util.Macro
 import ua.pp.lumivoid.util.features.Macros
 
@@ -189,28 +189,15 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                 .child(
                     Containers.horizontalFlow(Sizing.fixed(450), Sizing.fill())
                         .child(
-                            Containers.horizontalFlow(Sizing.content(), Sizing.content())
-                                .child(
-                                    Components.button(Text.literal("")) {
-                                        commandsLayout!!.removeChild(commandsLayout!!.childById(FlowLayout::class.java, id))
-                                    }.sizing(Sizing.fixed(20), Sizing.fixed(20))
-                                        .configure {
-                                            if (commandsLayout!!.children().isEmpty()) {
-                                                (it as ButtonComponent).visible = false
-                                            }
-                                        }
-                                )
-                                .child(
-                                    Components.texture(Identifier.of(Constants.MOD_ID, "textures/gui/macros/cross.png"), 0, 0, 250, 250)
-                                        .sizing(Sizing.fixed(16), Sizing.fixed(16))
-                                        .positioning(Positioning.relative(50, 50))
-                                        .configure {
-                                            if (commandsLayout!!.children().isEmpty()) {
-                                                (it as TextureComponent).visibleArea(PositionedRectangle.of(0, 0, Size.zero()))
-                                            }
-                                        }
-                                )
+                            TexturedButton(Identifier.of(Constants.MOD_ID, "cross")) {
+                                commandsLayout!!.removeChild(commandsLayout!!.childById(FlowLayout::class.java, id))
+                            }.sizing(Sizing.fixed(20), Sizing.fixed(20))
                                 .positioning(Positioning.relative(98, 50))
+                                .configure {
+                                    if (commandsLayout!!.children().isEmpty()) {
+                                        (it as ButtonComponent).visible = false
+                                    }
+                                }
                         )
                         .child(
                             Components.textBox(Sizing.fixed(400))

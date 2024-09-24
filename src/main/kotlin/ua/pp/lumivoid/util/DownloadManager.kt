@@ -37,7 +37,7 @@ object DownloadManager {
             return filePath
         } catch (e: Exception) {
             logger.error("Failed to download $fileName")
-            e.printStackTrace()
+            e.stackTrace.forEach { logger.error(it.toString()) }
         }
 
         return null
