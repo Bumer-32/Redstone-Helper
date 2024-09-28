@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.registration
+package ua.pp.lumivoid.redstonehelper.registration
 
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry

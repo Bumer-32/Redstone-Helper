@@ -1,7 +1,7 @@
-package ua.pp.lumivoid.network.receiver.server
+package ua.pp.lumivoid.redstonehelper.network.receiver.server
 
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.packets.c2s.SetPlayerSlotInventoryC2SPacket
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.SetPlayerSlotInventoryC2SPacket
 
 object SetPlayerSlotInventoryReceiver {
     private val logger = Constants.LOGGER

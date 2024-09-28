@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.commands.commandsuggestionproviders
+package ua.pp.lumivoid.redstonehelper.commands.commandsuggestionproviders
 
 import com.mojang.brigadier.context.CommandContext
 import com.mojang.brigadier.suggestion.SuggestionProvider

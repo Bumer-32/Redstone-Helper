@@ -1,14 +1,14 @@
-package ua.pp.lumivoid.registration
+package ua.pp.lumivoid.redstonehelper.registration
 
 import net.fabricmc.fabric.api.client.networking.v1.ClientLoginConnectionEvents
 import net.minecraft.text.Text
-import ua.pp.lumivoid.ClientOptions
-import ua.pp.lumivoid.Config
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.util.JsonConfig
-import ua.pp.lumivoid.util.TickHandler
-import ua.pp.lumivoid.util.VersionChecker
+import ua.pp.lumivoid.redstonehelper.ClientOptions
+import ua.pp.lumivoid.redstonehelper.Config
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.gui.HudToast
+import ua.pp.lumivoid.redstonehelper.util.JsonConfig
+import ua.pp.lumivoid.redstonehelper.util.TickHandler
+import ua.pp.lumivoid.redstonehelper.util.VersionChecker
 import kotlin.random.Random
 
 object LogginedInRegistration {

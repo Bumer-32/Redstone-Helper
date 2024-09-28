@@ -1,6 +1,6 @@
 @file:Suppress("LoggingStringTemplateAsArgument")
 
-package ua.pp.lumivoid.gui
+package ua.pp.lumivoid.redstonehelper.gui
 
 import io.wispforest.owo.ui.component.LabelComponent
 import io.wispforest.owo.ui.container.FlowLayout
@@ -15,8 +15,8 @@ import net.minecraft.client.MinecraftClient
 import net.minecraft.registry.Registries
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
-import ua.pp.lumivoid.Config
-import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.redstonehelper.Config
+import ua.pp.lumivoid.redstonehelper.Constants
 
 
 object HudToast {

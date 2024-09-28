@@ -1,9 +1,9 @@
-package ua.pp.lumivoid.network.receiver.server
+package ua.pp.lumivoid.redstonehelper.network.receiver.server
 
 import net.minecraft.entity.Entity
 import net.minecraft.network.packet.s2c.play.PositionFlag
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.packets.c2s.QuickTeleportC2SPacket
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.QuickTeleportC2SPacket
 import java.util.*
 
 object QuickTeleportPacketReceiver {

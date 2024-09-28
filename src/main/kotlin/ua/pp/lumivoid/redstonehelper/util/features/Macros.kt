@@ -1,11 +1,11 @@
-package ua.pp.lumivoid.util.features
+package ua.pp.lumivoid.redstonehelper.util.features
 
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import net.minecraft.client.MinecraftClient
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.util.JsonConfig
-import ua.pp.lumivoid.util.Macro
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.util.JsonConfig
+import ua.pp.lumivoid.redstonehelper.util.Macro
 import java.io.File
 
 object Macros {

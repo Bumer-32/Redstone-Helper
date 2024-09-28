@@ -25,9 +25,8 @@
  *         SOFTWARE.
  */
 
-package ua.pp.lumivoid.mixin;
+package ua.pp.lumivoid.redstonehelper.mixin;
 
-import ua.pp.lumivoid.Options;
 import net.minecraft.block.Block;
 import net.minecraft.block.RedstoneLampBlock;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +34,7 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import ua.pp.lumivoid.registration.GamerulesRegistration;
+import ua.pp.lumivoid.redstonehelper.registration.GamerulesRegistration;
 
 @Mixin(RedstoneLampBlock.class)
 public abstract class RedstoneLampMixin extends Block {

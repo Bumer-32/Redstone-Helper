@@ -3,7 +3,7 @@
  * License in: REDSTONE_TOOLS_LICENSE
  */
 
-package ua.pp.lumivoid.mixin;
+package ua.pp.lumivoid.redstonehelper.mixin;
 
 import net.minecraft.inventory.Inventory;
 import net.minecraft.util.ItemScatterer;
@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import ua.pp.lumivoid.registration.GamerulesRegistration;
+import ua.pp.lumivoid.redstonehelper.registration.GamerulesRegistration;
 
 @Mixin(ItemScatterer.class)
 public class DoContainerDropsMixin {

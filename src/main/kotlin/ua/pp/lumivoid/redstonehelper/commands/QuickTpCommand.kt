@@ -1,14 +1,14 @@
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.BoolArgumentType
 import com.mojang.brigadier.arguments.IntegerArgumentType
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
-import ua.pp.lumivoid.Config
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.SendPacket
-import ua.pp.lumivoid.network.packets.c2s.QuickTeleportC2SPacket
+import ua.pp.lumivoid.redstonehelper.Config
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.network.SendPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.QuickTeleportC2SPacket
 
 object QuickTpCommand {
     private val logger = Constants.LOGGER

@@ -1,11 +1,11 @@
-package ua.pp.lumivoid.commands.commandsuggestionproviders
+package ua.pp.lumivoid.redstonehelper.commands.commandsuggestionproviders
 
 import com.mojang.brigadier.context.CommandContext
 import com.mojang.brigadier.suggestion.SuggestionProvider
 import com.mojang.brigadier.suggestion.Suggestions
 import com.mojang.brigadier.suggestion.SuggestionsBuilder
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
-import ua.pp.lumivoid.util.features.Macros
+import ua.pp.lumivoid.redstonehelper.util.features.Macros
 import java.util.concurrent.CompletableFuture
 
 object MacrosCommandSuggestionProvider: SuggestionProvider<FabricClientCommandSource>{

@@ -1,10 +1,10 @@
-package ua.pp.lumivoid.registration
+package ua.pp.lumivoid.redstonehelper.registration
 
 import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
-import ua.pp.lumivoid.Config
-import ua.pp.lumivoid.commands.*
+import ua.pp.lumivoid.redstonehelper.Config
+import ua.pp.lumivoid.redstonehelper.commands.*
 
 object ClientCommandsRegistration {
     fun register() {

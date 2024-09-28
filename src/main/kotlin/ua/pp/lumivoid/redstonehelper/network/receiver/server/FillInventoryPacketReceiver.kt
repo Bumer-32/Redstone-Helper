@@ -1,12 +1,12 @@
-package ua.pp.lumivoid.network.receiver.server
+package ua.pp.lumivoid.redstonehelper.network.receiver.server
 
 import net.minecraft.inventory.Inventory
 import net.minecraft.item.ItemStack
 import net.minecraft.registry.Registries
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.packets.c2s.FillInventoryC2SPacket
-import ua.pp.lumivoid.network.packets.s2c.InfoSuccessS2CPacket
-import ua.pp.lumivoid.network.SendPacket
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.FillInventoryC2SPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.s2c.InfoSuccessS2CPacket
+import ua.pp.lumivoid.redstonehelper.network.SendPacket
 
 object FillInventoryPacketReceiver {
     private val logger = Constants.LOGGER

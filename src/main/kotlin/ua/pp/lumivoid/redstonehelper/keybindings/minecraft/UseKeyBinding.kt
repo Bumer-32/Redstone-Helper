@@ -1,11 +1,11 @@
-package ua.pp.lumivoid.keybindings.minecraft
+package ua.pp.lumivoid.redstonehelper.keybindings.minecraft
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.minecraft.network.packet.c2s.play.PlayerInteractBlockC2SPacket
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
-import ua.pp.lumivoid.ClientOptions
-import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.redstonehelper.ClientOptions
+import ua.pp.lumivoid.redstonehelper.Constants
 
 object UseKeyBinding {
     val logger = Constants.LOGGER

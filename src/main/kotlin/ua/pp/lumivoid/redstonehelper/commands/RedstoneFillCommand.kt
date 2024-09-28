@@ -1,6 +1,6 @@
 @file:Suppress("LoggingStringTemplateAsArgument", "LoggingSimilarMessage")
 
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.IntegerArgumentType
@@ -15,10 +15,10 @@ import net.minecraft.text.Text
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
 import net.minecraft.util.hit.HitResult.Type
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.network.SendPacket
-import ua.pp.lumivoid.network.packets.c2s.FillInventoryC2SPacket
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.gui.HudToast
+import ua.pp.lumivoid.redstonehelper.network.SendPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.FillInventoryC2SPacket
 import kotlin.random.Random
 
 

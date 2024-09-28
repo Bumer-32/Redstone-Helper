@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.network.packets.s2c
+package ua.pp.lumivoid.redstonehelper.network.packets.s2c
 
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos

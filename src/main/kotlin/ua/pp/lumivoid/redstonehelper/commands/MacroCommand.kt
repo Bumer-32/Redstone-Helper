@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.StringArgumentType
@@ -6,10 +6,10 @@ import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.MinecraftClient
 import net.minecraft.text.Text
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.commands.commandsuggestionproviders.MacrosCommandSuggestionProvider
-import ua.pp.lumivoid.gui.MacroScreen
-import ua.pp.lumivoid.util.features.Macros
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.commands.commandsuggestionproviders.MacrosCommandSuggestionProvider
+import ua.pp.lumivoid.redstonehelper.gui.MacroScreen
+import ua.pp.lumivoid.redstonehelper.util.features.Macros
 
 object MacroCommand {
     private val logger = Constants.LOGGER

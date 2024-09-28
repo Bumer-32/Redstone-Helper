@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.HitResult
-import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.redstonehelper.Constants
 
 object CopyStateCommand {
     private val logger = Constants.LOGGER

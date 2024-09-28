@@ -1,11 +1,11 @@
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.text.Text
-import ua.pp.lumivoid.ClientOptions
-import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.redstonehelper.ClientOptions
+import ua.pp.lumivoid.redstonehelper.Constants
 
 object AirPlaceCommand {
     private val logger = Constants.LOGGER

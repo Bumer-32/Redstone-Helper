@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.util
+package ua.pp.lumivoid.redstonehelper.util
 
 @Suppress("unused")
 enum class ToastPositions {

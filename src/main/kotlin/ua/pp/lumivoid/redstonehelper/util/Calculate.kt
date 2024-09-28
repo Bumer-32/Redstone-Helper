@@ -1,8 +1,8 @@
-package ua.pp.lumivoid.util
+package ua.pp.lumivoid.redstonehelper.util
 
 import net.minecraft.item.Item
 import org.mariuszgromada.math.mxparser.Expression
-import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.redstonehelper.Constants
 
 object Calculate {
     private val logger = Constants.LOGGER

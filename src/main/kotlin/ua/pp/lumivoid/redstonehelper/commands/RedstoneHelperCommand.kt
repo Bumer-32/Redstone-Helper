@@ -1,6 +1,6 @@
 @file:Suppress("LoggingSimilarMessage")
 
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.BoolArgumentType
@@ -8,11 +8,11 @@ import com.mojang.brigadier.arguments.StringArgumentType
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.text.Text
-import ua.pp.lumivoid.Config
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.util.DownloadManager
-import ua.pp.lumivoid.util.VersionChecker
+import ua.pp.lumivoid.redstonehelper.Config
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.gui.HudToast
+import ua.pp.lumivoid.redstonehelper.util.DownloadManager
+import ua.pp.lumivoid.redstonehelper.util.VersionChecker
 
 object RedstoneHelperCommand {
     private val logger = Constants.LOGGER

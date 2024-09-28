@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.keybindings
+package ua.pp.lumivoid.redstonehelper.keybindings
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
@@ -6,10 +6,10 @@ import net.minecraft.client.option.KeyBinding
 import net.minecraft.client.util.InputUtil
 import net.minecraft.text.Text
 import org.lwjgl.glfw.GLFW
-import ua.pp.lumivoid.ClientOptions
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.util.features.AutoWire
+import ua.pp.lumivoid.redstonehelper.ClientOptions
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.gui.HudToast
+import ua.pp.lumivoid.redstonehelper.util.features.AutoWire
 
 object NextAutoWireModeKeyBinding {
     private val logger = Constants.LOGGER

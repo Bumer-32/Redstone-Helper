@@ -1,7 +1,7 @@
-package ua.pp.lumivoid.util
+package ua.pp.lumivoid.redstonehelper.util
 
 import kotlinx.serialization.Serializable
-import ua.pp.lumivoid.util.features.AutoWire
+import ua.pp.lumivoid.redstonehelper.util.features.AutoWire
 
 @Serializable
 data class JsonConfigData(

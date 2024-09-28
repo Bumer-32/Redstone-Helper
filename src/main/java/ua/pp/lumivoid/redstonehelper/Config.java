@@ -1,8 +1,8 @@
-package ua.pp.lumivoid;
+package ua.pp.lumivoid.redstonehelper;
 
-import ua.pp.lumivoid.util.ToastPositions;
-import ua.pp.lumivoid.util.features.AutoWire;
-import ua.pp.lumivoid.util.RedstoneHelperConfig;
+import ua.pp.lumivoid.redstonehelper.util.ToastPositions;
+import ua.pp.lumivoid.redstonehelper.util.features.AutoWire;
+import ua.pp.lumivoid.redstonehelper.util.RedstoneHelperConfig;
 
 public class Config {
     public static final RedstoneHelperConfig CONFIG = RedstoneHelperConfig.createAndLoad();

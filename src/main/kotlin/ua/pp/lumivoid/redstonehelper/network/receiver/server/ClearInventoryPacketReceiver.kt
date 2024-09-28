@@ -1,13 +1,13 @@
 @file:Suppress("LoggingStringTemplateAsArgument")
 
-package ua.pp.lumivoid.network.receiver.server
+package ua.pp.lumivoid.redstonehelper.network.receiver.server
 
 import net.minecraft.inventory.Inventory
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.SendPacket
-import ua.pp.lumivoid.network.packets.c2s.ClearInventoryC2SPacket
-import ua.pp.lumivoid.network.packets.s2c.InfoBlockNotFoundS2CPacket
-import ua.pp.lumivoid.network.packets.s2c.InfoSuccessS2CPacket
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.network.SendPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.ClearInventoryC2SPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.s2c.InfoBlockNotFoundS2CPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.s2c.InfoSuccessS2CPacket
 
 object ClearInventoryPacketReceiver {
     private val logger = Constants.LOGGER

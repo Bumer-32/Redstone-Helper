@@ -1,6 +1,6 @@
 @file:Suppress("LoggingSimilarMessage", "DuplicatedCode")
 
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.IntegerArgumentType
@@ -18,9 +18,9 @@ import net.minecraft.server.command.CommandManager
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.gui.HudToast
-import ua.pp.lumivoid.util.Calculate
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.gui.HudToast
+import ua.pp.lumivoid.redstonehelper.util.Calculate
 import kotlin.random.Random
 
 object RedstoneGiveSignalCommandCommand {

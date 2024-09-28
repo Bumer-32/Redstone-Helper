@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.gui
+package ua.pp.lumivoid.redstonehelper.gui
 
 import io.wispforest.owo.ui.base.BaseUIModelScreen
 import io.wispforest.owo.ui.component.BoxComponent
@@ -9,9 +9,9 @@ import io.wispforest.owo.ui.core.Color
 import io.wispforest.owo.ui.core.Surface
 import net.minecraft.client.MinecraftClient
 import net.minecraft.util.Identifier
-import ua.pp.lumivoid.Config
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.util.Calculate
+import ua.pp.lumivoid.redstonehelper.Config
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.util.Calculate
 
 class ManualWelcomePageScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of(Constants.MOD_ID, "manual_welcome_page"))) {
     private val logger = Constants.LOGGER

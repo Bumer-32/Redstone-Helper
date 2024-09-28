@@ -1,11 +1,11 @@
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.MinecraftClient
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.gui.AutowireScreen
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.gui.AutowireScreen
 
 object AutoWireCommand {
     private val logger = Constants.LOGGER

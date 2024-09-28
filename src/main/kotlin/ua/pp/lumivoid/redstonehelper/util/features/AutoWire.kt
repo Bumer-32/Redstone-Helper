@@ -1,6 +1,6 @@
 @file:Suppress("LoggingStringTemplateAsArgument")
 
-package ua.pp.lumivoid.util.features
+package ua.pp.lumivoid.redstonehelper.util.features
 
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.registry.Registries
@@ -9,13 +9,13 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
 import net.minecraft.world.World
-import ua.pp.lumivoid.ClientOptions
-import ua.pp.lumivoid.Config
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.SendPacket
-import ua.pp.lumivoid.network.packets.c2s.SetBlockC2SPacket
-import ua.pp.lumivoid.util.JsonConfig
-import ua.pp.lumivoid.util.TickHandler
+import ua.pp.lumivoid.redstonehelper.ClientOptions
+import ua.pp.lumivoid.redstonehelper.Config
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.network.SendPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.SetBlockC2SPacket
+import ua.pp.lumivoid.redstonehelper.util.JsonConfig
+import ua.pp.lumivoid.redstonehelper.util.TickHandler
 import kotlin.math.abs
 
 enum class AutoWire {

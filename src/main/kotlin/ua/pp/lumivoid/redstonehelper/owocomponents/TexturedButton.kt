@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.owocomponents
+package ua.pp.lumivoid.redstonehelper.owocomponents
 
 import io.wispforest.owo.ui.component.ButtonComponent
 import net.minecraft.client.gui.DrawContext

@@ -1,10 +1,10 @@
-package ua.pp.lumivoid.util
+package ua.pp.lumivoid.redstonehelper.util
 
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.lwjgl.glfw.GLFW
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.util.features.Macros
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.util.features.Macros
 import java.io.File
 
 object JsonConfig {

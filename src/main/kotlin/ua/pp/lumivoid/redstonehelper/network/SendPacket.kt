@@ -1,7 +1,7 @@
-package ua.pp.lumivoid.network
+package ua.pp.lumivoid.redstonehelper.network
 
 import net.minecraft.server.network.ServerPlayerEntity
-import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.redstonehelper.Constants
 
 
 object SendPacket {

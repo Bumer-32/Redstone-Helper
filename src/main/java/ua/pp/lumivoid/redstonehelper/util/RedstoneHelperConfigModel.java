@@ -1,9 +1,9 @@
-package ua.pp.lumivoid.util;
+package ua.pp.lumivoid.redstonehelper.util;
 
 import io.wispforest.owo.config.annotation.*;
-import ua.pp.lumivoid.ClientOptions;
-import ua.pp.lumivoid.Constants;
-import ua.pp.lumivoid.util.features.AutoWire;
+import ua.pp.lumivoid.redstonehelper.ClientOptions;
+import ua.pp.lumivoid.redstonehelper.Constants;
+import ua.pp.lumivoid.redstonehelper.util.features.AutoWire;
 
 @SuppressWarnings("unused")
 @Modmenu(modId = Constants.MOD_ID)

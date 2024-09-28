@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
@@ -8,10 +8,10 @@ import net.minecraft.item.Items
 import net.minecraft.registry.Registries
 import net.minecraft.util.DyeColor
 import net.minecraft.util.Identifier
-import ua.pp.lumivoid.ClientOptions
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.SendPacket
-import ua.pp.lumivoid.network.packets.c2s.SetPlayerSlotInventoryC2SPacket
+import ua.pp.lumivoid.redstonehelper.ClientOptions
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.network.SendPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.SetPlayerSlotInventoryC2SPacket
 
 object GlassCommand {
     private val logger = Constants.LOGGER

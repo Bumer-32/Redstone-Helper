@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.IntegerArgumentType
@@ -12,7 +12,7 @@ import com.sk89q.worldedit.math.BlockVector3
 import net.minecraft.server.command.CommandManager
 import net.minecraft.server.command.ServerCommandSource
 import net.minecraft.text.Text
-import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.redstonehelper.Constants
 
 
 object RstackCommand {

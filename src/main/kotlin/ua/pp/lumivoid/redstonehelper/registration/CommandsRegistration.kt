@@ -1,11 +1,11 @@
-package ua.pp.lumivoid.registration
+package ua.pp.lumivoid.redstonehelper.registration
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback
 import net.fabricmc.loader.api.FabricLoader
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.commands.ColorcodeCommand
-import ua.pp.lumivoid.commands.RedstoneGiveCommand
-import ua.pp.lumivoid.commands.RedstoneGiveSignalCommandCommand
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.commands.ColorcodeCommand
+import ua.pp.lumivoid.redstonehelper.commands.RedstoneGiveCommand
+import ua.pp.lumivoid.redstonehelper.commands.RedstoneGiveSignalCommandCommand
 
 object CommandsRegistration {
     private val logger = Constants.LOGGER

@@ -1,13 +1,13 @@
-package ua.pp.lumivoid
+package ua.pp.lumivoid.redstonehelper
 
 import net.fabricmc.api.ModInitializer
-import ua.pp.lumivoid.network.packets.s2c.InfoBlockNotFoundS2CPacket
-import ua.pp.lumivoid.network.packets.s2c.InfoSuccessS2CPacket
-import ua.pp.lumivoid.registration.CommandsRegistration
-import ua.pp.lumivoid.registration.EachTickRegistration
-import ua.pp.lumivoid.registration.GamerulesRegistration
-import ua.pp.lumivoid.registration.PacketReceiverRegistration
-import ua.pp.lumivoid.util.VersionChecker
+import ua.pp.lumivoid.redstonehelper.network.packets.s2c.InfoBlockNotFoundS2CPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.s2c.InfoSuccessS2CPacket
+import ua.pp.lumivoid.redstonehelper.registration.CommandsRegistration
+import ua.pp.lumivoid.redstonehelper.registration.EachTickRegistration
+import ua.pp.lumivoid.redstonehelper.registration.GamerulesRegistration
+import ua.pp.lumivoid.redstonehelper.registration.PacketReceiverRegistration
+import ua.pp.lumivoid.redstonehelper.util.VersionChecker
 
 
 @Suppress("unused")

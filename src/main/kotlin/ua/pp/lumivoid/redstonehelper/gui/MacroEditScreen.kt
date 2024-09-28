@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.gui
+package ua.pp.lumivoid.redstonehelper.gui
 
 import io.wispforest.owo.ui.base.BaseUIModelScreen
 import io.wispforest.owo.ui.component.ButtonComponent
@@ -18,11 +18,11 @@ import net.minecraft.text.Text
 import net.minecraft.util.Formatting
 import net.minecraft.util.Identifier
 import org.lwjgl.glfw.GLFW
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.keybindings.MacrosKeyBindings
-import ua.pp.lumivoid.owocomponents.TexturedButton
-import ua.pp.lumivoid.util.Macro
-import ua.pp.lumivoid.util.features.Macros
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.keybindings.MacrosKeyBindings
+import ua.pp.lumivoid.redstonehelper.owocomponents.TexturedButton
+import ua.pp.lumivoid.redstonehelper.util.Macro
+import ua.pp.lumivoid.redstonehelper.util.features.Macros
 
 
 @Suppress("UsePropertyAccessSyntax")

@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.gui
+package ua.pp.lumivoid.redstonehelper.gui
 
 import io.wispforest.owo.ui.base.BaseUIModelScreen
 import io.wispforest.owo.ui.component.ButtonComponent
@@ -19,11 +19,11 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.Util
 import org.lwjgl.system.MemoryStack
 import org.lwjgl.util.tinyfd.TinyFileDialogs
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.keybindings.MacrosKeyBindings
-import ua.pp.lumivoid.owocomponents.TexturedButton
-import ua.pp.lumivoid.util.Macro
-import ua.pp.lumivoid.util.features.Macros
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.keybindings.MacrosKeyBindings
+import ua.pp.lumivoid.redstonehelper.owocomponents.TexturedButton
+import ua.pp.lumivoid.redstonehelper.util.Macro
+import ua.pp.lumivoid.redstonehelper.util.features.Macros
 import java.util.concurrent.CompletableFuture
 
 class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of(Constants.MOD_ID, "macro_ui_model"))) {

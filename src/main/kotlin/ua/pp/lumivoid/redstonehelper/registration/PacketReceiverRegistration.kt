@@ -1,6 +1,6 @@
-package ua.pp.lumivoid.registration
+package ua.pp.lumivoid.redstonehelper.registration
 
-import ua.pp.lumivoid.network.receiver.server.*
+import ua.pp.lumivoid.redstonehelper.network.receiver.server.*
 
 object PacketReceiverRegistration {
     fun register() {

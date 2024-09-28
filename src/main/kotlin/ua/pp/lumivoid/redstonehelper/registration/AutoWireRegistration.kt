@@ -1,12 +1,12 @@
-package ua.pp.lumivoid.registration
+package ua.pp.lumivoid.redstonehelper.registration
 
 import net.minecraft.block.BlockState
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.util.ActionResult
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
-import ua.pp.lumivoid.ClientOptions
-import ua.pp.lumivoid.events.PlayerBlockPlaceCallback
+import ua.pp.lumivoid.redstonehelper.ClientOptions
+import ua.pp.lumivoid.redstonehelper.events.PlayerBlockPlaceCallback
 
 object AutoWireRegistration {
     fun register() {

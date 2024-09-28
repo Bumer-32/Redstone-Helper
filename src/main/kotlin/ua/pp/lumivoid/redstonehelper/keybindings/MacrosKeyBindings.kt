@@ -1,11 +1,11 @@
-package ua.pp.lumivoid.keybindings
+package ua.pp.lumivoid.redstonehelper.keybindings
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.minecraft.client.option.KeyBinding
 import net.minecraft.client.util.InputUtil
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.util.Macro
-import ua.pp.lumivoid.util.features.Macros
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.util.Macro
+import ua.pp.lumivoid.redstonehelper.util.features.Macros
 
 object MacrosKeyBindings {
     private val logger = Constants.LOGGER

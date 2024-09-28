@@ -1,6 +1,6 @@
-package ua.pp.lumivoid.util
+package ua.pp.lumivoid.redstonehelper.util
 
-import ua.pp.lumivoid.Constants
+import ua.pp.lumivoid.redstonehelper.Constants
 import java.io.File
 import java.net.URL
 

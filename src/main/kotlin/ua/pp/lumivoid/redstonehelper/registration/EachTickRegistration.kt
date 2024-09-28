@@ -1,7 +1,7 @@
-package ua.pp.lumivoid.registration
+package ua.pp.lumivoid.redstonehelper.registration
 
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
-import ua.pp.lumivoid.util.TickHandler
+import ua.pp.lumivoid.redstonehelper.util.TickHandler
 
 object EachTickRegistration {
     fun register() {

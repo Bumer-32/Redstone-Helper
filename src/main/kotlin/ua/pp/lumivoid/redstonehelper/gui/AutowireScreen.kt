@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.gui
+package ua.pp.lumivoid.redstonehelper.gui
 
 import io.wispforest.owo.ui.base.BaseUIModelScreen
 import io.wispforest.owo.ui.component.ButtonComponent
@@ -11,11 +11,11 @@ import io.wispforest.owo.ui.core.Component
 import io.wispforest.owo.ui.core.Surface
 import net.minecraft.text.Text
 import net.minecraft.util.Identifier
-import ua.pp.lumivoid.ClientOptions
-import ua.pp.lumivoid.Config
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.util.Calculate
-import ua.pp.lumivoid.util.features.AutoWire
+import ua.pp.lumivoid.redstonehelper.ClientOptions
+import ua.pp.lumivoid.redstonehelper.Config
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.util.Calculate
+import ua.pp.lumivoid.redstonehelper.util.features.AutoWire
 
 class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, DataSource.asset(Identifier.of(Constants.MOD_ID, "autowire_ui_model"))) {
     private val logger = Constants.LOGGER

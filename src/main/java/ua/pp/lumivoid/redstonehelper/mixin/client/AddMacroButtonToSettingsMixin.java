@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.mixin.client;
+package ua.pp.lumivoid.redstonehelper.mixin.client;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.ControlsOptionsScreen;
@@ -10,8 +10,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import ua.pp.lumivoid.Constants;
-import ua.pp.lumivoid.gui.MacroScreen;
+import ua.pp.lumivoid.redstonehelper.Constants;
+import ua.pp.lumivoid.redstonehelper.gui.MacroScreen;
 
 import java.util.List;
 import java.util.Objects;

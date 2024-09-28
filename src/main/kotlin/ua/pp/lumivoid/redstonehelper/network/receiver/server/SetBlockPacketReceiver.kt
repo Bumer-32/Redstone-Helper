@@ -1,13 +1,13 @@
-package ua.pp.lumivoid.network.receiver.server
+package ua.pp.lumivoid.redstonehelper.network.receiver.server
 
 import net.minecraft.block.enums.WireConnection
 import net.minecraft.registry.Registries
 import net.minecraft.state.property.Properties
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.Direction
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.network.packets.c2s.SetBlockC2SPacket
-import ua.pp.lumivoid.util.TickHandler
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.SetBlockC2SPacket
+import ua.pp.lumivoid.redstonehelper.util.TickHandler
 
 object SetBlockPacketReceiver {
     private val logger = Constants.LOGGER

@@ -1,7 +1,7 @@
-package ua.pp.lumivoid.registration
+package ua.pp.lumivoid.redstonehelper.registration
 
-import ua.pp.lumivoid.network.receiver.client.ClientInfoBlockNotFoundPacket
-import ua.pp.lumivoid.network.receiver.client.ClientInfoSuccessPacketReceiver
+import ua.pp.lumivoid.redstonehelper.network.receiver.client.ClientInfoBlockNotFoundPacket
+import ua.pp.lumivoid.redstonehelper.network.receiver.client.ClientInfoSuccessPacketReceiver
 
 object ClientPacketReceiverRegistration {
     fun register() {

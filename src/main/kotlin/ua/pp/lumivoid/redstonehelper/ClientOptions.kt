@@ -1,8 +1,8 @@
-package ua.pp.lumivoid
+package ua.pp.lumivoid.redstonehelper
 
 import net.minecraft.item.ItemStack
 import net.minecraft.util.math.BlockPos
-import ua.pp.lumivoid.util.features.AutoWire
+import ua.pp.lumivoid.redstonehelper.util.features.AutoWire
 
 object ClientOptions {
     var isAutoWireEnabled: Boolean = false

@@ -1,4 +1,4 @@
-package ua.pp.lumivoid
+package ua.pp.lumivoid.redstonehelper
 
 import io.wispforest.owo.network.OwoNetChannel
 import net.fabricmc.loader.api.FabricLoader

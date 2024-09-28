@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.commands
+package ua.pp.lumivoid.redstonehelper.commands
 
 import com.mojang.brigadier.CommandDispatcher
 import com.mojang.brigadier.arguments.StringArgumentType
@@ -12,10 +12,10 @@ import net.minecraft.text.Text
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
-import ua.pp.lumivoid.Constants
-import ua.pp.lumivoid.commands.commandsuggestionproviders.ColorCommandSuggestionProvider
-import ua.pp.lumivoid.network.SendPacket
-import ua.pp.lumivoid.network.packets.c2s.SetBlockC2SPacket
+import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.commands.commandsuggestionproviders.ColorCommandSuggestionProvider
+import ua.pp.lumivoid.redstonehelper.network.SendPacket
+import ua.pp.lumivoid.redstonehelper.network.packets.c2s.SetBlockC2SPacket
 
 
 object ColorcodeCommand {

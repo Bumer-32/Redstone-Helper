@@ -1,4 +1,4 @@
-package ua.pp.lumivoid
+package ua.pp.lumivoid.redstonehelper
 
 import io.wispforest.owo.ui.component.Components
 import io.wispforest.owo.ui.container.Containers
@@ -10,8 +10,8 @@ import io.wispforest.owo.ui.hud.Hud
 import net.fabricmc.api.ClientModInitializer
 import net.minecraft.text.Text
 import org.mariuszgromada.math.mxparser.License
-import ua.pp.lumivoid.registration.*
-import ua.pp.lumivoid.util.JsonConfig
+import ua.pp.lumivoid.redstonehelper.registration.*
+import ua.pp.lumivoid.redstonehelper.util.JsonConfig
 
 
 @Suppress("unused")
