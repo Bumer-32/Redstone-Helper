@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "ua.pp.lumivoid.mixin.client",
+	"package": "ua.pp.lumivoid.redstonehelper.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
 		"AddMacroButtonToSettingsMixin"
