@@ -55,7 +55,7 @@ object VersionChecker {
 
             // else check
 
-            if (version.jsonObject["game_versions"]!!.jsonArray.first().jsonPrimitive.content == Constants.MINECRAFT_VERSION) {
+            if (version.jsonObject["game_versions"]!!.jsonArray.any { it.jsonPrimitive.content == Constants.MINECRAFT_VERSION }) {
                 if (newestVersion == Constants.MOD_VERSION) {
                     isUpdate = true
                     return Pair(true, "$newestVersion-$versionType")
