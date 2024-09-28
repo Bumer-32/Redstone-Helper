@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "ua.pp.lumivoid.mixin",
+	"package": "ua.pp.lumivoid.redstonehelper.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
       	"RedstoneLampMixin",

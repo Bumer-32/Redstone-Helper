@@ -18,13 +18,13 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "ua.pp.lumivoid.RedstoneHelper",
+				"value": "ua.pp.lumivoid.redstonehelper.RedstoneHelper",
 				"adapter": "kotlin"
 			}
 		],
 		"client": [
 			{
-				"value": "ua.pp.lumivoid.RedstoneHelperClient",
+				"value": "ua.pp.lumivoid.redstonehelper.RedstoneHelperClient",
 				"adapter": "kotlin"
 			}
 		]
