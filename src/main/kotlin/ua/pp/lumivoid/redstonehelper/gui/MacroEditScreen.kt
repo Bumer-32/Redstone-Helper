@@ -7,11 +7,6 @@ import io.wispforest.owo.ui.component.LabelComponent
 import io.wispforest.owo.ui.container.Containers
 import io.wispforest.owo.ui.container.FlowLayout
 import io.wispforest.owo.ui.core.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import net.minecraft.client.MinecraftClient
 import net.minecraft.client.gui.widget.TextFieldWidget
 import net.minecraft.client.util.InputUtil
 import net.minecraft.text.Text
@@ -43,6 +38,27 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
     }
 
+    override fun shouldCloseOnEsc(): Boolean {
+        return false
+    }
+
+    override fun keyPressed(keyCode: Int, scanCode: Int, modifiers: Int): Boolean {
+        if (!keyAssigned) {
+            if (keyCode == GLFW.GLFW_KEY_ESCAPE) {
+                keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
+                macro!!.key = GLFW.GLFW_KEY_UNKNOWN
+            } else {
+                macro!!.key = keyCode
+                keyBindButton!!.message = InputUtil.fromKeyCode(keyCode, scanCode).localizedText
+            }
+
+            keyAssigned = true
+        }
+
+        return true
+    }
+
+    @Suppress("t")
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building MacroEditScreen UI")
 
@@ -78,60 +94,35 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
             keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
         } else {
             if (macro!!.key != GLFW.GLFW_KEY_UNKNOWN) {
-                macro!!.key = macro!!.key
-                keyBindButton!!.message = Text.literal(GLFW.glfwGetKeyName(macro!!.key, -1))
+                keyBindButton!!.message = InputUtil.fromKeyCode(macro!!.key, -1).localizedText
             } else {
                 keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
             }
         }
 
         keyBindButton!!.onPress {
-            checkForAssigningActive()
-
-            val scope = CoroutineScope(Dispatchers.Default)
-
             keyAssigned = false
 
             keyBindButton!!.message = Text.literal(">").formatted(Formatting.YELLOW)
                 .append(keyBindButton!!.message.copy().formatted(Formatting.UNDERLINE, Formatting.WHITE))
                 .append(Text.literal("<").formatted(Formatting.YELLOW))
-
-            scope.launch {
-                while (!keyAssigned) {
-                    MinecraftClient.getInstance().execute {
-                        for (key in GLFW.GLFW_KEY_SPACE..GLFW.GLFW_KEY_LAST) {
-                            if (InputUtil.isKeyPressed(client!!.window.handle, key)) {
-                                if (key == GLFW.GLFW_KEY_ESCAPE) {
-                                    keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
-                                    macro!!.key = GLFW.GLFW_KEY_UNKNOWN
-                                } else {
-                                    macro!!.key = key
-                                    keyBindButton!!.message = Text.literal(GLFW.glfwGetKeyName(key, -1))
-                                }
-                                keyAssigned = true
-                            }
-                        }
-                    }
-                    delay(10)
-                }
-            }
         }
 
         resetButton.onPress {
-            checkForAssigningActive()
+            keyAssigned = true
             keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
             macro!!.key = GLFW.GLFW_KEY_UNKNOWN
         }
 
         macroName.setChangedListener {
-            checkForAssigningActive()
+            keyAssigned = true
             macro!!.name = macroName.text
             title.text(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_EDITMACROTITLE, macro!!.name))
         }
 
 
         doneButton.onPress {
-            checkForAssigningActive()
+            keyAssigned = true
 
             // saving
             if (!new) {
@@ -160,26 +151,13 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
 
         cancelButton.onPress {
-            checkForAssigningActive()
+            keyAssigned = true
             this.client!!.setScreen(parent)
         }
 
     }
 
-    /**
-    * Use to stop searching assigning key
-    * e.g: we started key search but didn't press any key on keyboard and press done button, then we should to stop searching and set key for none
-    */
-    private fun checkForAssigningActive() {
-        if (!keyAssigned) {
-            logger.warn("stop assigning")
-            keyAssigned = false
-            macro!!.key = GLFW.GLFW_KEY_UNKNOWN
-
-            keyBindButton!!.message = Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_KEYBINDNONE)
-        }
-    }
-
+    @Suppress("t")
     private fun addCommand(command: String) {
         val id = (commandsLayout!!.children().size + 1).toString()
 
@@ -218,7 +196,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
                                         textWidget.sizing(Sizing.fixed(440), Sizing.fixed(20))
                                     }
                                     textWidget.setChangedListener {
-                                        checkForAssigningActive()
+                                        keyAssigned = true
                                         if (textWidget.text == "") {
                                             textWidget.setSuggestion(Text.translatable(Constants.LOCALIZEIDS.FEATURE_MACRO_ADDCOMMAND).string)
                                         } else {

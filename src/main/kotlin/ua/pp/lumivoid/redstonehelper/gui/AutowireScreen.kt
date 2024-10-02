@@ -28,6 +28,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
         val selectMode = rootComponent.childById(ButtonComponent::class.java, "selectMode")
         val currentMode = rootComponent.childById(LabelComponent::class.java, "currentMode")
 
+        @Suppress("DuplicatedCode")
         if (Config().darkPanels) {
             layout.surface(Surface.DARK_PANEL)
         } else {

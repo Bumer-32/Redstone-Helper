@@ -18,12 +18,12 @@ class ManualWelcomePageScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.j
 
     override fun build(rootComponent: FlowLayout) {
         val layout = rootComponent.childById(FlowLayout::class.java, "layout")
-        val manualLayout = rootComponent.childById(FlowLayout::class.java, "manual_layout")
         val checkVersionCommandBackgroundBox = rootComponent.childById(BoxComponent::class.java, "check_version_command_background_box")
         val checkVersionCommandBackgroundBoxOutline = rootComponent.childById(BoxComponent::class.java, "check_version_command_background_box_outline")
         val previousPageButton = rootComponent.childById(ButtonComponent::class.java, "previous_page_button")
         val nextPageButton = rootComponent.childById(ButtonComponent::class.java, "next_page_button")
 
+        @Suppress("DuplicatedCode")
         if (Config().darkPanels) {
             layout.surface(Surface.DARK_PANEL)
         } else {

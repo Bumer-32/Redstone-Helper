@@ -32,6 +32,10 @@ class MacroScreen(private val parent: Screen?): BaseUIModelScreen<FlowLayout>(Fl
     private var macrosLayout: FlowLayout? = null
     private var loading: LabelComponent? = null
 
+    override fun shouldCloseOnEsc(): Boolean {
+        return false
+    }
+
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building MacroScreen UI")
 
