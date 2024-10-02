@@ -43,6 +43,11 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
     }
 
+    override fun shouldCloseOnEsc(): Boolean {
+        return false
+    }
+
+    @Suppress("t")
     override fun build(rootComponent: FlowLayout) {
         logger.debug("Building MacroEditScreen UI")
 
@@ -180,6 +185,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
         }
     }
 
+    @Suppress("t")
     private fun addCommand(command: String) {
         val id = (commandsLayout!!.children().size + 1).toString()
 
