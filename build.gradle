@@ -44,6 +44,8 @@ modrinth {
 		new ModDependency(project.id_modmenu, "optional"),
 		new ModDependency(project.id_world_edit, "optional")
 	]
+
+	tasks.modrinth.dependsOn(tasks.modrinthSyncBody)
 }
 
 dependencies {
