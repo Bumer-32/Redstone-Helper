@@ -40,4 +40,6 @@ replay_*.log
 *.jfr
 .lh/.lhignore
 
+# kotlin
+
 .kotlin
