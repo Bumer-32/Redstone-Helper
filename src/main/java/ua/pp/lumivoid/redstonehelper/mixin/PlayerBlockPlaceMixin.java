@@ -10,21 +10,21 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import ua.pp.lumivoid.redstonehelper.events.PlayerBlockPlaceCallback;
 
+import java.util.Objects;
+
 @Mixin(BlockItem.class)
 public class PlayerBlockPlaceMixin {
     @Inject(method = "place(Lnet/minecraft/item/ItemPlacementContext;Lnet/minecraft/block/BlockState;)Z", at = @At("HEAD"))
     private void place(ItemPlacementContext context, BlockState state, CallbackInfoReturnable<Boolean> info) {
-        if (context.getPlayer() != null) {
-            ActionResult result = PlayerBlockPlaceCallback.EVENT.invoker().interact(
-                    context.getPlayer(),
-                    context.getWorld(),
-                    state,
-                    context.getBlockPos()
-            );
+        ActionResult result = PlayerBlockPlaceCallback.EVENT.invoker().interact(
+                Objects.requireNonNull(context.getPlayer()),
+                context.getWorld(),
+                state,
+                context.getBlockPos()
+        );
 
-            if (result == ActionResult.FAIL) {
-                info.cancel();
-            }
+        if (result == ActionResult.FAIL) {
+            info.cancel();
         }
     }
 }
