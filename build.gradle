@@ -2,8 +2,8 @@ import com.modrinth.minotaur.dependencies.ModDependency
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id 'fabric-loom' version '1.8.2'
-  	id 'org.jetbrains.kotlin.plugin.serialization' version '2.0.20'
+	id "fabric-loom" version "1.8.6"
+  	id "org.jetbrains.kotlin.plugin.serialization" version "2.0.20"
   	id "org.jetbrains.kotlin.jvm" version "2.0.20"
 	id "com.modrinth.minotaur" version "2.+"
 }
@@ -18,7 +18,7 @@ base {
 }
 
 repositories {
-	maven { url 'https://maven.wispforest.io' }
+	maven { url "https://maven.wispforest.io" }
 	maven {
 		name = "WorldEdit Maven"
 		url = "https://maven.enginehub.org/repo/"
@@ -26,7 +26,7 @@ repositories {
 }
 
 modrinth {
-	token = project.hasProperty('modrinthToken') ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
+	token = project.hasProperty("modrinthToken") ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
 	projectId = project.id_main
 	versionNumber = project.mod_version
 	versionName = "Redstone Helper ${project.mod_version}"
@@ -66,8 +66,8 @@ dependencies {
 	include "io.wispforest:owo-sentinel:${project.owo_version}"
 
 	modImplementation("com.sk89q.worldedit:worldedit-fabric-mc${project.world_edit_version}") {
-		exclude group: 'it.unimi.dsi', module: 'fastutil'
-		exclude group: 'com.google.guava', module: 'guava'
+		exclude group: "it.unimi.dsi", module: "fastutil"
+		exclude group: "com.google.guava", module: "guava"
 	}
 }
 
