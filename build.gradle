@@ -1,5 +1,6 @@
 import com.modrinth.minotaur.dependencies.ModDependency
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import ua.pp.lumivoid.updater.UpdateChecker
 
 plugins {
 	id "fabric-loom" version "1.8.6"
@@ -24,6 +25,8 @@ repositories {
 		url = "https://maven.enginehub.org/repo/"
 	}
 }
+
+var updaterEnabled = false
 
 modrinth {
 	token = project.hasProperty("modrinthToken") ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
@@ -53,7 +56,7 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	modImplementation "net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}"
 
 	implementation include("org.mariuszgromada.math:MathParser.org-mXparser:${project.mxparser_version}")
@@ -101,4 +104,39 @@ java {
 
 jar {
 	from("LICENSE")
+}
+
+tasks.register("UpdateRedstoneHelper") {
+	def minecraftVersionURL = "https://meta.fabricmc.net/v2/versions/game"
+	def yarnVersionURL = "https://meta.fabricmc.net/v2/versions/yarn"
+	def updateListURL = [
+			"loader_version": "https://maven.fabricmc.net/net/fabricmc/fabric-loader/maven-metadata.xml",
+			"fabric_kotlin_version": "https://maven.fabricmc.net/net/fabricmc/fabric-language-kotlin/maven-metadata.xml",
+			"fabric_api_version": "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/maven-metadata.xml",
+			"mxparser_version": "https://repo.maven.apache.org/maven2/org/mariuszgromada/math/MathParser.org-mXparser/maven-metadata.xml",
+			"owo_version": "https://maven.wispforest.io/releases/io/wispforest/owo-lib/maven-metadata.xml",
+			"kotlinx_coroutines_version": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/maven-metadata.xml",
+			"kotlinx_serialization_version": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/maven-metadata.xml"
+	]
+
+	doLast {
+		println("Updating dependencies")
+
+		updaterEnabled = true
+
+		def currentMinecraftVersion = project.minecraft_version
+		def file = new File("gradle.properties")
+
+		def success = UpdateChecker.INSTANCE.checkForUpdates(updateListURL, minecraftVersionURL, currentMinecraftVersion, yarnVersionURL, file)
+
+		println()
+		println()
+		println()
+
+		if (success) {
+			println("Success updated dependencies")
+		} else {
+			println("Dependencies didn't update successfully")
+		}
+	}
 }
