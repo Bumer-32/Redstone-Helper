@@ -1,0 +1,21 @@
+name: Delete autoUpdate branch
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [closed]
+
+jobs:
+  delete-branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Delete branch if name starts with autoUpdate
+        if: startsWith(github.event.pull_request.head.ref, 'autoUpdate-')
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          git push origin --delete "$BRANCH_NAME"
+          echo "Branch $BRANCH_NAME deleted"
