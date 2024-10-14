@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.net.URI
 
 plugins {
-	id("fabric-loom") version "1.8.6"
+	id("fabric-loom") version "1.8.9"
   	id("org.jetbrains.kotlin.plugin.serialization") version "2.0.20"
   	id("org.jetbrains.kotlin.jvm") version "2.0.20"
 	id("com.modrinth.minotaur") version "2.+"
