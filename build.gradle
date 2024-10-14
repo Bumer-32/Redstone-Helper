@@ -118,20 +118,22 @@ tasks.runServer {
 }
 
 tasks.runTestmodClient {
+	group = "Update and tests"
 	doFirst {
 		args "--gameDir", file("run/client").absolutePath
 	}
 }
 
 tasks.runTestmodServer {
+	group = "Update and tests"
 	doFirst {
 		args "--gameDir", file("run/server").absolutePath
 	}
 }
 
-var updaterEnabled = false
-
 modrinth {
+	def autoReleaseNotify = "Small note, this is automatic update, it can be unstable, so report if something wrong"
+
 	token = project.hasProperty("modrinthToken") ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
 	projectId = project.id_main
 	versionNumber = project.mod_version
@@ -139,10 +141,10 @@ modrinth {
 	uploadFile = remapJar
 	//additionalFiles = [remapSourcesJar]
 	gameVersions = Eval.me(project.release_minecraft_versions)
-	versionType = project.release_type
+	versionType = project.hasProperty("autoUpdate") ? "beta" : project.release_type
 	loaders = ["fabric"]
 	syncBodyFrom = rootProject.file("README.md").text
-	changelog = rootProject.file("CHANGELOG.md").text
+	changelog = project.hasProperty("autoUpdate") ? rootProject.file("CHANGELOG.md").text + "\n\n" + autoReleaseNotify : rootProject.file("CHANGELOG.md").text
 	dependencies = [
 			new ModDependency(project.id_fabric_api, "required"),
 			new ModDependency(project.id_fabric_kotlin, "required"),
@@ -151,10 +153,13 @@ modrinth {
 			new ModDependency(project.id_world_edit, "optional")
 	]
 
-	tasks.modrinth.dependsOn(tasks.modrinthSyncBody)
+	//debugMode = true
+
+	tasks.modrinth.finalizedBy(tasks.modrinthSyncBody)
 }
 
 tasks.register("UpdateRedstoneHelper") {
+	// Configurable
 	def minecraftVersionURL = "https://meta.fabricmc.net/v2/versions/game"
 	def yarnVersionURL = "https://meta.fabricmc.net/v2/versions/yarn"
 	def updateListURL = [
@@ -167,12 +172,13 @@ tasks.register("UpdateRedstoneHelper") {
 			"kotlinx_serialization_version": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-json-jvm/maven-metadata.xml"
 	]
 
+	group = "Update and tests"
+
 	doLast {
 		println("Updating dependencies")
 
-		updaterEnabled = true
-
 		def currentMinecraftVersion = project.minecraft_version
+		//def currentMinecraftVersion = "1.21" // Just for tests
 		def file = new File("gradle.properties")
 
 		def success = UpdateChecker.INSTANCE.checkForUpdates(updateListURL, minecraftVersionURL, currentMinecraftVersion, yarnVersionURL, file)
@@ -184,7 +190,14 @@ tasks.register("UpdateRedstoneHelper") {
 		if (success) {
 			println("Success updated dependencies")
 		} else {
-			println("Dependencies didn't update successfully")
+			throw new GradleException("Dependencies didn't update successfully")
 		}
 	}
+}
+
+tasks.register("UpdateRedstoneHelperWithTests") {
+	group = "Update and tests"
+
+	tasks.UpdateRedstoneHelperWithTests.dependsOn(tasks.UpdateRedstoneHelper)
+	tasks.UpdateRedstoneHelperWithTests.finalizedBy(tasks.runTestmodClient)
 }
