@@ -26,31 +26,6 @@ repositories {
 	}
 }
 
-var updaterEnabled = false
-
-modrinth {
-	token = project.hasProperty("modrinthToken") ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
-	projectId = project.id_main
-	versionNumber = project.mod_version
-	versionName = "Redstone Helper ${project.mod_version}"
-	uploadFile = remapJar
-	//additionalFiles = [remapSourcesJar]
-	gameVersions = Eval.me(project.release_minecraft_versions)
-	versionType = project.release_type
-	loaders = ["fabric"]
-	syncBodyFrom = rootProject.file("README.md").text
-	changelog = rootProject.file("CHANGELOG.md").text
-	dependencies = [
-		new ModDependency(project.id_fabric_api, "required"),
-		new ModDependency(project.id_fabric_kotlin, "required"),
-		new ModDependency(project.id_owo, "required"),
-		new ModDependency(project.id_modmenu, "optional"),
-		new ModDependency(project.id_world_edit, "optional")
-	]
-
-	tasks.modrinth.dependsOn(tasks.modrinthSyncBody)
-}
-
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -92,6 +67,30 @@ tasks.withType(KotlinCompile).configureEach {
 	}
 }
 
+sourceSets {
+	testmod {
+		runtimeClasspath += main.runtimeClasspath
+		compileClasspath += main.compileClasspath
+	}
+}
+
+loom {
+	runs {
+		testmodClient {
+			client()
+			ideConfigGenerated project.rootProject == project
+			name = "Testmod Client"
+			source sourceSets.testmod
+		}
+		testmodServer {
+			server()
+			ideConfigGenerated project.rootProject == project
+			name = "Testmod Server"
+			source sourceSets.testmod
+		}
+	}
+}
+
 java {
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
 	// if it is present.
@@ -104,6 +103,55 @@ java {
 
 jar {
 	from("LICENSE")
+}
+
+tasks.runClient {
+	doFirst {
+		args "--gameDir", file("run/client").absolutePath
+	}
+}
+
+tasks.runServer {
+	doFirst {
+		args "--gameDir", file("run/server").absolutePath
+	}
+}
+
+tasks.runTestmodClient {
+	doFirst {
+		args "--gameDir", file("run/client").absolutePath
+	}
+}
+
+tasks.runTestmodServer {
+	doFirst {
+		args "--gameDir", file("run/server").absolutePath
+	}
+}
+
+var updaterEnabled = false
+
+modrinth {
+	token = project.hasProperty("modrinthToken") ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
+	projectId = project.id_main
+	versionNumber = project.mod_version
+	versionName = "Redstone Helper ${project.mod_version}"
+	uploadFile = remapJar
+	//additionalFiles = [remapSourcesJar]
+	gameVersions = Eval.me(project.release_minecraft_versions)
+	versionType = project.release_type
+	loaders = ["fabric"]
+	syncBodyFrom = rootProject.file("README.md").text
+	changelog = rootProject.file("CHANGELOG.md").text
+	dependencies = [
+			new ModDependency(project.id_fabric_api, "required"),
+			new ModDependency(project.id_fabric_kotlin, "required"),
+			new ModDependency(project.id_owo, "required"),
+			new ModDependency(project.id_modmenu, "optional"),
+			new ModDependency(project.id_world_edit, "optional")
+	]
+
+	tasks.modrinth.dependsOn(tasks.modrinthSyncBody)
 }
 
 tasks.register("UpdateRedstoneHelper") {
