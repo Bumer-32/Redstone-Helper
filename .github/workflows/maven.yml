@@ -1,6 +1,6 @@
 # Publishing to maven
 
-name: publish
+name: maven
 
 on:
   workflow_dispatch:
