@@ -2,8 +2,8 @@ name: Gradle Auto Update
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 8 * * 1'
+ # schedule: # needs updates, e.g. now it search wrong mappings, temporary disabled from schedule
+ #   - cron: '0 8 * * 1'
 
 jobs:
   auto-update:

@@ -16,7 +16,7 @@ object Constants {
     val NET_CHANNEL: OwoNetChannel = OwoNetChannel.create(Identifier.of(MOD_ID, "main"))
     val aMinecraftClass: Identifier = Identifier.of(MOD_ID, "main")
     val TOAST_ID = Identifier.of(MOD_ID, "toast")!!
-    val CONFIG_FOLDER_PATH = "${FabricLoader.getInstance().configDir}\\${MOD_ID}"
+    val CONFIG_FOLDER_PATH = "${FabricLoader.getInstance().configDir}/${MOD_ID}"
     val TEXT_SPACE = Text.literal(" ")!!
 
     const val WORLD_EDIT_FABRIC_ID = "worldedit"

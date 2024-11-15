@@ -14,14 +14,14 @@ object JsonConfig {
 
     init {
         if (!File(Constants.CONFIG_FOLDER_PATH).exists()) File(Constants.CONFIG_FOLDER_PATH).mkdirs()
-        val configFile = File(Constants.CONFIG_FOLDER_PATH + "\\config.json")
+        val configFile = File(Constants.CONFIG_FOLDER_PATH + "/config.json")
         if (!configFile.exists()) configFile.createNewFile()
     }
 
     fun readConfig(): JsonConfigData {
         if (cachedConfig != null) return cachedConfig!!
 
-        val file = File(Constants.CONFIG_FOLDER_PATH + "\\config.json")
+        val file = File(Constants.CONFIG_FOLDER_PATH + "/config.json")
         if (file.exists()) {
             val jsonData = file.readText()
             try {
@@ -58,7 +58,7 @@ object JsonConfig {
 
     fun writeConfig(data: JsonConfigData) {
         cachedConfig = data
-        val file = File(Constants.CONFIG_FOLDER_PATH + "\\config.json")
+        val file = File(Constants.CONFIG_FOLDER_PATH + "/config.json")
         file.writeText(json.encodeToString(data))
     }
 }

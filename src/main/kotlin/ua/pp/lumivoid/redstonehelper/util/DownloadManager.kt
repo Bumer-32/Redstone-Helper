@@ -7,7 +7,7 @@ import java.net.URL
 object DownloadManager {
     private val logger = Constants.LOGGER
 
-    private val files = File(Constants.CONFIG_FOLDER_PATH + "\\downloaded")
+    private val files = File(Constants.CONFIG_FOLDER_PATH + "/downloaded")
 
     init {
         if (!files.exists()) files.mkdirs()
@@ -15,7 +15,7 @@ object DownloadManager {
 
     fun downloadFile(url: String, fileName: String): String? {
         logger.info("Downloading file $fileName from $url")
-        val filePath = "${files.absolutePath}\\${Constants.MOD_VERSION}_${fileName}"
+        val filePath = "${files.absolutePath}/${Constants.MOD_VERSION}_${fileName}"
         val file = File(filePath)
         if (file.exists()) {
             logger.info("$fileName already exists")
