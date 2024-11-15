@@ -28,7 +28,7 @@ object QuickTpKeyBinding {
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (quickTpKeyBinding.wasPressed()) {
-                if (client.player!!.commandSource.hasPermissionLevel(2)) {
+                if (client.player!!.hasPermissionLevel(2)) {
                     val config = Config()
                     SendPacket.sendPacket(QuickTeleportC2SPacket(config.quickTpDistance, config.quickTpIncludeFluids, Constants.aMinecraftClass))
                 } else {

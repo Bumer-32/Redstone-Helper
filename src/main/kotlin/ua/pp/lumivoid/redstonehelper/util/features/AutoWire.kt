@@ -47,7 +47,7 @@ enum class AutoWire {
                     if (world.getBlockState(oldBlockPos.up()).get(Properties.POWER) == 1) {
                         TickHandler.scheduleAction(1) {
                             val block = Registries.BLOCK.getId(world.getBlockState(blockPos).block).toString()
-                            setBlock(blockPos, "minecraft:repeater", Direction.fromVector(blockPosDiff.x, 0, blockPosDiff.z)!!)
+                            setBlock(blockPos, "minecraft:repeater", Direction.fromVector(blockPosDiff.x, 0, blockPosDiff.z, null)!!)
                             setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff).down(), block)
                             setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff), "minecraft:redstone_wire")
                             setBlock(blockPos.subtract(blockPosDiff), block)

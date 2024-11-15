@@ -26,7 +26,7 @@ object SwitchAutoWireKeyBinding {
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (switchAutoWireKeyBinding.wasPressed()) {
-                if (client.player!!.commandSource.hasPermissionLevel(2)) {
+                if (client.player!!.hasPermissionLevel(2)) {
                     ClientOptions.isAutoWireEnabled = !ClientOptions.isAutoWireEnabled
                     if (ClientOptions.isAutoWireEnabled) {
                         HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.FEATURE_AUTOWIRE_AUTOWIREON), true)

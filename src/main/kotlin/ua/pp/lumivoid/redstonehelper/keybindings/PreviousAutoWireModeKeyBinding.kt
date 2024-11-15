@@ -27,7 +27,7 @@ object PreviousAutoWireModeKeyBinding {
 
         ClientTickEvents.END_CLIENT_TICK.register { client ->
             while (previousAutoWireKeyBinding.wasPressed()) {
-                if (client.player!!.commandSource.hasPermissionLevel(2)) {
+                if (client.player!!.hasPermissionLevel(2)) {
                     AutoWire.setMode(AutoWire.previous(ClientOptions.autoWireMode))
                     HudToast.addToastToQueue(Text.translatable(Constants.LOCALIZEIDS.FEATURE_AUTOWIRE_CURRENTAUTOWIREMODE, Text.translatable("redstone-helper.feature.auto_wire.modes.${ClientOptions.autoWireMode.toString().lowercase()}")), true)
                 } else {
