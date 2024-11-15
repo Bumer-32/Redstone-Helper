@@ -10,10 +10,10 @@ plugins {
 	id 'maven-publish'
 }
 
-version = project.mod_version
+version = project.mod_version + project.version_suffix
 group = project.maven_group
 
-archives_base_name = "${project.archives_base_name}${project.version_suffix}"
+archives_base_name = project.archives_base_name
 
 base {
 	archivesName = project.archives_base_name
