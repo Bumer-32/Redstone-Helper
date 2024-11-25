@@ -10,3 +10,10 @@ updates:
     schedule:
       interval: "weekly"
     target-branch: "dev"
+
+registries:
+  maven-artifactory:
+    type: maven-repository
+    url: https://maven.lumivoid.pp.ua
+    username: ${{ secrets.MAVEN_USERNAME }}
+    password: ${{ secrets.MAVEN_PASSWORD }}
