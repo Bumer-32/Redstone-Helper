@@ -13,7 +13,7 @@ plugins {
 version = project.mod_version + project.version_suffix
 group = project.maven_group
 
-archives_base_name = project.archives_base_name
+archives_base_name = project.archives_base_name + "-" + project.minecraft_version
 
 base {
 	archivesName = project.archives_base_name
@@ -138,7 +138,7 @@ modrinth {
 	token = project.hasProperty("modrinthToken") ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
 	projectId = project.id_main
 	versionNumber = project.mod_version
-	versionName = "Redstone Helper ${project.mod_version}"
+	versionName = "Redstone Helper ${project.mod_version + project.version_suffix}"
 	uploadFile = remapJar
 	//additionalFiles = [remapSourcesJar]
 	gameVersions = Eval.me(project.release_minecraft_versions)
@@ -207,7 +207,7 @@ tasks.register("UpdateRedstoneHelperWithTests") {
 publishing {
 	publications {
 		create("mavenJava", MavenPublication) {
-			artifactId = project.archives_base_name
+			artifactId = archives_base_name
 			groupId = project.maven_group
 			version = version
 			//noinspection GroovyAssignabilityCheck

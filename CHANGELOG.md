@@ -1,5 +1,5 @@
-Hi! Version 0.2.5.3-Updated
+Hi! Version 0.2.5.3-Updated.1
 
-Updated depends, so now Redstone Helper works with last versions of fabric loader
+Updated depends
 
-Minor changes
+Added Turkish language (Thanks [dodoH12](https://crowdin.com/profile/dodoh12))
