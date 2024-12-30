@@ -137,7 +137,7 @@ modrinth {
 
 	token = project.hasProperty("modrinthToken") ? project.modrinthToken : System.getenv("MODRINTH_TOKEN")
 	projectId = project.id_main
-	versionNumber = project.mod_version
+	versionNumber = project.mod_version + project.version_suffix
 	versionName = "Redstone Helper ${project.mod_version + project.version_suffix}"
 	uploadFile = remapJar
 	//additionalFiles = [remapSourcesJar]
