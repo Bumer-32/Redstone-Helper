@@ -1,5 +1,3 @@
-Hi! Version 0.2.5.3-Updated.1
+Hi! Version 0.2.5.3-Updated.2
 
-Updated depends
-
-Added Turkish language (Thanks [dodoH12](https://crowdin.com/profile/dodoh12))
+Fixed missing translations ([#109](https://github.com/Bumer-32/Redstone-Helper/issues/109) thanks [DODOhacker10](https://github.com/DODOhacker10))
