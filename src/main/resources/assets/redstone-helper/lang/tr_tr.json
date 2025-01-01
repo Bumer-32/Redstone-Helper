@@ -1,0 +1,313 @@
+{
+  "redstone-helper.mod.redstone_helper_title": "Redstone Helper",
+  "redstone-helper.mod.short_redstone_helper_title": "RH",
+  "redstone-helper.mod.styled_short_redstone_helper_title": [
+    {
+      "text": "[",
+      "color": "red"
+    },
+    {
+      "text": "RH"
+    },
+    {
+      "text": "]",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.keybinding.category.basic": "Redstone Helper",
+  "redstone-helper.keybinding.key.calc": "Hesap makinesi",
+  "redstone-helper.keybinding.key.switch_autowire": "Auto Wire™'ı değiştir",
+  "redstone-helper.keybinding.key.previous_autowire_mode": "Önceki Auto Wire™ modu",
+  "redstone-helper.keybinding.key.next_autowire_mode": "Sonraki Auto Wire™ modu",
+  "redstone-helper.keybinding.key.quickTp": "Hızlı Işınlanma",
+  "redstone-helper.feature.calculator.title": "Hesap makinesi",
+  "redstone-helper.feature.calculator.expression": "İfade",
+  "redstone-helper.feature.calculator.result": "Sonuç %d",
+  "redstone-helper.feature.calculator.invalid_expression": "Sonuç: geçersiz ifade!",
+  "redstone-helper.feature.auto_wire.title": "Auto Wire™",
+  "redstone-helper.feature.auto_wire.enable_auto_wire": "Auto Wire™'ı Etkinleştir",
+  "redstone-helper.feature.auto_wire.auto_wire_on": "Auto Wire™ etkinleştirildi",
+  "redstone-helper.feature.auto_wire.auto_wire_off": "Auto Wire™ devre dışı",
+  "redstone-helper.feature.auto_wire.select_auto_wire_mode": "Mod seç",
+  "redstone-helper.feature.auto_wire.current_auto_wire_mode": "Şu anki Auto Wire™ modu: %d",
+  "redstone-helper.feature.auto_wire.modes.auto_redstone": "Otomatik redstone",
+  "redstone-helper.feature.auto_wire.modes.auto_line": "Tekrarlayıcılı Redstone hattı",
+  "redstone-helper.feature.auto_wire.modes.auto_repeater": "Sadece tekrarlayıcılar",
+  "redstone-helper.feature.auto_wire.modes.auto_comparator": "Sadece karşılaştırıcılar",
+  "redstone-helper.feature.auto_wire.modes.cheap_auto_comparator": "Bloklar ile karşılaştırıcılar",
+  "redstone-helper.feature.auto_wire.description.auto_redstone": "Koyduğunuz her bloğun üstüne redstone koyar",
+  "redstone-helper.feature.auto_wire.description.auto_line": "Koyduğunuz her blokun üstüne redstone koyar + Her 15 bloka tekrarlayıcı koyar",
+  "redstone-helper.feature.auto_wire.description.auto_repeater": "Koyduğunuz her blokun üstüne tekrarlayıcı koyar",
+  "redstone-helper.feature.auto_wire.description.auto_comparator": "Koyduğunuz her blokun üstüne karşılaştırıcı koyar",
+  "redstone-helper.feature.auto_wire.description.cheap_auto_comparator": "Karşılaştırıcıları bloklar ve redstone ile yerleştirir, redstone-comparator-block gibi",
+  "redstone-helper.feature.bits_operations.title": "BIT Operations™",
+  "redstone-helper.feature.bits_operations.converter": "Dönüştürücü",
+  "redstone-helper.feature.bits_operations.invalid_expression": "Sonuç: geçersiz ifade!",
+  "redstone-helper.feature.bits_operations.expression": "İfade",
+  "redstone-helper.feature.bits_operations.to_bit": "BIT'e",
+  "redstone-helper.feature.bits_operations.to_hex": "HEX'e",
+  "redstone-helper.feature.bits_operations.from_bit": "BIT'ten",
+  "redstone-helper.feature.bits_operations.from_hex": "HEX'ten",
+  "redstone-helper.feature.bits_operations.bit_calculator": "BIT hesap makinesi",
+  "redstone-helper.feature.bits_operations.bit_result": "Sonuç:%d : %d : %d",
+  "redstone-helper.feature.bits_operations.result": "Sonuç %d",
+  "redstone-helper.feature.macro.title": "Makrolar",
+  "redstone-helper.feature.macro.edit_macro_title": "%d makrosunu düzenle",
+  "redstone-helper.feature.macro.settings_macros_button": "Makrolar...",
+  "redstone-helper.feature.macro.new_macro_button": "Yeni makro oluştur",
+  "redstone-helper.feature.macro.done": "Tamamlandı",
+  "redstone-helper.feature.macro.cancel": "İptal Et",
+  "redstone-helper.feature.macro.key_bind": "Tuş ataması",
+  "redstone-helper.feature.macro.key_bind_none": "Hiçbiri",
+  "redstone-helper.feature.macro.reset": "Sıfırla",
+  "redstone-helper.feature.macro.add_command": "Komut ekle",
+  "redstone-helper.feature.macro.macro_not_found": "Makro bulunamadı",
+  "redstone-helper.feature.macro.dialog.export": "Redstone Yardımcısı makrosunu dışa aktar",
+  "redstone-helper.feature.macro.dialog.import": "Redstone Yardımcısı makrolarını içe aktar",
+  "redstone-helper.feature.macro.dialog.fileName": "Redstone Yardımcısı makroları dosyası",
+  "redstone-helper.feature.macro.tooltip.enabled_for_keybinds": "Tuş atamaları için aktif",
+  "redstone-helper.feature.macro.tooltip.edit": "Bu makroyu düzenle",
+  "redstone-helper.feature.macro.tooltip.delete": "Bu makroyu sil",
+  "redstone-helper.feature.macro.tooltip.export": "Bu makroyu dışa aktar",
+  "redstone-helper.feature.macro.tooltip.import": "Makroları içe aktar",
+  "redstone-helper.feature.macro.tooltip.export_all": "Tüm makroları dışa aktar",
+  "redstone-helper.feature.insta_lamps.insta_on": "Anlık lambalar etkinleştirildi",
+  "redstone-helper.feature.insta_lamps.insta_off": "Anlık lambalar devre dışı bırakıldı",
+  "redstone-helper.feature.airplace.airplace_on": "Havaya Koyma etkinleştirildi",
+  "redstone-helper.feature.airplace.airplace_off": "Havaya Koyma devre dışı",
+  "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Hesaplanan sinyal: %d, eşya: %d",
+  "redstone-helper.feature.colorcode.success": "%d blokları başarıyla %d boyandı",
+  "redstone-helper.feature.hints.hint.1": "Redstone tozu eritmekten bıktınız mı?\n Belki /autowire size yardımcı olur",
+  "redstone-helper.feature.hints.hint.2": "/bits'i kullanarak numaraları BIT ve HEX \nsistemleri arasında dönüştürebilirsiniz",
+  "redstone-helper.feature.hints.hint.3": "/macro'yu kullanarak makro komutları yapabilirsiniz",
+  "redstone-helper.feature.hints.hint.4": "/gamerule instantLampsTurnOff true 'yu kullanarak lambaların gecikmesini kapayabilirsiniz",
+  "redstone-helper.feature.hints.hint.5": "/airplace'i kullanarak havaya koymayı açabilirsiniz",
+  "redstone-helper.feature.hints.hint.6": "Bumer_32 tarafından oluşturuldu",
+  "redstone-helper.feature.hints.hint.7": "Bir sinyal için kaç eşya gerektiğini unuttunuz mu?\n/calc-redstone-signal size yardımcı olur!",
+  "redstone-helper.feature.hints.hint.8": "Hep havaya blok koymayı mı hayal ettiniz?\nŞimdi /airplace ile mümkün!",
+  "redstone-helper.feature.hints.hint.9": "Tekrarlayıcılardan sıkıldınız mı?\nBırakın /autowire tüm işi yapsın",
+  "redstone-helper.feature.hints.hint.10": "/autodust sadece sizi /autowire'a yönlendirir",
+  "redstone-helper.feature.hints.hint.11": "BIT Operations™ ile kolayca bitleri ve onaltılık sayıları işleyin",
+  "redstone-helper.feature.hints.hint.12": "Eğer sürüm denetleme ModMenu'da kapalıysa\nmod güncellemelerini kontrol etmeyi unutmayın!",
+  "redstone-helper.feature.hints.hint.13": "Mod bir sürü dill destekliyor! Kendinizinkini eklemek ister misiniz? Crowdin'de çevirin!\n/redstone-helper crowdin",
+  "redstone-helper.feature.hints.hint.14": "ModMenu'yü kullanarak Redstone-Yardımcısının Arayüzünü düzenleyin",
+  "redstone-helper.feature.hints.hint.15": "Hızlı ışınlamanın /quicktp ile olduğunu unutmayın. Bir düğmeye bağlayarak kolayca kullanın!",
+  "redstone-helper.feature.hints.hint.16": "Redstone'un otomatik yerleştirilmesi mi?\nSadece /autodust yazın!",
+  "redstone-helper.feature.hints.hint.17": "Toast sistemi, önemli bilgileri her zaman size bildirecek, değil mi?",
+  "redstone-helper.feature.hints.hint.18": "Redstone Helper'ı ModMenu'dan ayarlayın!",
+  "redstone-helper.feature.hints.hint.19": "İpuçlarından sıkıldıysanız,\nmod ayarlarından kapayın",
+  "redstone-helper.feature.hints.hint.20": "Redstone Helper için kendi çevirini\nekleyebileceğini biliyor muydun?\n/redstone-helper crowdin",
+  "redstone-helper.feature.hints.hint.21": "/clear-inventory'den sakının!\nO, sandıklardaki en önemli eşyaları bile temizler!\n",
+  "redstone-helper.feature.hints.hint.22": "Bir yere hızlıca ulaşman mı lazım?\n/quicktp yaz ve işin bitti!",
+  "redstone-helper.feature.hints.hint.23": "Gecikmelere hayır de -\n/gamerule instantLampsTurnOff true ile \nlambalarını anında kapat!\n",
+  "redstone-helper.feature.hints.hint.24": "Eğlenceli bilgi: /instaLamp komutu,\n/gamerule instantLampsTurnOff true ile değiştirildi.\n Eğlenceli değil mi? Oh",
+  "redstone-helper.feature.hints.hint.25": "Daha çok otomasyon mu istiyorsun?\nMakrolar kullan ve rutini unut!",
+  "redstone-helper.feature.hints.hint.26": "BENİ BURADAN ÇIKARIN!!!\nYARDIIIM!!",
+  "redstone-helper.feature.hints.hint.27": "Eğlenceli bilgi: Redstone Helper Kotlin'de yazıldı",
+  "redstone-helper.feature.hints.hint.28": "İpuçlarının listesi bir ara güncellenecek...",
+  "redstone-helper.feature.hints.hint.29": "Redstone Helper'a destek olabilirsiniz!\n/redstone-helper github",
+  "redstone-helper.feature.hints.hint.30": "Bu ipucu listede 30 numara",
+  "dontlocalize.redstone-helper.feature.hints.hints_count": "30",
+  "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper güncel!",
+  "redstone-helper.stuff.version_checker.need_update": [
+    "Redstone Helper'ın eski sürümü bulundu!",
+    {
+      "text": "Lütfen buna güncelleyin ",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    },
+    {
+      "index": 0,
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.stuff.version_checker.unable_to_check_version": [
+    "Redstone Helper sürümü denetlenemiyor!",
+    {
+      "text": "Kendin kontrol edebilirsin ",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.stuff.version_checker.to_check_version": "Sürümü kontrol etmek için sohbet'e bunu yaz:\n/redstone-helper check-updates",
+  "redstone-helper.stuff.version_checker.skip_version": [
+    "Yapabilirsin ",
+    {
+      "text": "bu sürümü atla",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "suggest_command",
+        "value": "/redstone-helper check-updates skip"
+      }
+    }
+  ],
+  "redstone-helper.stuff.version_checker.skipping": "sürüm atlanıyor",
+  "redstone-helper.stuff.version_checker.clear_skips": "atlanan sürümleri temizle",
+  "redstone-helper.stuff.info.success": "Başarılı!",
+  "redstone-helper.stuff.info.error.block_not_found": [
+    {
+      "text": "Blok bulunamadı!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.error.invalid_block_inventory": [
+    {
+      "text": "Blok envanteri alınamıyor!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.error.missing_arguments": [
+    {
+      "text": "Eksik parametreler!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.error.no_permission": [
+    {
+      "text": "Bunu kullanmak için izniniz yok",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.error.select_region": [
+    {
+      "text": "Bölge seçin!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.warning.illegal_feature": [
+    {
+      "text": "Bu özellik bazı sunucularda yasak olabilir! Banlanabilirsin!\nSADECE SUNUCUDA İZİN VERİLİYORSA KULLAN\nModun yazarı, sunucuda yasaklanmanızdan sorumlu değildir!",
+      "color": "yellow"
+    }
+  ],
+  "redstone-helper.stuff.funny.1": "Bunu neden kullanmak isteyesin ki??",
+  "redstone-helper.stuff.funny.2": "Bunu neden kullanacaksın?",
+  "redstone-helper.stuff.funny.3": "Neden?",
+  "redstone-helper.stuff.funny.4": "... Tamam, ama eminsen.",
+  "redstone-helper.stuff.funny.5": "Başka bir şey kullanabileceğinden 99% eminim.",
+  "redstone-helper.stuff.funny.6": "Bu gereksiz duruyor.",
+  "redstone-helper.stuff.funny.7": "Bu bir yazım hatası mı?",
+  "redstone-helper.stuff.funny.8": "Vay canına, ne kadar süslü ama başka türlü işe yaramaz bir şey.",
+  "redstone-helper.stuff.funny.9": "Sıkıldın mı yoksa sadece meraklı mısın?",
+  "redstone-helper.stuff.funny.10": "Bu eylem size şunun tarafından sunulmuştur: ‘Neden olmasın?’",
+  "redstone-helper.stuff.funny.11": "Başarım kazanıldı: Hiçbir Şey Yapmamanın Ustası!",
+  "redstone-helper.stuff.funny.12": "Tebrikler! Sen... hiçbir şey yapmadın.",
+  "redstone-helper.stuff.funny.13": "Bu bir test olsaydı, hiçbir şey yapmamada geçerdin.",
+  "redstone-helper.stuff.funny.14": "Bunu gerçekten yapmak zorunda mıydın?",
+  "redstone-helper.stuff.funny.15": "‘Neden ki?’ tarihindeki bir başka harika an",
+  "redstone-helper.stuff.funny.16": "Bazen az sadece azdır.",
+  "redstone-helper.stuff.funny.17": "Bir daha, daha işe yarar bir şey yapmaya çalış.",
+  "redstone-helper.stuff.funny.18": "Hiçbir şey yapmamaktaki eforun ödüle değer.",
+  "redstone-helper.stuff.funny.19": "Her tıklama açıklanmak zorunda değildir.",
+  "redstone-helper.stuff.funny.20": "Sıfır eşya değişti... ama bunu zaten biliyordun, değil mi?",
+  "redstone-helper.stuff.funny.21": "Evet, bu... bir şeydi?",
+  "redstone-helper.stuff.funny.22": "Bunu gerçekten iyi düşündün, ha?",
+  "redstone-helper.stuff.funny.23": "Sadece yapabildiğin yapman gerektiği anlamına gelmez.",
+  "redstone-helper.stuff.funny.24": "Rastgeleliğin başka bir şaheseri daha.",
+  "redstone-helper.stuff.funny.25": "Senin ilerleme dediğin bu mu?",
+  "redstone-helper.stuff.funny.26": "Bunun için çok gururlu olmalısın.",
+  "redstone-helper.stuff.funny.27": "Bu planın bir parçası mıydı?",
+  "redstone-helper.stuff.funny.28": "Bazen, en iyi hareket hiç hareket etmemektir.",
+  "redstone-helper.stuff.funny.29": "Bu alkış gerektiriyor... ya da gerektirmiyor.",
+  "redstone-helper.stuff.funny.30": "Ve... hiçbir şey olmadı.",
+  "dontlocalize.redstone-helper.stuff.funny_count": "30",
+  "redstone-helper.stuff.modrinth": [
+    {
+      "text": "Modrinth",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.stuff.github": [
+    {
+      "text": "Github",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://github.com/Bumer-32/Redstone-Helper"
+      }
+    }
+  ],
+  "redstone-helper.stuff.crowdin": [
+    {
+      "text": "Crowdin",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://crowdin.com/project/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.system.info.server_incompatible_version": "Redstone Helper sürümü istemciyle aynı değil!\nBazı fonksiyonlar mevcut değil\nİstemci: %d Sunucu: %d",
+  "redstone-helper.manual.manual": "Manuel",
+  "redstone-helper.manual.previous": "Önceki",
+  "redstone-helper.manual.next": "Sonraki",
+  "redstone-helper.manual.welcome.1": "",
+  "gamerule.doContainerDrops": "Do container drops",
+  "gamerule.doContainerDrops.description": "Varil ve sandık gibi depolama blokları eşya düşürür",
+  "gamerule.instantLampsTurnOff": "Anlık lambalar kapalı",
+  "gamerule.instantLampsTurnOff.description": "Redstone lambaları anında kapanır",
+  "modmenu.nameTranslation.redstone-helper": "Redstone Helper",
+  "modmenu.descriptionTranslation.redstone-helper": "Sana redstone ile yardımcı olan bir mod!",
+  "modmenu.summaryTranslation.redstone-helper": "Redstone Helper - arkadaşın!",
+  "text.config.redstone-helper/redstone-helper-config.title": "Redstone Helper Ayarları",
+  "text.config.redstone-helper/redstone-helper-config.section.general": "Genel Ayarlar",
+  "text.config.redstone-helper/redstone-helper-config.category.updateCheckNest": "Güncelleme denetleme",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Otomatik güncelleme denetleme",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForRelease": "Ana sürüm güncellemelerini kontrol et",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForBeta": "Beta güncellemelerini kontrol et",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForAlpha": "Alpha güncellemelerini kontrol et",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.showUpToDateNotification": "\"Redstone Helper Güncel!\" mesajını göster",
+  "text.config.redstone-helper/redstone-helper-config.option.enableHints": "İpuçlarını aç",
+  "text.config.redstone-helper/redstone-helper-config.section.interface": "Arayüz",
+  "text.config.redstone-helper/redstone-helper-config.option.darkPanels": "Koyu paneller",
+  "text.config.redstone-helper/redstone-helper-config.option.enableBackgroundBlur": "Arka plan bulanıklığı",
+  "text.config.redstone-helper/redstone-helper-config.option.toastPosition": "Açılır pencere pozisyonu",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_left": "Sol üst",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_left": "Sol üst, ortaya yakın",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_left": "Orta sol",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_left": "Sol alt, ortaya yakın",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_left": "Sol alt",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_right": "Sağ üst",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_right": "Sağ üst, ortaya yakın",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_right": "Orta Sağ",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_right": "Sağ alt, ortaya yakın",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_right": "Sağ alt",
+  "text.config.redstone-helper/redstone-helper-config.section.features": "Mod özellkleri ayarları",
+  "text.config.redstone-helper/redstone-helper-config.category.autoWireNest": "Auto Wire™",
+  "text.config.redstone-helper/redstone-helper-config.option.autoWireNest.defaultAutoWireMode": "Varsayılan Auto Wire™ modu",
+  "text.config.redstone-helper/redstone-helper-config.option.autoWireNest.rememberLastAutoWireMode": "Auto Wire modunu hatırla",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_redstone": "Otomatik redstone",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_line": "Tekrarlayıcılı Redstone hattı",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_repeater": "Sadece tekrarlayıcılar",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_comparator": "Sadece karşılaştırıcılar",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Bloklar ile karşılaştırıcılar",
+  "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Hızlı Işınlanma",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Mesafe",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Sıvıları dahili et",
+  "text.config.redstone-helper/redstone-helper-config.section.becareful": "Dikkat et! Bu özellikler bazı sunucularda yasak olabilir! Banlanabilirsin!",
+  "text.config.redstone-helper/redstone-helper-config.category.customQuickTpNest": "Sunucuda RH kurmadan özel hızlı TP",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpEnabled": "Dikkat! Bazı sunucularda yasaklanabilirsin! Açılsın mı?",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpDistance": "Mesafe",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpIncludeFluids": "Sıvıları dahili et"
+}
