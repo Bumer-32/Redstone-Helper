@@ -2,9 +2,11 @@
 
 package ua.pp.lumivoid.redstonehelper.util.features
 
+import net.minecraft.block.BlockState
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.registry.Registries
 import net.minecraft.state.property.Properties
+import net.minecraft.util.ActionResult
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.Direction
@@ -12,10 +14,11 @@ import net.minecraft.world.World
 import ua.pp.lumivoid.redstonehelper.ClientOptions
 import ua.pp.lumivoid.redstonehelper.Config
 import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.events.PlayerBlockPlaceCallback
 import ua.pp.lumivoid.redstonehelper.network.SendPacket
 import ua.pp.lumivoid.redstonehelper.network.packets.c2s.SetBlockC2SPacket
 import ua.pp.lumivoid.redstonehelper.util.JsonConfig
-import ua.pp.lumivoid.redstonehelper.util.TickHandler
+import ua.pp.lumivoid.redstonehelper.util.Scheduling
 import kotlin.math.abs
 
 enum class AutoWire {
@@ -45,7 +48,7 @@ enum class AutoWire {
             } else {
                 try {
                     if (world.getBlockState(oldBlockPos.up()).get(Properties.POWER) == 1) {
-                        TickHandler.scheduleAction(1) {
+                        Scheduling.scheduleAction(1) {
                             val block = Registries.BLOCK.getId(world.getBlockState(blockPos).block).toString()
                             setBlock(blockPos, "minecraft:repeater", Direction.fromVector(blockPosDiff.x, 0, blockPosDiff.z, null)!!)
                             setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff).down(), block)
@@ -88,7 +91,7 @@ enum class AutoWire {
         override fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String {
             val direction = Direction.fromRotation(player.getHeadYaw().toDouble() - 180)
 
-            TickHandler.scheduleAction(1) { // sleep to find NEW block not old block
+            Scheduling.scheduleAction(1) { // sleep to find NEW block not old block
                 val block = Registries.BLOCK.getId(world.getBlockState(blockPos).block).toString()
                 setBlock(blockPos, "minecraft:comparator", Direction.fromRotation(player.getHeadYaw().toDouble()))
                 setBlock(blockPos.offset(direction), block)
@@ -104,6 +107,18 @@ enum class AutoWire {
     private val logger = Constants.LOGGER
 
     companion object {
+        fun register() {
+            PlayerBlockPlaceCallback.EVENT.register(PlayerBlockPlaceCallback { player: PlayerEntity, world: World, blockState: BlockState, blockPos: BlockPos ->
+                if (world.isClient) {
+                    if (ClientOptions.isAutoWireEnabled) {
+                        ClientOptions.autoWireMode.place(blockPos, player, world)
+                    }
+                }
+
+                ActionResult.PASS
+            })
+        }
+
         private val values = entries
 
         fun previous(current: AutoWire): AutoWire {

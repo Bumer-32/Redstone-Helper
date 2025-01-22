@@ -137,8 +137,8 @@ object VersionChecker {
             }
         } catch (e: Exception) {
             logger.error("Error while checking version of Redstone-Helper", e)
-            return "Unable to check Redstone Helper version! You can check it itself https://modrinth.com/mod/redstone-helper Error: $e"
+            return "Unable to check Redstone Helper version! You can check it itself ${Constants.URLS.MODRINTH_MOD_URL} Error: $e"
         }
-        return "Old version of Redstone Helper detected! Please update to $version https://modrinth.com/mod/redstone-helper"
+        return "Old version of Redstone Helper detected! Please update to $version ${Constants.URLS.MODRINTH_MOD_URL}"
     }
 }

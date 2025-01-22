@@ -7,7 +7,7 @@ import ua.pp.lumivoid.redstonehelper.Config
 import ua.pp.lumivoid.redstonehelper.Constants
 import ua.pp.lumivoid.redstonehelper.gui.HudToast
 import ua.pp.lumivoid.redstonehelper.util.JsonConfig
-import ua.pp.lumivoid.redstonehelper.util.TickHandler
+import ua.pp.lumivoid.redstonehelper.util.Scheduling
 import ua.pp.lumivoid.redstonehelper.util.VersionChecker
 import kotlin.random.Random
 
@@ -17,12 +17,12 @@ object LogginedInRegistration {
             val config = Config()
 
             //check for mod updates
-            TickHandler.scheduleAction(100) { // after 5 secs to load hud
+            Scheduling.scheduleAction(100) { // after 5 secs to load hud
                 VersionChecker.checkRedstoneHelperVersionWithToast()
             }
 
             if (config.enableHints) {
-                TickHandler.scheduleAction(300) { // 15 secs, hints
+                Scheduling.scheduleAction(300) { // 15 secs, hints
                     val hintInt = Random.nextInt(1, Constants.LOCALIZEIDS.Counts.HINTS_COUNT + 1)
                     HudToast.addToastToQueue(Text.translatable("redstone-helper.feature.hints.hint.$hintInt"), false)
                 }
