@@ -1,9 +1,11 @@
 package ua.pp.lumivoid.redstonehelper.util
 
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import org.lwjgl.glfw.GLFW
 import ua.pp.lumivoid.redstonehelper.Constants
+import ua.pp.lumivoid.redstonehelper.util.features.AutoWire
 import ua.pp.lumivoid.redstonehelper.util.features.Macros
 import java.io.File
 
@@ -11,19 +13,19 @@ object JsonConfig {
     private val logger = Constants.LOGGER
     private val json = Json { prettyPrint = true }
     private var cachedConfig: JsonConfigData? = null
+    private val configFolder = File(Constants.CONFIG_FOLDER_PATH)
+    private val configFile = File(Constants.CONFIG_FILE_PATH)
 
     init {
-        if (!File(Constants.CONFIG_FOLDER_PATH).exists()) File(Constants.CONFIG_FOLDER_PATH).mkdirs()
-        val configFile = File(Constants.CONFIG_FOLDER_PATH + "/config.json")
-        if (!configFile.exists()) configFile.createNewFile()
+        if (!configFolder.exists()) configFolder.mkdirs()
+
     }
 
     fun readConfig(): JsonConfigData {
         if (cachedConfig != null) return cachedConfig!!
 
-        val file = File(Constants.CONFIG_FOLDER_PATH + "/config.json")
-        if (file.exists()) {
-            val jsonData = file.readText()
+        if (configFile.exists()) {
+            val jsonData = configFile.readText()
             try {
                 return json.decodeFromString<JsonConfigData>(jsonData)
             } catch (e: RuntimeException) {
@@ -57,8 +59,16 @@ object JsonConfig {
     }
 
     fun writeConfig(data: JsonConfigData) {
+        if (!configFile.exists()) configFile.createNewFile()
         cachedConfig = data
-        val file = File(Constants.CONFIG_FOLDER_PATH + "/config.json")
-        file.writeText(json.encodeToString(data))
+        configFile.writeText(json.encodeToString(data))
     }
 }
+
+@Serializable
+data class JsonConfigData(
+    var modVersion: String? = null,
+    var versionCheckSkip: String? = null,
+    var autoWireMode: AutoWire? = null,
+    val macros: MutableList<Macro> = mutableListOf()
+)

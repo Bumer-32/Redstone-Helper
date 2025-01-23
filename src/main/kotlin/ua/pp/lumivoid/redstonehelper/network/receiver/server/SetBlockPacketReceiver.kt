@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.math.Direction
 import ua.pp.lumivoid.redstonehelper.Constants
 import ua.pp.lumivoid.redstonehelper.network.packets.c2s.SetBlockC2SPacket
-import ua.pp.lumivoid.redstonehelper.util.TickHandler
+import ua.pp.lumivoid.redstonehelper.util.Scheduling
 
 object SetBlockPacketReceiver {
     private val logger = Constants.LOGGER
@@ -16,7 +16,7 @@ object SetBlockPacketReceiver {
         logger.debug("Registering SetBlockPacketReceiver")
 
         Constants.NET_CHANNEL.registerServerbound(SetBlockC2SPacket::class.java) { message, access ->
-            TickHandler.scheduleAction(1) { // delay, need to place dust because it thinks there's no block under it
+            Scheduling.scheduleAction(1) { // delay, need to place dust because it thinks there's no block under it
                 var blockState = Registries.BLOCK.get(message.block).defaultState
 
                 if (message.direction != Direction.UP) {

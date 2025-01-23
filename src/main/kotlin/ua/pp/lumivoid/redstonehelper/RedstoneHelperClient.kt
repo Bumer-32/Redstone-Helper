@@ -10,8 +10,12 @@ import io.wispforest.owo.ui.hud.Hud
 import net.fabricmc.api.ClientModInitializer
 import net.minecraft.text.Text
 import org.mariuszgromada.math.mxparser.License
+import ua.pp.lumivoid.redstonehelper.commands.ClientCommandsRegistration
+import ua.pp.lumivoid.redstonehelper.keybindings.KeyBindingsRegistration
+import ua.pp.lumivoid.redstonehelper.network.receiver.ClientPacketReceiverRegistration
 import ua.pp.lumivoid.redstonehelper.registration.*
 import ua.pp.lumivoid.redstonehelper.util.JsonConfig
+import ua.pp.lumivoid.redstonehelper.util.features.AutoWire
 
 
 @Suppress("unused")
@@ -25,17 +29,9 @@ object RedstoneHelperClient : ClientModInitializer {
 
         ClientCommandsRegistration.register() // Registering client commands
         KeyBindingsRegistration.register() // Registering keybindings
-		AutoWireRegistration.register() // Registering autowire function
+		AutoWire.register() // Registering autowire function
 		LogginedInRegistration.register() // For mod updates check
 		ClientPacketReceiverRegistration.register() // Registering packet receiver
-
-		// ONLY FOR DOWNLOADER
-		// Verify files for version
-//		if (!File(Constants.CONFIG_FOLDER_PATH + "\\config.json" || JsonConfig.readConfig().modVersion != Constants.MOD_VERSION).exists()) {
-//			logger.info("Other version found! cleanUp!")
-//			File(Constants.CONFIG_FOLDER_PATH).listFiles()?.forEach { it.delete() }
-//			JsonConfig.writeConfig(JsonConfigData(modVersion = Constants.MOD_VERSION))
-//		}
 
 		val jsonConfig = JsonConfig.readConfig()
 		jsonConfig.modVersion = Constants.MOD_VERSION

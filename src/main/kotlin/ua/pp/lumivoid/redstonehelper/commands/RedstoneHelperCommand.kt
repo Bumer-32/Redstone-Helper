@@ -11,7 +11,6 @@ import net.minecraft.text.Text
 import ua.pp.lumivoid.redstonehelper.Config
 import ua.pp.lumivoid.redstonehelper.Constants
 import ua.pp.lumivoid.redstonehelper.gui.HudToast
-import ua.pp.lumivoid.redstonehelper.util.DownloadManager
 import ua.pp.lumivoid.redstonehelper.util.VersionChecker
 
 object RedstoneHelperCommand {
@@ -101,19 +100,6 @@ object RedstoneHelperCommand {
                         )
                     )
                 )
-            )
-            .then(ClientCommandManager.literal("test")
-                .executes {
-                    //for (i in 1..Constants.LOCALIZEIDS.Counts.HINTS_COUNT) HudToast.addToastToQueue(Text.translatable("redstone-helper.feature.hints.hint.$i"), false)
-                    1
-                }
-            )
-            .then(ClientCommandManager.literal("cleanUp")
-                .executes {
-                    logger.debug("/redstone-helper: Cleaning up")
-                    DownloadManager.cleanUp()
-                    1
-                }
             )
             .then(ClientCommandManager.literal("github")
                 .executes { context ->

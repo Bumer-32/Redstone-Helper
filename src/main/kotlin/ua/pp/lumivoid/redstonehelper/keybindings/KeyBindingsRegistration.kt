@@ -1,6 +1,5 @@
-package ua.pp.lumivoid.redstonehelper.registration
+package ua.pp.lumivoid.redstonehelper.keybindings
 
-import ua.pp.lumivoid.redstonehelper.keybindings.*
 import ua.pp.lumivoid.redstonehelper.keybindings.minecraft.UseKeyBinding
 
 object KeyBindingsRegistration {
