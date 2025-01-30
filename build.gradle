@@ -153,7 +153,7 @@ modrinth {
 			new ModDependency(project.id_world_edit, "optional")
 	]
 
-	debugMode = true
+	debugMode = false
 
 	tasks.modrinth.finalizedBy(tasks.modrinthSyncBody)
 }
