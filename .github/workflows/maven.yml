@@ -30,4 +30,7 @@ jobs:
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: building and publishing
-        run: ./gradlew publish -PmavenUsername=${{ secrets.MAVEN_USERNAME }} -PmavenPassword=${{ secrets.MAVEN_PASSWORD }}
+        run: ./gradlew publish
+        env:
+          MAVEN_NAME: ${{ secrets.MAVEN_NAME }}
+          MAVEN_SECRET: ${{ secrets.MAVEN_SECRET }}
