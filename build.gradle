@@ -121,9 +121,9 @@ publishing {
 			name = "Lumivoid"
 			url = "https://maven.lumivoid.pp.ua/releases"
 
-			credentials(PasswordCredentials)
-			authentication {
-				basic(BasicAuthentication)
+			credentials {
+				username = System.getenv("MAVEN_NAME") ?: property("mavenUser").toString()
+				password = System.getenv("MAVEN_SECRET") ?: property("mavenPassword").toString()
 			}
 		}
 	}
