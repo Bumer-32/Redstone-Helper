@@ -50,7 +50,7 @@ enum class AutoWire {
                     if (world.getBlockState(oldBlockPos.up()).get(Properties.POWER) == 1) {
                         Scheduling.scheduleAction(1) {
                             val block = Registries.BLOCK.getId(world.getBlockState(blockPos).block).toString()
-                            setBlock(blockPos, "minecraft:repeater", Direction.fromVector(blockPosDiff.x, 0, blockPosDiff.z, null)!!)
+                            setBlock(blockPos, "minecraft:repeater", Direction.fromVector(blockPosDiff.x, 0, blockPosDiff.z)!!)
                             setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff).down(), block)
                             setBlock(blockPos.subtract(blockPosDiff).subtract(blockPosDiff), "minecraft:redstone_wire")
                             setBlock(blockPos.subtract(blockPosDiff), block)
@@ -77,23 +77,23 @@ enum class AutoWire {
     },
     AUTO_REPEATER {
         override fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String {
-            setBlock(blockPos, "minecraft:repeater", Direction.fromHorizontalDegrees(player.getHeadYaw().toDouble()))
+            setBlock(blockPos, "minecraft:repeater", Direction.fromRotation(player.getHeadYaw().toDouble()))
             return "AUTO_REPEATER"
         }
     },
     AUTO_COMPARATOR {
         override fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String {
-            setBlock(blockPos, "minecraft:comparator", Direction.fromHorizontalDegrees(player.getHeadYaw().toDouble()))
+            setBlock(blockPos, "minecraft:comparator", Direction.fromRotation(player.getHeadYaw().toDouble()))
             return "AUTO_COMPARATOR"
         }
     },
     CHEAP_AUTO_COMPARATOR {
         override fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String {
-            val direction = Direction.fromHorizontalDegrees(player.getHeadYaw().toDouble() - 180)
+            val direction = Direction.fromRotation(player.getHeadYaw().toDouble() - 180)
 
             Scheduling.scheduleAction(1) { // sleep to find NEW block not old block
                 val block = Registries.BLOCK.getId(world.getBlockState(blockPos).block).toString()
-                setBlock(blockPos, "minecraft:comparator", Direction.fromHorizontalDegrees(player.getHeadYaw().toDouble()))
+                setBlock(blockPos, "minecraft:comparator", Direction.fromRotation(player.getHeadYaw().toDouble()))
                 setBlock(blockPos.offset(direction), block)
                 setBlock(blockPos.offset(direction).offset(direction).down(), block)
                 setBlock(blockPos.offset(direction).offset(direction), "minecraft:redstone_wire")

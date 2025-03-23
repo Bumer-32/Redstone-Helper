@@ -16,6 +16,6 @@ class TexturedButton(val texture: Identifier, onPress: Consumer<ButtonComponent>
     override fun renderWidget(context: DrawContext?, mouseX: Int, mouseY: Int, delta: Float) {
         super.renderWidget(context, mouseX, mouseY, delta)
 
-        context?.drawGuiTexture(RenderLayer::getGuiTextured, texture, this.x + 2, this.y + 2, this.width - 4, this.width - 4)
+        context?.drawGuiTexture(texture, this.x + 2, this.y + 2, this.width - 4, this.width - 4)
     }
 }
