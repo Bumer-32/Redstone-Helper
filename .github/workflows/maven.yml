@@ -31,3 +31,6 @@ jobs:
         run: chmod +x ./gradlew
       - name: building and publishing
         run: ./gradlew publish
+        env:
+          MAVEN_NAME: ${{ secrets.MAVEN_NAME }}
+          MAVEN_SECRET: ${{ secrets.MAVEN_SECRET }}
