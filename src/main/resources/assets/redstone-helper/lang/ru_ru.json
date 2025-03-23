@@ -1,0 +1,313 @@
+{
+  "redstone-helper.mod.redstone_helper_title": "Redstone Helper",
+  "redstone-helper.mod.short_redstone_helper_title": "RH",
+  "redstone-helper.mod.styled_short_redstone_helper_title": [
+    {
+      "text": "[",
+      "color": "red"
+    },
+    {
+      "text": "RH"
+    },
+    {
+      "text": "]",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.keybinding.category.basic": "Redstone Helper",
+  "redstone-helper.keybinding.key.calc": "Открыть калькулятор",
+  "redstone-helper.keybinding.key.switch_autowire": "Переключить Auto Wire™",
+  "redstone-helper.keybinding.key.previous_autowire_mode": "Предыдущий режим Auto Wire™",
+  "redstone-helper.keybinding.key.next_autowire_mode": "Следующий режим Auto Wire™",
+  "redstone-helper.keybinding.key.quickTp": "Быстрый телепорт",
+  "redstone-helper.feature.calculator.title": "Калькулятор",
+  "redstone-helper.feature.calculator.expression": "Выражение",
+  "redstone-helper.feature.calculator.result": "Результат: %d",
+  "redstone-helper.feature.calculator.invalid_expression": "Результат: неверное выражение!",
+  "redstone-helper.feature.auto_wire.title": "Auto Wire™",
+  "redstone-helper.feature.auto_wire.enable_auto_wire": "Включить Auto Wire™",
+  "redstone-helper.feature.auto_wire.auto_wire_on": "Auto Wire™ включен",
+  "redstone-helper.feature.auto_wire.auto_wire_off": "Auto Wire™ выключен",
+  "redstone-helper.feature.auto_wire.select_auto_wire_mode": "Выберите режим",
+  "redstone-helper.feature.auto_wire.current_auto_wire_mode": "Текущий режим Auto Wire™: %d",
+  "redstone-helper.feature.auto_wire.modes.auto_redstone": "Авто редстоун",
+  "redstone-helper.feature.auto_wire.modes.auto_line": "Редстоун линия с повторителями",
+  "redstone-helper.feature.auto_wire.modes.auto_repeater": "Только повторители",
+  "redstone-helper.feature.auto_wire.modes.auto_comparator": "Только компараторы",
+  "redstone-helper.feature.auto_wire.modes.cheap_auto_comparator": "Компараторы с блоками",
+  "redstone-helper.feature.auto_wire.description.auto_redstone": "Ставит редстоун на каждый блок, который вы разместили",
+  "redstone-helper.feature.auto_wire.description.auto_line": "Ставит редстоун на каждый блок, который вы разместили + ставит каждые 15 блоков повторитель",
+  "redstone-helper.feature.auto_wire.description.auto_repeater": "Ставит повторитель на каждый блок, который вы разместили",
+  "redstone-helper.feature.auto_wire.description.auto_comparator": "Ставит компаратор на каждый блок, который вы разместили",
+  "redstone-helper.feature.auto_wire.description.cheap_auto_comparator": "Ставит компараторы с блоками и редстоуном за схемой редстоун - компаратор - блок",
+  "redstone-helper.feature.bits_operations.title": "BIT Operations™",
+  "redstone-helper.feature.bits_operations.converter": "Конвертер",
+  "redstone-helper.feature.bits_operations.invalid_expression": "Результат: неверное выражение!",
+  "redstone-helper.feature.bits_operations.expression": "Выражение",
+  "redstone-helper.feature.bits_operations.to_bit": "В BIT",
+  "redstone-helper.feature.bits_operations.to_hex": "В HEX",
+  "redstone-helper.feature.bits_operations.from_bit": "Из BIT",
+  "redstone-helper.feature.bits_operations.from_hex": "Из HEX",
+  "redstone-helper.feature.bits_operations.bit_calculator": "BIT калькулятор",
+  "redstone-helper.feature.bits_operations.bit_result": "Результат: %d : %d : %d",
+  "redstone-helper.feature.bits_operations.result": "Результат: %d",
+  "redstone-helper.feature.macro.title": "Макросы",
+  "redstone-helper.feature.macro.edit_macro_title": "Редактирование %d макроса",
+  "redstone-helper.feature.macro.settings_macros_button": "Макросы...",
+  "redstone-helper.feature.macro.new_macro_button": "Создать новый макрос",
+  "redstone-helper.feature.macro.done": "Готово",
+  "redstone-helper.feature.macro.cancel": "Отменить",
+  "redstone-helper.feature.macro.key_bind": "Клавиша бинда",
+  "redstone-helper.feature.macro.key_bind_none": "Ничего",
+  "redstone-helper.feature.macro.reset": "Сбросить",
+  "redstone-helper.feature.macro.add_command": "Добавить команду",
+  "redstone-helper.feature.macro.macro_not_found": "Макрос не найден",
+  "redstone-helper.feature.macro.dialog.export": "Экспорт макроса Redstone Helper",
+  "redstone-helper.feature.macro.dialog.import": "Импорт макросов Redstone Helper",
+  "redstone-helper.feature.macro.dialog.fileName": "Файл макросов Redstone Helper",
+  "redstone-helper.feature.macro.tooltip.enabled_for_keybinds": "Включено для привязки клавиш",
+  "redstone-helper.feature.macro.tooltip.edit": "Редактировать этот макрос",
+  "redstone-helper.feature.macro.tooltip.delete": "Удалить этот макрос",
+  "redstone-helper.feature.macro.tooltip.export": "Экспортировать этот макрос",
+  "redstone-helper.feature.macro.tooltip.import": "Импортировать макросы",
+  "redstone-helper.feature.macro.tooltip.export_all": "Экспорт всех макросов",
+  "redstone-helper.feature.insta_lamps.insta_on": "Мгновенные лампы включены",
+  "redstone-helper.feature.insta_lamps.insta_off": "Мгновенные лампы выключены",
+  "redstone-helper.feature.airplace.airplace_on": "Airplace включен",
+  "redstone-helper.feature.airplace.airplace_off": "Airplace выключен",
+  "redstone-helper.feature.calc_redstone_signal.calculated_signal": "Вычисленный сигнал: %d, предмет: %d",
+  "redstone-helper.feature.colorcode.success": "Успешно окрашено %d блоков в %d",
+  "redstone-helper.feature.hints.hint.1": "Устали ставить редстоун?\n Наверное /autowire вам поможет",
+  "redstone-helper.feature.hints.hint.2": "Вы можете использовать /bits для преобразования\nчисел между BIT и HEX системами",
+  "redstone-helper.feature.hints.hint.3": "Вы можете использовать /macro для создания макросов",
+  "redstone-helper.feature.hints.hint.4": "Вы можете использовать /gamerule instantLampsTurnOff true для отключения задержки ламп",
+  "redstone-helper.feature.hints.hint.5": "Вы можете использовать /airplace для включения airplace",
+  "redstone-helper.feature.hints.hint.6": "Создано Bumer_32",
+  "redstone-helper.feature.hints.hint.7": "Забыли сколько предметов Вам нужно для сигнала?\n/calc-redstone Вам поможет!",
+  "redstone-helper.feature.hints.hint.8": "Всегда мечтали о размещении блоков в воздухе?\nТеперь это возможно с помощью /airplace!",
+  "redstone-helper.feature.hints.hint.9": "Устали от повторителей?\nДайте /autowire делать всю работу за вас",
+  "redstone-helper.feature.hints.hint.10": "/autodust просто перенаправляет вас в /autowire",
+  "redstone-helper.feature.hints.hint.11": "Манипулируйте с битами и шестнадцатеричными числами\nлегко с помощью BIT Operations™",
+  "redstone-helper.feature.hints.hint.12": "Не забывайте проверить наличие обновлений мода\nесли проверка версии отключена в ModMenu!",
+  "redstone-helper.feature.hints.hint.13": "Мод поддерживает разные языки! Хотите добавить свой?\nПереведите его в Crowdin!\n/redstone-helper crowdin",
+  "redstone-helper.feature.hints.hint.14": "Используйте ModMenu, чтобы настроить\nвнешний вид интерфейса Redstone Helper",
+  "redstone-helper.feature.hints.hint.15": "Не забывайте о быстром перемещении с помощью\n/quicktp. Установите его на кнопку для\nеще большего удобства!",
+  "redstone-helper.feature.hints.hint.16": "Автоматическое размещение редстоуна?\nПросто введите /autodust!",
+  "redstone-helper.feature.hints.hint.17": "Система уведомлений\nинформирует вас важной информацией\nправда же?",
+  "redstone-helper.feature.hints.hint.18": "Настройте Redstone Helper в ModMenu!",
+  "redstone-helper.feature.hints.hint.19": "Если вы устали от подсказок,\nпросто выключите их в настройках мода",
+  "redstone-helper.feature.hints.hint.20": "Знаете ли вы, что вы можете добавить\nсвой язык в Redstone Helper?\n/redstone-helper crowdin",
+  "redstone-helper.feature.hints.hint.21": "Остерегайтесь /clear-inventory!\nОна очистит даже самые важные предметы из сундука!",
+  "redstone-helper.feature.hints.hint.22": "Нужно быстро добраться куда-нибудь?\nВведи /quicktp и ты на месте!",
+  "redstone-helper.feature.hints.hint.23": "Скажите нет задержкам - используйте\n/gamerule instantLampsTurnOff true чтобы отключить задержку у ламп!",
+  "redstone-helper.feature.hints.hint.24": "Интересный факт:\n/instaLamp заменено на\n/gamerule instantLampsTurnOff true\n Неинтересно? эх",
+  "redstone-helper.feature.hints.hint.25": "Желаете получить больше автоматизации?\nИспользуйте макросы и забудьте за рутину!",
+  "redstone-helper.feature.hints.hint.26": "ВЫПУСТИТЕ МЕНЯ ОТСЮДА!!!\nПОМОГИТЕ!!",
+  "redstone-helper.feature.hints.hint.27": "Интересный факт: Redstone Helper написан на Kotlin",
+  "redstone-helper.feature.hints.hint.28": "Этот список когда-нибудь да обновиться...",
+  "redstone-helper.feature.hints.hint.29": "Вы можете редактировать Redstone Helper!\n/redstone-helper github",
+  "redstone-helper.feature.hints.hint.30": "Эта подсказка имеет номер 30 в списке",
+  "dontlocalize.redstone-helper.feature.hints.hints_count": "30",
+  "redstone-helper.stuff.version_checker.up_to_date": "Redstone Helper обновлён!",
+  "redstone-helper.stuff.version_checker.need_update": [
+    "Обнаружена старая версия Redstone Helper!\n",
+    {
+      "text": "Пожалуйста, обновите до ",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    },
+    {
+      "index": 0,
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.stuff.version_checker.unable_to_check_version": [
+    "Не удалось проверить версию Redstone Helper!\n",
+    {
+      "text": "Вы можете проверить её сами ",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.stuff.version_checker.to_check_version": "Чтобы проверить версию, введите в чат:\n/redstone-helper check-updates",
+  "redstone-helper.stuff.version_checker.skip_version": [
+    "Вы можете ",
+    {
+      "text": "пропустить эту версию",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "suggest_command",
+        "value": "/redstone-helper check-updates skip"
+      }
+    }
+  ],
+  "redstone-helper.stuff.version_checker.skipping": "пропуск версии",
+  "redstone-helper.stuff.version_checker.clear_skips": "очищаю пропущенные версии",
+  "redstone-helper.stuff.info.success": "Успешно!",
+  "redstone-helper.stuff.info.error.block_not_found": [
+    {
+      "text": "Блок не найден!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.error.invalid_block_inventory": [
+    {
+      "text": "Не могу получить инвентарь из блока!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.error.missing_arguments": [
+    {
+      "text": "Не хватает аргументов!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.error.no_permission": [
+    {
+      "text": "У вас недостаточно прав для этого",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.error.select_region": [
+    {
+      "text": "Выберите область!",
+      "color": "red"
+    }
+  ],
+  "redstone-helper.stuff.info.warning.illegal_feature": [
+    {
+      "text": "Эта функция может быть незаконна на некоторых серверах! Вы можете получить бан!\nИспользуйте её ТОЛЬКО ЕСЛИ ОНА РАЗРЕШЕНА НА СЕРВЕРЕ\nАвтор мода не несёт ответственности за ваш бан на сервере!",
+      "color": "yellow"
+    }
+  ],
+  "redstone-helper.stuff.funny.1": "Зачем это тебе??",
+  "redstone-helper.stuff.funny.2": "Зачем ты хочешь это сделать?",
+  "redstone-helper.stuff.funny.3": "Для чего?",
+  "redstone-helper.stuff.funny.4": "... Хорошо, если ты уверен.",
+  "redstone-helper.stuff.funny.5": "Я 99% уверен, что вы можете использовать что-нибудь другое.",
+  "redstone-helper.stuff.funny.6": "Это кажется лишним.",
+  "redstone-helper.stuff.funny.7": "Это опечатка?",
+  "redstone-helper.stuff.funny.8": "Вау, какая шикарная, но не нужная вещь.",
+  "redstone-helper.stuff.funny.9": "Тебе скучно или просто любопытно?",
+  "redstone-helper.stuff.funny.10": "Это действие спонсирует: 'А почему бы и нет?'",
+  "redstone-helper.stuff.funny.11": "Достижение разблокировано: Мастер бездельник!",
+  "redstone-helper.stuff.funny.12": "Поздравляю! Ты сделал... абсолютно ничего.",
+  "redstone-helper.stuff.funny.13": "Если это был тест, вы сдали... ничего не сделав.",
+  "redstone-helper.stuff.funny.14": "Вам действительно нужно было это сделать?",
+  "redstone-helper.stuff.funny.15": "Еще один великий момент в истории \"А зачем?\"",
+  "redstone-helper.stuff.funny.16": "Иногда меньше, это просто меньше.",
+  "redstone-helper.stuff.funny.17": "В следующий раз попробуй сделать что-то полезное.",
+  "redstone-helper.stuff.funny.18": "Ваши усилия по достижению ничего достойны похвалы.",
+  "redstone-helper.stuff.funny.19": "Не каждый клик должен быть обоснован.",
+  "redstone-helper.stuff.funny.20": "Ничего не изменилось... но ты знал это, верно?",
+  "redstone-helper.stuff.funny.21": "Ну, это было... что-то?",
+  "redstone-helper.stuff.funny.22": "Ты действительно думал об этом, да?",
+  "redstone-helper.stuff.funny.23": "То, что ты можешь, не значит, что это нужно.",
+  "redstone-helper.stuff.funny.24": "Еще один шедевр случайности.",
+  "redstone-helper.stuff.funny.25": "Это ты называешь прогрессом?",
+  "redstone-helper.stuff.funny.26": "Ты, наверное, действительно гордишься этим.",
+  "redstone-helper.stuff.funny.27": "Это часть плана?",
+  "redstone-helper.stuff.funny.28": "Иногда, наилучшим действием является не действие вообще.",
+  "redstone-helper.stuff.funny.29": "Это заслуживает аплодисментов... или нет.",
+  "redstone-helper.stuff.funny.30": "И... ничего не произошло.",
+  "dontlocalize.redstone-helper.stuff.funny_count": "30",
+  "redstone-helper.stuff.modrinth": [
+    {
+      "text": "Modrinth",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://modrinth.com/mod/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.stuff.github": [
+    {
+      "text": "Github",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://github.com/Bumer-32/Redstone-Helper"
+      }
+    }
+  ],
+  "redstone-helper.stuff.crowdin": [
+    {
+      "text": "Crowdin",
+      "color": "blue",
+      "bold": true,
+      "clickEvent": {
+        "action": "open_url",
+        "value": "https://crowdin.com/project/redstone-helper"
+      }
+    }
+  ],
+  "redstone-helper.system.info.server_incompatible_version": "Версия Redstone Helper не такая же, как на клиенте!\nНекоторые функции не доступны\nКлиент: %d Сервер: %d",
+  "redstone-helper.manual.manual": "Руководство",
+  "redstone-helper.manual.previous": "Назад",
+  "redstone-helper.manual.next": "Далее",
+  "redstone-helper.manual.welcome.1": "",
+  "gamerule.doContainerDrops": "Do container drops",
+  "gamerule.doContainerDrops.description": "Любые блоки хранения, такие как бочка или сундук выбрасывают предметы",
+  "gamerule.instantLampsTurnOff": "Мгновенное выключение ламп",
+  "gamerule.instantLampsTurnOff.description": "Редстоун лампы отключаются мгновенно",
+  "modmenu.nameTranslation.redstone-helper": "Redstone Helper",
+  "modmenu.descriptionTranslation.redstone-helper": "Мод, который помогает вам с редстоуном!",
+  "modmenu.summaryTranslation.redstone-helper": "Redstone helper - ваш друг!",
+  "text.config.redstone-helper/redstone-helper-config.title": "Параметры Redstone Helper",
+  "text.config.redstone-helper/redstone-helper-config.section.general": "Общие параметры",
+  "text.config.redstone-helper/redstone-helper-config.category.updateCheckNest": "Проверка обновлений",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.enableUpdateCheck": "Автоматическая проверка обновлений",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForRelease": "Проверять на релизные версий",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForBeta": "Проверять на бета-версии",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.checkForAlpha": "Проверять на альфа-версии",
+  "text.config.redstone-helper/redstone-helper-config.option.updateCheckNest.showUpToDateNotification": "Показывать уведомление \"Redstone Helper обновлён!\"",
+  "text.config.redstone-helper/redstone-helper-config.option.enableHints": "Включить подсказки",
+  "text.config.redstone-helper/redstone-helper-config.section.interface": "Интерфейс",
+  "text.config.redstone-helper/redstone-helper-config.option.darkPanels": "Тёмные панели",
+  "text.config.redstone-helper/redstone-helper-config.option.enableBackgroundBlur": "Размытие фона",
+  "text.config.redstone-helper/redstone-helper-config.option.toastPosition": "Позиция уведомлений",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_left": "Сверху слева",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_left": "Top left closer to center",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_left": "Посередине слева",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_left": "Bottom left closer to center",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_left": "Снизу слева",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_right": "Сверху справа",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.top_middle_right": "Top right closer to center",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.middle_right": "Посередине справа",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_middle_right": "Bottom right closer to center",
+  "text.config.redstone-helper/redstone-helper-config.enum.toastPositions.bottom_right": "Снизу справа",
+  "text.config.redstone-helper/redstone-helper-config.section.features": "Параметры функций мода",
+  "text.config.redstone-helper/redstone-helper-config.category.autoWireNest": "Auto Wire™",
+  "text.config.redstone-helper/redstone-helper-config.option.autoWireNest.defaultAutoWireMode": "Режим Auto Wire™ по умолчанию",
+  "text.config.redstone-helper/redstone-helper-config.option.autoWireNest.rememberLastAutoWireMode": "Запоминать режим Auto Wire™",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_redstone": "Авто редстоун",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_line": "Редстоун линия с повторителями",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_repeater": "Только повторители",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.auto_comparator": "Только компараторы",
+  "text.config.redstone-helper/redstone-helper-config.enum.autoWire.cheap_auto_comparator": "Компараторы с блоками",
+  "text.config.redstone-helper/redstone-helper-config.category.quickTpNest": "Быстрый телепорт",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpDistance": "Дистанция",
+  "text.config.redstone-helper/redstone-helper-config.option.quickTpNest.quickTpIncludeFluids": "Включать жидкости",
+  "text.config.redstone-helper/redstone-helper-config.section.becareful": "Будьте осторожны! Эти функции могут быть незаконны на некоторых серверах! Вы можете быть забанены!",
+  "text.config.redstone-helper/redstone-helper-config.category.customQuickTpNest": "Custom Quick TP без установки RH на сервер",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpEnabled": "Предупреждение! Вы можете быть забанены на некоторых серверах! Включить?",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpDistance": "Дистанция",
+  "text.config.redstone-helper/redstone-helper-config.option.customQuickTpNest.customQuickTpIncludeFluids": "Включать жидкости"
+}

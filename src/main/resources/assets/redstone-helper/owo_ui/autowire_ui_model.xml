@@ -1,0 +1,63 @@
+<owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+    <components>
+        <flow-layout direction="vertical">
+            <children>
+                <flow-layout id="layout" direction="vertical">
+                    <children>
+                        <label id="label">
+                            <positioning type="relative">50,0</positioning>
+                            <text translate="true">redstone-helper.feature.auto_wire.title</text>
+                        </label>
+                        
+                        <checkbox id="autowireState">
+                            <positioning type="relative">22,10</positioning>
+                            <checked>false</checked>
+                        </checkbox>
+
+                        <label>
+                            <!--IDK why but text in checkbox fully BROKEN-->
+                            <positioning type="relative">50,21</positioning>
+                            <text translate="true">redstone-helper.feature.auto_wire.enable_auto_wire</text>
+                        </label>
+
+                        <button id="selectMode">
+                            <positioning type="relative">50,65</positioning>
+                            <text translate="true">redstone-helper.feature.auto_wire.select_auto_wire_mode</text>
+                        </button>
+
+                        <label id="currentMode">
+                            <positioning type="relative">50,100</positioning>
+                            <!--suppress CheckTagEmptyBody -->
+                            <text></text>
+                        </label>
+                    </children>
+
+
+                    <horizontal-alignment>center</horizontal-alignment>
+                    <vertical-alignment>center</vertical-alignment>
+
+                    <surface>
+                        <panel/>
+                    </surface>
+
+                    <padding>
+                        <all>5</all>
+                    </padding>
+
+                    <sizing>
+                        <horizontal method="fixed">280</horizontal>
+                        <vertical method="fixed">65</vertical>
+                    </sizing>
+                </flow-layout>
+            </children>
+
+            <vertical-alignment>center</vertical-alignment>
+            <horizontal-alignment>center</horizontal-alignment>
+
+            <surface>
+                <vanilla-translucent/>
+            </surface>
+        </flow-layout>
+    </components>
+</owo-ui>

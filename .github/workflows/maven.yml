@@ -1,0 +1,36 @@
+# Publishing to maven
+
+name: maven
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - skip-ci
+
+jobs:
+  publish:
+    if: "!contains(github.ref, 'refs/tags/skip-ci')"
+
+    name: build and publish to maven
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: validate gradle wrapper
+        uses: gradle/actions/wrapper-validation@v4
+      - name: setup jdk
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'microsoft'
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+      - name: building and publishing
+        run: ./gradlew publish
+        env:
+          MAVEN_NAME: ${{ secrets.MAVEN_NAME }}
+          MAVEN_SECRET: ${{ secrets.MAVEN_SECRET }}

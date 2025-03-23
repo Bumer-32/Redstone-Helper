@@ -8,7 +8,7 @@
 		"Bumer_32"
 	],
 	"contact": {
-		"homepage": "https://github.com/Bumer-32/Redstone-Helper",
+		"homepage": "https://lumivoid.pp.ua",
 		"sources": "https://github.com/Bumer-32/Redstone-Helper",
 		"issues": "https://github.com/Bumer-32/Redstone-Helper/issues"
 	},
@@ -18,13 +18,13 @@
 	"entrypoints": {
 		"main": [
 			{
-				"value": "com.lumivoid.RedstoneHelper",
+				"value": "ua.pp.lumivoid.redstonehelper.RedstoneHelper",
 				"adapter": "kotlin"
 			}
 		],
 		"client": [
 			{
-				"value": "com.lumivoid.RedstoneHelperClient",
+				"value": "ua.pp.lumivoid.redstonehelper.RedstoneHelperClient",
 				"adapter": "kotlin"
 			}
 		]
@@ -37,13 +37,20 @@
 		}
 	],
 	"depends": {
-		"fabricloader": ">=0.15.7",
-		"minecraft": "~1.20.4",
-		"java": ">=17",
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
 		"fabric-api": "*",
-		"fabric-language-kotlin": ">=1.10.19+kotlin.1.9.23"
+		"fabric-language-kotlin": ">=1.11.0+kotlin.2.0.0"
 	},
 	"suggests": {
 		"another-mod": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.modrinth": "https://modrinth.com/mod/redstone-helper"
+			}
+		}
 	}
 }
