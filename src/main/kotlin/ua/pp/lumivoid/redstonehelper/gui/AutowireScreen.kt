@@ -70,7 +70,7 @@ class AutowireScreen: BaseUIModelScreen<FlowLayout>(FlowLayout::class.java, Data
                 dropdown.allowOverflow(true)
                 dropdown.zIndex(150)
 
-                for (mode in AutoWire.entries) {
+                AutoWire.entries.forEach { mode ->
                     dropdown.button(Text.translatable("redstone-helper.feature.auto_wire.modes.${mode.toString().lowercase()}")) {
                         dropdown.remove()
                         AutoWire.setMode(AutoWire.valueOf(mode.toString()))

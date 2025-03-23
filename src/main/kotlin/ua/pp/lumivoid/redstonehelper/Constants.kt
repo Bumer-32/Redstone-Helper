@@ -16,15 +16,16 @@ object Constants {
     val NET_CHANNEL: OwoNetChannel = OwoNetChannel.create(Identifier.of(MOD_ID, "main"))
     val aMinecraftClass: Identifier = Identifier.of(MOD_ID, "main")
     val TOAST_ID = Identifier.of(MOD_ID, "toast")!!
-    val CONFIG_FOLDER_PATH = "${FabricLoader.getInstance().configDir}\\${MOD_ID}"
+    val CONFIG_FOLDER_PATH = "${FabricLoader.getInstance().configDir}/${MOD_ID}"
+    val CONFIG_FILE_PATH = "$CONFIG_FOLDER_PATH/config.json"
     val TEXT_SPACE = Text.literal(" ")!!
 
     const val WORLD_EDIT_FABRIC_ID = "worldedit"
 
     //URLS
     object URLS {
+        const val MODRINTH_MOD_URL = "https://modrinth.com/mod/redstone-helper"
         const val MODRINTH_API_URL = "https://api.modrinth.com/v2/project/${MOD_MODRINTH_ID}/version"
-        const val GITHUB_MANUAL_OWO_LIB_URL = "https://github.com/Bumer-32/Redstone-Helper/blob/main/doc/owo%20lib.png?raw=true"
     }
 
     //TEXTS_ID

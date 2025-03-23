@@ -3,10 +3,10 @@ package ua.pp.lumivoid.redstonehelper
 import net.fabricmc.api.ModInitializer
 import ua.pp.lumivoid.redstonehelper.network.packets.s2c.InfoBlockNotFoundS2CPacket
 import ua.pp.lumivoid.redstonehelper.network.packets.s2c.InfoSuccessS2CPacket
-import ua.pp.lumivoid.redstonehelper.registration.CommandsRegistration
-import ua.pp.lumivoid.redstonehelper.registration.EachTickRegistration
+import ua.pp.lumivoid.redstonehelper.commands.CommandsRegistration
 import ua.pp.lumivoid.redstonehelper.registration.GamerulesRegistration
-import ua.pp.lumivoid.redstonehelper.registration.PacketReceiverRegistration
+import ua.pp.lumivoid.redstonehelper.network.receiver.PacketReceiverRegistration
+import ua.pp.lumivoid.redstonehelper.util.Scheduling
 import ua.pp.lumivoid.redstonehelper.util.VersionChecker
 
 
@@ -22,7 +22,7 @@ object RedstoneHelper : ModInitializer {
 
 		CommandsRegistration.register() // Registering commands
 		PacketReceiverRegistration.register() // Registering packets
-		EachTickRegistration.register() // Register something for each tick
+		Scheduling.register() // Register something for each tick
 		GamerulesRegistration.register() // Registering gamerules
 
 		// OwO Packets

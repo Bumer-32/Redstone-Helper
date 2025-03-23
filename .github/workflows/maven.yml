@@ -1,6 +1,6 @@
-# Publishing to modrinth
+# Publishing to maven
 
-name: publish
+name: maven
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ jobs:
   publish:
     if: "!contains(github.ref, 'refs/tags/skip-ci')"
 
-    name: build and publish to modrinth
+    name: build and publish to maven
     runs-on: ubuntu-latest
 
     steps:
@@ -30,4 +30,7 @@ jobs:
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: building and publishing
-        run: ./gradlew modrinth -PmodrinthToken=${{ secrets.MODRINTH_TOKEN }}
+        run: ./gradlew publish
+        env:
+          MAVEN_NAME: ${{ secrets.MAVEN_NAME }}
+          MAVEN_SECRET: ${{ secrets.MAVEN_SECRET }}

@@ -55,7 +55,7 @@ class MacroEditScreen(private val parent: MacroScreen?, name:String, private val
             keyAssigned = true
         }
 
-        return true
+        return super.keyPressed(keyCode, scanCode, modifiers)
     }
 
     @Suppress("t")

@@ -1,4 +1,4 @@
-package ua.pp.lumivoid.redstonehelper.registration
+package ua.pp.lumivoid.redstonehelper.network.receiver
 
 import ua.pp.lumivoid.redstonehelper.network.receiver.client.ClientInfoBlockNotFoundPacket
 import ua.pp.lumivoid.redstonehelper.network.receiver.client.ClientInfoSuccessPacketReceiver

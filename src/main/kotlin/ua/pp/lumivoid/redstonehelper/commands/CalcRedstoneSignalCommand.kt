@@ -29,7 +29,6 @@ object CalcRedstoneSignalCommand {
         logger.debug("/calc-redstone-signal: Registering calc-redstone-signal command")
 
         dispatcher.register(ClientCommandManager.literal("calc-redstone-signal")
-            .requires { source -> source.hasPermissionLevel(2) }
             .executes { context ->
                 logger.debug("/redstone-give-signal: Missing arguments!")
                 context.source.sendError(Text.translatable(Constants.LOCALIZEIDS.STUFF_INFO_ERROR_MISSINGARGUMENTS))

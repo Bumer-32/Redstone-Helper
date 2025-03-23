@@ -15,10 +15,12 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import ua.pp.lumivoid.redstonehelper.registration.GamerulesRegistration;
 
+import java.util.Objects;
+
 @Mixin(ItemScatterer.class)
 public class DoContainerDropsMixin {
     @Inject(method = "spawn(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/inventory/Inventory;)V", at = @At("HEAD"), cancellable = true)
     private static void spawn(World world, BlockPos pos, Inventory inventory, CallbackInfo ci) {
-        if (!world.getGameRules().getBoolean(GamerulesRegistration.INSTANCE.getDO_CONTAINER_DROPS())) ci.cancel();
+        if (!Objects.requireNonNull(world.getServer()).getGameRules().getBoolean(GamerulesRegistration.INSTANCE.getDO_CONTAINER_DROPS())) ci.cancel();
     }
 }

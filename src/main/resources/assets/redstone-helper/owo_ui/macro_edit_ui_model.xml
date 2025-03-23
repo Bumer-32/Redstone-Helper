@@ -1,5 +1,5 @@
 <owo-ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.20/owo-ui.xsd">
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/wisp-forest/owo-lib/1.21.4/owo-ui.xsd">
 <!-- COPY OF https://github.com/wisp-forest/owo-lib/blob/1.21/src/main/resources/assets/owo/owo_ui/config.xml-->
     <components>
         <flow-layout direction="vertical">
@@ -21,12 +21,11 @@
 
                 <stack-layout>
                     <children>
-                        <flow-layout direction="horizontal" id="main-panel">
+                        <flow-layout direction="vertical" id="main-panel">
                             <children>
                                 <flow-layout direction="vertical">
                                     <children>
                                         <text-box id="macro_name">
-                                            <positioning type="relative">50,3</positioning>
                                             <text>Macro name</text>
                                             <sizing>
                                                 <horizontal method="fixed">200</horizontal>
@@ -59,15 +58,19 @@
 
                                             <sizing>
                                                 <horizontal method="fixed">200</horizontal>
-                                                <vertical method="fill">25</vertical>
+                                                <vertical method="fixed">20</vertical>
                                             </sizing>
+
+                                            <margins>
+                                                <top>10</top>
+                                            </margins>
                                         </flow-layout>
                                     </children>
 
                                     <positioning type="relative">50,0</positioning>
                                     <sizing>
                                         <horizontal method="content">100</horizontal>
-                                        <vertical method="fill">30</vertical>
+                                        <vertical method="fixed">60</vertical>
                                     </sizing>
                                     <horizontal-alignment>center</horizontal-alignment>
                                     <vertical-alignment>center</vertical-alignment>
@@ -96,13 +99,13 @@
                                         <vertical method="fill">70</vertical>
                                     </sizing>
 
+                                    <padding>
+                                        <top>10</top>
+                                    </padding>
+
                                     <positioning type="relative">50,100</positioning>
                                 </scroll>
                             </children>
-
-                            <padding>
-                                <horizontal>50</horizontal>
-                            </padding>
 
                             <sizing>
                                 <horizontal method="fill">100</horizontal>
