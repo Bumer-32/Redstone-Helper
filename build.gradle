@@ -120,7 +120,7 @@ publishing {
 		maven {
 			name = "Lumivoid"
 			url = "https://maven.lumivoid.pp.ua/releases"
-
+      
 			credentials {
 				username = System.getenv("MAVEN_NAME")
 				password = System.getenv("MAVEN_SECRET")
