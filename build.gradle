@@ -6,7 +6,7 @@ plugins {
   	id "org.jetbrains.kotlin.plugin.serialization" version "2.1.10"
   	id "org.jetbrains.kotlin.jvm" version "2.1.10"
 	id "com.modrinth.minotaur" version "2.+"
-	id 'maven-publish'
+	id "maven-publish"
 }
 
 version = project.mod_version + project.version_suffix
@@ -118,12 +118,12 @@ publishing {
 
 	repositories {
 		maven {
-			name = 'Lumivoid'
-			url = 'https://maven.lumivoid.pp.ua/repository/lumivoid/'
+			name = "Lumivoid"
+			url = "https://maven.lumivoid.pp.ua/releases"
 
-			credentials {
-				username = project.hasProperty("mavenUsername") ? project.mavenUsername : System.getenv("MAVEN_USERNAME")
-				password = project.hasProperty("mavenPassword") ? project.mavenPassword : System.getenv("MAVEN_PASSWORD")
+			credentials(PasswordCredentials)
+			authentication {
+				basic(BasicAuthentication)
 			}
 		}
 	}
