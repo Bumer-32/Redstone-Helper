@@ -2,7 +2,7 @@ import com.modrinth.minotaur.dependencies.ModDependency
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id "fabric-loom" version "1.11.1"
+	id "fabric-loom" version "1.11.4"
   	id "org.jetbrains.kotlin.plugin.serialization" version "2.2.0"
   	id "org.jetbrains.kotlin.jvm" version "2.2.0"
 	id "com.modrinth.minotaur" version "2.+"
