@@ -145,7 +145,7 @@ enum class AutoWire {
         logger.debug("Trying to set $block block at $blockPos")
 
         val blockToSet = Identifier.of(block)
-        SendPacket.sendPacket(SetBlockC2SPacket(blockPos.up(), blockToSet, direction, Constants.aMinecraftClass))
+        SendPacket.sendPacket(SetBlockC2SPacket(blockPos.up(), blockToSet, direction,  true, Constants.aMinecraftClass))
     }
 
     abstract fun place(blockPos: BlockPos, player: PlayerEntity, world: World): String

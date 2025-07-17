@@ -26,6 +26,11 @@ object UseKeyBinding {
                         client.player!!.swingHand(client.player!!.activeHand)
                         client.networkHandler!!.sendPacket(PlayerInteractBlockC2SPacket(client.player!!.activeHand, hit, 1))
                         lastBlockPlacementTime = currentTime
+
+                        // Autowire
+                        if (ClientOptions.isAutoWireEnabled) {
+                            ClientOptions.autoWireMode.place(hit.blockPos, client.player!!, client.player!!.world)
+                        }
                     }
                 }
             }
