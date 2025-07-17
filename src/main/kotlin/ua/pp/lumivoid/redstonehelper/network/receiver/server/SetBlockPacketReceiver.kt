@@ -17,6 +17,7 @@ object SetBlockPacketReceiver {
 
         Constants.NET_CHANNEL.registerServerbound(SetBlockC2SPacket::class.java) { message, access ->
             Scheduling.scheduleAction(1) { // delay, need to place dust because it thinks there's no block under it
+                if (message.isAuto && !access.player.serverWorld.getBlockState(message.blockPos).isAir) return@scheduleAction
                 var blockState = Registries.BLOCK.get(message.block).defaultState
 
                 if (message.direction != Direction.UP) {
@@ -33,7 +34,6 @@ object SetBlockPacketReceiver {
                 access.player.serverWorld.setBlockState(message.blockPos, blockState)
                 access.player.serverWorld.updateNeighbors(message.blockPos.east(), blockState.block)
             }
-
         }
     }
 }

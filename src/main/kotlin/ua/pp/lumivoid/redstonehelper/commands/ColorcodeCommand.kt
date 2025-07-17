@@ -67,7 +67,7 @@ object ColorcodeCommand {
                                         "${StringArgumentType.getString(context, "color")}_${it}"
                                     )
                                     if (Registries.BLOCK.containsId(fullId)) {
-                                        SendPacket.sendPacket(SetBlockC2SPacket(blockPos, fullId, Direction.UP, Constants.aMinecraftClass))
+                                        SendPacket.sendPacket(SetBlockC2SPacket(blockPos, fullId, Direction.UP,  false, Constants.aMinecraftClass))
                                         totalBlocksColored++
                                     }
                                     return@any true
